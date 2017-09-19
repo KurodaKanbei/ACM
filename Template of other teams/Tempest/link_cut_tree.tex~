@@ -1,0 +1,133 @@
+\begin{lstlisting}
+namespace link_cut_tree {
+	struct node {
+		node *child[2], *father;
+		bool head, rev;
+		int val, sum, size;
+		inline node() {
+			head = rev = val = sum = size = 0;
+		}
+		inline void set(node *temp, int dir) {
+			child[dir] = temp;
+			temp->father = this;
+		}
+		inline int which() {
+			return father->child[1] == this;
+		}
+		inline void update() {
+			sum = val + child[0]->sum + child[1]->sum;
+			size = 1 + child[0]->size + child[1]->size;
+		}
+		inline void release() {
+			if (rev) {
+				child[0]->reverse();
+				child[1]->reverse();
+				rev = 0;
+			}
+		}
+		inline void reverse() {
+			if (size == 0) {
+				return;
+			}
+			rev ^= 1;
+			swap(child[0], child[1]);
+		}
+	};
+ 
+	node *null, *tree[N];
+ 
+	inline node* create(int val) {
+		node *temp = new node();
+		temp->val = temp->sum = val;
+		temp->size = 1;
+		temp->child[0] = temp->child[1] = temp->father = null;
+		temp->head = true;
+		return temp;
+	}
+ 
+	inline void rotate(node *root) {
+		node *father = root->father;
+		father->release();
+		root->release();
+		int dir = root->which();
+		father->set(root->child[!dir], dir);
+		if (father->head) {
+			father->head = false;
+			root->head = true;
+			root->father = father->father;
+		} else {
+			father->father->set(root, father->which());
+		}
+		root->set(father, !dir);
+		father->update();	
+	}
+ 
+	inline void splay(node *root) {
+		for (root->release(); !root->head; ) {
+			if (root->father->head) {
+				rotate(root);
+			} else {
+				root->which() == root->father->which() ? (rotate(root->father), rotate(root)) : (rotate(root), rotate(root));
+			}
+		}
+		root->update();
+	}
+ 
+	inline void access(node *root) {
+		for (node *temp = null; root != null; temp = root, root = root->father) {
+			splay(root);
+			root->child[1]->head = true;
+			root->child[1] = temp;
+			root->child[1]->head = false;
+			root->update();
+		}
+	}
+ 
+	inline void link(int son, int father) {
+		access(tree[son]);
+		splay(tree[son]);
+		tree[son]->father = tree[father];
+		tree[son]->reverse();
+	}
+ 
+	inline void cut(int x, int y) {
+		access(tree[y]);
+		splay(tree[x]);
+		if (tree[x]->father == tree[y]) {
+			tree[x]->father = null;
+		} else {
+			access(tree[x]);
+			splay(tree[y]);
+			if (tree[y]->father == tree[x]) {
+				tree[y]->father = null;
+			}
+		}
+	}
+ 
+	inline void handle(int x, int y) {
+		access(tree[x]);
+		node *root = tree[y];
+		for (node *temp = null; root != null; temp = root, root = root->father) {
+			splay(root);
+			if (root->father == null) {
+ 
+			}
+			root->child[1]->head = true;
+			root->child[1] = temp;
+			root->child[1]->head = false;
+			root->update();
+		}
+	}
+ 
+	inline void init(int n, int val[]) {
+		for (int i = 1; i <= n; ++i) {
+			tree[i] = create(val[i]);
+		}
+	}
+ 
+	inline void prepare() {
+		null = new node();
+		null->child[0] = null->child[1] = null->father = null;
+	}
+}
+\end{lstlisting}

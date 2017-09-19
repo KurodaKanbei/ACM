@@ -1,0 +1,439 @@
+\documentclass[landscape, oneside, a4paper, cs4size]{book}
+
+\def\marginset#1#2{                      % 页边设置 \marginset{left}{top}
+\setlength{\oddsidemargin}{#1}         % 左边（书内侧）装订预留空白距离
+\iffalse                   % 如果考虑左侧（书内侧）的边注区则改为\iftrue
+\reversemarginpar
+\addtolength{\oddsidemargin}{\marginparsep}
+\addtolength{\oddsidemargin}{\marginparwidth}
+\fi
+\setlength{\evensidemargin}{0mm}       % 置0
+\iffalse                   % 如果考虑右侧（书外侧）的边注区则改为\iftrue
+\addtolength{\evensidemargin}{\marginparsep}
+\addtolength{\evensidemargin}{\marginparwidth}
+\fi
+% \paperwidth = h + \oddsidemargin+\textwidth+\evensidemargin + h
+\setlength{\hoffset}{\paperwidth}
+\addtolength{\hoffset}{-\oddsidemargin}
+\addtolength{\hoffset}{-\textwidth}
+\addtolength{\hoffset}{-\evensidemargin}
+\setlength{\hoffset}{0.5\hoffset}
+\addtolength{\hoffset}{-1in}           % h = \hoffset + 1in
+%\setlength{\voffset}{-1in}             % 0 = \voffset + 1in
+\setlength{\topmargin}{\paperheight}
+\addtolength{\topmargin}{-\headheight}
+\addtolength{\topmargin}{-\headsep}
+\addtolength{\topmargin}{-\textheight}
+\addtolength{\topmargin}{-\footskip}
+\addtolength{\topmargin}{#2}           % 上边预留装订空白距离
+\setlength{\topmargin}{0.5\topmargin}
+}
+% 调整页边空白使内容居中，两参数分别为纸的左边和上边预留装订空白距离
+\marginset{125mm}{200mm}
+
+
+%\usepackage{ctex}
+\usepackage{bm}
+%\usepackage[fleqn]{amsmath}
+\usepackage{harpoon}
+\usepackage{fontspec}
+\usepackage{listings}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,columnsep=1cm,dvipdfm]{geometry}
+\usepackage{setspace}
+\usepackage{bm}
+\usepackage{cmap}
+\usepackage{cite}
+\usepackage{float}
+\usepackage{xeCJK}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage{indentfirst}
+\usepackage{adjmulticol}
+\usepackage{titlesec}
+\allowdisplaybreaks
+%\setlength{\parindent}{0em}
+%\setlength{\mathindent}{0pt}
+\lstset{breaklines}
+\let\cleardoublepage\relax
+\titleformat{\chapter}{\normalfont\large\bfseries}{第\,\thechapter\,章}{10pt}{\large}
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\small\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\footnotesize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\chapter} {0pt}{0pt}{0pt}
+\titlespacing*{\section} {0pt}{0pt}{0pt}
+\titlespacing*{\subsection} {0pt}{-1pt}{-1pt}
+\titlespacing*{\subsubsection}{0pt}{-1pt}{-1pt}
+\newfontfamily\Courier{Courier New}
+\lstset{
+	language=C++,
+	tabsize=2,
+	numbers=left,
+	extendedchars=false,
+	showstringspaces=false,
+	xleftmargin=0em,
+	xrightmargin=0em,
+	frame=single,
+	breaklines=true,
+	breakatwhitespace=false,
+	numberstyle=\scriptsize\Courier,
+	basicstyle=\scriptsize\Courier
+}
+\begin{document}\scriptsize
+	\title{\textbf{\LARGE{Standard Code Library}}}
+	\author{Shanghai Jiao Tong University}
+	\date{October, 2015}
+	\maketitle
+	\newpage
+	\begin{multicols}{2}
+		\tableofcontents
+		\chapter{数论算法}
+			\section{快速数论变换}
+			\begin{spacing}{0.8}
+				使用条件及注意事项：$mod$必须要是一个形如$a2^b + 1$的数，$prt$表示$mod$的原根。
+				\input{Source/Number-Theory/Number-Theory-Transform.tex}
+			\end{spacing}
+			\section{多项式求逆}
+			\begin{spacing}{0.8}
+				使用条件及注意事项：求一个多项式在模意义下的逆元。
+				\input{Source/Number-Theory/Inverse-Polynomial.tex}
+			\end{spacing}
+			\section{中国剩余定理}
+			\begin{spacing}{0.8}
+				使用条件及注意事项：模数可以不互质。
+				\input{Source/Number-Theory/Chinese-Remainder-Theorem.tex}
+			\end{spacing}
+			\section{Miller Rabin}
+			\begin{spacing}{0.8}
+				\input{Source/Number-Theory/Miller-Rabin.tex}
+			\end{spacing}
+			\section{Pollard Rho}
+			\begin{spacing}{0.8}
+				\input{Source/Number-Theory/Pollard-Rho.tex}
+			\end{spacing}
+			\section{坚固的逆元}
+			\begin{spacing}{0.8}
+				\input{Source/Number-Theory/Quick-Inverse.tex}
+			\end{spacing}
+			\section{离散对数}
+			\begin{spacing}{0.8}
+				使用条件及注意事项：$a$必须要有关于$MOD$的逆元。
+				\input{Source/Number-Theory/Discrete-Log.tex}
+			\end{spacing}
+			\section{直线下整点个数}
+			\begin{spacing}{0.8}
+				\input{Source/Number-Theory/Lattice-Count.tex}
+			\end{spacing}
+			\section{原根相关}
+			\begin{spacing}{0.8}
+				\input{Source/Number-Theory/Primitive-Root.tex}
+			\end{spacing}
+		\chapter{数值算法}
+			\section{快速傅立叶变换}
+			\begin{spacing}{0.8}
+				\input{Source/Numerical-Algorithm/Fast-Fourier-Transform.tex}
+			\end{spacing}
+			\section{单纯形法求解线性规划}
+			\begin{spacing}{0.8}
+				使用条件及注意事项：返回结果为$max\{c_{1 \times m} \cdot x_{m \times 1} \ | \ x_{m \times 1} \geq 0_{m \times 1}, a_{n \times m} \cdot x_{m \times 1} \leq b_{n \times 1}\}$
+				\input{Source/Numerical-Algorithm/Linear-Programming-Simplex.tex}
+			\end{spacing}
+			\section{自适应辛普森}
+			\begin{spacing}{0.8}
+				\input{Source/Numerical-Algorithm/Adaptive-Simpson.tex}
+			\end{spacing}
+		\chapter{数据结构}
+			\section{堆}
+			\begin{spacing}{0.8}
+				\input{Source/Data-Structure/Priority_Queue.tex}
+			\end{spacing}
+			\section{左偏树}
+			\begin{spacing}{0.8}
+				\input{Source/Data-Structure/Leftist-Tree.tex}
+			\end{spacing}
+			\section{Splay普通操作版}
+			\begin{spacing}{0.8}
+				使用条件及注意事项：\par
+				\begin{enumerate}\setlength{\itemsep}{-\itemsep}
+					\item 插入$x$数
+					\item 删除$x$数(若有多个相同的数，因只删除一个)
+					\item 查询$x$数的排名(若有多个相同的数，因输出最小的排名)
+					\item 查询排名为$x$的数
+					\item 求$x$的前驱(前驱定义为小于$x$，且最大的数)
+					\item 求$x$的后继(后继定义为大于$x$，且最小的数)
+				\end{enumerate}
+				\input{Source/Data-Structure/Splay-Normal.tex}
+			\end{spacing}
+			\section{Splay区间操作版}
+			\begin{spacing}{0.8}
+				使用条件及注意事项：\par
+				这是为NOI2005维修数列的代码，仅供区间操作用的splay参考。
+				\input{Source/Data-Structure/Splay-Interval.tex}
+			\end{spacing}
+			\section{坚固的Treap}
+			\begin{spacing}{0.8}
+				使用条件及注意事项：题目来源UVA 12358
+				\input{Source/Data-Structure/Persistent-Treap}
+			\end{spacing}
+			\section{k-d树}
+			\begin{spacing}{0.8}
+				使用条件及注意事项：这是求$k$远点的代码，要求$k$近点的话把堆的比较函数改一改，把朝左儿子或者是右儿子
+				的方向改一改。
+				\input{Source/Data-Structure/K-Dimensional-Tree.tex}
+			\end{spacing}
+			\section{树链剖分}
+			\begin{spacing}{0.8}
+				\subsection{点操作版本}
+					使用条件及注意事项：树上最大（非空）子段和，注意一条路径询问的时候信息统计的顺序。
+					\input{Source/Data-Structure/Heavy-Light-Decomposition-Point.tex}
+				\subsection{链操作版本}
+					\input{Source/Data-Structure/Heavy-Light-Decomposition-Chain.tex}
+			\end{spacing}
+			\section{Link-Cut-Tree}
+			\begin{spacing}{0.8}
+				\input{Source/Data-Structure/Link-Cut-Tree.tex}
+			\end{spacing}
+		\chapter{图论}
+			\section{点双连通分量}
+			\begin{spacing}{0.8}
+				\input{Source/Graph-Theory/Double-Connected-component.tex}
+			\end{spacing}	
+			\section{2-SAT问题}
+			\begin{spacing}{0.8}
+				\input{Source/Graph-Theory/Two-Satisfiability.tex}
+			\end{spacing}
+			\section{二分图最大匹配}
+			\begin{spacing}{0.8}
+				\subsection{Hopcroft Karp算法}
+					时间复杂度：$\mathcal{O}(\sqrt{V} \cdot E)$
+					\input{Source/Graph-Theory/Maximum-Matching-Hopcroft-Karp.tex}
+			\end{spacing}
+			\section{二分图最大权匹配}
+			\begin{spacing}{0.8}
+				时间复杂度：$\mathcal{O}(V^4)$
+				\input{Source/Graph-Theory/Maximum-Weight-Matching.tex}
+			\end{spacing}
+			\begin{spacing}{0.8}
+				时间复杂度：$\mathcal{O}(V^3)$
+				\input{Source/Graph-Theory/Maximum-Weight-Matching-Faster.tex}
+			\end{spacing}
+			\section{最大流}
+			\begin{spacing}{0.8}
+				\subsection{ISAP}
+					\indent 时间复杂度：$\mathcal{O}(V^2 \cdot E)$
+					\input{Source/Graph-Theory/Maximum-Flow-ISAP.tex}
+				\subsection{SAP}
+					\indent 时间复杂度：$\mathcal{O}(V^2 \cdot E)$
+					\input{Source/Graph-Theory/Maximum-Flow-SAP.tex}
+			\end{spacing}
+			\section{上下界网络流}
+			\begin{spacing}{0.8}
+				$B(u,v)$表示边$(u,v)$流量的下界，$C(u,v)$表示边$(u,v)$流量的上界，$F(u,v)$表示边$(u,v)$的流量。
+				设$G(u,v) = F(u,v) - B(u,v)$，显然有
+				$$0 \leq G(u,v) \leq C(u,v)-B(u,v)$$
+			\end{spacing}
+			\subsection{无源汇的上下界可行流}
+			\begin{spacing}{0.8}
+				建立超级源点$S^*$和超级汇点$T^*$，对于原图每条边$(u,v)$在新网络中连如下三条边：$S^* \rightarrow v$，容量为$B(u,v)$；$u \rightarrow T^*$，容量为$B(u,v)$；$u \rightarrow v$，容量为$C(u,v) - B(u,v)$。最后求新网络的最大流，判断从超级源点$S^*$出发的边是否都满流即可，边$(u,v)$的最终解中的实际流量为$G(u,v)+B(u,v)$。
+			\end{spacing}
+			\subsection{有源汇的上下界可行流}
+			\begin{spacing}{0.8}
+				从汇点$T$到源点$S$连一条上界为$\infty$，下界为$0$的边。按照\textbf{无源汇的上下界可行流}一样做即可，流量即为$T \rightarrow S$边上的流量。
+			\end{spacing}
+			\subsection{有源汇的上下界最大流}
+			\begin{spacing}{0.8}
+				\begin{enumerate}\setlength{\itemsep}{-\itemsep}
+					\item 在\textbf{有源汇的上下界可行流}中，从汇点$T$到源点$S$的边改为连一条上界为$\infty$，下届为$x$的边。$x$满足二分性质，找到最大的$x$使得新网络存在\textbf{无源汇的上下界可行流}即为原图的最大流。
+					\item 从汇点$T$到源点$S$连一条上界为$\infty$，下界为$0$的边，变成无源汇的网络。按照\textbf{无源汇的上下界可行流}的方法，建立超级源点$S^*$和超级汇点$T^*$，求一遍$S^* \rightarrow T^*$的最大流，再将从汇点$T$到源点$S$的这条边拆掉，求一次$S \rightarrow T$的最大流即可。
+				\end{enumerate}
+			\end{spacing}
+			\subsection{有源汇的上下界最小流}
+			\begin{spacing}{0.8}
+				\begin{enumerate}\setlength{\itemsep}{-\itemsep}
+					\item 在\textbf{有源汇的上下界可行流}中，从汇点$T$到源点$S$的边改为连一条上界为$x$，下界为$0$的边。$x$满足二分性质，找到最小的$x$使得新网络存在\textbf{无源汇的上下界可行流}即为原图的最小流。
+					\item 按照\textbf{无源汇的上下界可行流}的方法，建立超级源点$S^*$与超级汇点$T^*$，求一遍$S^* \rightarrow T^*$的最大流，但是注意这一次不加上汇点$T$到源点$S$的这条边，即不使之改为无源汇的网络去求解。求完后，再加上那条汇点$T$到源点$S$上界$\infty$的边。因为这条边下界为$0$，所以$S^*$，$T^*$无影响，再直接求一次$S^* \rightarrow T^*$的最大流。若超级源点$S^*$出发的边全部满流，则$T \rightarrow S$边上的流量即为原图的最小流，否则无解。
+				\end{enumerate}
+			\end{spacing}
+			\section{最小费用最大流}
+			\begin{spacing}{0.8}
+				\subsection{稀疏图}
+					时间复杂度：$\mathcal{O}(V \cdot E^2)$
+					\input{Source/Graph-Theory/Minimum-Cost-Flow-Spfa.tex}
+				\subsection{稠密图}
+					使用条件：费用非负\\
+					\indent 时间复杂度：$\mathcal{O}(V \cdot E^2)$
+					\input{Source/Graph-Theory/Minimum-Cost-Flow-Zkw.tex}
+			\end{spacing}
+			\section{一般图最大匹配}
+			\begin{spacing}{0.8}
+				时间复杂度：$\mathcal{O}(V^3)$
+				\input{Source/Graph-Theory/Maximum-Matching-Blossom.tex}
+			\end{spacing}
+			\section{无向图全局最小割}
+			\begin{spacing}{0.8}
+				时间复杂度：$\mathcal{O}(V^3)$\\
+				\indent 注意事项：处理重边时，应该对边权累加
+				\input{Source/Graph-Theory/Minimum-Cut-Stoer-Wagner.tex}
+			\end{spacing}
+			\section{最小树形图}
+			\begin{spacing}{0.8}
+				\input{Source/Graph-Theory/Chu-Liu-Algorithm.tex}
+			\end{spacing}
+			\section{有根树的同构}
+			\begin{spacing}{0.8}
+				时间复杂度：$\mathcal{O}(V log V)$
+				\input{Source/Graph-Theory/Rooted-Tree-Isomorphism.tex}
+			\end{spacing}
+			\section{度限制生成树}
+			\begin{spacing}{0.8}
+				\input{Source/Graph-Theory/Minimum-Spanning-Tree-With-Degree-Limit.tex}
+			\end{spacing}
+			\section{弦图相关}
+			\begin{spacing}{0.8}
+				\subsection{弦图的判定}
+					\input{Source/Graph-Theory/Chord-Graph-Judgement.tex}
+				\subsection{弦图的团数}
+					\input{Source/Graph-Theory/Chord-Graph-Group-Counter.tex}
+			\end{spacing}
+			\section{最大团点数}
+			\begin{spacing}{0.8}
+				\input{Source/Graph-Theory/Maximum-Clique.tex}
+			\end{spacing}
+			\section{最大团计数}
+			\begin{spacing}{0.8}
+				\input{Source/Graph-Theory/Maximum-Clique-Counter.tex}
+			\end{spacing}
+			\section{哈密尔顿回路（ORE性质的图）}
+			\begin{spacing}{0.8}
+				ORE性质：$$\forall x,y \in V \wedge (x,y) \notin E \ \ s.t. \ \ deg_x+deg_y \geq n$$
+				\indent 返回结果：从顶点$1$出发的一个哈密尔顿回路\\
+				\indent 使用条件：$n \geq 3$
+				\input{Source/Graph-Theory/Hamiltonian-Circuit-Ore.tex}
+			\end{spacing}
+		\chapter{字符串}
+			\section{模式串匹配}
+			\begin{spacing}{0.8}
+				\input{Source/String-Algorithm/Knuth-Morris-Pratt.tex}
+			\end{spacing}
+			\section{坚固的模式串匹配}
+			\begin{spacing}{0.8}
+				\input{Source/String-Algorithm/Extended-Knuth-Morris-Pratt.tex}
+			\end{spacing}
+			\section{AC自动机}
+			\begin{spacing}{0.8}
+				\input{Source/String-Algorithm/Aho-Corasick-Automaton.tex}
+			\end{spacing}
+			\section{后缀数组}
+			\begin{spacing}{0.8}
+				\input{Source/String-Algorithm/Suffix-Array.tex}
+			\end{spacing}
+			\section{广义后缀自动机}
+			\begin{spacing}{0.8}
+				\input{Source/String-Algorithm/Generalized-Suffix-Automaton.tex}
+			\end{spacing}
+			\section{Manacher算法}
+			\begin{spacing}{0.8}
+				\input{Source/String-Algorithm/Manacher.tex}
+			\end{spacing}
+			\section{回文树}
+			\begin{spacing}{0.8}
+				\input{Source/String-Algorithm/Palindromic-Tree.tex}
+			\end{spacing}
+			\section{循环串最小表示}
+			\begin{spacing}{0.8}
+				\input{Source/String-Algorithm/Minimum-Circular-Representation.tex}
+			\end{spacing}
+		\chapter{计算几何}
+			\section{二维基础}
+				\subsection{凸包}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/Convex-Hull-2D.tex}
+				\end{spacing}
+				\subsection{半平面交}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/Half-Plane-Intersection.tex}
+				\end{spacing}
+				\subsection{最近点对}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/Closest-Pair-Of-Points.tex}
+				\end{spacing}
+				\subsection{三角形的心}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/The-Core-Of-Triangle.tex}
+				\end{spacing}
+			\section{三维基础}
+				\subsection{凸包}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/Convex-Hull-3D.tex}
+				\end{spacing}
+				\subsection{绕轴旋转}
+				\begin{spacing}{0.8}
+					使用方法及注意事项：逆时针绕轴$AB$旋转$\theta$角
+					\input{Source/Computational-Geometry/Rotate-3D.tex}
+				\end{spacing}
+			\section{多边形}
+				\subsection{判断点在多边形内部}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/Point-In-Polygon.tex}
+				\end{spacing}
+				\subsection{多边形内整点计数}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/Lattice-In-Polygon-Counter.tex}
+				\end{spacing}
+				%\subsection{旋转卡壳}
+				%\subsection{动态凸包}
+				%\subsection{点到凸包的切线}
+				%\subsection{直线与凸包的交点}
+				%\subsection{凸多边形的交集}
+				%\subsection{凸多边形内的最大圆}
+			\section{圆}
+				%\subsubsection{圆类}
+				%\subsection{圆的交集}
+				\subsection{最小覆盖圆}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/Minimum-Coverage-Circle.tex}
+				\end{spacing}
+				\subsection{最小覆盖球}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/Minimum-Coverage-Ball.tex}
+				\end{spacing}
+				%\subsubsection{判断圆存在交集}
+				\subsection{多边形与圆的交面积}
+				\begin{spacing}{0.8}
+					\input{Source/Computational-Geometry/Polygon-Circle-Intersection.tex}
+				\end{spacing}
+			%\subsection{三角形}
+				%\subsubsection{三角形的内心}
+				%\subsubsection{三角形的外心}
+				%\subsubsection{三角形的垂心}
+			%\subsection{黑暗科技}
+				%\subsubsection{平面图形的转动惯量}
+				%\subsubsection{平面区域处理}
+				%\subsubsection{Vonoroi图}
+		\chapter{其它}
+			\section{STL使用方法}
+				\begin{spacing}{0.8}
+				\input{Source/Hint/STL-Template.tex}
+				\end{spacing}
+			\section{博弈论相关}
+				\begin{spacing}{0.8}
+				\input{Source/Hint/Game-Theory.tex}
+				\end{spacing}
+			\section{Java Reference}
+				\begin{spacing}{0.8}
+				\input{Source/Hint/Java-Reference.tex}
+				\end{spacing}
+			\section{Bug List}
+				\begin{spacing}{0.8}
+				\input{Source/Hint/Bug-List.tex}
+				\end{spacing}
+		\chapter{数学公式}
+			\begin{spacing}{0.8}
+			\input{Source/Mathematics/Mathematics-Formula.tex}
+			\end{spacing}
+	\end{multicols}
+\end{document}

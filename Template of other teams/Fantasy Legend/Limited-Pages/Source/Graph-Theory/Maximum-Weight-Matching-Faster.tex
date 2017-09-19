@@ -1,0 +1,74 @@
+\begin{lstlisting}
+//最小权匹配
+struct KM_State {
+	int lx[N], ly[N], match[N], way[N];
+	KM_State() {
+		for (int i = 1; i <= n; i ++) {
+			match[i] = 0;
+			lx[i] = 0;
+			ly[i] = 0;
+			way[i] = 0;
+		}
+	}
+};
+struct KM_Solver {
+	int w[N][N], slack[N];
+	KM_State state; 
+	bool used[N];
+	KM_Solver() {
+		for (int i = 1; i <= n; i ++) {
+			for (int j = 1; j <= n; j ++) {
+				w[i][j] = 0;
+			}
+		}
+	}
+	void hungary(int x) {
+		state.match[0] = x;
+		int j0 = 0;
+		for (int j = 0; j <= n; j ++) {
+			slack[j] = INF;
+			used[j] = false;
+		}
+		do {
+			used[j0] = true;
+			int i0 = state.match[j0], delta = INF, j1;
+			for (int j = 1; j <= n; j ++) {
+				if (used[j] == false) {
+					int cur = w[i0][j] - state.lx[i0] - state.ly[j];
+					if (cur < slack[j]) {
+						slack[j] = cur;
+						state.way[j] = j0;
+					}
+					if (slack[j] < delta) {
+						delta = slack[j];
+						j1 = j;
+					}
+				}
+			}
+			for (int j = 0; j <= n; j ++) {
+				if (used[j]) {
+					state.lx[state.match[j]] += delta;
+					state.ly[j] -= delta;
+				} else {
+					slack[j] -= delta;
+				}
+			}
+			j0 = j1;
+		} while (state.match[j0] != 0);
+		do {
+			int j1 = state.way[j0];
+			state.match[j0] = state.match[j1];
+			j0 = j1;
+		} while (j0);
+	}
+	int get_ans() {
+		int ret = 0;
+		for (int i = 1; i <= n; i ++) {
+			if (state.match[i] > 0) {
+				ret += w[state.match[i]][i];
+			}
+		}
+		return state.ly[0];
+	}
+};
+\end{lstlisting}

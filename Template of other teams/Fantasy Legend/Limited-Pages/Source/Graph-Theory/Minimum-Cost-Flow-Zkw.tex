@@ -1,0 +1,38 @@
+\begin{lstlisting}
+int aug(int no,int res) {
+    if(no == t) return cost += pi1 * res,res;
+    v[no] = true;
+    int flow = 0;
+    for(int i = h[no]; ~ i ;i = nxt[i])
+		if(cap[i] && !expense[i] && !v[p[i]]) {
+			int d = aug(p[i],min(res,cap[i]));
+			cap[i] -= d,cap[i ^ 1] += d,flow += d,res -= d;
+			if( !res ) return flow;
+		}
+    return flow;
+}
+bool modlabel() {
+    int d = maxint;
+    for(int i = 1;i <= t;++ i)
+		if(v[i]) {
+			for(int j = h[i]; ~ j ;j = nxt[j])
+				if(cap[j] && !v[p[j]] && expense[j] < d) d = expense[j];
+		}
+    if(d == maxint)return false;
+    for(int i = 1;i <= t;++ i)
+		if(v[i]) {
+			for(int j = h[i];~ j;j = nxt[j])
+				expense[j] -= d,expense[j ^ 1] += d;
+		}
+    pi1 += d;
+    return true;
+}
+void minimum_cost_flow_zkw() {
+	cost = 0;
+	do{
+		do{
+			memset(v,false,sizeof v);
+		}while (aug(s,maxint));
+	}while (modlabel());
+}
+\end{lstlisting}

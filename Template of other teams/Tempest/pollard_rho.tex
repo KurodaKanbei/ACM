@@ -1,0 +1,72 @@
+\begin{lstlisting}
+模板需要配合miller\_rabin一起使用.
+调用factor()函数, 会返回vector<long long>, 表示分解结果. (例如分解12, 会返回2, 2和3)
+namespace pollard_rho {
+	//可以改成LL*LL%LL的形式
+	inline long long multiply(const long long &x, const long long &y, const long long &p) {
+		long long ans = 0, num = x % p;
+		for (long long i = y; i > 0; i >>= 1) {
+			if (i & 1) {
+				(ans += num) %= p;
+			}
+			(num += num) %= p;
+		}
+		return ans;
+	}
+ 
+	inline long long gcd(long long x, long long y) {
+		while (y > 0) {
+			x %= y;
+			swap(x, y);
+		}
+		return x;
+	}
+ 
+	inline long long pollard_rho(const long long &n, const long long &c) {
+		long long x = rand() % (n - 1) + 1, y = x;
+		int head = 1, tail = 2;
+		while (true) {
+			x = multiply(x, x, n);
+			if ((x += c) >= n) {
+				x -= n;
+			}
+			if (x == y) {
+				return n;
+			}
+			long long d = gcd(abs(x - y), n);
+			if (d > 1 && d < n) {
+				return d;
+			}
+			if ((++head) == tail) {
+				y = x;
+				tail <<= 1;
+			}
+		}
+	}
+ 
+	inline vector<long long> mergy(const vector<long long> &a, const vector<long long> &b) {
+		vector<long long> vec;
+		for (int i = 0; i < (int)a.size(); ++i) {
+			vec.push_back(a[i]);
+		}
+		for (int i = 0; i < (int)b.size(); ++i) {
+			vec.push_back(b[i]);
+		}
+		return vec;
+	}
+ 
+	inline vector<long long> factor(const long long &n) {
+		if (n <= 1) {
+			return vector<long long>();
+		}
+		if (miller_rabin::prime(n)) {
+			return vector<long long>(1, n);
+		}
+		long long p = n;
+		while (p >= n) {
+			p = pollard_rho(n, rand() % (n - 1) + 1);
+		}
+		return mergy(factor(n / p), factor(p));
+	}
+}
+\end{lstlisting}

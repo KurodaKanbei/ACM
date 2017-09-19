@@ -1,0 +1,85 @@
+\begin{lstlisting}
+int pred(int x) {
+	splay(x, -1);
+	for (x = c[x][0]; c[x][1]; x = c[x][1]);
+	return x;
+}
+int succ(int x) {
+	splay(x, -1);
+	for (x = c[x][1]; c[x][0]; x = c[x][0]);
+	return x;
+}
+void remove(int x) {
+	if (b[x] > 1) {b[x]--; splay(x, -1); return;}
+	splay(x, -1);
+	if (!c[x][0] && !c[x][1]) rt = 0;
+	else if (c[x][0] && !c[x][1]) f[rt = c[x][0]] = -1;
+	else if (!c[x][0] && c[x][1]) f[rt = c[x][1]] = -1;
+	else{
+		int t = pred(x); f[rt = c[x][0]] = -1;
+		c[t][1] = c[x][1]; f[c[x][1]] = t;
+		splay(c[x][1], -1);
+	}
+	c[x][0] = c[x][1] = f[x] = d[x] = s[x] = b[x] = 0;
+}
+int find(int z) {
+	int x=rt;
+	while (d[x]!=z)
+		if (c[x][d[x]<z]) x=c[x][d[x]<z];
+		else break;
+	return x;
+}
+void insert(int z) {
+	if (!rt) {
+		f[rt = ++size] = -1;
+		d[size] = z; b[size] = 1;
+		splay(size, -1);
+		return;
+	}
+	int x = find(z);
+	if (d[x] == z) {
+		b[x]++;
+		splay(x, -1);
+		return;
+	}
+	c[x][d[x]<z] = ++size; f[size] = x;
+	d[size] = z; b[size] = s[size] = 1;
+	splay(size, -1);
+}
+int select(int z) {
+	int x = rt;
+	while (z < s[c[x][0]] + 1 || z > s[c[x][0]] + b[x])
+		if (z > s[c[x][0]] + b[x]) {
+			z -= s[c[x][0]] + b[x];
+			x = c[x][1];
+		}
+	  	else x = c[x][0];
+	return x;
+}
+int main() {
+	scanf("%d",&n);
+	for (int i = 1; i <= n; i++) {
+		int opt, x;
+		scanf("%d%d", &opt, &x);
+		if (opt == 1) insert(x);
+		else if (opt == 2) remove(find(x)); //删除x数(若有多个相同的数，因只删除一个)
+		else if (opt == 3) { // 查询x数的排名(若有多个相同的数，因输出最小的排名)
+			insert(x);
+			printf("%d\n", s[c[find(x)][0]] + 1);
+			remove(find(x));
+		}
+		else if (opt == 4) printf("%d\n",d[select(x)]);
+		else if (opt == 5) {
+			insert(x);
+			printf("%d\n", d[pred(find(x))]);
+			remove(find(x));
+		}
+		else if (opt == 6) {
+			insert(x);
+			printf("%d\n", d[succ(find(x))]);
+			remove(find(x));
+		}
+	}
+	return 0;
+}
+\end{lstlisting}

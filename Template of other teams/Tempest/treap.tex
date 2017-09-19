@@ -1,0 +1,105 @@
+\begin{lstlisting}
+namespace treap {
+	struct node {
+		node *left, *right;
+		int key;
+		int size, count, aux;
+		inline node(int _aux) {
+			left = right = 0;
+			key = size = count = 0;
+			aux = _aux;
+		}
+		inline void update() {
+			this->size = this->left->size + this->count + this->right->size;
+		}
+	};
+ 
+	node *null;
+ 
+	inline void print(node *&x) {
+		if (x == null) {
+			return;
+		}
+		print(x->left);
+		printf("%d ", x->key);
+		print(x->right);
+	}
+ 
+	inline node* create(int key) {
+		node *x = new node(rand() % INT_MAX);
+		x->key = key;
+		x->count = x->size = 1;
+		x->left = x->right = null;
+		return x;
+	}
+ 
+	inline void left_rotate(node *&x) {
+		node *y = x->right;
+		x->right = y->left;
+		y->left = x;
+		x->update();
+		y->update();
+		x = y;
+	}
+ 
+	inline void right_rotate(node *&x) {
+		node *y = x->left;
+		x->left = y->right;
+		y->right = x;
+		x->update();
+		y->update();
+		x = y;
+	}
+ 
+	inline void insert(node *&x, int key) {
+		if (x == null) {
+			x = create(key);
+			return;
+		}
+		if (x->key == key) {
+			x->count++;
+		} else if (x->key > key) {
+			insert(x->left, key);
+			if (x->left->aux < x->aux) {
+				right_rotate(x);
+			}
+		} else {
+			insert(x->right, key);
+			if (x->right->aux < x->aux) {
+				left_rotate(x);
+			}
+		}
+		x->update();
+	}
+ 
+	inline void erase(node *&x, int key) {
+		if (x == null) {
+			return;
+		}
+		if (x->key == key) {
+			if (x->count > 1) {
+				x->count--;
+			} else if (x->left == null && x->right == null) {
+				delete(x);
+				x = null;
+				return;
+			} else if (x->left->aux < x->right->aux) {
+				right_rotate(x);
+				erase(x->right, key);
+			} else {
+				left_rotate(x);
+				erase(x->left, key);
+			}
+		} else if (x->key > key) {
+			erase(x->left, key);
+		} else {
+			erase(x->right, key);
+		}
+		x->update();
+	}
+ 
+	inline void prepare() {
+		null = new node(INT_MAX);
+	}
+}
+\end{lstlisting}

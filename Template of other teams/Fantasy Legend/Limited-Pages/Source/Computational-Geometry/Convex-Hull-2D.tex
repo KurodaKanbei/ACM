@@ -1,0 +1,21 @@
+\begin{lstlisting}
+bool Pair_Comp(const Point &a, const Point &b) {
+	if (dcmp(a.x - b.x) < 0) return true;
+	if (dcmp(a.x - b.x) > 0) return false;
+	return dcmp(a.y - b.y) < 0;
+}
+int Convex_Hull(int n, Point *P, Point *C) {
+	sort(P, P + n, Pair_Comp);
+	int top = 0;
+	for (int i = 0; i < n; i++) {
+		while (top >= 2 && dcmp(det(C[top - 1] - C[top - 2], P[i] - C[top - 2])) <= 0) top--;
+		C[top++] = P[i];
+	}
+	int lasttop = top;
+	for (int i = n - 1; i >= 0; i--) {
+		while (top > lasttop && dcmp(det(C[top - 1] - C[top - 2], P[i] - C[top - 2])) <= 0) top--;
+		C[top++] = P[i];
+	}
+	return top;
+}
+\end{lstlisting}

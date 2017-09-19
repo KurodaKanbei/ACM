@@ -1,0 +1,47 @@
+\begin{lstlisting}
+const int modulo(786433);
+const int G(10);//原根
+int pw[999999];
+void FFT(int P[], int n, int oper) {
+	for(int i(1), j(0); i < n - 1; i++) {
+		for(int s(n); j ^= s >>= 1, ~j & s;);
+		if (i < j) 
+			swap(P[i], P[j]);
+	}
+	int unit_p0;
+	for(int d(0); (1 << d) < n; d++) {
+		int m(1 << d), m2(m * 2);
+		unit_p0 = oper == 1?pw[(modulo - 1) / m2]:pw[modulo - 1 - (modulo - 1) / m2];
+		for(int i = 0; i < n; i += m2) {
+			int unit(1);
+			for(int j(0); j < m; j++) {
+				int &P1 = P[i + j + m], &P2 = P[i + j];
+				int t = (long long)unit * P1 % modulo;
+				P1 = (P2 - t + modulo) % modulo;
+				P2 = (P2 + t) % modulo;
+				unit = (long long)unit * unit_p0 % modulo;
+			}
+		}
+	}
+}
+
+int nn;
+int A[N], B[N], C[N];
+//A * B = C;
+//len = nn
+void multiply() {
+	FFT(A, nn, 1);
+	FFT(B, nn, 1);
+	for(int i(0); i < nn; i++) {
+		C[i] = (long long)A[i] * B[i] % modulo;
+	}
+	FFT(C,  nn, -1);
+}
+
+int main() {
+	pw[0] = 1;
+	for(int i(1); i < modulo; i++) {
+		pw[i] = (long long)pw[i - 1] * G % modulo;
+	}
+}
+\end{lstlisting}

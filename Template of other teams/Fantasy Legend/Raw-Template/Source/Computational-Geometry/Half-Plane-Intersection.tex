@@ -1,0 +1,28 @@
+\begin{lstlisting}
+bool isOnLeft(const Point &x, const Line &l) {
+	double d = det(x - l.a, l.b - l.a);
+	return dcmp(d) <= 0;
+}
+// 传入一个线段的集合L，传出A，并且返回A的大小
+int getIntersectionOfHalfPlane(int n, Line *L, Line *A) {
+	Line *q = new Line[n + 1];
+	Point *p = new Point[n + 1];
+	sort(L, L + n, Polar_Angle_Comp_Line);
+	int l = 1, r = 0;
+	for (int i = 0; i < n; i++) {
+		while (l < r && !isOnLeft(p[r - 1], L[i])) r--;
+		while (l < r && !isOnLeft(p[l], L[i])) l++;
+		q[++r] = L[i];
+		if (l < r && is_Colinear(q[r], q[r - 1])) {
+			r--;
+			if (isOnLeft(L[i].a, q[r])) q[r] = L[i];
+		}
+		if (l < r) p[r - 1] = getIntersection(q[r - 1], q[r]);
+	}
+	while (l < r && !isOnLeft(p[r - 1], q[l])) r--;
+	if (r - l + 1 <= 2) return 0;
+	int tot = 0;
+	for (int i = l; i <= r; i++) A[tot++] = q[i];
+	return tot;
+}
+\end{lstlisting}

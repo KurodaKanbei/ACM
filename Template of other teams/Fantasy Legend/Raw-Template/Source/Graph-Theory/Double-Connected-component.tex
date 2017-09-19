@@ -1,0 +1,119 @@
+\subsection{坚固的点双连通分量}
+\begin{lstlisting}
+int n, m, x, y, ans1, ans2, tot1, tot2, flag, size, ind2, dfn[N], low[N], block[M], vis[N];
+vector<int> a[N];
+pair<int, int> stack[M];
+void tarjan(int x, int p) {
+	dfn[x] = low[x] = ++ind2;
+	for (int i = 0; i < a[x].size(); ++i)
+		if (dfn[x] > dfn[a[x][i]] && a[x][i] != p){
+			stack[++size] = make_pair(x, a[x][i]);
+			if (i == a[x].size() - 1 || a[x][i] != a[x][i + 1])
+				if (!dfn[a[x][i]]){
+					tarjan(a[x][i], x);
+					low[x] = min(low[x], low[a[x][i]]);
+					if (low[a[x][i]] >= dfn[x]){
+						tot1 = tot2 = 0;
+						++flag;
+						for (; ; ){
+							if (block[stack[size].first] != flag) {
+								++tot1;
+								block[stack[size].first] = flag;
+							}
+							if (block[stack[size].second] != flag) {
+								++tot1;
+								block[stack[size].second] = flag;
+							}
+							if (stack[size].first == x && stack[size].second == a[x][i])
+								break;
+							++tot2;
+							--size;
+						}
+						for (; stack[size].first == x && stack[size].second == a[x][i]; --size)
+							++tot2;
+						if (tot2 < tot1)
+							ans1 += tot2;
+						if (tot2 > tot1)
+							ans2 += tot2;
+					}
+				}
+				else
+					low[x] = min(low[x], dfn[a[x][i]]);
+		}
+}
+int main(){
+	for (; ; ){
+		scanf("%d%d", &n, &m);
+		if (n == 0 && m == 0) return 0;
+		for (int i = 1; i <= n; ++i) {
+			a[i].clear();
+			dfn[i] = 0;
+		}
+		for (int i = 1; i <= m; ++i){
+			scanf("%d%d",&x, &y);
+			++x, ++y;
+			a[x].push_back(y);
+			a[y].push_back(x);
+		}
+		for (int i = 1; i <= n; ++i)
+			sort(a[i].begin(), a[i].end());
+		ans1 = ans2 = ind2 = 0;
+		for (int i = 1; i <= n; ++i)
+			if (!dfn[i]) {
+				size = 0;
+				tarjan(i, 0);
+			}
+		printf("%d %d\n", ans1, ans2);
+	}
+	return 0;
+}
+\end{lstlisting}
+\subsection{朴素的点双连通分量}
+\begin{lstlisting}
+void tarjan(int x){
+	dfn[x] = low[x] = ++ind2;
+	v[x] = 1;
+	for (int i = nt[x]; pt[i]; i = nt[i])
+		if (!dfn[pt[i]]){
+			tarjan(pt[i]);
+			low[x] = min(low[x], low[pt[i]]);
+			if (dfn[x] <= low[pt[i]])
+				++v[x];
+		}
+		else
+			low[x] = min(low[x], dfn[pt[i]]);
+}
+int main(){
+	for (; ; ){
+		scanf("%d%d", &n, &m);
+		if (n == 0 && m == 0)
+			return 0;
+		for (int i = 1; i <= ind; ++i)
+			nt[i] = pt[i] = 0;
+		ind = n;
+		for (int i = 1; i <= ind; ++i)
+			last[i] = i;
+		for (int i = 1; i <= m; ++i){
+			scanf("%d%d", &x, &y);
+			++x, ++y;
+			edge(x, y), edge(y, x);
+		}
+		memset(dfn, 0, sizeof(dfn));
+		memset(v, 0, sizeof(v));
+		ans = num = ind2 = 0;
+		for (int i = 1; i <= n; ++i)
+			if (!dfn[i]){
+				root = i;
+				size = 0;
+				++num;
+				tarjan(i);
+				--v[root];
+			}
+		for (int i = 1; i <= n; ++i)
+			if (v[i] + num - 1 > ans)
+				ans = v[i] + num - 1;
+		printf("%d\n",ans);
+	}
+	return 0;
+}
+\end{lstlisting}

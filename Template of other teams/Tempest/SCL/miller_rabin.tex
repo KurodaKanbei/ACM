@@ -1,0 +1,104 @@
+\begin{lstlisting}
+namespace miller_rabin_32 {
+	int const n = 3;
+	int const base[] = {2, 7, 61};
+ 
+	inline long long power(int x, int k, int p) {
+		long long ans = 1, num = x % p;
+		for (int i = k; i > 0; i >>= 1) {
+			if (i & 1) {
+				(ans *= num) %= p;
+			}
+			(num *= num) %= p;
+		}
+		return ans;
+	}
+ 
+	inline bool check(int p, int base) {
+		int n = p - 1;
+		while (!(n & 1)) {
+			n >>= 1;
+		}
+		long long m = power(base, n, p);
+		while (n != p - 1 && m != 1 && m != p - 1) {
+			(m *= m) %= p;
+			n <<= 1;
+		}
+		return m == p - 1 || (n & 1) == 1);
+	}
+ 
+	inline bool prime(int p) {
+		for (int i = 0; i < n; ++i) {
+			if (base[i] == p) {
+				return true;
+			}
+		}
+		if (p == 1 || !(p & 1)) {
+			return false;
+		}
+		for (int i = 0; i < n; ++i) {
+			if (!check(p, base[i])) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+ 
+namespace miller_rabin_64 {
+	int const n = 9;
+	int const base[] = {2, 3, 5, 7, 11, 13, 17, 19, 23};
+ 
+	inline long long multiply(const long long& x, const long long& y, const long long& p) {
+		long long ans = 0, num = x % p;
+		for (long long i = y; i > 0; i >>= 1) {
+			if (i & 1) {
+				(ans += num) %= p;
+			}
+			(num += num) %= p;
+		}
+		return ans;
+	}
+ 
+	inline long long power(const long long& x, const long long& k, const long long& p) {
+		long long ans = 1, num = x % p;
+		for (long long i = k; i > 0; i >>= 1) {
+			if (i & 1) {
+				ans = multiply(ans, num, p);
+			}
+			num = multiply(num, num, p);
+		}
+		return ans;
+	}
+ 
+	inline bool check(const long long& p, const long long& base) {
+		long long n = p - 1;
+		while (!(n & 1)) {
+			n >>= 1;
+		}
+		long long m = power(base, n, p);
+		while (n != p - 1 && m != 1 && m != p - 1) {
+			m = multiply(m, m, p);
+			n <<= 1;
+		}
+		return m == p - 1 || (n & 1) == 1;
+	}
+ 
+	inline bool prime(const long long& p) {
+		for (int i = 0; i < n; ++i) {
+			if (base[i] == p) {
+				return true;
+			}
+		}
+		if (p == 1 || !(p & 1)) {
+			return false;
+		}
+		for (int i = 0; i < n; ++i) {
+			if (!check(p, base[i])) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+\end{lstlisting}

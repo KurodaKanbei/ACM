@@ -1,0 +1,98 @@
+\begin{lstlisting}
+#include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+#include <vector>
+#include <cstring>
+#include <string>
+#include <iostream>
+
+#define foreach(e, x) for(__typeof(x.begin()) e = x.begin(); e != x.end(); ++e)
+
+using namespace std;
+
+const int N = 333;
+const int INF = (1 << 30);
+
+int mat[N][N], lx[N], ly[N], vx[N], vy[N], slack[N];
+int n, match[N];
+
+bool find(int x) {
+	vx[x] = 1;
+	for(int i = 1; i <= n; i++) {
+		if (vy[i]) {
+			continue;
+		}
+		int temp = lx[x] + ly[i] - mat[x][i];
+		if (temp == 0) {
+			vy[i] = 1;
+			if (match[i] == -1 || find(match[i])) {
+				match[i] = x;
+				return true;
+			}
+		} else {
+			slack[i] = min(slack[i], temp);
+		}
+	}
+	return false;
+}
+
+int KM() {
+	for(int i = 1; i <= n; i++) {
+		lx[i] = -INF;
+		ly[i] = 0;
+		match[i] = -1;
+		for(int j = 1; j <= n; j++) {
+			lx[i] = max(lx[i], mat[i][j]);
+		}
+	}
+	for(int i = 1; i <= n; i++) {
+		for(int j = 1; j <= n; j++) {
+			slack[j] = INF;
+		}
+		for(; ;) {
+			memset(vx, 0, sizeof(vx));
+			memset(vy, 0, sizeof(vy));
+			for(int j = 1; j <= n; j++) {
+				slack[j] = INF;
+			}
+			if (find(i)) {
+				break;
+			}
+			int delta = INF;
+			for(int j = 1; j <= n; j++) {
+				if (!vy[j]) {
+					delta = min(delta, slack[j]);
+				}
+			}
+			for(int j = 1; j <= n; j++) {
+				if (vx[j]) {
+					lx[j] -= delta;
+				}
+				if (vy[j]) {
+					ly[j] += delta;
+				} else {
+					slack[j] -= delta;
+				}
+			}
+		}
+	}
+	int answer = 0;
+	for(int i = 1; i <= n; i++) {
+		answer += mat[match[i]][i];
+	}
+	return answer;
+}
+
+int main() {
+	while(scanf("%d", &n) != EOF) {
+		for(int i = 1; i <= n; i++) {
+			for(int j = 1; j <= n; j++) {
+				scanf("%d", &mat[i][j]);
+			}
+		}
+		printf("%d\n", KM());
+	}
+	return 0;
+}
+\end{lstlisting}

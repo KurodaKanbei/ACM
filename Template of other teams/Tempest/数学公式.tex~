@@ -1,0 +1,7 @@
+fibonacci\\
+$f_0=0, f_1=1$\\
+$f_{n+2}f_n-f_{n+1}^2=(-1)^{n+1}$\\
+$f_{-n}=(-1)^{n-1}f_n$\\
+$f_{n+k}=f_kf_{n+1}+f_{k-1}f_n$\\
+$gcd(f_m, f_n)=f_{gcd(m, n)}$\\
+$f_m|f_n^2\Leftrightarrow nf_n|m$\\

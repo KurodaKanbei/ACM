@@ -1,0 +1,112 @@
+\begin{lstlisting}
+#include<cstring>
+#include<cstdio>
+#include<algorithm>
+#include<iostream>
+using namespace std;
+long long gcd(long long a, long long b) {
+	return b?gcd(b, a % b):a;
+}
+struct frac {
+	long long x, y;
+	frac() {}
+	frac(const long long & xx, const long long & yy) : x(xx), y(yy) {
+		long long d(gcd(x, y));
+		x /= d; y /= d;
+		if(y < 0) 
+			y = -y, x = -x;
+	}
+	void print() const {
+		printf("(%lld/%lld)\n", x, y);
+	}
+};
+frac operator + (const frac & a, const frac & b) {
+	//long long y = a.y / gcd(a.y, b.y) * b.y;
+	//return frac(y / a.y * a.x + y / b.y * b.x, y);//这里可以减小中间结果, 以避免爆long long.
+	return frac(a.x * b.y + b.x * a.y, a.y * b.y);
+}
+frac operator - (const frac & a, const frac & b) {
+	//long long y = a.y / gcd(a.y, b.y) * b.y;
+	//return frac(y / a.y * a.x - y / b.y * b.x, y);
+	return frac(a.x * b.y - b.x * a.y, a.y * b.y);
+}
+frac operator * (const frac & a, const frac & b) {
+	//long long v(gcd(a.x, b.y)), w(gcd(a.y, b.x));
+	//return frac((a.x / v) * (b.x / w), (a.y / w) * (b.y / v));
+	return frac(a.x * b.x, a.y * b.y);
+}
+frac operator / (const frac & a, const frac & b) {
+	//long long v(gcd(a.x, b.x)), w(gcd(a.y, b.y));
+	//return frac((a.x / v) * (b.y / w), (a.y / w) * (b.x / v));
+	return frac(a.x * b.y, a.y * b.x);
+}
+bool operator < (const frac & a, const frac & b) {
+	return a.x * b.y < b.x * a.y;
+}
+bool operator == (const frac & a, const frac & b) {
+	return a.x * b.y == b.x * a.y;
+}
+bool operator <= (const frac & a, const frac & b) {
+	return a.x * b.y <= b.x * a.y;
+}
+ 
+frac sqr(const frac & a) {
+	return a * a;
+}
+struct Point {
+	frac x, y, z;
+	Point () {}
+	void scan() {cin >> x.x >> y.x >> z.x; x.y = y.y = z.y = 1;}
+	Point(const frac & x, const frac & y, const frac & z) :x(x), y(y), z(z) {}
+	frac sqrlen() {return x * x + y * y + z * z;}
+	void print() const {printf("{");x.print(); y.print(); z.print();printf("}\n");}
+} a, b, c, d;
+Point operator - (const Point & a, const Point & b) {
+	return Point(a.x - b.x, a.y - b.y, a.z - b.z);
+}
+Point operator + (const Point & a, const Point & b) {
+	return Point(a.x + b.x, a.y + b.y, a.z + b.z);
+}
+Point operator * (const frac & a, const Point & b) {
+	return Point(a * b.x, a * b.y, a * b.z);
+}
+frac operator % (const Point & a, const Point & b) {
+	return a.x * b.x + a.y * b.y + a.z * b.z;
+}
+Point operator * (const Point & a, const Point & b) {
+	return Point(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
+}
+bool _ (const Point & a) {
+	return a.x == frac(0, 1) and a.y == frac(0, 1) and a.z == frac(0, 1);
+}
+void check(frac & ans, const Point & a, const Point & s, const Point & t) {
+	if(sign((a - s) % (t - s)) * sign((a - t) % (t - s)) <= 0) {//点到线段的垂足在线段上(端点含)
+		ans = min(ans, ((a - s) * (t - s)).sqrlen() / (t - s).sqrlen());//点到直线距离
+	}
+}
+int sign(const frac & a) {
+	return a.x < 0?-1:a.x > 0;
+}
+int main() {
+	int tst;
+	scanf("%d", &tst);
+	for(int qq = 1; qq <= tst; qq++) {
+		a.scan(); b.scan();
+		c.scan(); d.scan();//线段(a->b), (c->d)
+		frac ans = (a - c).sqrlen();
+		ans = min(ans, (a - d).sqrlen());
+		ans = min(ans, (b - c).sqrlen());
+		ans = min(ans, (b - d).sqrlen());
+		Point nor;
+		if(!_(nor = (b - a) * (d - c)))//线段平行
+			if(sign((c - a) * (d - a) % nor) * sign((c - b) * (d - b) % nor) <= 0 and sign((a - c) * (b - c) % nor) * sign((a - d) * (b - d) % nor) <= 0)//三维跨立实验
+				ans = min(ans, sqr(nor % (c - a)) / nor.sqrlen());
+		check(ans, a, c, d);
+		check(ans, b, c, d);
+		check(ans, c, a, b);
+		check(ans, d, a, b);
+		cout << ans.x << ' ' << ans.y << endl;
+	}
+	return 0;
+}
+\end{lstlisting}

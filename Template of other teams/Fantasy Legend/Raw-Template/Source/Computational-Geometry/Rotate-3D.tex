@@ -1,0 +1,40 @@
+\begin{lstlisting}
+Matrix getTrans(const double &a, const double &b, const double &c) {
+    Matrix ret;
+    ret.a[0][0] = 1; ret.a[0][1] = 0; ret.a[0][2] = 0; ret.a[0][3] = 0;
+    ret.a[1][0] = 0; ret.a[1][1] = 1; ret.a[1][2] = 0; ret.a[1][3] = 0;
+    ret.a[2][0] = 0; ret.a[2][1] = 0; ret.a[2][2] = 1; ret.a[2][3] = 0;
+    ret.a[3][0] = a; ret.a[3][1] = b; ret.a[3][2] = c; ret.a[3][3] = 1;
+    return ret;
+}
+Matrix getRotate(const double &a, const double &b, const double &c, const double &theta) {
+    Matrix ret;
+    ret.a[0][0] = a * a * (1 - cos(theta)) + cos(theta);
+    ret.a[0][1] = a * b * (1 - cos(theta)) + c * sin(theta);
+    ret.a[0][2] = a * c * (1 - cos(theta)) - b * sin(theta);
+    ret.a[0][3] = 0;
+    
+    ret.a[1][0] = b * a * (1 - cos(theta)) - c * sin(theta);
+    ret.a[1][1] = b * b * (1 - cos(theta)) + cos(theta);
+    ret.a[1][2] = b * c * (1 - cos(theta)) + a * sin(theta);
+    ret.a[1][3] = 0;
+    
+    ret.a[2][0] = c * a * (1 - cos(theta)) + b * sin(theta);
+    ret.a[2][1] = c * b * (1 - cos(theta)) - a * sin(theta);
+    ret.a[2][2] = c * c * (1 - cos(theta)) + cos(theta);
+    ret.a[2][3] = 0;
+    
+    ret.a[3][0] = 0;
+    ret.a[3][1] = 0;
+    ret.a[3][2] = 0;
+    ret.a[3][3] = 1;
+    return ret;
+}
+Matrix getRotate(const double &ax, const double &ay, const double &az, const double &bx, const double &by, const double &bz, const double &theta) {
+    double l = dist(Point(0, 0, 0), Point(bx, by, bz));
+    Matrix ret = getTrans(-ax, -ay, -az);
+    ret = ret * getRotate(bx / l, by / l, bz / l, theta);
+    ret = ret * getTrans(ax, ay, az);
+    return ret;
+}
+\end{lstlisting}

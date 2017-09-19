@@ -1,0 +1,18 @@
+\begin{lstlisting}
+Node * persiMerge(Node * a, Node * b) {
+	if(!a) return b;
+	if(!b) return a;
+	Node * res;
+	if(a->v < b->v) {
+		res = new Node(*a);
+		res->s[1] = persiMerge(b, res->s[1]);
+	}else {
+		res = new Node(*b);
+		res->s[1] = persiMerge(a, res->s[1]);
+	}
+	if(!res->s[0] or res->s[1] and res->s[0]->l < res->s[1]->l)
+		swap(res->s[0], res->s[1]);
+	res->l = res->s[1]?res->s[1]->l + 1:0;
+	return res;
+}
+\end{lstlisting}

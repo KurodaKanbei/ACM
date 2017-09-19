@@ -1,0 +1,75 @@
+\begin{lstlisting}
+const int N = 110, M = 30110, INF = 1000000000;//边表不要开小
+int n, m, ind, S, T, flow, tot, pt[M], nt[M], last[N], size[M], num[N], h[N], now[N];
+void edge(int x, int y, int z){
+	last[x] = nt[last[x]] = ++ind;
+	pt[ind] = y, size[ind] = z;
+}
+int aug(int x, int y){
+	if (x == T)
+		return y;
+	int f = y;
+	for (int i = now[x]; pt[i]; i = nt[i])
+		if (size[i] && h[pt[i]] + 1 == h[x]){
+			int z = aug(pt[i], min(f, size[i]));
+			f -= z;
+			size[i] -= z;
+			size[i ^ 1] += z;
+			now[x] = i;
+			if (h[S] > tot || f == 0)
+				return y - f;
+		}
+	now[x] = nt[x];
+	if (--num[h[x]] == 0)
+		h[S] = tot + 1;
+	++num[++h[x]];
+	return y - f;
+}
+int main(){
+	int np, nc;
+	for (; scanf("%d%d%d%d", &n, &np, &nc, &m) == 4; ) {
+		for (int i = 0; i <= ind; ++i)
+			pt[i] = nt[i] = last[i] = size[i] = 0;
+		ind = n + 2;
+		if (ind % 2 == 0)
+			++ind;
+		S = n + 1, tot = T = n + 2;
+		for (int i = 0; i <= tot; ++i)
+			num[i] = h[i] = now[i] = 0;
+		for (int i = 1; i <= tot; ++i)
+			last[i] = i;
+		for (int i = 1; i <= m; ++i){
+			int x, y, z;
+			for (; getchar() != '('; );
+			scanf("%d%*c%d%*c%d", &x, &y, &z);
+			++x, ++y;
+			edge(x, y, z);
+			edge(y, x, 0);
+		}
+		for (int i = 1; i <= np; ++i) {
+			int y, z;
+			for (; getchar() != '('; );
+			scanf("%d%*c%d", &y, &z);
+			++y;
+			edge(S, y, z);
+			edge(y, S, 0);
+		}
+		for (int i = 1; i <= nc; ++i) {
+			int x, z;
+			for (; getchar() != '('; );
+			scanf("%d%*c%d", &x, &z);
+			++x;
+			edge(x, T, z);
+			edge(T, x, 0);
+		}
+		num[0] = tot;
+		for (int i = 1; i <= tot; ++i)
+			now[i] = nt[i];
+		flow = 0;
+		for (; h[S] <= T; )
+			flow += aug(S, INF);
+		printf("%d\n", flow);
+	}
+	return 0;
+}
+\end{lstlisting}

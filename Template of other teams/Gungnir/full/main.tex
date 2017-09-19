@@ -1,0 +1,88 @@
+%!TEX program = xelatex
+\documentclass[titlepage, a4paper]{book}
+%\usepackage{ctex}
+%\usepackage[fleqn]{amsmath}
+\usepackage[left=1.5cm, right=1.5cm]{geometry}
+\usepackage{listings, color, fontspec, minted, setspace, titlesec, fancyhdr, dingbat, mdframed, multicol}
+\usepackage{graphicx, amssymb, amsmath, textcomp, booktabs}
+\usepackage{xeCJK}
+\usepackage{yfonts}
+
+%\setlength{\parindent}{0em}
+%\setlength{\mathindent}{0pt}
+
+%configure fonts
+\setmonofont{Menlo}[Scale=1.0]
+\setCJKmainfont{STHeiti}
+
+\renewcommand{\theFancyVerbLine}{\sffamily \textcolor[rgb]{0.5,0.5,0.5}{\scriptsize {\arabic{FancyVerbLine}}}}
+
+\setminted[cpp]{
+	style=xcode,
+	mathescape,
+	linenos,
+	autogobble,
+	baselinestretch=1.0,
+	tabsize=4,
+	fontsize=\normalsize,
+	%bgcolor=Gray,
+	frame=single,
+	framesep=1mm,
+	framerule=0.3pt,
+	numbersep=1mm,
+	breaklines=true,
+	breaksymbolsepleft=2pt,
+	%breaksymbolleft=\raisebox{0.8ex}{ \small\reflectbox{\carriagereturn}}, %not moe!
+	%breaksymbolright=\small\carriagereturn,
+	breakbytoken=false,
+}
+\setminted[java]{
+	style=xcode,
+	mathescape,
+	linenos,
+	autogobble,
+	baselinestretch=1.0,
+	tabsize=4,
+	%bgcolor=Gray,
+	frame=single,
+	framesep=1mm,
+	framerule=0.3pt,
+	numbersep=1mm,
+	breaklines=true,
+	breaksymbolsepleft=2pt,
+	%breaksymbolleft=\raisebox{0.8ex}{ \small\reflectbox{\carriagereturn}}, %not moe!
+	%breaksymbolright=\small\carriagereturn,
+	breakbytoken=false,
+}
+\setminted[text]{
+	style=xcode,
+	mathescape,
+	linenos,
+	autogobble,
+	baselinestretch=1.0,
+	tabsize=4,
+	%bgcolor=Gray,
+	frame=single,
+	framesep=1mm,
+	framerule=0.3pt,
+	numbersep=1mm,
+	breaklines=true,
+	breaksymbolsepleft=2pt,
+	%breaksymbolleft=\raisebox{0.8ex}{ \small\reflectbox{\carriagereturn}}, %not moe!
+	%breaksymbolright=\small\carriagereturn,
+	breakbytoken=false,
+}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\title{\Huge{\textgoth{Gungnir's Standard Code Library}}\thanks{https://github.com/footoredo/Gungnir}}
+	\author{\emph{Shanghai Jiao Tong University}}
+	\date{Dated: \today}
+
+\begin{document}
+
+	\maketitle
+	\tableofcontents
+	\begin{spacing}{0.8}
+		\input{../source.tex}
+	\end{spacing}
+\end{document}

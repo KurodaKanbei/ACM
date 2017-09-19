@@ -1,0 +1,134 @@
+	\begin{lstlisting}
+const int N = 4 * int(1e5) + 10;
+
+int n, m;
+int sa[N], ta[N], tb[N], *rank = ta, *tmp = tb;
+int height[N], myLog[N], f[N][20];
+int str[N];
+
+bool cmp(int i, int j, int l) {
+	return tmp[i] == tmp[j] && tmp[i + l] == tmp[j + l];
+}
+
+void radixSort() {
+	static int w[N];
+	fill(w, w + m, 0);
+	for (int i = 0; i < n; i++) {
+		w[rank[i]]++;
+	}
+	for (int i = 1; i < m; i++) {
+		w[i] += w[i - 1];
+	}
+	for (int i = n - 1; i >= 0; i--) {
+		sa[--w[rank[tmp[i]]]] = tmp[i];
+	}
+}
+
+void suffixArray() {
+	for (int i = 0; i < n; i++) {
+		rank[i] = str[i];
+		tmp[i] = i;
+	}
+	radixSort();
+	for (int j = 1, i, p; j < n; j <<= 1, m = p) {
+		for (i = n - j, p = 0; i < n; i++) {
+			tmp[p++] = i;
+		}
+		for (i = 0; i < n; i++) {
+			if (sa[i] >= j) {
+				tmp[p++] = sa[i] - j;
+			}
+		}
+		radixSort();
+		for (swap(tmp, rank), rank[sa[0]] = 0, i = p = 1; i < n; i++) {
+			rank[sa[i]] = cmp(sa[i - 1], sa[i], j) ? p - 1 : p++;
+		}
+	}
+	for (int i = 0, j, k = 0; i < n; ++i, k = max(k - 1, 0)) {
+		if (rank[i]) {
+			j = sa[rank[i] - 1];
+			for (; str[i + k] == str[j + k]; k++);
+			height[rank[i]] = k;
+		}
+	}
+	for (int i = 2; i <= n; i++) {
+		myLog[i] = myLog[i >> 1] + 1;
+	}
+	for (int i = 1; i < n; i++) {
+		f[i][0] = height[i];
+	}
+	for (int j = 1; 1 << j <= n; j++) {
+		for (int i = 1; i + (1 << j) <= n; i++) {
+			f[i][j] = min(f[i][j - 1], f[i + (1 << j - 1)][j - 1]);
+		}
+	}
+}
+
+int lcp(int l, int r) {
+	if (l > r) {
+		return 0;
+	}
+	int len = myLog[r - l + 1];
+	return min(f[l][len], f[r - (1 << len) + 1][len]);
+}
+
+int nBase, mBase;
+int cnt[N];
+char buf[N];
+
+int pos(int x) {
+	return x / (mBase << 1 | 1 );
+}
+
+int main() {
+	n = 0;
+	m = 256;
+	scanf("%d%d", &nBase, &mBase);
+	for (int i = 0; i < nBase; i++) {
+		scanf("%s", buf);
+		for (int j = 0; j < mBase; j++) {
+			str[n++] = buf[j];
+		}
+		for (int j = 0; j < mBase; j++) {
+			str[n++] = buf[j];
+		}
+		str[n++] = i < nBase - 1 ? m++ : 0;
+	}
+	suffixArray();
+	int result = 0, total = 0;
+	for (int i = 0, j = 0; i < n; i++) {
+		for (; j < n && total < nBase; j++) {
+			int p = pos(sa[j]);
+			total += cnt[p]++ == 0;
+		}
+		if (total == nBase) {
+			result = max(result, lcp(i + 1, j - 1));
+		}
+		int p = pos(sa[i]);
+		total -= --cnt[p] == 0;
+	}
+	result = min(result, mBase);
+	printf("%d\n", result);
+	vector <int> ans(n);
+	total = 0;
+	memset(cnt, 0, sizeof(cnt));
+	for (int i = 0, j = 0; i < n; i++) {
+		for (; j < n && total < nBase; j++) {
+			int p = pos(sa[j]);
+			total += cnt[p]++ == 0;
+		}
+		if (total == nBase && lcp(i + 1, j - 1) >= result) {
+			for (int k = i; k < j; k++) {
+				int p = pos(sa[k]);
+				ans[p] = sa[k] % (mBase << 1 | 1);
+			}
+			break;
+		}
+		int p = pos(sa[i]);
+		total -= --cnt[p] == 0;
+	}
+	for (int i = 0; i < nBase; i++) {
+		printf("%d\n", ans[i] % mBase + 1);
+	}
+}
+	\end{lstlisting}

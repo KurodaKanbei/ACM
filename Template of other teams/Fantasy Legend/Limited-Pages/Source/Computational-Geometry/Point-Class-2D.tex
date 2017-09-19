@@ -1,0 +1,27 @@
+\begin{lstlisting}
+struct Point{
+	double x, y;
+	Point() {}
+	Point(double x, double y):x(x), y(y) {}
+	Point operator +(const Point &p)const {
+		return Point(x + p.x, y + p.y);
+	}
+	Point operator -(const Point &p)const {
+		return Point(x - p.x, y - p.y);
+	}
+	Point operator *(const double &p)const {
+		return Point(x * p, y * p);
+	}
+	Point operator /(const double &p)const {
+		return Point(x / p, y / p);
+	}
+	int read() {
+		return scanf("%lf%lf", &x, &y);
+	}
+};
+struct Line{
+	Point a, b;
+	Line() {}
+	Line(Point a, Point b):a(a), b(b) {}
+};
+\end{lstlisting}

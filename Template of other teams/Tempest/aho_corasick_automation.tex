@@ -1,0 +1,53 @@
+\begin{lstlisting}
+namespace aho_corasick_automation {
+	int const N = ;
+	struct node {
+		node *next[N], *fail;
+		int count;
+		inline node() {
+			memset(next, 0, sizeof(next));
+			fail = 0;
+			count = 0;
+		}
+	};
+	
+	node *root;
+	
+	inline int idx(char x) {
+		return x - 'a';
+	}
+	
+	inline void insert(node *x, char *str) {
+		int len = (int)strlen(str);
+		for (int i = 0; i < len; ++i) {
+			int c = idx(str[i]);
+			if (!x->next[c]) {
+				x->next[c] = new node();
+			}
+			x = x->next[c];
+		}
+		x->count++;
+	}
+	
+	inline void build() {
+		vector<node*> queue;
+		queue.push_back(root->fail = root);
+		for (int head = 0; head < (int)queue.size(); ++head) {
+			node* x = queue[head];
+			for (int i = 0; i < N; ++i) {
+				if (x->next[i]) {
+					x->next[i]->fail = (x == root) ? root : x->fail->next[i];
+					x->next[i]->count += x->next[i]->fail->count;
+					queue.push_back(x->next[i]);
+				} else {
+					x->next[i] = (x == root) ? root : x->fail->next[i];
+				}
+			}
+		}
+	}
+	
+	inline void prepare() {
+		root = new node();
+	}
+}
+\end{lstlisting}

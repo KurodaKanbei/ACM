@@ -1,0 +1,27 @@
+\begin{lstlisting}
+int up(int pos){
+	for (; pos != 1; pos /= 2)
+		if (C()(array.getpq(pos), array.getpq(pos / 2))) swap(pos, pos / 2);
+		else break;
+	return pos;
+}
+
+void down(int pos){
+	for (; pos * 2 <= array.size(); ){
+		if (pos * 2 + 1 <= array.size()){
+			if (C()(array.getpq(pos * 2 + 1), array.getpq(pos * 2))){
+				if (C()(array.getpq(pos * 2 + 1), array.getpq(pos))) swap(pos * 2 + 1, pos), pos = pos * 2 + 1;
+				else break;
+			}
+			else{
+				if (C()(array.getpq(pos * 2), array.getpq(pos))) swap(pos * 2, pos), pos = pos * 2;
+				else break;
+			}
+		}
+		else{
+			if (C()(array.getpq(pos * 2), array.getpq(pos))) swap(pos * 2, pos), pos = pos * 2;
+			else break;
+		}
+	}
+}
+\end{lstlisting}

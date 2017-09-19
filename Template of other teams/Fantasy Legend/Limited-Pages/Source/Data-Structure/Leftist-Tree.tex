@@ -1,0 +1,12 @@
+\begin{lstlisting}
+int merge(int a, int b) {
+	if (a == 0) return b;
+	if (b == 0) return a;
+	if (w[a] > w[b]) std::swap(a, b);
+	c[a][1] = merge(c[a][1], b);
+	if (d[c[a][1]] > d[c[a][0]]) std::swap(c[a][0], c[a][1]);
+	if (c[a][1] == 0) d[a] = 0;
+	else d[a] = d[c[a][1]] + 1;
+	return a;
+}
+\end{lstlisting}

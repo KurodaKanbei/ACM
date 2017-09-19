@@ -1,0 +1,77 @@
+\begin{lstlisting}
+#include<vector>
+#include<cstdio>
+#include<cstring>
+#include<iostream>
+using namespace std;
+int color[222222], siz[222222], cnt[222222];
+long long ans[222222];
+vector<int> edges[222222];
+vector<pair<int, int> > st0, st2;
+vector<int> st1;
+void psh(int v) {
+	st0.push_back(make_pair(v, 0));
+	color[v] = st1.size();
+	st1.push_back(v);
+}
+int main() {
+	freopen("travel.in", "r", stdin);
+	freopen("travel.out", "w", stdout);
+	int n, m;
+	scanf("%d%d", &n, &m);
+	for(int i(1); i <= m; i++) {
+		int x, y;
+		scanf("%d%d", &x, &y);
+		edges[x].push_back(y);
+		edges[y].push_back(x);
+	}
+	int c(n);
+	fill(color + 1, color + 1 + n, 0);
+	fill(ans + 1, ans + 1 + n, 0);
+	fill(cnt + 1, cnt + 1 + n, 0);
+	fill(siz + 1, siz + 1 + n, 0);
+	for(int i(1); i <= n; i++) if(!color[i]) {
+		psh(i);
+		while(!st0.empty()) {
+ 
+			int v(st0.back().first), p(st0.back().second++);
+			if(p != (int)edges[v].size()) {
+				int y(edges[v][p]);
+				if(!color[y]) {
+					psh(y);
+					st2.push_back(make_pair(color[v], color[y]));
+				}else
+					while(!st2.empty() and st2.back().first > color[y])
+						st2.pop_back();
+			}else {
+				st0.pop_back();
+				siz[v]++;
+				if(color[v] == 1) 
+					color[v] = c;
+				else {
+					int fa(st0.back().first);
+					if(st2.back().second == color[v]) {
+						st2.pop_back();
+						color[v] = ++c;
+						while(st1.back() != v) {
+							color[st1.back()] = c;
+							st1.pop_back();
+						}
+						st1.pop_back();
+						ans[fa] += (long long)cnt[fa] * siz[v];
+						cnt[fa] += siz[v];
+					}
+					siz[fa] += siz[v];
+				}
+				ans[v] += (long long)(n - cnt[v]) * cnt[v] + n - cnt[v] - 1;
+			}
+		}
+	}
+	for(int i(1); i <= n; i++) {
+		cout << ans[i] << endl;//ans[i]:删去点i后, 无法连通的{a, b}数, 其中a, b为图中不同节点且无序.
+	}
+	fclose(stdin);
+	fclose(stdout);
+	return 0;
+}
+\end{lstlisting}

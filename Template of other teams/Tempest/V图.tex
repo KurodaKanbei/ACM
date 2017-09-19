@@ -1,0 +1,299 @@
+\begin{lstlisting}
+const int AIX = 5;
+const int MAXM = AIX * MAXN;
+
+struct point {
+	double x, y;
+	int index;
+	struct Edge *in;
+	point(double _x = 0, double _y = 0) : x(_x), y(_y) {}
+};
+inline bool operator< (const point &a, const point &b) {
+	return a.x < b.x || (sgn(a.x - b.x) == 0 && a.y < b.y);
+}
+inline double cross(const point &a, const point &b, const point &c) { return det
+		(b - a, c - a); }
+struct Edge {
+	point *Org, *Dest;
+	Edge *Onext, *Oprev, *Dnext, *Dprev;
+};
+inline point* Other(const Edge *e, const point *p) { return e->Org == p ?
+		 e->Dest : e->Org; }
+inline Edge* Next(const Edge *e, const point *p) { return e->Org == p ? e->Onext
+		 : e->Dnext; }
+inline Edge* Prev(const Edge *e, const point *p) { return e->Org == p ? e->Oprev
+		 : e->Dprev; }
+struct gEdge {
+	int u, v;
+	double w;
+	gEdge() {}
+	gEdge(int _u, int _v, double _w) : u(_u), v(_v), w(_w) {}
+};
+inline bool operator< (const gEdge &a, const gEdge &b) { return a.w < b.w; }
+point p[MAXN], *Q[MAXN];
+Edge mem[AIX * MAXN], *elist[AIX * MAXN];
+static int nfree;
+//Alloc memory
+inline void Alloc_Memory(const int &n) {
+	nfree = AIX * n;
+	Edge *e = mem;
+	for (int i = 0; i < nfree; ++i)
+		elist[i] = e++;
+}
+//Add an edge to a ring of edges
+inline void Splice(Edge *a, Edge *b, point *v) {
+	Edge *next;
+	if (a->Org == v)
+		next = a->Onext, a->Onext = b;
+	else
+		next = a->Dnext, a->Dnext = b;
+	if (next->Org == v)
+		next->Oprev = b;
+	else
+		next->Dprev = b;
+	if (b->Org == v)
+		b->Onext = next, b->Oprev = a;
+	else
+		b->Dnext = next, b->Dprev = a;
+}
+//Initialise a new edge
+inline Edge *MakeEdge(point *u, point *v) {
+	Edge *e = elist[--nfree];
+	e->Onext = e->Oprev = e->Dnext = e->Dprev = e;
+	e->Org = u, e->Dest = v;
+	if (!u->in)
+		u->in = e;
+	if (!v->in)
+		v->in = e;
+	return e;
+}
+//Creates a new edge and adds it to two rings of edges.
+inline Edge *Join(Edge *a, point *u, Edge *b, point *v, int side) {
+	Edge *e = MakeEdge(u, v);
+	if (side == 1) {
+		if (a->Org == u)
+			Splice(a->Oprev, e, u);
+		else
+			Splice(a->Dprev, e, u);
+		Splice(b, e, v);
+	}
+	else {
+		Splice(a, e, u);
+		if (b->Org == v)
+			Splice(b->Oprev, e, v);
+		else
+			Splice(b->Dprev, e, v);
+	}
+	return e;
+}
+//Remove an edge
+inline void Remove(Edge *e) {
+	point *u = e->Org, *v = e->Dest;
+	if (u->in == e)
+		u->in = e->Onext;
+	if (v->in == e)
+		v->in = e->Dnext;
+	if (e->Onext->Org == u)
+		e->Onext->Oprev = e->Oprev;
+	else
+		e->Onext->Dprev = e->Oprev;
+	if (e->Oprev->Org == u)
+		e->Oprev->Onext = e->Onext;
+	else
+		e->Oprev->Dnext = e->Onext;
+	if (e->Dnext->Org == v)
+		e->Dnext->Oprev = e->Dprev;
+	else
+		e->Dnext->Dprev = e->Dprev;
+	if (e->Dprev->Org == v)
+		e->Dprev->Onext = e->Dnext;
+	else
+		e->Dprev->Dnext = e->Dnext;
+	elist[nfree++] = e;
+}
+//Determines the lower tangent of two triangulations
+inline void Low_tangent(Edge *e_l, point *o_l, Edge *e_r, point *o_r, Edge
+		 **l_low, point **OL, Edge **r_low, point **OR) {
+	point *d_l = Other(e_l, o_l), *d_r = Other(e_r, o_r);
+	while (true) {
+		if (cross(*o_l, *o_r, *d_l) < -EPS) {
+			e_l = Prev(e_l, d_l);
+			o_l = d_l;
+			d_l = Other(e_l, o_l);
+		}
+		else if (cross(*o_l, *o_r, *d_r) < -EPS) {
+			e_r = Next(e_r, d_r);
+			o_r = d_r;
+			d_r = Other(e_r, o_r);
+		}
+		else
+			break;
+	}
+	*OL = o_l, *OR = o_r;
+	*l_low = e_l, *r_low = e_r;
+}
+inline void Merge(Edge *lr, point *s, Edge *rl, point *u, Edge **tangent) {
+	double cot_L, cot_R, N1, cot_N, P1, cot_P;
+	point l1, l2, r1, r2, uu, vv;
+	point *O, *D, *OR, *OL;
+	Edge *B, *L, *R;
+	Low_tangent(lr, s, rl, u, &L, &OL, &R, &OR);
+	*tangent = B = Join(L, OL, R, OR, 0);
+	O = OL, D = OR;
+	do {
+		Edge *El = Next(B, O), *Er = Prev(B, D), *next, *prev;
+		point *l = Other(El, O), *r = Other(Er, D);
+		l1 = *O - *l, l2 = *D - *l, r1 = *O - *r, r2 = *D - *r;
+		double cl = det(l1, l2), cr = det(r1, r2);
+		bool BL = cl > EPS, BR = cr > EPS;
+		if (!BL && !BR)
+			break;
+		if (BL) {
+			double dl = dot(l1, l2);
+			cot_L = dl / cl;
+			do {
+				next = Next(El, O);
+				uu = *O - *Other(next, O);
+				vv = *D - *Other(next, O);
+				N1 = det(uu, vv);
+				if (!(N1 > EPS))
+					break;
+				cot_N = dot(uu, vv) / N1;
+				if (cot_N > cot_L)
+					break;
+				Remove(El);
+				El = next;
+				cot_L = cot_N;
+			}
+			while (true);
+		}
+		if (BR) {
+			double dr = dot(r1, r2);
+			cot_R = dr / cr;
+			do {
+				prev = Prev(Er, D);
+				uu = *O - *Other(prev, D);
+				vv = *D - *Other(prev, D);
+				P1 = det(uu, vv);
+				if (!(P1 > EPS))
+					break;
+				cot_P = dot(uu, vv) / P1;
+				if (cot_P > cot_R)
+					break;
+				Remove(Er);
+				Er = prev;
+				cot_R = cot_P;
+			}
+			while (true);
+		}
+		l = Other(El, O); r = Other(Er, D);
+		if (!BL || (BL && BR && cot_R < cot_L)) {
+			B = Join(B, O, Er, r, 0);
+			D = r;
+		}
+		else {
+			B = Join(El, l, B, D, 0);
+			O = l;
+		}
+	}
+	while (true);
+}
+inline void Divide(int s, int t, Edge **L, Edge **R) {
+	Edge *a, *b, *c, *ll, *lr, *rl, *rr, *tangent;
+	int n = t - s + 1;
+	if (n == 2)
+		*L = *R = MakeEdge(Q[s], Q[t]);
+	else if (n == 3) {
+		a = MakeEdge(Q[s], Q[s + 1]);
+		b = MakeEdge(Q[s + 1], Q[t]);
+		Splice(a, b, Q[s + 1]);
+		double v = cross(*Q[s], *Q[s + 1], *Q[t]);
+		if (v > EPS) {
+			c = Join(a, Q[s], b, Q[t], 0);
+			*L = a, *R = b;
+		}
+		else if (v < -EPS) {
+			c = Join(a, Q[s], b, Q[t], 1);
+			*L = c, *R = c;
+		}
+		else
+			*L = a, *R = b;
+	}
+	else if(n > 3) {
+		int split = (s + t) / 2;
+		Divide(s, split, &ll, &lr);
+		Divide(split + 1, t, &rl, &rr);
+		Merge(lr, Q[split], rl, Q[split + 1], &tangent);
+		if (tangent->Org == Q[s])
+			ll = tangent;
+		if (tangent->Dest == Q[t])
+			rr = tangent;
+		*L = ll; *R = rr;
+	}
+}
+int task, n, m, k, root[MAXN];
+gEdge E[MAXM], MST[MAXN];
+inline int Make_Graph() {
+	Edge *start, *e;
+	int M = 0;
+	point *u, *v;
+	for(int i = 0; i < n; ++i) {
+		u = p + i;
+		start = e = u->in;
+		do {
+			v = Other(e, u);
+			if (u < v)
+				E[M++] = gEdge(u - p + 1, v - p + 1, dis(*u, *v));
+			e = Next(e, u);
+		}
+		while(e != start);
+	}
+	return M;
+}
+int find_root(const int &x) { return root[x] ? root[x] = find_root(root[x]) : x;
+		 }
+inline bool merge(const int &x, const int &y) {
+	int p = find_root(x), q = find_root(y);
+	if (p != q) {
+		root[p] = q;
+		return true;
+	}
+	else
+		return false;
+}
+inline void kruskal(gEdge *E, int m, int n, gEdge* MST) {
+	for (int i = 1; i <= n; ++i)
+		root[i] = 0;
+	sort(E, E + m);
+	int tot = 0;
+	for (int i = 0; i < m; ++i)
+		if (merge(E[i].u, E[i].v))
+			MST[tot++] = E[i];
+}
+inline void MinimumEuclideanSpaningTree(point* p, int n, gEdge* MST) {
+	Alloc_Memory(n);
+	sort(p, p + n);
+	for (int i = 0; i < n; ++i)
+		Q[i] = p + i;
+	Edge *L, *R;
+	Divide(0, n - 1, &L, &R);
+	m = Make_Graph();
+	kruskal(E, m, n, MST);
+}
+int main() {
+	for (scanf("%d", &task); task--; ) {
+		scanf("%d", &k);
+		for (n = 0; scanf("%lf", &p[n].x) == 1 && p[n].x != -1; ++n) {
+			scanf("%lf", &p[n].y);
+			p[n].in = NULL;
+			p[n].index = n;
+		}
+		if (n == 1) {
+			printf("0\n");
+			continue;
+		}
+		MinimumEuclideanSpaningTree(p, n, MST);
+		printf("%d\n", int(ceil(k > n ? 0 : MST[n - k - 1].w) + EPS));
+	}
+}
+\end{lstlisting}

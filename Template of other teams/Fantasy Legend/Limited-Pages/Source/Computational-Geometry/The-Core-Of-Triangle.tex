@@ -1,0 +1,16 @@
+\begin{lstlisting}
+Point incenter(const Point &a, const Point &b, const Point &c) {
+	double p = (a − b).length() + (b − c).length() + (c − a).length();
+	return (a * (b − c).length() + b * (c − a).length() + c * (a − b).length()) / p;
+}
+Point circumcenter(const Point &a, const Point &b, const Point &c) {
+	Point p = b − a, q = c − a, s(dot(p, p) / 2, dot(q, q) / 2);
+	double d = det(p, q);
+	return a + Point(det(s, Point(p.y, q.y)), det(Point(p.x, q.x), s)) / d;
+}
+Point circumcenter(const Point &a, const Point &b, const Point &c) {
+	Point p = b − a, q = c − a, s(dot(p, p) / 2, dot(q, q) / 2);
+	double d = det(p, q);
+	return a + Point(det(s, Point(p.y, q.y)), det(Point(p.x, q.x), s)) / d;
+}
+\end{lstlisting}

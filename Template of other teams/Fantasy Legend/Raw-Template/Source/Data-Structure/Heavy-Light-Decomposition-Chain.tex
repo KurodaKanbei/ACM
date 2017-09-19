@@ -1,0 +1,19 @@
+\begin{lstlisting}
+void modify(int x, int y) {
+	int fx = t[x], fy = t[y];
+	while (fx != fy) {
+		if (d[fx] > d[fy]) {
+			modify(1, 1, n, w[fx], w[x]);
+			x = f[fx]; fx = t[x];
+		}
+		else{
+			modify(1, 1, n, w[fy], w[y]);
+			y = f[fy]; fy = t[y];
+		}
+	}
+	if (x != y) {
+		if (d[x] < d[y]) modify(1, 1, n, w[z[x]], w[y]);
+		else modify(1, 1, n, w[z[y]], w[x]);
+	}
+}
+\end{lstlisting}

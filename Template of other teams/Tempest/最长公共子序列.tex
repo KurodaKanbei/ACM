@@ -1,0 +1,114 @@
+\subsection{最长公共子序列} %{{{
+	\begin{lstlisting}
+const int dx[]={0,-1,0,1};
+const int dy[]={1,0,-1,0};
+const string ds="ENWS";
+char G[52][52];
+char A[22222], B[22222], buf[22222];
+int n, m;
+
+typedef unsigned long long ll;
+
+const int M = 62;
+const int maxn = 20010;
+const int maxt = 130;
+const int maxl = maxn / M + 10;
+const ll Top = ((ll) 1 << (M));
+const ll Topless = Top - 1;
+const ll underTop = ((ll) 1 << (M - 1));
+typedef ll bitarr[maxl];
+bitarr comp[maxt], row[2], X;
+
+void get(char *S){
+	int L,x,y,sz=0;
+	scanf("%d%d%d",&L,&x,&y),x--,y--;
+	//scanf(" %s",buf);
+	S[sz++]=G[x][y];
+	for(int i=0;i<L;i++){
+		char ch;
+		scanf(" %c", &ch);
+		int pos=ds.find(ch);
+		x+=dx[pos],y+=dy[pos];
+		if (x < 0 || y < 0 || x >= n || y >= m) for(;;);
+		S[sz++]=G[x][y];
+	}
+	S[sz]=0;
+}
+
+bool calc[maxt];
+
+void prepare() {
+	
+	int u, p;	
+	memset(calc, 0, sizeof(calc));	
+	for (int i = 0; i < m; i++) {
+		u = B[i];
+		if (calc[u]) continue;	//======仅对所有字符集 ，每次一次 
+		calc[u] = 1;
+		memset(comp[u], 0, sizeof(comp[u]));
+		for (p = 0; p < n; p++) if (u == A[p]) comp[u][p / M] ^= ((ll) 1 << (p % M));			
+	}		
+}
+
+void solve() {
+	prepare();
+	memset(row, 0, sizeof(row));
+	int prev, curt;
+	int i, u, p, c, cc;
+	int Ln = (n / M) + 1;
+	prev = 0;
+	for (i = 0; i < m; i++) {
+		curt = 1 - prev; u = B[i];
+		for (p = 0; p < Ln; p++) X[p] = row[prev][p] | comp[u][p];
+		c = 0;
+		for (p = 0; p < Ln; p++) {
+			cc = (row[prev][p] & underTop) > 0;
+			row[prev][p] = ((row[prev][p] & (underTop - 1)) << 1) + c;
+			c = cc;
+		}
+		for (p = 0; p < Ln; p++) {
+			if (row[prev][p] != Topless) {
+				row[prev][p]++;
+				break;
+			}
+			row[prev][p] = 0;
+		}
+		c = 0;
+		for (p = 0; p < Ln; p++) {
+			if (X[p] >= row[prev][p] + c) 
+				row[prev][p] = X[p] - (row[prev][p] + c), c = 0;
+			else
+				row[prev][p] = Top + X[p] - (row[prev][p] + c), c = 1;
+		}
+		for (p = 0; p < Ln; p++) 
+			row[curt][p] = X[p] & (row[prev][p] ^ X[p]);
+		prev = curt;
+	}
+	int ret = 0;
+	for (i = 0; i < n; i++) 
+		if (row[prev][i / M] & ((ll) 1 << (i % M))) ret++;	
+//	printf("%d %d %d\n", n, m, ret);
+//=========ret 就是最长公共子序列。 
+	printf("%d %d\n", n - ret, m - ret);
+}
+
+int main(){
+	int tests=0,T;
+	scanf("%d",&T);
+	while(T--){
+		scanf("%d%d",&n,&m);
+		for(int i=0;i<n;i++)
+			for (int j = 0; j < m; j++) 
+				scanf(" %c",&G[i][j]);
+		get(A),get(B);
+		
+		printf("Case %d: ", ++tests);	
+//		printf("A = %s\n, B = %s\n", A, B);
+		n = strlen(A), m = strlen(B);
+		//n = 20000; m = 20000;
+		//for (int i = 0; i < m; i++) A[i] = B[i] = 'A'; 
+		//A[m] = B[m] = 0;
+		solve();		
+	}
+}
+	\end{lstlisting}
