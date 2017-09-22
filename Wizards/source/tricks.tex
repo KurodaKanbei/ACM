@@ -1,12 +1,20 @@
 \chapter{技巧}
-\section{真正的释放STL容器内存空间}
+\sectio{STL归还空间}
 \inputminted{cpp}{\source/tricks/truly-release-container-space.cpp}
-\section{无敌的大整数相乘取模}
-Time complexity $O(1)$.
+\section{大整数取模}
 \inputminted{cpp}{\source/tricks/O1-multiply-mod.cpp}
-\section{无敌的读入优化}
+\section{读入优化}
 \inputminted{cpp}{\source/tricks/unbeatable-input-acceleration.cpp}
-\section{梅森旋转算法}
-High quality pseudorandom number generator, twice as efficient as rand() with \texttt{-O2}.
-C++11 required.
+\section{二次随机法}
 \inputminted{cpp}{\source/tricks/mersenne-twister.cpp}
+\section{vimrc}
+\inputminted{cpp}
+\section{控制cout输出实数精度}
+\inputminted{cpp}{\source/tricks/control-cout-precision.cpp}
+\section{让make支持c++11}
+in .bashrc or whatever
+\begin{verbatim}
+export CXXFLAGS='-std=c++11 -Wall'
+\end{verbatim}
+\section{tuple相关}
+\inputminted{cpp}{\source/tricks/tuple.cpp}

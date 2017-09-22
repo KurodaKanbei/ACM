@@ -1,5 +1,5 @@
 \chapter{数论}
-\section{$O(m^2\log n)$求线性递推数列第n项}
+\section{$O(m^2\log n)$线性递推}
 Given $a_0, a_1, \ldots, a_{m - 1}$\\
 	$a_n = c_0 \times a_{n - m} + \cdots + c_{m - 1} \times a_{n - 1}$\\
 	Solve for $a_n = v_0 \times a_0 + v_1 \times a_1 + \cdots + v_{m - 1} \times a_{m - 1}$\\
@@ -12,5 +12,9 @@ Given $a_0, a_1, \ldots, a_{m - 1}$\\
 \inputminted{cpp}{\source/number-theory/primality-test.cpp}
 \section{质因数分解}
 \inputminted{cpp}{\source/number-theory/pollards-rho-algorithm.cpp}
+\section{佩尔方程}
+\inputminted{cpp}
+\section{二次剩余}
+\inputminted{cpp}
 \section{线下整点}
 \inputminted{cpp}{\source/number-theory/integer-lattice-under-segment.cpp}
