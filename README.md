@@ -1,7 +1,7 @@
 # ACM
 It is the Standard Code Library of Wizards.
 
-##数论
+## 数论
 线性递推
 扩展欧几里得
 中国剩余定理
@@ -12,14 +12,14 @@ It is the Standard Code Library of Wizards.
 一元三次方程
 线下整点
 
-##代数
+## 代数
 快速傅立叶变换
 快速数论变换
 自适应辛普森
 单纯性
 
-##计算几何
-###二维计算几何
+## 计算几何
+### 二维计算几何
 二维点类
 凸包
 凸包最近点对
@@ -29,11 +29,11 @@ It is the Standard Code Library of Wizards.
 最小覆盖圆
 圆交及求中心
 平面图求域
-###三维计算几何
+### 三维计算几何
 三维点类
 三维凸包
 最小覆盖球
-##字符串
+## 字符串
 AC自动机
 后缀数组
 后缀自动机
@@ -46,7 +46,7 @@ KD-Tree
 Treap
 Splay
 LCT
-##图论
+## 图论
 KM
 点双联通分量
 边双联通分量
@@ -57,12 +57,12 @@ KM
 最大团搜索
 弦图判定
 ZKW费用流
-##其他
+## 其他
 DLX
 斜率优化
 蔡勒公式
 五边形数定理
-##技巧
+## 技巧
 STL归还空间
 大整数取模
 读入优化
@@ -71,7 +71,7 @@ vimrc
 cout-precision
 make支持c++11
 tuple相关
-##Hints
+## Hints
 线性规划转对偶
 网络流建图
 NTT素数及原根
