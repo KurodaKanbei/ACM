@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{bool} \PYG{n+nf}{byY}\PYG{p}{(}\PYG{n}{P} \PYG{n}{a}\PYG{p}{,}\PYG{n}{P} \PYG{n}{b}\PYG{p}{)\PYGZob{}}\PYG{k}{return} \PYG{n}{a}\PYG{p}{.}\PYG{n}{y}\PYG{o}{\PYGZlt{}}\PYG{n}{b}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;\PYGZcb{}}
+\PYG{n}{LL} \PYG{n+nf}{solve}\PYG{p}{(}\PYG{n}{P} \PYG{o}{*}\PYG{n}{p}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{l}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{)\PYGZob{}}
+	\PYG{n}{LL} \PYG{n}{d}\PYG{o}{=}\PYG{l+m+mi}{1LL}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{l+m+mi}{62}\PYG{p}{;}
+	\PYG{k}{if}\PYG{p}{(}\PYG{n}{l}\PYG{o}{==}\PYG{n}{r}\PYG{p}{)}
+		\PYG{k}{return} \PYG{n}{d}\PYG{p}{;}
+	\PYG{k}{if}\PYG{p}{(}\PYG{n}{l}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{o}{==}\PYG{n}{r}\PYG{p}{)}
+		\PYG{k}{return} \PYG{n}{dis2}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{n}{l}\PYG{p}{],}\PYG{n}{p}\PYG{p}{[}\PYG{n}{r}\PYG{p}{]);}
+	\PYG{k+kt}{int} \PYG{n}{mid}\PYG{o}{=}\PYG{p}{(}\PYG{n}{l}\PYG{o}{+}\PYG{n}{r}\PYG{p}{)}\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+	\PYG{n}{d}\PYG{o}{=}\PYG{n}{min}\PYG{p}{(}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,}\PYG{n}{mid}\PYG{p}{),}\PYG{n}{d}\PYG{p}{);}
+	\PYG{n}{d}\PYG{o}{=}\PYG{n}{min}\PYG{p}{(}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{mid}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{r}\PYG{p}{),}\PYG{n}{d}\PYG{p}{);}
+	\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{P}\PYG{o}{\PYGZgt{}}\PYG{n}{tmp}\PYG{p}{;}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{n}{l}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}=}\PYG{n}{r}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{sqr}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{n}{mid}\PYG{p}{].}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{x}\PYG{p}{)}\PYG{o}{\PYGZlt{}=}\PYG{n}{d}\PYG{p}{)}
+			\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+	\PYG{n}{sort}\PYG{p}{(}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{(),}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{end}\PYG{p}{(),}\PYG{n}{byY}\PYG{p}{);}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j}\PYG{o}{=}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{10}\PYG{p}{;}\PYG{n}{j}\PYG{o}{++}\PYG{p}{)}
+			\PYG{n}{d}\PYG{o}{=}\PYG{n}{min}\PYG{p}{(}\PYG{n}{d}\PYG{p}{,}\PYG{n}{dis2}\PYG{p}{(}\PYG{n}{tmp}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{n}{tmp}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]));}
+	\PYG{k}{return} \PYG{n}{d}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

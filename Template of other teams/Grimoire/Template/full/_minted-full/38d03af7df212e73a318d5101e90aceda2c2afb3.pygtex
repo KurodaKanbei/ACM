@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{register} \PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{\PYGZus{}sp} \PYG{n+nf}{\PYGZus{}\PYGZus{}asm\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}rsp\PYGZdq{}}\PYG{p}{);}
+\PYG{k+kt}{int} \PYG{n+nf}{main}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+	\PYG{k}{const} \PYG{k+kt}{int} \PYG{n}{size} \PYG{o}{=} \PYG{l+m+mi}{400} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{20}\PYG{p}{;}\PYG{c+c1}{//400MB}
+	\PYG{k}{static} \PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{sys}\PYG{p}{,} \PYG{o}{*}\PYG{n}{mine}\PYG{p}{(}\PYG{k}{new} \PYG{k+kt}{char}\PYG{p}{[}\PYG{n}{size}\PYG{p}{]} \PYG{o}{+} \PYG{n}{size} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4096}\PYG{p}{);}
+	\PYG{n}{sys} \PYG{o}{=} \PYG{n}{\PYGZus{}sp}\PYG{p}{;} \PYG{n}{\PYGZus{}sp} \PYG{o}{=} \PYG{n}{mine}\PYG{p}{;} \PYG{n}{\PYGZus{}main}\PYG{p}{();} \PYG{n}{\PYGZus{}sp} \PYG{o}{=} \PYG{n}{sys}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{int} \PYG{n}{a}\PYG{p}{[}\PYG{n}{maxn}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{maxn}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{];}
+\PYG{k+kt}{int} \PYG{n}{top}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{k}\PYG{p}{;}
+\PYG{k+kt}{void} \PYG{n+nf}{build}\PYG{p}{()\PYGZob{}}
+    \PYG{n}{top}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{sort}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{a}\PYG{o}{+}\PYG{n}{k}\PYG{p}{,}\PYG{n}{bydfn}\PYG{p}{);}
+    \PYG{n}{k}\PYG{o}{=}\PYG{n}{unique}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{a}\PYG{o}{+}\PYG{n}{k}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{a}\PYG{p}{;}
+    \PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{++}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{n}{\PYGZus{}n}\PYG{o}{=}\PYG{n}{k}\PYG{p}{;}
+    \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{k}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{k+kt}{int} \PYG{n}{LCA}\PYG{o}{=}\PYG{n}{lca}\PYG{p}{(}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]);}
+        \PYG{k}{while}\PYG{p}{(}\PYG{n}{dep}\PYG{p}{[}\PYG{n}{LCA}\PYG{p}{]}\PYG{o}{\PYGZlt{}}\PYG{n}{dep}\PYG{p}{[}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]])\PYGZob{}}
+            \PYG{k}{if}\PYG{p}{(}\PYG{n}{dep}\PYG{p}{[}\PYG{n}{LCA}\PYG{p}{]}\PYG{o}{\PYGZgt{}=}\PYG{n}{dep}\PYG{p}{[}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{]])\PYGZob{}}
+                \PYG{n}{add\PYGZus{}edge}\PYG{p}{(}\PYG{n}{LCA}\PYG{p}{,}\PYG{n}{sta}\PYG{p}{[}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{top}\PYG{p}{]);}
+                \PYG{k}{if}\PYG{p}{(}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{!=}\PYG{n}{LCA}\PYG{p}{)}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{++}\PYG{p}{]}\PYG{o}{=}\PYG{n}{LCA}\PYG{p}{;}
+                \PYG{k}{break}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}\PYG{n}{add\PYGZus{}edge}\PYG{p}{(}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]);}\PYG{n}{top}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}\PYG{k}{if}\PYG{p}{(}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{!=}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{++}\PYG{p}{]}\PYG{o}{=}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{while}\PYG{p}{(}\PYG{n}{top}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+        \PYG{n}{add\PYGZus{}edge}\PYG{p}{(}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{n}{sta}\PYG{p}{[}\PYG{n}{top}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]),}\PYG{n}{top}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{k}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}\PYG{n}{inr}\PYG{p}{[}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}    
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

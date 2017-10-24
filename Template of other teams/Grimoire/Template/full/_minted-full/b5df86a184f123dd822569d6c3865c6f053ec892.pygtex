@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{int} \PYG{n+nf}{solve}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{year}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{month}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{day}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{answer}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{month} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{o}{||} \PYG{n}{month} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{month} \PYG{o}{+=} \PYG{l+m+mi}{12}\PYG{p}{;}
+        \PYG{n}{year}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{year} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{1752}\PYG{p}{)} \PYG{o}{||} \PYG{p}{(}\PYG{n}{year} \PYG{o}{==} \PYG{l+m+mi}{1752} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{month} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{9}\PYG{p}{)} \PYG{o}{||}
+        \PYG{p}{(}\PYG{n}{year} \PYG{o}{==} \PYG{l+m+mi}{1752} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{month} \PYG{o}{==} \PYG{l+m+mi}{9} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{day} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{3}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+        \PYG{n}{answer} \PYG{o}{=} \PYG{p}{(}\PYG{n}{day} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{month} \PYG{o}{+} \PYG{l+m+mi}{3} \PYG{o}{*} \PYG{p}{(}\PYG{n}{month} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{5} \PYG{o}{+} \PYG{n}{year} \PYG{o}{+} \PYG{n}{year} \PYG{o}{/} \PYG{l+m+mi}{4} \PYG{o}{+} \PYG{l+m+mi}{5}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{7}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+        \PYG{n}{answer} \PYG{o}{=} \PYG{p}{(}\PYG{n}{day} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{month} \PYG{o}{+} \PYG{l+m+mi}{3} \PYG{o}{*} \PYG{p}{(}\PYG{n}{month} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{5} \PYG{o}{+} \PYG{n}{year} \PYG{o}{+} \PYG{n}{year} \PYG{o}{/} \PYG{l+m+mi}{4}
+               \PYG{o}{\PYGZhy{}} \PYG{n}{year} \PYG{o}{/} \PYG{l+m+mi}{100} \PYG{o}{+} \PYG{n}{year} \PYG{o}{/} \PYG{l+m+mi}{400}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{7}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{answer}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

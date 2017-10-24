@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{p}{(}\PYG{n}{a}\PYG{o}{+}\PYG{n}{b}\PYG{p}{)(}\PYG{n}{c}\PYG{o}{+}\PYG{n}{d}\PYG{p}{)} \PYG{o}{=} \PYG{n}{ac}\PYG{o}{+}\PYG{p}{(}\PYG{n}{bc}\PYG{o}{+}\PYG{n}{ad}\PYG{p}{)}\PYG{o}{+}\PYG{n}{bd} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{n}{ac}\PYG{o}{\PYGZhy{}}\PYG{p}{(}\PYG{n}{a}\PYG{o}{\PYGZhy{}}\PYG{n}{b}\PYG{p}{)(}\PYG{n}{c}\PYG{o}{\PYGZhy{}}\PYG{n}{d}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{n}{bd}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{n}{m} \PYG{n}{m}\PYG{o}{=}\PYG{p}{(}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}
+\PYG{p}{(}\PYG{n}{ax}\PYG{o}{+}\PYG{n}{b}\PYG{p}{)(}\PYG{n}{cx}\PYG{o}{+}\PYG{n}{d}\PYG{p}{)} \PYG{o}{=} \PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{n}{ac} \PYG{o}{+} \PYG{n}{x}\PYG{p}{(}\PYG{n}{bc}\PYG{o}{+}\PYG{n}{ad}\PYG{p}{)} \PYG{o}{+} \PYG{n}{bd} \PYG{o}{=} \PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{n}{ac} \PYG{o}{+} \PYG{n}{x}\PYG{p}{(}\PYG{n}{ac} \PYG{o}{+} \PYG{n}{bd} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{a}\PYG{o}{\PYGZhy{}}\PYG{n}{b}\PYG{p}{)(}\PYG{n}{c}\PYG{o}{\PYGZhy{}}\PYG{n}{d}\PYG{p}{))} \PYG{o}{+} \PYG{n}{bd}
+\end{Verbatim}

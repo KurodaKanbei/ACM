@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{int} \PYG{n+nf}{solve}\PYG{p}{(}\PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{text}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{length}\PYG{p}{)} \PYG{p}{\PYGZob{}}\PYG{c+c1}{//0\PYGZhy{}base , 多解答案为起点最小}
+    \PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{delta} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{while} \PYG{p}{(}\PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{length} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{length} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{delta} \PYG{o}{\PYGZlt{}} \PYG{n}{length}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kt}{char} \PYG{n}{tokeni} \PYG{o}{=} \PYG{n}{text}\PYG{p}{[(}\PYG{n}{i} \PYG{o}{+} \PYG{n}{delta}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{length}\PYG{p}{];}
+        \PYG{k+kt}{char} \PYG{n}{tokenj} \PYG{o}{=} \PYG{n}{text}\PYG{p}{[(}\PYG{n}{j} \PYG{o}{+} \PYG{n}{delta}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{length}\PYG{p}{];}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{tokeni} \PYG{o}{==} \PYG{n}{tokenj}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{delta}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{tokeni} \PYG{o}{\PYGZgt{}} \PYG{n}{tokenj}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n}{i} \PYG{o}{+=} \PYG{n}{delta} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+                \PYG{n}{j} \PYG{o}{+=} \PYG{n}{delta} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{o}{==} \PYG{n}{j}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n}{j}\PYG{o}{++}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{delta} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

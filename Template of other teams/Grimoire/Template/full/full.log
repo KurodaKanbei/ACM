@@ -1,0 +1,3186 @@
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.8.23)  19 OCT 2017 12:30
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**full.tex
+(./full.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctex.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2016/01/19 v6377 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2016/01/19 v6377 L3 programming layer (code)
+L3 Module: l3bootstrap 2016/01/01 v6339 L3 Bootstrap code
+L3 Module: l3names 2015/12/21 v6328 L3 Namespace for primitives
+L3 Module: l3basics 2015/11/22 v6315 L3 Basic definitions
+L3 Module: l3expan 2015/09/10 v5983 L3 Argument expansion
+L3 Module: l3tl 2015/09/29 v6121 L3 Token lists
+L3 Module: l3str 2016/01/03 v6357 L3 Strings
+L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
+L3 Module: l3int 2016/01/05 v6366 L3 Integers
+\c_max_int=\count88
+\l_tmpa_int=\count89
+\l_tmpb_int=\count90
+\g_tmpa_int=\count91
+\g_tmpb_int=\count92
+L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
+L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
+\g__prg_map_int=\count93
+L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
+L3 Module: l3token 2015/11/11 v6249 L3 Experimental token manipulation
+L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
+L3 Module: l3msg 2015/09/28 v6113 L3 Messages
+L3 Module: l3file 2015/12/03 v6317 L3 File and I/O operations
+\l_iow_line_count_int=\count94
+\l__iow_target_count_int=\count95
+\l__iow_current_line_int=\count96
+\l__iow_current_word_int=\count97
+\l__iow_current_indentation_int=\count98
+L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
+\c_zero_dim=\dimen103
+\c_max_dim=\dimen104
+\l_tmpa_dim=\dimen105
+\l_tmpb_dim=\dimen106
+\g_tmpa_dim=\dimen107
+\g_tmpb_dim=\dimen108
+\c_zero_skip=\skip43
+\c_max_skip=\skip44
+\l_tmpa_skip=\skip45
+\l_tmpb_skip=\skip46
+\g_tmpa_skip=\skip47
+\g_tmpb_skip=\skip48
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
+\g__keyval_level_int=\count99
+\l_keys_choice_int=\count100
+L3 Module: l3fp 2015/08/25 v5890 L3 Floating points
+\c__fp_leading_shift_int=\count101
+\c__fp_middle_shift_int=\count102
+\c__fp_trailing_shift_int=\count103
+\c__fp_big_leading_shift_int=\count104
+\c__fp_big_middle_shift_int=\count105
+\c__fp_big_trailing_shift_int=\count106
+\c__fp_Bigg_leading_shift_int=\count107
+\c__fp_Bigg_middle_shift_int=\count108
+\c__fp_Bigg_trailing_shift_int=\count109
+L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
+\c_empty_box=\box26
+\l_tmpa_box=\box27
+\l_tmpb_box=\box28
+\g_tmpa_box=\box29
+\g_tmpb_box=\box30
+L3 Module: l3coffins 2015/08/06 v5789 L3 Coffin code layer
+\l__coffin_internal_box=\box31
+\l__coffin_internal_dim=\dimen109
+\l__coffin_offset_x_dim=\dimen110
+\l__coffin_offset_y_dim=\dimen111
+\l__coffin_x_dim=\dimen112
+\l__coffin_y_dim=\dimen113
+\l__coffin_x_prime_dim=\dimen114
+\l__coffin_y_prime_dim=\dimen115
+\c_empty_coffin=\box32
+\l__coffin_aligned_coffin=\box33
+\l__coffin_aligned_internal_coffin=\box34
+\l_tmpa_coffin=\box35
+\l_tmpb_coffin=\box36
+\l__coffin_display_coffin=\box37
+\l__coffin_display_coord_coffin=\box38
+\l__coffin_display_pole_coffin=\box39
+\l__coffin_display_offset_dim=\dimen116
+\l__coffin_display_x_dim=\dimen117
+\l__coffin_display_y_dim=\dimen118
+L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
+L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
+L3 Module: l3candidates 2016/01/14 v6376 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen119
+\l__box_bottom_dim=\dimen120
+\l__box_left_dim=\dimen121
+\l__box_right_dim=\dimen122
+\l__box_top_new_dim=\dimen123
+\l__box_bottom_new_dim=\dimen124
+\l__box_left_new_dim=\dimen125
+\l__box_right_new_dim=\dimen126
+\l__box_internal_box=\box40
+\l__coffin_bounding_shift_dim=\dimen127
+\l__coffin_left_corner_dim=\dimen128
+\l__coffin_right_corner_dim=\dimen129
+\l__coffin_bottom_corner_dim=\dimen130
+\l__coffin_top_corner_dim=\dimen131
+\l__coffin_scaled_total_height_dim=\dimen132
+\l__coffin_scaled_width_dim=\dimen133
+L3 Module: l3luatex 2015/11/11 v6250 L3 Experimental LuaTeX-specific functions
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2015/11/11 v6250 L3 Experimental driver: xdvipdfmx
+))
+Package: ctex 2016/02/02 v2.3 Chinese adapter in LaTeX (CTEX)
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2016/01/19 v6377 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count110
+\l__xparse_m_args_int=\count111
+\l__xparse_mandatory_args_int=\count112
+\l__xparse_processor_int=\count113
+\l__xparse_v_nesting_int=\count114
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2016/01/19 v6377 LaTeX2e option processing using LaTeX3 keys
+)
+\g__file_internal_ior=\read1
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexhook.sty
+Package: ctexhook 2016/02/02 v2.3 Document and package hooks (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexpatch.sty
+Package: ctexpatch 2016/02/02 v2.3 Patching commands (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\l__ctex_tmp_int=\count115
+\l__ctex_tmp_dim=\dimen134
+\l__ctex_tmp_box=\box41
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
+File: ctexopts.cfg 2016/02/02 v2.3 Option configuration file (CTEX)
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ctexset with sig. '' on line 364.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXsetup with sig. '+o>{\TrimSpaces }m' on line 370.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXoptions with sig. '+o' on line 376.
+.................................................
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
+File: ctex-engine-xetex.def 2016/02/02 v2.3 XeLaTeX adapter (CTEX)
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+Package: xeCJK 2016/02/10 v3.3.4 Typesetting CJK scripts with XeLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+Package: xtemplate 2016/01/19 v6377 L3 Experimental prototype document function
+s
+\l__xtemplate_tmp_dim=\dimen135
+\l__xtemplate_tmp_int=\count116
+\l__xtemplate_tmp_muskip=\muskip16
+\l__xtemplate_tmp_skip=\skip49
+)
+\l__xeCJK_tmp_int=\count117
+\l__xeCJK_tmp_box=\box42
+\l__xeCJK_tmp_dim=\dimen136
+\l__xeCJK_tmp_skip=\skip50
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKShipoutHook with sig. '' on line 151.
+.................................................
+\g__xeCJK_spacefactor_int=\count118
+\l__xeCJK_begin_int=\count119
+\l__xeCJK_end_int=\count120
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \makexeCJKactive with sig. '' on line 380.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \makexeCJKinactive with sig. '' on line 381.
+.................................................
+\c__xeCJK_CJK_class_int=\XeTeXcharclass1
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
+\c__xeCJK_CM_class_int=\XeTeXcharclass7
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclareCharClass with sig. 's>{\TrimSpaces }mm' on
+. line 555.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_set_char_class_aux:Nnw with sig.
+. 'm>{\SplitArgument {1}{->}}m' on line 572.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \normalspacedchars with sig. 'm' on line 617.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKResetPunctClass with sig. '' on line 624.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKResetCharClass with sig. '' on line 632.
+.................................................
+\g__xeCJK_node_int=\count121
+\c__xeCJK_CJK_node_dim=\dimen137
+\c__xeCJK_CJK-space_node_dim=\dimen138
+\c__xeCJK_default_node_dim=\dimen139
+\c__xeCJK_default-space_node_dim=\dimen140
+\c__xeCJK_CJK-widow_node_dim=\dimen141
+\c__xeCJK_normalspace_node_dim=\dimen142
+\l__xeCJK_ccglue_skip=\skip51
+\l__xeCJK_ecglue_skip=\skip52
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKnobreak with sig. '' on line 1409.
+.................................................
+\l__xeCJK_widow_penalty_int=\count122
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclareSubCJKBlock with sig. 's>{\TrimSpaces
+. }m>{\TrimSpaces }m' on line 1605.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKCancelSubCJKBlock with sig. 'sm' on line 1616.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKRestoreSubCJKBlock with sig. 'sm' on line 1625.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetwidth with sig. 'smm' on line 1723.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetkern with sig. 'mmm' on line 1727.
+.................................................
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'xeCJK/punctuation' taking \c_zero  argument(s) on
+. line 1828.
+.................................................
+\l__xeCJK_fixed_punct_width_dim=\dimen143
+\l__xeCJK_mixed_punct_width_dim=\dimen144
+\l__xeCJK_middle_punct_width_dim=\dimen145
+\l__xeCJK_fixed_margin_width_dim=\dimen146
+\l__xeCJK_mixed_margin_width_dim=\dimen147
+\l__xeCJK_middle_margin_width_dim=\dimen148
+\l__xeCJK_bound_punct_width_dim=\dimen149
+\l__xeCJK_bound_margin_width_dim=\dimen150
+\l__xeCJK_margin_minimum_dim=\dimen151
+\l__xeCJK_kerning_total_width_dim=\dimen152
+\l__xeCJK_same_align_margin_dim=\dimen153
+\l__xeCJK_different_align_margin_dim=\dimen154
+\l__xeCJK_kerning_margin_width_dim=\dimen155
+\l__xeCJK_kerning_margin_minimum_dim=\dimen156
+\l__xeCJK_bound_dim=\dimen157
+\l__xeCJK_reverse_bound_dim=\dimen158
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclarePunctStyle with sig. '>{\TrimSpaces }mm' on
+. line 2313.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKEditPunctStyle with sig. '>{\TrimSpaces }mm' on line
+. 2326.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKfallbackfamilyfont with sig. 'mO{}m' on line 2414.
+.................................................
+\g__xeCJK_family_int=\count123
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKfamily with sig. 't+t-m' on line 2838.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_gobble_CJKfamily:wn with sig. 't+t-m' on line
+. 2852.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmainfont with sig. 'O{}m' on line 2902.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKsansfont with sig. 'O{}m' on line 2908.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmonofont with sig. 'O{}m' on line 2913.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKfamilyfont with sig. 'mO{}m' on line 2920.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newCJKfontfamily with sig. 'omO{}m' on line 2926.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKfontspec with sig. 'O{}m' on line 2931.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultCJKfontfeatures with sig. 'm' on line 2954.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addCJKfontfeatures with sig. 'sO{}m' on line 2960.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmathfont with sig. 'O{}m' on line 3130.
+.................................................
+\l__xeCJK_verb_case_int=\count124
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKVerbAddon with sig. '' on line 3283.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKOffVerbAddon with sig. '' on line 3287.
+.................................................
+\l__xeCJK_verb_exspace_skip=\skip53
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTe
+X
+\l_fontspec_script_int=\count125
+\l_fontspec_language_int=\count126
+\l_fontspec_strnum_int=\count127
+\l__fontspec_tmpa_dim=\dimen159
+\l__fontspec_tmpb_dim=\dimen160
+\l__fontspec_tmpc_dim=\dimen161
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1enc.def
+File: eu1enc.def 2010/05/27 v0.1h Experimental Unicode font encodings
+)
+LaTeX Font Info:    Try loading font information for EU1+lmr on input line 105.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmr.fd
+File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(/usr/share/texlive/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+
+(/usr/share/texmf/tex/latex/tipa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmss.fd
+File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+\tipaTiiicode=\count128
+\tipasavetokens=\toks14
+\tipachecktokens=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: xetex.def on input line 95.
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2015/09/11 v4.06 LaTeX color/graphics driver for XeTeX (TeX Liv
+e/RRM/JK)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)))
+\Gin@req@height=\dimen162
+\Gin@req@width=\dimen163
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__fontspec_post_arg:w with sig. 'mmO{}' on line 353.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'om' on line 355.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'om' on line 365.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'om' on line 375.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'om' on line 385.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'om' on line 399.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'om' on line 407.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'om' on line 415.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'om' on line 423.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mom' on line 437.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mom' on line 453.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 467.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 529.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 540.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 548.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 556.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 577.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 586.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 590.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 594.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontsExtensions with sig. 'm' on line 599.
+.................................................
+\l__fontspec_tmp_int=\count129
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 2705.
+LaTeX Info: Redefining \slshape on input line 2710.
+LaTeX Info: Redefining \scshape on input line 2715.
+LaTeX Info: Redefining \upshape on input line 2720.
+\l__fontspec_em_int=\count130
+\l__fontspec_emdef_int=\count131
+LaTeX Info: Redefining \em on input line 2736.
+LaTeX Info: Redefining \emph on input line 2742.
+LaTeX Info: Redefining \- on input line 2746.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 2841.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 2845.
+.................................................
+))
+(/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xunicode-addon.sty
+Package: xunicode-addon 2016/02/10 v3.3.4 addon file for xunicode
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \ReloadXunicode with sig. 'm' on line 87.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareUTFmathsymbols with sig. 'm' on line 132.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \UseMathAsText with sig. '' on line 141.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \UndeclareUTFcharacter with sig. 'O{\UTFencname }mm' on
+. line 176.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \UndeclareUTFcomposite with sig. 'O{\UTFencname }mmm' on
+. line 183.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareUTFcharacter with sig. 'O{\UTFencname }mm' on
+. line 210.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFSymbol with sig. 'mO{\UTFencname }m' on line
+. 236.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFCommand with sig. 'mO{\UTFencname }m' on line
+. 238.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareUTFcomposite with sig. 'O{\UTFencname }mmm' on
+. line 281.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFCompositeCommand with sig. 'mO{\UTFencname }mm'
+. on line 294.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFCompositeSymbol with sig. 'mO{\UTFencname }mm'
+. on line 299.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFComposite with sig. 'mO{\UTFencname }' on line
+. 301.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFEncodedAccent with sig. 'mO{\UTFencname }mm' on
+. line 303.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFEncodedAccents with sig. 'mO{\UTFencname }mm' on
+. line 305.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFEncodedSymbol with sig. 'mO{\UTFencname }mm' on
+. line 307.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFEncodedCircle with sig. 'mO{\UTFencname }mm' on
+. line 309.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareEncodedCompositeCharacter with sig. 'mmmm' on
+. line 311.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareEncodedCompositeAccents with sig. 'mmmm' on line
+. 313.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFDoubleEncodedAccent with sig. 'mO{\UTFencname
+. }mm' on line 315.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFDoubleEncodedSymbol with sig. 'mO{\UTFencname
+. }mm' on line 317.
+.................................................
+\l__xunadd_tmp_coffin=\box43
+\l__xunadd_circle_coffin=\box44
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \settextcircledratio with sig. 'm' on line 468.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \AtBeginUTFCommand with sig. 'sO{}+m' on line 537.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \AtEndUTFCommand with sig. 'sO{}+m' on line 547.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFTIPACommand with sig. 'O{\UTFencname }m' on line
+. 579.
+.................................................
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+
+*** Reloading Xunicode for encoding 'EU1' ***
+) (/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xunicode-extra.def
+File: xunicode-extra.def 2016/02/10 v3.3.4 extra definition for xunicode
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetup with sig. '+m' on line 3588.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetemboldenfactor with sig. 'm' on line 3590.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetslantfactor with sig. 'm' on line 3592.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \punctstyle with sig. 'm' on line 3593.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKplainchr with sig. '' on line 3594.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKsetecglue with sig. 'm' on line 3595.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKspace with sig. '' on line 3597.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKnospace with sig. '' on line 3598.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKallowbreakbetweenpuncts with sig. '' on line 3600.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKnobreakbetweenpuncts with sig. '' on line 3602.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKenablefallback with sig. '' on line 3604.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKdisablefallback with sig. '' on line 3606.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetcharclass with sig. 'mmm' on line 3611.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \nobreakspace with sig. '' on line 3730.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \fontfamily with sig. 'm' on line 3776.
+.................................................
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
+File: xeCJK.cfg 2016/02/10 v3.3.4 Configuration file for xeCJK package
+))
+(/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJKfntef.sty
+Package: xeCJKfntef 2016/02/10 v3.3.4 xeCJK font effect
+
+(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box45
+\UL@hyphenbox=\box46
+\UL@skip=\skip54
+\UL@hook=\toks17
+\UL@height=\dimen164
+\UL@pe=\count132
+\UL@pixel=\dimen165
+\ULC@box=\box47
+Package: ulem 2012/05/18
+\ULdepth=\dimen166
+)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks18
+)
+(/usr/share/texmf/tex/latex/CJK/CJKfntef.sty
+Package: CJKfntef 2015/04/18 4.8.4
+\CJK@fntefSkip=\skip55
+\CJK@nest=\count133
+\CJK@fntefDimen=\dimen167
+\CJK@underdotBox=\box48
+\CJK@ULbox=\box49
+\CJK@underanyskip=\dimen168
+)
+\l__xeCJK_space_skip=\skip56
+\c__xeCJK_ulem-left_node_dim=\dimen169
+\c__xeCJK_null_box=\box50
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKfntefon with sig. 'st-so' on line 590.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderline with sig. 'st-so' on line 609.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \varCJKunderline with sig. '' on line 611.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderwave with sig. 'st-so' on line 621.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderdblline with sig. 'st-so' on line 645.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKsout with sig. 'st-so' on line 664.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKxout with sig. 'st-so' on line 681.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderanyline with sig. 'st-somm' on line 702.
+.................................................
+\l__xeCJK_fntef_box=\box51
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderanysymbol with sig. 'ommm' on line 874.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderdot with sig. 'om' on line 883.
+.................................................
+\l__xeCJK_under_symbol_box=\box52
+.................................................
+. LaTeX info: "xparse/redefine-environment"
+. 
+. Redefining environment 'CJKfilltwosides' with sig. 'O{c}m' on line 977.
+.................................................
+\c__xeCJK_filll_skip=\skip57
+)
+\ccwd=\dimen170
+\l__ctex_ccglue_skip=\skip58
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXsetfont with sig. '' on line 404.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ziju with sig. 'm' on line 476.
+.................................................
+\l__ctex_ziju_dim=\dimen171
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXindent with sig. '' on line 517.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXnoindent with sig. '' on line 523.
+.................................................
+
+(/usr/share/texlive/texmf-dist/tex/latex/zhnumber/zhnumber.sty
+Package: zhnumber 2016/02/02 v2.3 Typesetting numbers with Chinese glyphs
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumber with sig. '+o+m' on line 45.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumberwithoptions with sig. '+m+m' on line 52.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnum with sig. '+o+m' on line 106.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumwithoptions with sig. '+m+m' on line 113.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdigits with sig. '+s+o+m' on line 291.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdigitswithoptions with sig. '+m+m+m' on line 298.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdate with sig. '+s+m' on line 357.
+.................................................
+\l__zhnum_scale_int=\count134
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumExtendScaleMap with sig. '>{\TrimSpaces }+o+m' on
+. line 467.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumsetup with sig. '+m' on line 898.
+.................................................
+
+(/usr/share/texlive/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
+File: zhnumber-utf8.cfg 2016/02/02 v2.3 Chinese numerals with UTF8 encoding
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXnumber with sig. 'mm' on line 538.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXdigits with sig. 'mm' on line 540.
+.................................................
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese.def
+File: ctex-scheme-chinese.def 2016/02/02 v2.3 Chinese scheme for generic (CTEX)
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
+File: ctex-name-utf8.cfg 2016/02/02 v2.3 Caption with encoding UTF8 (CTEX)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zihao with sig. 'm' on line 619.
+.................................................
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctex-c5size.clo
+File: ctex-c5size.clo 2016/02/02 v2.3 c5size option (CTEX)
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTeX with sig. '' on line 723.
+.................................................
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def
+File: ctex-fontset-fandol.def 2016/02/02 v2.3 Fandol fonts definition (CTEX)
+
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'FandolSong-Regular' does not contain script 'CJK'.
+*************************************************
+\g__fontspec_family_FandolSong-Regular_int=\count135
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FandolSong-Regular(0)' created for font 'FandolSong-Regular'
+. with options
+. [Script={CJK},Extension={.otf},BoldFont={FandolSong-Bold},ItalicFont={FandolK
+ai-Regular}].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.: <->"[FandolSong-Regular.otf]/OT:"
+. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
+. <->"[FandolSong-Bold.otf]/OT:"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: - 'italic' (m/it) with NFSS
+. spec.: <->"[FandolKai-Regular.otf]/OT:"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \songti with sig. '' on line 97.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \heiti with sig. '' on line 98.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fangsong with sig. '' on line 99.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \kaishu with sig. '' on line 100.
+.................................................
+)) (/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctex.cfg
+File: ctex.cfg 2016/02/02 v2.3 Configuration file (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2015/09/18 v0.5d Insert pages of external PDF documents (AM)
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count136
+\calc@Bcount=\count137
+\calc@Adimen=\dimen172
+\calc@Bdimen=\dimen173
+\calc@Askip=\skip59
+\calc@Bskip=\skip60
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count138
+\calc@Cskip=\skip61
+)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+\AM@pagewidth=\dimen174
+\AM@pageheight=\dimen175
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/ppxetex.def
+File: ppxetex.def 2015/09/18 v0.5d Pdfpages driver for XeTeX (AM)
+)
+\AM@pagebox=\box53
+\AM@toc@title=\toks19
+\c@AM@survey=\count139
+\AM@templatesizebox=\box54
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/03 v2.15a AMS math features
+\@mathmargin=\skip62
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen176
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen177
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count140
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count141
+\leftroot@=\count142
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count143
+\DOTSCASE@=\count144
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box55
+\strutbox@=\box56
+\big@size=\dimen178
+LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
+\macc@depth=\count145
+\c@MaxMatrixCols=\count146
+\dotsspace@=\muskip17
+\c@parentequation=\count147
+\dspbrk@lvl=\count148
+\tag@help=\toks21
+\row@=\count149
+\column@=\count150
+\maxfields@=\count151
+\andhelp@=\toks22
+\eqnshift@=\dimen179
+\alignsep@=\dimen180
+\tagshift@=\dimen181
+\tagwidth@=\dimen182
+\totwidth@=\dimen183
+\lineht@=\dimen184
+\@envbody=\toks23
+\multlinegap=\skip63
+\multlinetaggap=\skip64
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2735.
+LaTeX Info: Redefining \] on input line 2736.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count152
+\Gm@cntv=\count153
+\c@Gm@tempcnt=\count154
+\Gm@bindingoffset=\dimen185
+\Gm@wd@mp=\dimen186
+\Gm@odd@mp=\dimen187
+\Gm@even@mp=\dimen188
+\Gm@layoutwidth=\dimen189
+\Gm@layoutheight=\dimen190
+\Gm@layouthoffset=\dimen191
+\Gm@layoutvoffset=\dimen192
+\Gm@dimlist=\toks25
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count155
+\lst@gtempboxa=\box57
+\lst@token=\toks26
+\lst@length=\count156
+\lst@currlwidth=\dimen193
+\lst@column=\count157
+\lst@pos=\count158
+\lst@lostspace=\dimen194
+\lst@width=\dimen195
+\lst@newlines=\count159
+\lst@lineno=\count160
+\lst@maxwidth=\dimen196
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count161
+\lst@skipnumbers=\count162
+\lst@framebox=\box58
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2015/09/09 v2.1 Yet another Pygments shim for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count163
+\FV@InFile=\read2
+\FV@TabBox=\box59
+\c@FancyVerbLine=\count164
+\FV@StepNumber=\count165
+\FV@OutFile=\write3
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count166
+\float@exts=\toks27
+\float@box=\box60
+\@float@everytoks=\toks28
+\@floatcapt=\box61
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
+)
+runsystem(uname -s > "full.w18")...executed.
+
+ (./full.w18)
+runsystem(rm -- "full.w18")...executed.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count167
+)
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write4
+\integerpart=\count168
+\decimalpart=\count169
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+Invalid UTF-8 byte or sequence at line 296 replaced by U+FFFD.
+\linenopenalty=\count170
+\output=\toks29
+\linenoprevgraf=\count171
+\linenumbersep=\dimen197
+\linenumberwidth=\dimen198
+\c@linenumber=\count172
+\c@pagewiselinenumber=\count173
+\c@LN@truepage=\count174
+\c@internallinenumber=\count175
+\c@internallinenumbers=\count176
+\quotelinenumbersep=\dimen199
+\bframerule=\dimen256
+\bframesep=\dimen257
+\bframebox=\box62
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\minted@appexistsfile=\read3
+\FV@BreakIndent=\dimen258
+\FV@BreakSymbolSepLeft=\dimen259
+\FV@BreakSymbolSepRight=\dimen260
+\FV@BreakSymbolIndentLeft=\dimen261
+
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'FandolFang-Regular' does not contain script 'CJK'.
+*************************************************
+\g__fontspec_family_FandolFang-Regular_int=\count177
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 688
+.
+(/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmtt.fd
+File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FandolFang-Regular(0)' created for font 'FandolFang-Regular'
+. with options [Script={CJK},Extension={.otf},AutoFakeBold={4}].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.: <->"[FandolFang-Regular.otf]/OT:"
+. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
+. <->"[FandolFang-Regular.otf]/OT:embolden=4;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+.................................................
+\FV@BreakSymbolIndentRight=\dimen262
+\c@FancyVerbLineBreakLast=\count178
+\FV@LineBox=\box63
+\FV@LineIndentBox=\box64
+\minted@bgbox=\box65
+\minted@code=\write5
+\c@minted@FancyVerbLineTemp=\count179
+\@float@every@listing=\toks30
+\c@listing=\count180
+)
+runsystem(mkdir -p "_minted-full")...executed.
+
+
+(./_minted-full/default.pygstyle)
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/15 v2.10.1 Sectioning titles
+\ttl@box=\box66
+\beforetitleunit=\skip65
+\aftertitleunit=\skip66
+\ttl@plus=\dimen263
+\ttl@minus=\dimen264
+\ttl@toksa=\toks31
+\titlewidth=\dimen265
+\titlewidthlast=\dimen266
+\titlewidthfirst=\dimen267
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip67
+\f@ncyO@elh=\skip68
+\f@ncyO@erh=\skip69
+\f@ncyO@olh=\skip70
+\f@ncyO@orh=\skip71
+\f@ncyO@elf=\skip72
+\f@ncyO@erf=\skip73
+\f@ncyO@olf=\skip74
+\f@ncyO@orf=\skip75
+)
+(/usr/share/texlive/texmf-dist/tex/latex/dingbat/dingbat.sty
+Package: dingbat 2001/04/27 v1.00 Hands and other dingbats
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+Package: zref-abspage 2012/04/04 v2.24 Module abspage for zref (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/zref-base.sty
+Package: zref-base 2012/04/04 v2.24 Module base for zref (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 759.
+Package zref Info: New property: default on input line 760.
+Package zref Info: New property: page on input line 761.
+)
+\c@abspage=\count181
+Package zref Info: New property: abspage on input line 62.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+\mdf@templength=\skip76
+\c@mdf@globalstyle@cnt=\count182
+\mdf@skipabove@length=\skip77
+\mdf@skipbelow@length=\skip78
+\mdf@leftmargin@length=\skip79
+\mdf@rightmargin@length=\skip80
+\mdf@innerleftmargin@length=\skip81
+\mdf@innerrightmargin@length=\skip82
+\mdf@innertopmargin@length=\skip83
+\mdf@innerbottommargin@length=\skip84
+\mdf@splittopskip@length=\skip85
+\mdf@splitbottomskip@length=\skip86
+\mdf@outermargin@length=\skip87
+\mdf@innermargin@length=\skip88
+\mdf@linewidth@length=\skip89
+\mdf@innerlinewidth@length=\skip90
+\mdf@middlelinewidth@length=\skip91
+\mdf@outerlinewidth@length=\skip92
+\mdf@roundcorner@length=\skip93
+\mdf@footenotedistance@length=\skip94
+\mdf@userdefinedwidth@length=\skip95
+\mdf@needspace@length=\skip96
+\mdf@frametitleaboveskip@length=\skip97
+\mdf@frametitlebelowskip@length=\skip98
+\mdf@frametitlerulewidth@length=\skip99
+\mdf@frametitleleftmargin@length=\skip100
+\mdf@frametitlerightmargin@length=\skip101
+\mdf@shadowsize@length=\skip102
+\mdf@extratopheight@length=\skip103
+\mdf@subtitleabovelinewidth@length=\skip104
+\mdf@subtitlebelowlinewidth@length=\skip105
+\mdf@subtitleaboveskip@length=\skip106
+\mdf@subtitlebelowskip@length=\skip107
+\mdf@subtitleinneraboveskip@length=\skip108
+\mdf@subtitleinnerbelowskip@length=\skip109
+\mdf@subsubtitleabovelinewidth@length=\skip110
+\mdf@subsubtitlebelowlinewidth@length=\skip111
+\mdf@subsubtitleaboveskip@length=\skip112
+\mdf@subsubtitlebelowskip@length=\skip113
+\mdf@subsubtitleinneraboveskip@length=\skip114
+\mdf@subsubtitleinnerbelowskip@length=\skip115
+
+(/usr/share/texlive/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box67
+\mdf@footnotebox=\box68
+\mdf@splitbox@one=\box69
+\mdf@splitbox@two=\box70
+\mdf@splitbox@save=\box71
+\mdfsplitboxwidth=\skip116
+\mdfsplitboxtotalwidth=\skip117
+\mdfsplitboxheight=\skip118
+\mdfsplitboxdepth=\skip119
+\mdfsplitboxtotalheight=\skip120
+\mdfframetitleboxwidth=\skip121
+\mdfframetitleboxtotalwidth=\skip122
+\mdfframetitleboxheight=\skip123
+\mdfframetitleboxdepth=\skip124
+\mdfframetitleboxtotalheight=\skip125
+\mdffootnoteboxwidth=\skip126
+\mdffootnoteboxtotalwidth=\skip127
+\mdffootnoteboxheight=\skip128
+\mdffootnoteboxdepth=\skip129
+\mdffootnoteboxtotalheight=\skip130
+\mdftotallinewidth=\skip131
+\mdfboundingboxwidth=\skip132
+\mdfboundingboxtotalwidth=\skip133
+\mdfboundingboxheight=\skip134
+\mdfboundingboxdepth=\skip135
+\mdfboundingboxtotalheight=\skip136
+\mdf@freevspace@length=\skip137
+\mdf@horizontalwidthofbox@length=\skip138
+\mdf@verticalmarginwhole@length=\skip139
+\mdf@horizontalspaceofbox=\skip140
+\mdfsubtitleheight=\skip141
+\mdfsubsubtitleheight=\skip142
+\c@mdfcountframes=\count183
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newmdtheoremenv with sig. 'O{} m o m o ' on line 601.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \mdtheorem with sig. ' O{} m o m o ' on line 701.
+.................................................
+\mdf@envdepth=\count184
+\c@mdf@env@i=\count185
+\c@mdf@env@ii=\count186
+\c@mdf@zref@counter=\count187
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
+\c@tracingmulticols=\count188
+\mult@box=\box72
+\multicol@leftmargin=\dimen268
+\c@unbalance=\count189
+\c@collectmore=\count190
+\doublecol@number=\count191
+\multicoltolerance=\count192
+\multicolpretolerance=\count193
+\full@width=\dimen269
+\page@free=\dimen270
+\premulticols=\dimen271
+\postmulticols=\dimen272
+\multicolsep=\skip143
+\multicolbaselineskip=\skip144
+\partial@page=\box73
+\last@line=\box74
+\maxbalancingoverflow=\dimen273
+\mult@rightbox=\box75
+\mult@grightbox=\box76
+\mult@gfirstbox=\box77
+\mult@firstbox=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\c@columnbadness=\count194
+\c@finalcolumnbadness=\count195
+\last@try=\dimen274
+\multicolovershoot=\dimen275
+\multicolundershoot=\dimen276
+\mult@nat@firstbox=\box96
+\colbreak@box=\box97
+\mc@col@check@num=\count196
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen277
+\lightrulewidth=\dimen278
+\cmidrulewidth=\dimen279
+\belowrulesep=\dimen280
+\belowbottomsep=\dimen281
+\aboverulesep=\dimen282
+\abovetopsep=\dimen283
+\cmidrulesep=\dimen284
+\cmidrulekern=\dimen285
+\defaultaddspace=\dimen286
+\@cmidla=\count197
+\@cmidlb=\count198
+\@aboverulesep=\dimen287
+\@belowrulesep=\dimen288
+\@thisruleclass=\count199
+\@lastruleclass=\count266
+\@thisrulewidth=\dimen289
+)
+(/usr/share/texlive/texmf-dist/tex/latex/yfonts/yfonts.sty
+Package: yfonts 2003/01/08 v1.3 (WaS)
+)
+*************************************************
+* xeCJK warning: "CJKfamily-redef"
+* 
+* Redefining CJKfamily `\CJKrmdefault' (FandolSong-Regular(0)).
+*************************************************
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'FandolSong-Regular' does not contain script 'CJK'.
+*************************************************
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font FandolSong-Bold/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font FandolSong-Regular/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FandolSong-Regular(1)' created for font 'FandolSong-Regular'
+. with options [Script={CJK},BoldFont={FandolSong-Bold}].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.: <->"FandolSong-Regular/OT:"
+. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
+. <->"FandolSong-Bold/OT:"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: - 'bold italic' (bx/it) with
+. NFSS spec.: <->"FandolSong-Regular/BI/OT:"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+*************************************************
+* xeCJK warning: "CJKfamily-redef"
+* 
+* Redefining CJKfamily `\CJKttdefault' (FandolFang-Regular(0)).
+*************************************************
+(./_minted-full/xcode.pygstyle)
+runsystem(which "pygmentize" && touch "full.aex")...executed.
+
+runsystem(rm "full.aex")...executed.
+
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
+Package: xeCJK-listings 2016/02/10 v3.3.4 xeCJK patch file for listings
+\l__xeCJK_listings_max_char_int=\count267
+\l__xeCJK_listings_flag_int=\count268
+)
+(./full.aux)
+\openout1 = `full.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 89.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 89.
+ (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
+File: t3cmr.fd 2001/12/31 TIPA font definitions
+)
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for LY/yfrak/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for LYG/ygoth/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 89.
+.................................................
+. fontspec info: "setup-math"
+. 
+. Adjusting the maths setup (use [no-math] to avoid this).
+.................................................
+\symlegacymaths=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 89.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 89.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 89.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 89.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 89.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 89.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 89.
+LaTeX Font Info:    Redeclaring math accent \check on input line 89.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 89.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 89.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 89.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 89.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 89.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> EU1/lmr/m/n on input line 89.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 89.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> EU1/lmr/m/n on input line 89.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 89.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> EU1/lmr/m/it on input line 89.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> EU1/lmr/bx/n on input line 89.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 89.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 89.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 89.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> EU1/lmr/bx/it on input line 89.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 89.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 89.
+\AtBeginShipoutBox=\box98
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(42.67912pt, 512.14963pt, 42.67912pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=512.14963pt
+* \textheight=591.5302pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
+* \topmargin=-0.93083pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=115.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\c@lstlisting=\count269
+(./_minted-full/default-pyg-prefix.pygstyle)
+
+LaTeX Font Warning: Font shape `LYG/ygoth/m/n' in size <26.09749> not available
+
+(Font)              size <24.88> substituted on input line 91.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 91.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+] [2
+
+] (./full.toc
+[3]
+
+LaTeX Font Warning: Font shape `EU1/FandolSong-Regular(1)/m/sl' undefined
+(Font)              using `EU1/FandolSong-Regular(1)/m/n' instead on input line
+ 62.
+
+[4])
+\tf@toc=\write6
+\openout6 = `full.toc'.
+
+ (../source.tex (../source/algebra.tex [5] [6]
+Chapter 1.
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'FandolHei-Regular' does not contain script 'CJK'.
+*************************************************
+\g__fontspec_family_FandolHei-Regular_int=\count270
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FandolHei-Regular(0)' created for font 'FandolHei-Regular' with
+. options [Script={CJK},Extension={.otf},BoldFont={FandolHei-Bold}].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.: <->"[FandolHei-Regular.otf]/OT:"
+. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
+. <->"[FandolHei-Bold.otf]/OT:"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+.................................................
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/a
+lgebra/linear-recursion.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f =
+ open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + 
+hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\
+makeatother\\endinput\n \"); f.close();")...executed.
+
+(./full.mintedmd5)
+(./_minted-full/8520780b5af29f20a18bdd1f18530a5b5ad132eb.pygtex
+*************************************************
+* fontspec warning: "script-not-exist-latn"
+* 
+* Font 'STXihei' does not contain script 'CJK'.
+* 'Latin' script used instead.
+*************************************************
+\g__fontspec_family_STXihei_int=\count271
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font STXihei/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font STXihei/BI (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font STXihei/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STXihei(0)' created for font 'STXihei' with options
+. [Script={CJK},AutoFakeBold={4}].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.: <->"STXihei/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
+. <->"STXihei/OT:script=latn;language=DFLT;embolden=4;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+.................................................
+[7
+
+])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/a
+lgebra/FFT_1e9+7.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\
+"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.
+hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeato
+ther\\endinput\n \"); f.close();")...executed.
+
+ (./full.mintedmd5)
+(./_minted-full/eb8898b8701fef734cbbff7b600f53de6ca2cf9b.pygtex [8])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/a
+lgebra/FFT.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"full.
+mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.hexdig
+est() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeatother\\
+endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/64dad20bfaa7c12cd164ed36d2c9aea4894ac161.pygtex [9])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/a
+lgebra/NTT+CRT.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"f
+ull.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.he
+xdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeatoth
+er\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/5ac7e2d66e64465f1a715af7dc4a0b5ffe64a9ce.pygtex [10])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/a
+lgebra/polynomial-inverse.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f
+ = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) 
++ hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"
+\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/7186e4042c410a238631ffd9c28d3ddb21966cd5.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/a
+lgebra/polynomial-divide.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f 
+= open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) +
+ hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\
+\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/d9763029fafd591661f7009e59a61802de14ece8.pygtex [11])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/a
+lgebra/polynomial-expandln.cpp\", \"rb\"); hasher.update(f.read()); f.close(); 
+f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123)
+ + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \
+"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/d3b54e8e6781683ac7dde9b96a1f6eb6996fbaef.pygtex [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/a
+lgebra/FWT.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"full.
+mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.hexdig
+est() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeatother\\
+endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/a7deb1e01cb0bd47417dc0a5738b7c6fcbb0d2b1.pygtex))
+(../source/number-theory.tex [14]
+Chapter 2.
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/biginteger-multiply.cpp\", \"rb\"); hasher.update(f.read()); f.clo
+se(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + ch
+r(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + mac
+ro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+(./full.mintedmd5)
+(./_minted-full/a12550c005953e2f678924c10a00f570b8e6a122.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/extended-euclid.cpp\", \"rb\"); hasher.update(f.read()); f.close()
+; f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(12
+3) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro +
+ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/c96a7982dd1376dc2904a5485638800b187031c2.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/miller-rabin.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f
+ = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) 
++ hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"
+\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/6440998441e1a0c1d9d09caac8d34712edc5790f.pygtex [15
+
+])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/pollard-rho.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f 
+= open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) +
+ hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\
+\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/13ef9f85577fc6282512b722d4fe700a3c03d806.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/CRT.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\
+"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.
+hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeato
+ther\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/2fae332faa1cad2b291d3ed04a8090479c9457bc.pygtex [16])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/CRT-zky.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = op
+en(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + has
+her.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\mak
+eatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/e0b595d1c3fa94c81e2435ccecae6cfff3c92068.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/Pell.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(
+\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher
+.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeat
+other\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/62d8be0cd859b085d07dd6e1d06d59ebe4a70e2e.pygtex
+Underfull \vbox (badness 6461) has occurred while \output is active []
+
+ [17])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/Simpson.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = op
+en(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + has
+her.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\mak
+eatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/aaccb298ea1dccb7353b40fafcd941a6527b1629.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/解一元三次方程.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = op
+en(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + has
+her.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\mak
+eatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/6bca75a06d853f45640db06a7f775594c40264e1.pygtex [18])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/integer-lattice-under-segment.cpp\", \"rb\"); hasher.update(f.read
+()); f.close(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@h
+ash\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatlett
+er\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/c017d1b5d3d0351cfe5c3b90ed49e2b59fa4e5ac.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/线性同余不等式.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = op
+en(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + has
+her.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\mak
+eatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/2a77655e924a9a37dd503487009fee5ea29c50a2.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/EX-BSGS-zzq.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f 
+= open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) +
+ hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\
+\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/0e6122765ecff1a9568264965952dc8411b08d3d.pygtex [19])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/EX-BSGS-zky.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f 
+= open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) +
+ hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\
+\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/19fa42ae583e40320a71bdc30db79942d1db8478.pygtex [20])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/DAC-multiply\", \"rb\"); hasher.update(f.read()); f.close(); f = o
+pen(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + ha
+sher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\ma
+keatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/e53ceb003877fa25fe1fb15012eb38b49dd18e35.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/CnmmodP.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = op
+en(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + has
+her.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\mak
+eatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/5c46b078fe778561febae5d246b644d527ccb501.pygtex [21])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/n
+umber-theory/linear-sieve.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f
+ = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) 
++ hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"
+\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/0ae4b2a8a246f749fc89df1d431a9f3ca819a5e9.pygtex [22]))
+(../source/graph-theory.tex [23] [24
+
+]
+Chapter 3.
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/basic.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(
+\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher
+.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeat
+other\\endinput\n \"); f.close();")...executed.
+
+(./full.mintedmd5)
+(./_minted-full/4a39fa0e3a2183a7c76d70ab149ff4bef5c4b2f2.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/Biconnected-Point-Component -zzq.cpp\", \"rb\"); hasher.update(f.re
+ad()); f.close(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted
+@hash\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatle
+tter\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/09beedfb8442b9467bf96d70ff4b43fc1d6ecf04.pygtex [25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/Biconnected-Edge-Component -zzq.cpp\", \"rb\"); hasher.update(f.rea
+d()); f.close(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@
+hash\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatlet
+ter\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/ceb93bf42a2f88292ac3a45c39d6c259aedf9cb2.pygtex [27])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/biconnected-graph-vertex -jzh.cpp\", \"rb\"); hasher.update(f.read(
+)); f.close(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@ha
+sh\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatlette
+r\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/67438d515113c5f0683edf9d563f55f63b5fd6af.pygtex [28]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/biconnected-graph-edge -jzh.cpp\", \"rb\"); hasher.update(f.read())
+; f.close(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash
+\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\
+" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/b50cb5dcd348d958a11b408415a8e9dde3186a63.pygtex [30])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/two-satisfiability.cpp\", \"rb\"); hasher.update(f.read()); f.close
+(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(
+123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro
+ + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/a7e9f478697ab59399c270c9440b2615bbd8562a.pygtex [31])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/Hopcroft-Karp.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f
+ = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) 
++ hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"
+\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/622c963ebceea9e99e91094d73cbb0f58a18e45f.pygtex [32])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/general-matching.cpp\", \"rb\"); hasher.update(f.read()); f.close()
+; f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(12
+3) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro +
+ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/c97b724db6bfb1bffb9ebb02b35ff58b0a5c870f.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/weighted_blossom.cpp\", \"rb\"); hasher.update(f.read()); f.close()
+; f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(12
+3) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro +
+ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/40dd504c94ff484b73d33f16b12981a4c713225f.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/StoerWagner_O(V^3).cpp\", \"rb\"); hasher.update(f.read()); f.close
+(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(
+123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro
+ + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/5e34b27f34fa8b59676cd87d6f02596433211900.pygtex [40])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/weighted_blossom.cpp\", \"rb\"); hasher.update(f.read()); f.close()
+; f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(12
+3) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro +
+ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/40dd504c94ff484b73d33f16b12981a4c713225f.pygtex [41]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/dominator.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = o
+pen(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + ha
+sher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\ma
+keatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/3525afb4679814898ef0e68297c192c345753c92.pygtex [46]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/Kth-minimum-path.cpp\", \"rb\"); hasher.update(f.read()); f.close()
+; f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(12
+3) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro +
+ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/306604aa8d97efb95858b02266a7bd26e5f11155.pygtex [48]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/最大团搜索.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(
+\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher
+.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeat
+other\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/eb5e573f46f9114a7227fb97ff38bf9ba2090481.pygtex [52])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/极大团计数.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(
+\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher
+.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeat
+other\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/fff7558a09e93eda36fb39735af43b3d150fc800.pygtex [53])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/euler-tour.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = 
+open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + h
+asher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\m
+akeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/885cb30cdb991d2baedd5dfd0a5a687d0f35f5d9.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/g
+raph-theory/minimum_arborescence.cpp\", \"rb\"); hasher.update(f.read()); f.clo
+se(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + ch
+r(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + mac
+ro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/b1990d8b9e2a2ccbe4036fbf7e0f9897c779881e.pygtex [54]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55]))
+(../source/data-structure.tex [56]
+Chapter 4.
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/d
+ata-structure/Kd-tree.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = o
+pen(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + ha
+sher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\ma
+keatother\\endinput\n \"); f.close();")...executed.
+
+(./full.mintedmd5)
+(./_minted-full/462770ba94df28dfd95721b4094eab3dd27bf29c.pygtex [57
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [58]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [59]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/d
+ata-structure/LCT.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(
+\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher
+.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeat
+other\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/ba182dce8ddf5e9b063cc7995333680643a13ef5.pygtex [62])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/d
+ata-structure/fenwicktree_kth.cpp\", \"rb\"); hasher.update(f.read()); f.close(
+); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(1
+23) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro 
++ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/8c5fc3eee6695fcc58b815f579c7b6c4a8adeb9d.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/d
+ata-structure/Treap.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = ope
+n(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hash
+er.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\make
+atother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/aa854baf821907387f6223532b6d22a2c1dbb841.pygtex [63]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [64])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/d
+ata-structure/fhqTreap.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = 
+open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + h
+asher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\m
+akeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/b581106e85cb8dc3be8c529c9249708b4ab3ba25.pygtex [65]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/d
+ata-structure/true.fhqtreap.cpp\", \"rb\"); hasher.update(f.read()); f.close();
+ f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123
+) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + 
+\"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/41789e4ef412e9c0d0e959ff6959e9fe0244e7f2.pygtex [68]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/d
+ata-structure/mo-team-on-tree.cpp\", \"rb\"); hasher.update(f.read()); f.close(
+); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(1
+23) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro 
++ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/db7749f34f720c8d53a45d2d0493238fca1be8fd.pygtex [70])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/d
+ata-structure/virtual-tree.cpp\", \"rb\"); hasher.update(f.read()); f.close(); 
+f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123)
+ + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \
+"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/14a74238ad95be25cdafe85f24b0d1ff3319542a.pygtex))
+(../source/string.tex [71] [72
+
+]
+Chapter 5.
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/s
+tring/manacher.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"f
+ull.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.he
+xdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeatoth
+er\\endinput\n \"); f.close();")...executed.
+
+(./full.mintedmd5)
+(./_minted-full/b3469cd083484781ea7a4fb6e26e65a76a67c1ae.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/s
+tring/PalindromeAutomaton_pointer.cpp\", \"rb\"); hasher.update(f.read()); f.cl
+ose(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + c
+hr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + ma
+cro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/a21046e8265c9715ec6232548c2510f368f7055b.pygtex [73])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/s
+tring/SuffixAutomaton_array.cpp\", \"rb\"); hasher.update(f.read()); f.close();
+ f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123
+) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + 
+\"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/b07ace6e1957ca8aef8ae8723d922864ac43d222.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/s
+tring/SuffixAutomaton_pointer.cpp\", \"rb\"); hasher.update(f.read()); f.close(
+); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(1
+23) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro 
++ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/d4a0440512a2563f3dfff7bdb22126eae5c6a48e.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [75]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/s
+tring/EX_SuffixAutomaton_pointer.cpp\", \"rb\"); hasher.update(f.read()); f.clo
+se(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + ch
+r(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + mac
+ro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/f98f79b20de35cee62aba19b4adb9d6acb525f34.pygtex [77])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/s
+tring/SA.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"full.mi
+ntedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.hexdiges
+t() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeatother\\en
+dinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/78e569f5f2fef824e2938ea831c8e4fd307d70d4.pygtex [78])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/s
+tring/min_express.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(
+\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher
+.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeat
+other\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/5131c17f85d60c6f17356a0133df647774dc6590.pygtex))
+(../source/computational-geometry.tex [79] [80
+
+]
+Chapter 6.
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/c
+omputational-geometry/point.cpp\", \"rb\"); hasher.update(f.read()); f.close();
+ f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123
+) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + 
+\"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+(./full.mintedmd5)
+(./_minted-full/6cc9fd134649c0666dc68a43fe2524f254044411.pygtex [81]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [82])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/c
+omputational-geometry/circle.cpp\", \"rb\"); hasher.update(f.read()); f.close()
+; f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(12
+3) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro +
+ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/a72f44293ddfbad7fbc558e36c04f9c91117f9e6.pygtex [83]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [84])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/c
+omputational-geometry/point-in-polygon.cpp\", \"rb\"); hasher.update(f.read());
+ f.close(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\
+" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\"
+ + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/fa08dbaa0134d85f680ec9abfa51eefbd649b0d7.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/c
+omputational-geometry/mincir.cpp\", \"rb\"); hasher.update(f.read()); f.close()
+; f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(12
+3) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro +
+ \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/41ca046db824d23e59b765d2e7c1a704fba40188.pygtex [85])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/c
+omputational-geometry/halfplaneintersection.cpp\", \"rb\"); hasher.update(f.rea
+d()); f.close(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@
+hash\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatlet
+ter\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/b78e2591f2e37f82e2c91ecd3b4a494761183c95.pygtex [86])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/c
+omputational-geometry/convex-hull.cpp\", \"rb\"); hasher.update(f.read()); f.cl
+ose(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + c
+hr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + ma
+cro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/12bc42016a9d9d617fe3b5ec7bcdb11b4aa8d16f.pygtex [87])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/c
+omputational-geometry/PlayWithConvex.cpp\", \"rb\"); hasher.update(f.read()); f
+.close(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" 
++ chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" +
+ macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/5e748d06d314efbbf8096e4124221b1dbbe024d4.pygtex [88]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [89])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/c
+omputational-geometry/closest-pair-of-points.cpp\", \"rb\"); hasher.update(f.re
+ad()); f.close(); f = open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted
+@hash\" + chr(123) + hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatle
+tter\" + macro + \"\\makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/4158ac8cb2b2d8a73a72660b0845f6bb828cb069.pygtex [90]))
+(../source/hints.tex [91] [92
+
+]
+Chapter 7.
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/h
+ints/input-acceleration.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f =
+ open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + 
+hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\
+makeatother\\endinput\n \"); f.close();")...executed.
+
+(./full.mintedmd5)
+(./_minted-full/36cf09340272682854c92c91033ec8279886e195.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/h
+ints/STL-memory-release.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f =
+ open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + 
+hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\
+makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/f0e30ad4a2189489f2bd4b035ff575bf79cfb6c4.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [93])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/h
+ints/STL-memory-release.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f =
+ open(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + 
+hasher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\
+makeatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/f0e30ad4a2189489f2bd4b035ff575bf79cfb6c4.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/h
+ints/zeller.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"full
+.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.hexdi
+gest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeatother\
+\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/b5df86a184f123dd822569d6c3865c6f053ec892.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/h
+ints/openstack.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"f
+ull.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.he
+xdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeatoth
+er\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/38d03af7df212e73a318d5101e90aceda2c2afb3.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/h
+ints/subset-of-size-k.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = o
+pen(\"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + ha
+sher.hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\ma
+keatother\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/2727a83e4da38e12eb65592b59ef99a7dcf4a8a0.pygtex [94])
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/h
+ints/长方体表面两点最短距离.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\
+"full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.
+hexdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeato
+ther\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/3a93448f6ee5a8bb3a06cd8c304ad0c6e6aac883.pygtex)
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/h
+ints/经纬度求球面最短距离.cpp\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"
+full.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.h
+exdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeatot
+her\\endinput\n \"); f.close();")...executed.
+
+
+(./full.mintedmd5)
+(./_minted-full/5c8aa6c4920600e9ee239aa939a98d674fd7ac63.pygtex)
+Underfull \vbox (badness 5460) has occurred while \output is active []
+
+ [95]
+(../source/hints/Formula.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [96]
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 29.
+
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 42.
+
+
+Underfull \vbox (badness 3209) has occurred while \output is active []
+
+ [97]
+[98] [99]
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+[100])
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+ <use  "../source/hints/Integral.pdf" >
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+
+<use  "../source/hints/Integral.pdf" >
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+
+<use  "../source/hints/Integral.pdf"  page1>
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+
+<use  "../source/hints/Integral.pdf"  page1> [101]
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+
+<use  "../source/hints/Integral.pdf"  page1>
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+
+<use  "../source/hints/Integral.pdf"  page1>
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+
+<use  "../source/hints/Integral.pdf"  page1> [102]
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+
+<use  "../source/hints/Integral.pdf"  page2>
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+
+<use  "../source/hints/Integral.pdf"  page2>
+File: ../source/hints/Integral.pdf Graphic file (type QTm)
+
+<use  "../source/hints/Integral.pdf"  page2> [103]
+\openout5 = `full.mintedcmd'.
+
+runsystem(python -c "import hashlib; hasher = hashlib.sha1(); f = open(\"full.m
+intedcmd\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"../source/h
+ints/template.java\", \"rb\"); hasher.update(f.read()); f.close(); f = open(\"f
+ull.mintedmd5\", \"w\"); macro = \"\\edef\\minted@hash\" + chr(123) + hasher.he
+xdigest() + chr(125) + \"\"; f.write(\"\\makeatletter\" + macro + \"\\makeatoth
+er\\endinput\n \"); f.close();")...executed.
+
+ (./full.mintedmd5)
+(./_minted-full/6a16947851cbf1442d358d0dff2145ee8b797585.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [104])
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf" >
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf" >
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page1>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page1> [105]
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page1>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page1>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page1> [106]
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page2>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page2>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page2> [107]
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page3>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page3>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page3> [108]
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page4>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page4>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page4> [109]
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page5>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page5>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page5> [110]
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page6>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page6>
+File: ../source/hints/biginteger.pdf Graphic file (type QTm)
+
+<use  "../source/hints/biginteger.pdf"  page6> [111]
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf" >
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+ <use  "../source/hints/treemap.pdf" >
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page1>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page1>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page1>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page1>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page1> [112]
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page2>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page2>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page2> [113]
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page3>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page3>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page3> [114]
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page4>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page4>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page4> [115]
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page5>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page5>
+File: ../source/hints/treemap.pdf Graphic file (type QTm)
+
+<use  "../source/hints/treemap.pdf"  page5> [116]))
+runsystem(rm "full.mintedcmd")...executed.
+
+runsystem(rm "full.mintedmd5")...executed.
+
+ (./full.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.21748pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 28286 strings out of 493638
+ 555961 string characters out of 6146796
+ 603256 words of memory out of 5000000
+ 30864 multiletter control sequences out of 15000+600000
+ 21176 words of font info for 130 fonts, out of 8000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 65i,18n,87p,10431b,937s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on full.pdf (116 pages).

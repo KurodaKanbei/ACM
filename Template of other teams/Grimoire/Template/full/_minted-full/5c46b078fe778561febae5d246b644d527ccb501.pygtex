@@ -1,0 +1,36 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{LL} \PYG{n}{prod}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{P}\PYG{p}{;}
+\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{LL}\PYG{p}{,}\PYG{n}{LL}\PYG{o}{\PYGZgt{}} \PYG{n}{comput}\PYG{p}{(}\PYG{n}{LL} \PYG{n}{n}\PYG{p}{,}\PYG{n}{LL} \PYG{n}{p}\PYG{p}{,}\PYG{n}{LL} \PYG{n}{k}\PYG{p}{)\PYGZob{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{n}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{k}{return} \PYG{n}{make\PYGZus{}pair}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{n}{LL} \PYG{n}{ans}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{cnt}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{ans}\PYG{o}{=}\PYG{n}{pow}\PYG{p}{(}\PYG{n}{prod}\PYG{p}{,}\PYG{n}{n}\PYG{o}{/}\PYG{n}{P}\PYG{p}{,}\PYG{n}{P}\PYG{p}{);}
+    \PYG{n}{cnt}\PYG{o}{=}\PYG{n}{n}\PYG{o}{/}\PYG{n}{p}\PYG{p}{;}
+    \PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{LL}\PYG{p}{,}\PYG{n}{LL}\PYG{o}{\PYGZgt{}}\PYG{n}{res}\PYG{o}{=}\PYG{n}{comput}\PYG{p}{(}\PYG{n}{n}\PYG{o}{/}\PYG{n}{p}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{k}\PYG{p}{);}
+    \PYG{n}{cnt}\PYG{o}{+=}\PYG{n}{res}\PYG{p}{.}\PYG{n}{first}\PYG{p}{;}
+    \PYG{n}{ans}\PYG{o}{=}\PYG{n}{ans}\PYG{o}{*}\PYG{n}{res}\PYG{p}{.}\PYG{n}{second}\PYG{o}{\PYGZpc{}}\PYG{n}{P}\PYG{p}{;}
+    \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{n}{n}\PYG{o}{\PYGZpc{}}\PYG{n}{P}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}=}\PYG{n}{n}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}\PYG{k}{if}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{n}{p}\PYG{p}{)\PYGZob{}}
+
+        \PYG{n}{ans}\PYG{o}{=}\PYG{n}{ans}\PYG{o}{*}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{n}{P}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{make\PYGZus{}pair}\PYG{p}{(}\PYG{n}{cnt}\PYG{p}{,}\PYG{n}{ans}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{LL}\PYG{p}{,}\PYG{n}{LL}\PYG{o}{\PYGZgt{}} \PYG{n}{calc}\PYG{p}{(}\PYG{n}{LL} \PYG{n}{n}\PYG{p}{,}\PYG{n}{LL} \PYG{n}{p}\PYG{p}{,}\PYG{n}{LL} \PYG{n}{k}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{prod}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{n}{P}\PYG{o}{=}\PYG{n}{pow}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,}\PYG{n}{k}\PYG{p}{,}\PYG{l+m+mf}{1e18}\PYG{p}{);}
+    \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{P}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}\PYG{k}{if}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{n}{p}\PYG{p}{)}\PYG{n}{prod}\PYG{o}{=}\PYG{n}{prod}\PYG{o}{*}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{n}{P}\PYG{p}{;}
+    \PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{LL}\PYG{p}{,}\PYG{n}{LL}\PYG{o}{\PYGZgt{}} \PYG{n}{res}\PYG{o}{=}\PYG{n}{comput}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{k}\PYG{p}{);}
+\PYG{c+c1}{//  res.second=res.second*pow(p,res.first\PYGZpc{}k,P)\PYGZpc{}P;}
+\PYG{c+c1}{//  res.first\PYGZhy{}=res.first\PYGZpc{}k; }
+    \PYG{k}{return} \PYG{n}{res}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{LL} \PYG{n}{calc}\PYG{p}{(}\PYG{n}{LL} \PYG{n}{n}\PYG{p}{,}\PYG{n}{LL} \PYG{n}{m}\PYG{p}{,}\PYG{n}{LL} \PYG{n}{p}\PYG{p}{,}\PYG{n}{LL} \PYG{n}{k}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{LL}\PYG{p}{,}\PYG{n}{LL}\PYG{o}{\PYGZgt{}}\PYG{n}{A}\PYG{p}{,}\PYG{n}{B}\PYG{p}{,}\PYG{n}{C}\PYG{p}{;}
+    \PYG{n}{LL} \PYG{n}{P}\PYG{o}{=}\PYG{n}{pow}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,}\PYG{n}{k}\PYG{p}{,}\PYG{l+m+mf}{1e18}\PYG{p}{);}
+    \PYG{n}{A}\PYG{o}{=}\PYG{n}{calc}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{k}\PYG{p}{);}
+    \PYG{n}{B}\PYG{o}{=}\PYG{n}{calc}\PYG{p}{(}\PYG{n}{m}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{k}\PYG{p}{);}
+    \PYG{n}{C}\PYG{o}{=}\PYG{n}{calc}\PYG{p}{(}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{n}{m}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{k}\PYG{p}{);}
+    \PYG{n}{LL} \PYG{n}{ans}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{n}{ans}\PYG{o}{=}\PYG{n}{pow}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,}\PYG{n}{A}\PYG{p}{.}\PYG{n}{first}\PYG{o}{\PYGZhy{}}\PYG{n}{B}\PYG{p}{.}\PYG{n}{first}\PYG{o}{\PYGZhy{}}\PYG{n}{C}\PYG{p}{.}\PYG{n}{first}\PYG{p}{,}\PYG{n}{P}\PYG{p}{);}
+    \PYG{n}{ans}\PYG{o}{=}\PYG{n}{ans}\PYG{o}{*}\PYG{n}{A}\PYG{p}{.}\PYG{n}{second}\PYG{o}{\PYGZpc{}}\PYG{n}{P}\PYG{o}{*}\PYG{n}{inv}\PYG{p}{(}\PYG{n}{B}\PYG{p}{.}\PYG{n}{second}\PYG{p}{,}\PYG{n}{P}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{P}\PYG{o}{*}\PYG{n}{inv}\PYG{p}{(}\PYG{n}{C}\PYG{p}{.}\PYG{n}{second}\PYG{p}{,}\PYG{n}{P}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{P}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{ans}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

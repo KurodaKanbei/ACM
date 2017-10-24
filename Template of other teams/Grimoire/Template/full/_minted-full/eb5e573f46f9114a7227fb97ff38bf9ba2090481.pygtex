@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{Int} \PYG{n}{g}\PYG{p}{[][]}\PYG{err}{为图的邻接矩阵。}
+	\PYG{n}{MC}\PYG{p}{(}\PYG{n}{V}\PYG{p}{)}\PYG{err}{表示点集}\PYG{n}{V}\PYG{err}{的最大团}
+	\PYG{err}{令}\PYG{n}{Si}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n}{vi}\PYG{p}{,} \PYG{n}{vi}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{p}{...,} \PYG{n}{vn}\PYG{p}{\PYGZcb{},} \PYG{n}{mc}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{err}{表示}\PYG{n}{MC}\PYG{p}{(}\PYG{n}{Si}\PYG{p}{)}
+	\PYG{err}{倒着算}\PYG{n}{mc}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{err}{，那么显然}\PYG{n}{MC}\PYG{p}{(}\PYG{n}{V}\PYG{p}{)}\PYG{o}{=}\PYG{n}{mc}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}
+	\PYG{err}{此外有}\PYG{n}{mc}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{n}{mc}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{n}{or} \PYG{n}{mc}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{n}{mc}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+m+mi}{1}
+\PYG{k+kt}{void} \PYG{n}{init}\PYG{p}{()\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{;}
+	\PYG{k}{for} \PYG{p}{(}\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}=}\PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{k}{for} \PYG{p}{(}\PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{j}\PYG{o}{\PYGZlt{}=}\PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{j}\PYG{p}{)} \PYG{n}{scanf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d\PYGZdq{}}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{g}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]);}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{dfs}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{size}\PYG{p}{)\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{,} \PYG{n}{k}\PYG{p}{;}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{len}\PYG{p}{[}\PYG{n}{size}\PYG{p}{]}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{size}\PYG{o}{\PYGZgt{}}\PYG{n}{ans}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{ans}\PYG{o}{=}\PYG{n}{size}\PYG{p}{;} \PYG{n}{found}\PYG{o}{=}\PYG{n+nb}{true}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{for} \PYG{p}{(}\PYG{n}{k}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{k}\PYG{o}{\PYGZlt{}}\PYG{n}{len}\PYG{p}{[}\PYG{n}{size}\PYG{p}{]} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n}{found}\PYG{p}{;} \PYG{o}{++}\PYG{n}{k}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{size}\PYG{o}{+}\PYG{n}{len}\PYG{p}{[}\PYG{n}{size}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{k}\PYG{o}{\PYGZlt{}=}\PYG{n}{ans}\PYG{p}{)} \PYG{k}{break}\PYG{p}{;}
+		\PYG{n}{i}\PYG{o}{=}\PYG{n}{list}\PYG{p}{[}\PYG{n}{size}\PYG{p}{][}\PYG{n}{k}\PYG{p}{];}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{size}\PYG{o}{+}\PYG{n}{mc}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZlt{}=}\PYG{n}{ans}\PYG{p}{)} \PYG{k}{break}\PYG{p}{;}
+		\PYG{k}{for} \PYG{p}{(}\PYG{n}{j}\PYG{o}{=}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{len}\PYG{p}{[}\PYG{n}{size}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{n}{len}\PYG{p}{[}\PYG{n}{size}\PYG{p}{];} \PYG{o}{++}\PYG{n}{j}\PYG{p}{)}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{g}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{list}\PYG{p}{[}\PYG{n}{size}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]])} \PYG{n}{list}\PYG{p}{[}\PYG{n}{size}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{len}\PYG{p}{[}\PYG{n}{size}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{++}\PYG{p}{]}\PYG{o}{=}\PYG{n}{list}\PYG{p}{[}\PYG{n}{size}\PYG{p}{][}\PYG{n}{j}\PYG{p}{];}
+		\PYG{n}{dfs}\PYG{p}{(}\PYG{n}{size}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{work}\PYG{p}{()\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{;}
+	\PYG{n}{mc}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]}\PYG{o}{=}\PYG{n}{ans}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}
+	\PYG{k}{for} \PYG{p}{(}\PYG{n}{i}\PYG{o}{=}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i}\PYG{p}{;} \PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{found}\PYG{o}{=}\PYG{n+nb}{false}\PYG{p}{;}
+		\PYG{n}{len}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{for} \PYG{p}{(}\PYG{n}{j}\PYG{o}{=}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{j}\PYG{o}{\PYGZlt{}=}\PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{j}\PYG{p}{)} \PYG{k}{if} \PYG{p}{(}\PYG{n}{g}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{])} \PYG{n}{list}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{len}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{++}\PYG{p}{]}\PYG{o}{=}\PYG{n}{j}\PYG{p}{;}
+		\PYG{n}{dfs}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+		\PYG{n}{mc}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{n}{ans}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{print}\PYG{p}{()\PYGZob{}}
+	\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ans}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{//merge Ax=B and ax=b to A\PYGZsq{}x=B\PYGZsq{}}
+\PYG{n}{LL} \PYG{n+nf}{china}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,}\PYG{k+kt}{int} \PYG{o}{*}\PYG{n}{a}\PYG{p}{,}\PYG{k+kt}{int} \PYG{o}{*}\PYG{n}{m}\PYG{p}{)\PYGZob{}}
+	\PYG{n}{LL} \PYG{n}{M}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{d}\PYG{p}{,}\PYG{n}{x}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{y}\PYG{p}{;}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+		\PYG{n}{M}\PYG{o}{*=}\PYG{n}{m}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+		\PYG{n}{LL} \PYG{n}{w}\PYG{o}{=}\PYG{n}{M}\PYG{o}{/}\PYG{n}{m}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+		\PYG{n}{d}\PYG{o}{=}\PYG{n}{exgcd}\PYG{p}{(}\PYG{n}{m}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{n}{w}\PYG{p}{,}\PYG{n}{d}\PYG{p}{,}\PYG{n}{y}\PYG{p}{);}
+		\PYG{n}{y}\PYG{o}{=}\PYG{p}{(}\PYG{n}{y}\PYG{o}{\PYGZpc{}}\PYG{n}{M}\PYG{o}{+}\PYG{n}{M}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{M}\PYG{p}{;}
+		\PYG{n}{x}\PYG{o}{=}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{n}{y}\PYG{o}{*}\PYG{n}{w}\PYG{o}{\PYGZpc{}}\PYG{n}{M}\PYG{o}{*}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}\PYG{o}{\PYGZpc{}}\PYG{n}{M}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{while}\PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{n}{x}\PYG{o}{+=}\PYG{n}{M}\PYG{p}{;}
+	\PYG{k}{return} \PYG{n}{x}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n+nf}{merge}\PYG{p}{(}\PYG{n}{LL} \PYG{o}{\PYGZam{}}\PYG{n}{A}\PYG{p}{,}\PYG{n}{LL} \PYG{o}{\PYGZam{}}\PYG{n}{B}\PYG{p}{,}\PYG{n}{LL} \PYG{n}{a}\PYG{p}{,}\PYG{n}{LL} \PYG{n}{b}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{LL} \PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{;}
+    \PYG{n}{sol}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{o}{\PYGZhy{}}\PYG{n}{B}\PYG{p}{,}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{);}
+    \PYG{n}{A}\PYG{o}{=}\PYG{n}{lcm}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,}\PYG{n}{a}\PYG{p}{);} 
+    \PYG{n}{B}\PYG{o}{=}\PYG{p}{(}\PYG{n}{a}\PYG{o}{*}\PYG{n}{y}\PYG{o}{+}\PYG{n}{b}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{A}\PYG{p}{;}
+    \PYG{n}{B}\PYG{o}{=}\PYG{p}{(}\PYG{n}{B}\PYG{o}{+}\PYG{n}{A}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{A}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

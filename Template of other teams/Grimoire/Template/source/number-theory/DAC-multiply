@@ -1,0 +1,4 @@
+(a+b)(c+d) = ac+(bc+ad)+bd = 2ac-(a-b)(c-d)+2bd
+
+x = x^m m=(n+1)/2
+(ax+b)(cx+d) = x^2ac + x(bc+ad) + bd = x^2ac + x(ac + bd - (a-b)(c-d)) + bd

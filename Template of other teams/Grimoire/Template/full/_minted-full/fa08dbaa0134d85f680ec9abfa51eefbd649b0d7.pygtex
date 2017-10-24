@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{bool} \PYG{n+nf}{InPoly}\PYG{p}{(}\PYG{n}{P} \PYG{n}{p}\PYG{p}{,}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{P}\PYG{o}{\PYGZgt{}}\PYG{n}{poly}\PYG{p}{)\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{cnt}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{poly}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+		\PYG{n}{P} \PYG{n}{a}\PYG{o}{=}\PYG{n}{poly}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{n}{b}\PYG{o}{=}\PYG{n}{poly}\PYG{p}{[(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{poly}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()];}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{OnLine}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,}\PYG{n}{L}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{)))}
+			\PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+		\PYG{k+kt}{int} \PYG{n}{x}\PYG{o}{=}\PYG{n}{sgn}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{b}\PYG{p}{));}
+		\PYG{k+kt}{int} \PYG{n}{y}\PYG{o}{=}\PYG{n}{sgn}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{p}\PYG{p}{.}\PYG{n}{y}\PYG{p}{);}
+		\PYG{k+kt}{int} \PYG{n}{z}\PYG{o}{=}\PYG{n}{sgn}\PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{p}\PYG{p}{.}\PYG{n}{y}\PYG{p}{);}
+		\PYG{n}{cnt}\PYG{o}{+=}\PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{y}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{0}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{z}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{p}{);}
+		\PYG{n}{cnt}\PYG{o}{\PYGZhy{}=}\PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{0}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{z}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{0}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{y}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n}{cnt}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{//从一个奇度点dfs，sqn即为回路/路径}
+\PYG{c+c1}{//first存点，second存边的编号，正反边编号一致}
+\PYG{c+c1}{//清空cur、used数组}
+\PYG{k+kt}{void} \PYG{n+nf}{getCycle}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{u}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{o}{\PYGZam{}}\PYG{n}{i}\PYG{o}{=}\PYG{n}{cur}\PYG{p}{[}\PYG{n}{u}\PYG{p}{];} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{].}\PYG{n}{size}\PYG{p}{();} \PYG{o}{++} \PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{id} \PYG{o}{=} \PYG{n}{adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{i}\PYG{p}{].}\PYG{n}{second}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{used}\PYG{p}{[}\PYG{n}{id}\PYG{p}{])} \PYG{k}{continue}\PYG{p}{;}
+		\PYG{n}{used}\PYG{p}{[}\PYG{n}{id}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{true}\PYG{p}{;}
+		\PYG{n}{getCycle}\PYG{p}{(}\PYG{n}{adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{i}\PYG{p}{].}\PYG{n}{first}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{n}{sqn}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{u}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

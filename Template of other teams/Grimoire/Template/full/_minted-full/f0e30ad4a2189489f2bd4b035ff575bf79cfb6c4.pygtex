@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{template} \PYG{o}{\PYGZlt{}}\PYG{k}{typename} \PYG{n}{T}\PYG{o}{\PYGZgt{}}
+\PYG{k+kr}{\PYGZus{}\PYGZus{}inline} \PYG{k+kt}{void} \PYG{n}{clear}\PYG{p}{(}\PYG{n}{T}\PYG{o}{\PYGZam{}} \PYG{n}{container}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{container}\PYG{p}{.}\PYG{n}{clear}\PYG{p}{();} \PYG{c+c1}{// 或者删除了一堆元素}
+	\PYG{n}{T}\PYG{p}{(}\PYG{n}{container}\PYG{p}{).}\PYG{n}{swap}\PYG{p}{(}\PYG{n}{container}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

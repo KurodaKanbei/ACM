@@ -1,0 +1,64 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+cm}{/* }
+\PYG{c+cm}{ * EX Suffix Automaton \PYGZhy{} pointer version}
+\PYG{c+cm}{ * SAMSAMSAM? SAMSAMSAM!}
+\PYG{c+cm}{ */}
+
+\PYG{k}{namespace} \PYG{n}{SAM} \PYG{p}{\PYGZob{}}
+	\PYG{k}{struct} \PYG{n}{Node} \PYG{o}{*}\PYG{n}{pool\PYGZus{}pointer}\PYG{p}{;}
+	\PYG{k}{struct} \PYG{n}{Node} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Node} \PYG{o}{*}\PYG{n}{parent}\PYG{p}{,} \PYG{o}{*}\PYG{n}{to}\PYG{p}{[}\PYG{l+m+mi}{26}\PYG{p}{];}
+		\PYG{k+kt}{int} \PYG{n}{step}\PYG{p}{;}
+
+		\PYG{n}{Node}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{step} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{o}{:} \PYG{n}{step}\PYG{p}{(}\PYG{n}{step}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{memset}\PYG{p}{(}\PYG{n}{to}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{to}\PYG{p}{);}
+			\PYG{n}{parent} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+
+		\PYG{k+kt}{void} \PYG{o}{*}\PYG{k}{operator} \PYG{k}{new} \PYG{p}{(}\PYG{k+kt}{size\PYGZus{}t}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{n}{pool\PYGZus{}pointer}\PYG{o}{++}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}} \PYG{n}{pool}\PYG{p}{[}\PYG{l+m+mi}{100005} \PYG{o}{*} \PYG{l+m+mi}{10} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{1}\PYG{p}{],} \PYG{o}{*}\PYG{n}{root}\PYG{p}{,} \PYG{o}{*}\PYG{n}{np}\PYG{p}{;}
+	\PYG{k+kt}{int} \PYG{n}{sam\PYGZus{}len}\PYG{p}{,} \PYG{n}{now\PYGZus{}len}\PYG{p}{;}
+
+	\PYG{k+kt}{void} \PYG{n+nf}{init}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{sam\PYGZus{}len} \PYG{o}{=} \PYG{n}{now\PYGZus{}len} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{n}{pool\PYGZus{}pointer} \PYG{o}{=} \PYG{n}{pool}\PYG{p}{;}
+		\PYG{n}{root} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Node}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kt}{void} \PYG{n+nf}{new\PYGZus{}str}\PYG{p}{()} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// a new string start}
+		\PYG{n}{now\PYGZus{}len} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{n}{np} \PYG{o}{=} \PYG{n}{root}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k+kt}{void} \PYG{n+nf}{extend}\PYG{p}{(}\PYG{k+kt}{char} \PYG{n}{ch}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{static} \PYG{n}{Node} \PYG{o}{*}\PYG{n}{last}\PYG{p}{,} \PYG{o}{*}\PYG{n}{q}\PYG{p}{,} \PYG{o}{*}\PYG{n}{nq}\PYG{p}{;}
+
+		\PYG{k+kt}{int} \PYG{n}{x} \PYG{o}{=} \PYG{n}{ch} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{to}\PYG{p}{[}\PYG{n}{x}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+			\PYG{n}{np} \PYG{o}{=} \PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{to}\PYG{p}{[}\PYG{n}{x}\PYG{p}{];}
+			\PYG{o}{++}\PYG{n}{now\PYGZus{}len}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{n}{last} \PYG{o}{=} \PYG{n}{np}\PYG{p}{;} \PYG{n}{np} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Node}\PYG{p}{(}\PYG{o}{++}\PYG{n}{now\PYGZus{}len}\PYG{p}{);}
+			\PYG{k}{for} \PYG{p}{(;} \PYG{n}{last} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n}{last}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{to}\PYG{p}{[}\PYG{n}{x}\PYG{p}{];} \PYG{n}{last} \PYG{o}{=} \PYG{n}{last}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{parent}\PYG{p}{)}
+				\PYG{n}{last}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{to}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n}{np}\PYG{p}{;}
+			\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{last}\PYG{p}{)} \PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{parent} \PYG{o}{=} \PYG{n}{root}\PYG{p}{;}
+			\PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{n}{q} \PYG{o}{=} \PYG{n}{last}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{to}\PYG{p}{[}\PYG{n}{x}\PYG{p}{];}
+				\PYG{k}{if} \PYG{p}{(}\PYG{n}{q}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{step} \PYG{o}{==} \PYG{n}{last}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{step} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{parent} \PYG{o}{=} \PYG{n}{q}\PYG{p}{;}
+				\PYG{k}{else} \PYG{p}{\PYGZob{}}
+					\PYG{n}{nq} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Node}\PYG{p}{(}\PYG{o}{*}\PYG{n}{q}\PYG{p}{);}
+					\PYG{n}{nq}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{step} \PYG{o}{=} \PYG{n}{last}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{step} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+					\PYG{n}{q}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{parent} \PYG{o}{=} \PYG{n}{np}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{parent} \PYG{o}{=} \PYG{n}{nq}\PYG{p}{;}
+					\PYG{k}{for} \PYG{p}{(;} \PYG{n}{last} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{last}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{to}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{==} \PYG{n}{q}\PYG{p}{;} \PYG{n}{last} \PYG{o}{=} \PYG{n}{last}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{parent}\PYG{p}{)}
+						\PYG{n}{last}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{to}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n}{nq}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+
+		\PYG{n}{sam\PYGZus{}len} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{max}\PYG{p}{(}\PYG{n}{sam\PYGZus{}len}\PYG{p}{,} \PYG{n}{now\PYGZus{}len}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

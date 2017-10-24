@@ -1,0 +1,61 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{typedef} \PYG{n}{std}\PYG{o}{::}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,} \PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{pii}\PYG{p}{;}
+\PYG{c+cp}{\PYGZsh{}define mkpair std::make\PYGZus{}pair}
+
+\PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,} \PYG{n}{m}\PYG{p}{;}
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{G}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{];}
+
+\PYG{k+kt}{int} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{],} \PYG{n}{low}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{],} \PYG{n}{bcc\PYGZus{}id}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{],} \PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{,} \PYG{n}{stamp}\PYG{p}{;}
+\PYG{k+kt}{bool} \PYG{n}{iscut}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{];}
+
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{bcc}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{];} \PYG{c+c1}{// Unnecessary}
+
+\PYG{n}{pii} \PYG{n}{stk}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{];} \PYG{k+kt}{int} \PYG{n}{stk\PYGZus{}top}\PYG{p}{;}
+\PYG{c+c1}{// Use a handwritten structure to get higher efficiency}
+
+\PYG{k+kt}{void} \PYG{n+nf}{Tarjan}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{now}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{fa}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{child} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{o}{++}\PYG{n}{stamp}\PYG{p}{;}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n+nl}{to}\PYG{p}{:} \PYG{n}{G}\PYG{p}{[}\PYG{n}{now}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{to}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+			\PYG{n}{stk}\PYG{p}{[}\PYG{o}{++}\PYG{n}{stk\PYGZus{}top}\PYG{p}{]} \PYG{o}{=} \PYG{n}{mkpair}\PYG{p}{(}\PYG{n}{now}\PYG{p}{,} \PYG{n}{to}\PYG{p}{);} \PYG{o}{++}\PYG{n}{child}\PYG{p}{;}
+			\PYG{n}{Tarjan}\PYG{p}{(}\PYG{n}{to}\PYG{p}{,} \PYG{n}{now}\PYG{p}{);}
+			\PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{(}\PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{],} \PYG{n}{low}\PYG{p}{[}\PYG{n}{to}\PYG{p}{]);}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{low}\PYG{p}{[}\PYG{n}{to}\PYG{p}{]} \PYG{o}{\PYGZgt{}=} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{now}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+				\PYG{n}{iscut}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+				\PYG{n}{bcc}\PYG{p}{[}\PYG{o}{++}\PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{].}\PYG{n}{clear}\PYG{p}{();}
+				\PYG{k}{while} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{n}{pii} \PYG{n}{tmp} \PYG{o}{=} \PYG{n}{stk}\PYG{p}{[}\PYG{n}{stk\PYGZus{}top}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{];}
+					\PYG{k}{if} \PYG{p}{(}\PYG{n}{bcc\PYGZus{}id}\PYG{p}{[}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{first}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+						\PYG{n}{bcc}\PYG{p}{[}\PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{].}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{first}\PYG{p}{);}
+						\PYG{n}{bcc\PYGZus{}id}\PYG{p}{[}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{first}\PYG{p}{]} \PYG{o}{=} \PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{;}
+					\PYG{p}{\PYGZcb{}}
+					\PYG{k}{if} \PYG{p}{(}\PYG{n}{bcc\PYGZus{}id}\PYG{p}{[}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{second}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+						\PYG{n}{bcc}\PYG{p}{[}\PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{].}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{second}\PYG{p}{);}
+						\PYG{n}{bcc\PYGZus{}id}\PYG{p}{[}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{second}\PYG{p}{]} \PYG{o}{=} \PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{;}
+					\PYG{p}{\PYGZcb{}}
+					\PYG{k}{if} \PYG{p}{(}\PYG{n}{tmp}\PYG{p}{.}\PYG{n}{first} \PYG{o}{==} \PYG{n}{now} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{tmp}\PYG{p}{.}\PYG{n}{second} \PYG{o}{==} \PYG{n}{to}\PYG{p}{)}
+						\PYG{k}{break}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{to}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{to} \PYG{o}{!=} \PYG{n}{fa}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{stk}\PYG{p}{[}\PYG{o}{++}\PYG{n}{stk\PYGZus{}top}\PYG{p}{]} \PYG{o}{=} \PYG{n}{mkpair}\PYG{p}{(}\PYG{n}{now}\PYG{p}{,} \PYG{n}{to}\PYG{p}{);}
+			\PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{(}\PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{],} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{to}\PYG{p}{]);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{fa} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{child} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)}
+		\PYG{n}{iscut}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n+nf}{PBCC}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{dfn}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{dfn}\PYG{p}{);}
+	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{low}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{low}\PYG{p}{);}
+	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{iscut}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{iscut}\PYG{p}{);}
+	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{bcc\PYGZus{}id}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{bcc\PYGZus{}id}\PYG{p}{);}
+	\PYG{n}{stamp} \PYG{o}{=} \PYG{n}{bcc\PYGZus{}cnt} \PYG{o}{=} \PYG{n}{stk\PYGZus{}top} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{n}{Tarjan}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

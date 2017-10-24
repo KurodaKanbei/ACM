@@ -1,0 +1,41 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+cm}{/* }
+\PYG{c+cm}{ * EX\PYGZus{}BSGS}
+\PYG{c+cm}{ * a\PYGZca{}x = b (mod p)}
+\PYG{c+cm}{ * p may not be a prime}
+\PYG{c+cm}{ */}
+
+\PYG{n}{ll} \PYG{n+nf}{qpow}\PYG{p}{(}\PYG{n}{ll} \PYG{n}{a}\PYG{p}{,} \PYG{n}{ll} \PYG{n}{x}\PYG{p}{,} \PYG{n}{ll} \PYG{n}{Mod}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{ll} \PYG{n}{res} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+	\PYG{k}{for} \PYG{p}{(;} \PYG{n}{x}\PYG{p}{;} \PYG{n}{x} \PYG{o}{\PYGZgt{}\PYGZgt{}=} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZam{}} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{n}{res} \PYG{o}{=} \PYG{n}{res} \PYG{o}{*} \PYG{n}{a} \PYG{o}{\PYGZpc{}} \PYG{n}{Mod}\PYG{p}{;}
+		\PYG{n}{a} \PYG{o}{=} \PYG{n}{a} \PYG{o}{*} \PYG{n}{a} \PYG{o}{\PYGZpc{}} \PYG{n}{Mod}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n}{res}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{unordered\PYGZus{}map}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,} \PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{mp}\PYG{p}{;}
+
+\PYG{n}{ll} \PYG{n+nf}{exbsgs}\PYG{p}{(}\PYG{n}{ll} \PYG{n}{a}\PYG{p}{,} \PYG{n}{ll} \PYG{n}{b}\PYG{p}{,} \PYG{n}{ll} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{b} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{n}{ll} \PYG{n}{t}\PYG{p}{,} \PYG{n}{d} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{k}{while} \PYG{p}{((}\PYG{n}{t} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{\PYGZus{}\PYGZus{}gcd}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{p}\PYG{p}{))} \PYG{o}{!=} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{b} \PYG{o}{\PYGZpc{}} \PYG{n}{t}\PYG{p}{)} \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{o}{++}\PYG{n}{k}\PYG{p}{,} \PYG{n}{b} \PYG{o}{/=} \PYG{n}{t}\PYG{p}{,} \PYG{n}{p} \PYG{o}{/=} \PYG{n}{t}\PYG{p}{,} \PYG{n}{d} \PYG{o}{=} \PYG{n}{d} \PYG{o}{*} \PYG{p}{(}\PYG{n}{a} \PYG{o}{/} \PYG{n}{t}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{p}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{b} \PYG{o}{==} \PYG{n}{d}\PYG{p}{)} \PYG{k}{return} \PYG{n}{k}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{n}{mp}\PYG{p}{.}\PYG{n}{clear}\PYG{p}{();}
+	\PYG{n}{ll} \PYG{n}{m} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{ceil}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{p}\PYG{p}{));}
+	\PYG{n}{ll} \PYG{n}{a\PYGZus{}m} \PYG{o}{=} \PYG{n}{qpow}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{m}\PYG{p}{,} \PYG{n}{p}\PYG{p}{);}
+	\PYG{n}{ll} \PYG{n}{mul} \PYG{o}{=} \PYG{n}{b}\PYG{p}{;}
+	\PYG{k}{for} \PYG{p}{(}\PYG{n}{ll} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}=} \PYG{n}{m}\PYG{p}{;} \PYG{o}{++}\PYG{n}{j}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{mul} \PYG{o}{=} \PYG{n}{mul} \PYG{o}{*} \PYG{n}{a} \PYG{o}{\PYGZpc{}} \PYG{n}{p}\PYG{p}{;}
+		\PYG{n}{mp}\PYG{p}{[}\PYG{n}{mul}\PYG{p}{]} \PYG{o}{=} \PYG{n}{j}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{for} \PYG{p}{(}\PYG{n}{ll} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{m}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{d} \PYG{o}{=} \PYG{n}{d} \PYG{o}{*} \PYG{n}{a\PYGZus{}m} \PYG{o}{\PYGZpc{}} \PYG{n}{p}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{mp}\PYG{p}{.}\PYG{n}{count}\PYG{p}{(}\PYG{n}{d}\PYG{p}{))} \PYG{k}{return} \PYG{n}{i} \PYG{o}{*} \PYG{n}{m} \PYG{o}{\PYGZhy{}} \PYG{n}{mp}\PYG{p}{[}\PYG{n}{d}\PYG{p}{]} \PYG{o}{+} \PYG{n}{k}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

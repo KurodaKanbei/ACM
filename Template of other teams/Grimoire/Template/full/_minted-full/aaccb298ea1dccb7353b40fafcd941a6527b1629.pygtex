@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{// 三次函数，两倍精度拟合}
+\PYG{c+c1}{// $error = \frac{(r - l)^5}{6480}|f^{(4)}|$}
+\PYG{c+c1}{// $\int_{a}^{b} f(x) \, dx \approx \frac{(b-a)}{8}\left[f(a) + 3f\left(\frac{2a+b}{3}\right) + 3f\left(\frac{a+2b}{3}\right) + f(b)\right]\, $}
+\PYG{c+c1}{// 三次函数拟合 $error = \frac{1}{90}{\frac{(r-l)}{2}}^5|f^{(4)}|$}
+\PYG{n}{d} \PYG{n+nf}{simpson}\PYG{p}{(}\PYG{n}{d} \PYG{n}{fl}\PYG{p}{,}\PYG{n}{d} \PYG{n}{fr}\PYG{p}{,}\PYG{n}{d} \PYG{n}{fmid}\PYG{p}{,}\PYG{n}{d} \PYG{n}{l}\PYG{p}{,}\PYG{n}{d} \PYG{n}{r}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{p}{(}\PYG{n}{fl}\PYG{o}{+}\PYG{n}{fr}\PYG{o}{+}\PYG{l+m+mf}{4.0}\PYG{o}{*}\PYG{n}{fmid}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{r}\PYG{o}{\PYGZhy{}}\PYG{n}{l}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mf}{6.0}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+\PYG{n}{d} \PYG{n+nf}{rsimpson}\PYG{p}{(}\PYG{n}{d} \PYG{n}{slr}\PYG{p}{,}\PYG{n}{d} \PYG{n}{fl}\PYG{p}{,}\PYG{n}{d} \PYG{n}{fr}\PYG{p}{,}\PYG{n}{d} \PYG{n}{fmid}\PYG{p}{,}\PYG{n}{d} \PYG{n}{l}\PYG{p}{,}\PYG{n}{d} \PYG{n}{r}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{d} \PYG{n}{mid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{l}\PYG{o}{+}\PYG{n}{r}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n}{fml} \PYG{o}{=} \PYG{n}{f}\PYG{p}{((}\PYG{n}{l}\PYG{o}{+}\PYG{n}{mid}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{n}{fmr} \PYG{o}{=} \PYG{n}{f}\PYG{p}{((}\PYG{n}{mid}\PYG{o}{+}\PYG{n}{r}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{);}
+	\PYG{n}{d} \PYG{n}{slm} \PYG{o}{=} \PYG{n}{simpson}\PYG{p}{(}\PYG{n}{fl}\PYG{p}{,}\PYG{n}{fmid}\PYG{p}{,}\PYG{n}{fml}\PYG{p}{,}\PYG{n}{l}\PYG{p}{,}\PYG{n}{mid}\PYG{p}{);}
+	\PYG{n}{d} \PYG{n}{smr} \PYG{o}{=} \PYG{n}{simpson}\PYG{p}{(}\PYG{n}{fmid}\PYG{p}{,}\PYG{n}{fr}\PYG{p}{,}\PYG{n}{fmr}\PYG{p}{,}\PYG{n}{mid}\PYG{p}{,}\PYG{n}{r}\PYG{p}{);}
+	\PYG{k}{if}\PYG{p}{(}\PYG{n}{fabs}\PYG{p}{(}\PYG{n}{slr} \PYG{o}{\PYGZhy{}} \PYG{n}{smr} \PYG{o}{\PYGZhy{}} \PYG{n}{slm}\PYG{p}{)} \PYG{o}{/} \PYG{n}{slr} \PYG{o}{\PYGZlt{}} \PYG{n}{eps}\PYG{p}{)}\PYG{k}{return} \PYG{n}{slm} \PYG{o}{+} \PYG{n}{smr}\PYG{p}{;}
+	\PYG{k}{return} \PYG{n}{rsimpson}\PYG{p}{(}\PYG{n}{slm}\PYG{p}{,}\PYG{n}{fl}\PYG{p}{,}\PYG{n}{fmid}\PYG{p}{,}\PYG{n}{fml}\PYG{p}{,}\PYG{n}{l}\PYG{p}{,}\PYG{n}{mid}\PYG{p}{)}\PYG{o}{+}
+		\PYG{n}{rsimpson}\PYG{p}{(}\PYG{n}{smr}\PYG{p}{,}\PYG{n}{fmid}\PYG{p}{,}\PYG{n}{fr}\PYG{p}{,}\PYG{n}{fmr}\PYG{p}{,}\PYG{n}{mid}\PYG{p}{,}\PYG{n}{r}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,52 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,} \PYG{n}{m}\PYG{p}{;}
+\PYG{k+kt}{int} \PYG{n}{head}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{],} \PYG{n}{nxt}\PYG{p}{[}\PYG{n}{MAXM} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{to}\PYG{p}{[}\PYG{n}{MAXM} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{ed}\PYG{p}{;}
+\PYG{c+c1}{// Opposite edge exists, set head[] to \PYGZhy{}1.}
+
+\PYG{k+kt}{int} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{],} \PYG{n}{low}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{],} \PYG{n}{bcc\PYGZus{}id}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{],} \PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{,} \PYG{n}{stamp}\PYG{p}{;}
+\PYG{k+kt}{bool} \PYG{n}{isbridge}\PYG{p}{[}\PYG{n}{MAXM} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{vis}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{];}
+
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{bcc}\PYG{p}{[}\PYG{n}{MAXN}\PYG{p}{];}
+
+\PYG{k+kt}{void} \PYG{n+nf}{Tarjan}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{now}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{fa}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{o}{++}\PYG{n}{stamp}\PYG{p}{;}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{head}\PYG{p}{[}\PYG{n}{now}\PYG{p}{];} \PYG{o}{\PYGZti{}}\PYG{n}{i}\PYG{p}{;} \PYG{n}{i} \PYG{o}{=} \PYG{n}{nxt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{to}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]])} \PYG{p}{\PYGZob{}}
+			\PYG{n}{Tarjan}\PYG{p}{(}\PYG{n}{to}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{now}\PYG{p}{);}
+			\PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{(}\PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{],} \PYG{n}{low}\PYG{p}{[}\PYG{n}{to}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]);}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{low}\PYG{p}{[}\PYG{n}{to}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]} \PYG{o}{\PYGZgt{}} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{now}\PYG{p}{])}
+				\PYG{n}{isbridge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{isbridge}\PYG{p}{[}\PYG{n}{i} \PYG{o}{\PYGZca{}} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{to}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]} \PYG{o}{\PYGZlt{}} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{to}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{fa}\PYG{p}{)}
+			\PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{(}\PYG{n}{low}\PYG{p}{[}\PYG{n}{now}\PYG{p}{],} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{to}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n+nf}{DFS}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{now}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{vis}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+	\PYG{n}{bcc\PYGZus{}id}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{=} \PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{;}
+	\PYG{n}{bcc}\PYG{p}{[}\PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{].}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{now}\PYG{p}{);}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{head}\PYG{p}{[}\PYG{n}{now}\PYG{p}{];} \PYG{o}{\PYGZti{}}\PYG{n}{i}\PYG{p}{;} \PYG{n}{i} \PYG{o}{=} \PYG{n}{nxt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{isbridge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{k}{continue}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{vis}\PYG{p}{[}\PYG{n}{to}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]])} \PYG{n}{DFS}\PYG{p}{(}\PYG{n}{to}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n+nf}{EBCC}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{dfn}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{dfn}\PYG{p}{);}
+	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{low}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{low}\PYG{p}{);}
+	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{isbridge}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{isbridge}\PYG{p}{);}
+	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{bcc\PYGZus{}id}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{bcc\PYGZus{}id}\PYG{p}{);}
+	\PYG{n}{bcc\PYGZus{}cnt} \PYG{o}{=} \PYG{n}{stamp} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{n}{Tarjan}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+
+	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{vis}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof} \PYG{n}{vis}\PYG{p}{);}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{vis}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+			\PYG{o}{++}\PYG{n}{bcc\PYGZus{}cnt}\PYG{p}{;}
+			\PYG{n}{DFS}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

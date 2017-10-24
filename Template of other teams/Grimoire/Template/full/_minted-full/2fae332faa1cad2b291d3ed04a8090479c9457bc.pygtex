@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{fix}\PYG{p}{(}\PYG{n}{LL} \PYG{o}{\PYGZam{}}\PYG{n}{x}\PYG{p}{,} \PYG{n}{LL} \PYG{n}{y}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{x} \PYG{o}{=} \PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZpc{}} \PYG{n}{y} \PYG{o}{+} \PYG{n}{y}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{y}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{bool} \PYG{n+nf}{solve}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{LL}\PYG{p}{,} \PYG{n}{LL}\PYG{o}{\PYGZgt{}} \PYG{n}{a}\PYG{p}{[],}
+                  \PYG{n}{std}\PYG{o}{::}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{LL}\PYG{p}{,} \PYG{n}{LL}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZam{}}\PYG{n}{ans}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{ans} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{make\PYGZus{}pair}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{);}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{LL} \PYG{n}{num}\PYG{p}{,} \PYG{n}{y}\PYG{p}{;}
+		\PYG{n}{euclid}\PYG{p}{(}\PYG{n}{ans}\PYG{p}{.}\PYG{n}{second}\PYG{p}{,} \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{second}\PYG{p}{,} \PYG{n}{num}\PYG{p}{,} \PYG{n}{y}\PYG{p}{);}
+		\PYG{n}{LL} \PYG{n}{divisor} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{\PYGZus{}\PYGZus{}gcd}\PYG{p}{(}\PYG{n}{ans}\PYG{p}{.}\PYG{n}{second}\PYG{p}{,} \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{second}\PYG{p}{);}
+		\PYG{k}{if} \PYG{p}{((}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{first} \PYG{o}{\PYGZhy{}} \PYG{n}{ans}\PYG{p}{.}\PYG{n}{first}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{divisor}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{n}{num} \PYG{o}{*=} \PYG{p}{(}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{first} \PYG{o}{\PYGZhy{}} \PYG{n}{ans}\PYG{p}{.}\PYG{n}{first}\PYG{p}{)} \PYG{o}{/} \PYG{n}{divisor}\PYG{p}{;}
+		\PYG{n}{fix}\PYG{p}{(}\PYG{n}{num}\PYG{p}{,} \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{second}\PYG{p}{);}
+		\PYG{n}{ans}\PYG{p}{.}\PYG{n}{first} \PYG{o}{+=} \PYG{n}{ans}\PYG{p}{.}\PYG{n}{second} \PYG{o}{*} \PYG{n}{num}\PYG{p}{;}
+		\PYG{n}{ans}\PYG{p}{.}\PYG{n}{second} \PYG{o}{*=} \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{second} \PYG{o}{/} \PYG{n}{divisor}\PYG{p}{;} 
+		\PYG{n}{fix}\PYG{p}{(}\PYG{n}{ans}\PYG{p}{.}\PYG{n}{first}\PYG{p}{,} \PYG{n}{ans}\PYG{p}{.}\PYG{n}{second}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
