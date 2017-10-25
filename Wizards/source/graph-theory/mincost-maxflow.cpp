@@ -65,10 +65,10 @@ int solve()
 
     while(SPFA())
     {
-        int f = back(T, inf);
+        int flow = back(T, inf);
 
-        mincost += dist[T] * f;
-        maxflow += f;
+        mincost += dist[T] * flow;
+        maxflow += flow;
     }
 
     return mincost;
