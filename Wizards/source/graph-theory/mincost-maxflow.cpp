@@ -53,12 +53,6 @@ int back(int x,int flow)
 	{
 		flow = back(edge[from[x] ^ 1].v, std::min(flow, edge[from[x]].cap));
 		
-        if(!flag[x])
-        {
-            addnode(set[x]);
-            flag[x] = true;
-        }
-        
 		edge[from[x]].cap -= flow;
 		edge[from[x] ^ 1].cap += flow;
 	}
