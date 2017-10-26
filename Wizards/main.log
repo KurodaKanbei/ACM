@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.15)  26 OCT 2017 17:40
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.15)  26 OCT 2017 18:58
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2030,23 +2030,23 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 99.
 
-) (./main.toc)
-\tf@toc=\write6
-\openout6 = `main.toc'.
-
- [1
-
-] (./source.tex (./source/number-theory.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
-
+) (./main.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [1
+
+])
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+ [2]
+(./source.tex (./source/number-theory.tex
 (./_minted-main/default-pyg-prefix.pygstyle) (./_minted-main/xcode.pygstyle)
 (./_minted-main/3BFCF6D6DF29C641DA3778F1725C4FFA364FE131EAF292715EEF0B63283C77E
 1.pygtex
@@ -2139,7 +2139,7 @@ Overfull \hbox (43.63536pt too wide) in paragraph at lines 18--18
 (./_minted-main/6C3057F2DB9EDCC100F1ED17C2A743DF364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/5C975FDC3AFE3FECFCE1C4A45AEFD5257555BD1B672EA4FE3EB320D14CDBAF3
-7.pygtex [2]
+7.pygtex [3]
 Overfull \hbox (102.43573pt too wide) in paragraph at lines 26--26
 []\TU/Isotype(0)/m/n/10 ([][]p[][].[][]pow[][]([][]2[][]).[][]subtract[][]([][]
 N[][].[][]multiply[][]([][]q[][].[][]pow[][]([][]2[][]))).[][]compareTo[][]([][
@@ -2154,7 +2154,7 @@ N[][].[][]multiply[][]([][]q[][].[][]pow[][]([][]2[][]))).[][]compareTo[][]([][
 (./_minted-main/FEEEF54E30B8D9DB36680882DCF3EEE3364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/5D4FD3405B6FEA1FC9078C9E48E033C0364FE131EAF292715EEF0B63283C77E
-1.pygtex [3])
+1.pygtex [4])
 (./_minted-main/EF7A6ABD5A77CB56BA2AF29138B53CAB364FE131EAF292715EEF0B63283C77E
 1.pygtex
 Overfull \hbox (22.6354pt too wide) in paragraph at lines 33--33
@@ -2165,30 +2165,30 @@ inv[]([]B[].[]second[],[]P[])[]%[][]P[][]*[][]inv[]([]C[].[]second[],[]P[])[]%[
 
 )
 (./_minted-main/A2ECF1F72444C53F7BC0051A3E620657364FE131EAF292715EEF0B63283C77E
-1.pygtex [4])
+1.pygtex [5])
 (./_minted-main/528997934F7328E5372C922CB9263DA9364FE131EAF292715EEF0B63283C77E
 1.pygtex)) (./source/algebra.tex
 (./_minted-main/0E91F8A02BDDCFA8B5A58370A9231028364FE131EAF292715EEF0B63283C77E
-1.pygtex) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex [5])
+1.pygtex) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex [6])
 (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
 (./_minted-main/DB1F63A6A410C52C7A35E9F9A7AB1975364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/A8771C2DCD9DC309F88BBD1FBDFC568F364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/06CC42F25F4192C07487BA1FF24C9F5F364FE131EAF292715EEF0B63283C77E
-1.pygtex [6]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
+1.pygtex [7]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
 (./_minted-main/7FF0F2696A0081A90BC573E26230BEBD364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/20BF1398FFE370FDA80548A85930A9F5364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/8DE7059FE99729AE7FF7DE4D877FC8EA364FE131EAF292715EEF0B63283C77E
-1.pygtex [7])) (./source/geometry.tex
+1.pygtex [8])) (./source/geometry.tex
 (./_minted-main/ABC25B1DC0D488A2DD5F40462C910BFF364FE131EAF292715EEF0B63283C77E
-1.pygtex [8])
-(./_minted-main/C903EFA9BF0C035D67D26708CDC67E5B364FE131EAF292715EEF0B63283C77E
 1.pygtex [9])
+(./_minted-main/C903EFA9BF0C035D67D26708CDC67E5B364FE131EAF292715EEF0B63283C77E
+1.pygtex [10])
 (./_minted-main/3B78EF130884853D44E8F93416516678364FE131EAF292715EEF0B63283C77E
-1.pygtex [10] [11]
+1.pygtex [11] [12]
 Overfull \hbox (68.83557pt too wide) in paragraph at lines 255--255
 []\TU/Isotype(0)/m/n/10 SegmentToSegment[]([]P[][[]yminP[]],[]P[][[]yminP[][]+[
 ][]1[]],[]Q[][[]ymaxQ[]],[]Q[][[]ymaxQ[][]+[][]1[]]);|  
@@ -2198,32 +2198,32 @@ Overfull \hbox (68.83557pt too wide) in paragraph at lines 255--255
 (./_minted-main/2E66A7A846E72AD45D0FA668E6BAC50A364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/81E951BBB1B11C0E69E9AC5362693B8C364FE131EAF292715EEF0B63283C77E
-1.pygtex [12])
+1.pygtex [13])
 (./_minted-main/D5E9C39EC716D61164B64880B96EC3CC364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/D7948D6499297F1FBAF6F9F19582F85B364FE131EAF292715EEF0B63283C77E
-1.pygtex [13])
+1.pygtex [14])
 (./_minted-main/1BC7CA2BF7F3D65B27328F161C9285EA364FE131EAF292715EEF0B63283C77E
-1.pygtex
+1.pygtex [15]
 Overfull \hbox (5.83533pt too wide) in paragraph at lines 74--74
 []\TU/Isotype(0)/m/n/10 sqrt[]([]di2[]([]x[],[]y[])[]*[][]di2[]([]y[],[]z[])[]*
 [][]di2[]([]z[],[]x[]))[]/[][]fabs[]([]x[][]*[][]y[][]+[][]y[][]*[][]z[][]+[][]
 z[][]*[][]x[])[]/[][]2[];|  
  []
 
-[14])
+)
 (./_minted-main/51F2EDC179B6AE0914239D2D188949FD364FE131EAF292715EEF0B63283C77E
-1.pygtex [15]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
+1.pygtex [16]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
 (./_minted-main/F88B6C65E6C9E065F51DBFA3614CFA5D364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/71A67580D697678433628CB667D3A0E0364FE131EAF292715EEF0B63283C77E
-1.pygtex [16])
+1.pygtex [17])
 (./_minted-main/79503B31C465BCA96B6F4987964CBDA9364FE131EAF292715EEF0B63283C77E
-1.pygtex [17])) (./source/string.tex
+1.pygtex [18])) (./source/string.tex
 (./_minted-main/2E1840EEC99CFB0F0325215BFB095F93364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/97B2407A6FA5D4B0182FAB4865FD351E364FE131EAF292715EEF0B63283C77E
-1.pygtex [18])
+1.pygtex [19])
 (./_minted-main/A6296BFF3CFD1F84233F8E4192EB6DE0364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/FDF75CEBB1BFE9BA1D5C12183F5C3421364FE131EAF292715EEF0B63283C77E
@@ -2231,212 +2231,39 @@ z[][]*[][]x[])[]/[][]2[];|
 (./_minted-main/428A85A67563F359A690360C5026F062364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/13A052AC626FCEBFB1DE408D361E96D3364FE131EAF292715EEF0B63283C77E
-1.pygtex [19]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex))
+1.pygtex [20]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex))
 (./source/data-structure.tex
 (./_minted-main/FDF64B951CB2810A99E70E8B0FF2A4B0364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/A62CEBDCA024547436942070C4A083B8364FE131EAF292715EEF0B63283C77E
-1.pygtex [20])
-(./_minted-main/0C775C3D4B5768A5D4C8A7400E37F17B364FE131EAF292715EEF0B63283C77E
 1.pygtex [21])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/spaly
-.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.
-path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); f
-vstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = f
-vstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x)))
- for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/55A559E2A38B338374585BF8376BF418364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
-(./_minted-main/55A559E2A38B338374585BF8376BF418364FE131EAF292715EEF0B63283C77E
+(./_minted-main/0C775C3D4B5768A5D4C8A7400E37F17B364FE131EAF292715EEF0B63283C77E
 1.pygtex [22])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/link-
-cut-tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = 
-open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UT
-F8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 
-0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".j
-oin(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/49AF97D881D70502A4690BF889DC61BD364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+(./_minted-main/55A559E2A38B338374585BF8376BF418364FE131EAF292715EEF0B63283C77E
+1.pygtex [23])
 (./_minted-main/49AF97D881D70502A4690BF889DC61BD364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/mo'al
-ogorithm-on-tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close
-(); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encod
-ing=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum !=
- 0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.deden
-t(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...execute
-d.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/7AAC22BD05D5DA9AD6DF3C2431C1D393364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/7AAC22BD05D5DA9AD6DF3C2431C1D393364FE131EAF292715EEF0B63283C77E
-1.pygtex [23])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/cdq.c
-pp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.pa
-th.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvs
-tartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvs
-topnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) f
-or x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/782CB10B025DBA5924C36B36C8438DC1364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+1.pygtex [24])
 (./_minted-main/782CB10B025DBA5924C36B36C8438DC1364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/gener
-al-binary.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f =
- open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"U
-TF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else
- 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".
-join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/D316469FAFF2A6D83A4B13C422FADEF6364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/D316469FAFF2A6D83A4B13C422FADEF6364FE131EAF292715EEF0B63283C77E
-1.pygtex [24])) (./source/graph-theory.tex
+1.pygtex [25])) (./source/graph-theory.tex
 (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/2-sat-t
-arjan.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = ope
-n(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\
-"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; 
-e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join
-(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/CAD0268BF784BD3D08EB9D8F4B3580C0364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/CAD0268BF784BD3D08EB9D8F4B3580C0364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/KM.cpp\
-")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.
-expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstar
-tnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstop
-num if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for 
-x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/9E4C8AB6E3627E966BB945EB6A0AE125364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/9E4C8AB6E3627E966BB945EB6A0AE125364FE131EAF292715EEF0B63283C77E
-1.pygtex [25])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/biconne
-cted-graph-vertex.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.clos
-e(); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", enco
-ding=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum !
-= 0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dede
-nt(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...execut
-ed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/18833E22428BE4F6338737EED58F31D3364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+1.pygtex [26])
 (./_minted-main/18833E22428BE4F6338737EED58F31D3364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/biconne
-cted-graph-edge.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(
-); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encodi
-ng=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 
-0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent
-(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed
-.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/25B2DCB6EADB4BE94E4516B1954929E9364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/25B2DCB6EADB4BE94E4516B1954929E9364FE131EAF292715EEF0B63283C77E
-1.pygtex [26])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/optimum
--branching.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f 
-= open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"
-UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 els
-e 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\"
-.join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/F15CF6C60B60111A93DB03C65B21DC5E364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+1.pygtex [27])
 (./_minted-main/F15CF6C60B60111A93DB03C65B21DC5E364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/blossom
--algorithm.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f 
-= open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"
-UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 els
-e 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\"
-.join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/2167B175259CDB9C9D1ED97ED5C03943364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/2167B175259CDB9C9D1ED97ED5C03943364FE131EAF292715EEF0B63283C77E
-1.pygtex [27])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/dominat
-or-tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = o
-pen(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF
-8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0
-; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".jo
-in(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/EF5B9FE36095C42D26FCF52DE3D8DBB5364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+1.pygtex [28])
 (./_minted-main/EF5B9FE36095C42D26FCF52DE3D8DBB5364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/stoer-w
-agner-algorithm.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(
-); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encodi
-ng=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 
-0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent
-(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed
-.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/C9ABEAC1E2B5E499A6DFEA3B3D290240364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/C9ABEAC1E2B5E499A6DFEA3B3D290240364FE131EAF292715EEF0B63283C77E
 1.pygtex
 Overfull \hbox (52.03564pt too wide) in paragraph at lines 32--32
@@ -2445,125 +2272,21 @@ Overfull \hbox (52.03564pt too wide) in paragraph at lines 32--32
 ][[]i[]]];|  
  []
 
-)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/maxcliq
-ue.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(o
-s.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\");
- fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e =
- fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x)
-)) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/D08A2628F69A18766D6AB6E419903EFD364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+[29])
 (./_minted-main/D08A2628F69A18766D6AB6E419903EFD364FE131EAF292715EEF0B63283C77E
-1.pygtex [28]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/Steiner
--Tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = ope
-n(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\
-"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; 
-e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join
-(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/80942DBBEC99CD6AC7A18C0A859B757F364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+1.pygtex) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
 (./_minted-main/80942DBBEC99CD6AC7A18C0A859B757F364FE131EAF292715EEF0B63283C77E
-1.pygtex [29])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/mirage-
-tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open
-(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"
-); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e
- = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(
-x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/239156FED46642F21D048FF2AF41A0E5364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+1.pygtex [30])
 (./_minted-main/239156FED46642F21D048FF2AF41A0E5364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/vertex-
-partition.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f =
- open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"U
-TF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else
- 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".
-join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/C086113364151457543B5859B1AED2AD364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/C086113364151457543B5859B1AED2AD364FE131EAF292715EEF0B63283C77E
-1.pygtex [30])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/dinic.c
-pp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.pa
-th.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvs
-tartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvs
-topnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) f
-or x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/504EC836FAAAD1AD05FF17B03582F83F364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+1.pygtex [31])
 (./_minted-main/504EC836FAAAD1AD05FF17B03582F83F364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/mincost
--maxflow.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = 
-open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UT
-F8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 
-0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".j
-oin(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/6ECD7EDE1FC14B1981277651F0D50534364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/6ECD7EDE1FC14B1981277651F0D50534364FE131EAF292715EEF0B63283C77E
-1.pygtex [31])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/zkw-cos
-t-flow.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = op
-en(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8
-\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0;
- e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".joi
-n(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/EB2991D571E970AFC5030503E6506A2F364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+1.pygtex [32])
 (./_minted-main/EB2991D571E970AFC5030503E6506A2F364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/GH-tree
-.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.
-path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); f
-vstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = f
-vstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x)))
- for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/F74A60F592F377B6137AA6E48C17BE1E364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/F74A60F592F377B6137AA6E48C17BE1E364FE131EAF292715EEF0B63283C77E
 1.pygtex
 Overfull \hbox (14.23537pt too wide) in paragraph at lines 12--12
@@ -2585,58 +2308,19 @@ Overfull \hbox (31.03543pt too wide) in paragraph at lines 19--19
 nt[];|  
  []
 
-[32]
+[33]
 Overfull \hbox (26.83539pt too wide) in paragraph at lines 81--81
 []\TU/Isotype(0)/m/n/10 ans[][[]i[]][[]j[]][]=[][]ans[][[]j[]][[]i[]][]=[][]min
 []([]ans[][[]i[]][[]j[]],[]flow[]);|  
  []
 
 )) (./source/others.tex
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/exact.cpp\"))
-, \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.exp
-anduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnu
-m = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum
- if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x i
-n (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/3474C6185ABD0355AB4424FFD2D5B6BD364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/3474C6185ABD0355AB4424FFD2D5B6BD364FE131EAF292715EEF0B63283C77E
-1.pygtex [33])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/rader.cpp\"))
-, \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.exp
-anduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnu
-m = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum
- if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x i
-n (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/AD649595CAEF15A0209C9BFE24B3FD8F364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
-(./_minted-main/AD649595CAEF15A0209C9BFE24B3FD8F364FE131EAF292715EEF0B63283C77E
 1.pygtex [34])
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/optimize.cpp\
-")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.
-expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstar
-tnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstop
-num if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for 
-x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/DDECFEC7E0D782170CC25CA0B24A4186364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+(./_minted-main/AD649595CAEF15A0209C9BFE24B3FD8F364FE131EAF292715EEF0B63283C77E
+1.pygtex [35])
 (./_minted-main/DDECFEC7E0D782170CC25CA0B24A4186364FE131EAF292715EEF0B63283C77E
-1.pygtex [35]
+1.pygtex [36]
 Overfull \hbox (85.63562pt too wide) in paragraph at lines 30--30
 \TU/Isotype(0)/m/n/10 ([]double[])([]sum[][[]k[]][]*[][]sum[][[]k[]][]-[][]sum[
 ][[]j[]][]*[][]sum[][[]j[]][]+[][]g[][[]j[]][]-[][]g[][[]k[]])[]/[]([]double[])
@@ -2657,19 +2341,6 @@ Overfull \hbox (26.83543pt too wide) in paragraph at lines 39--39
  []
 
 )
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/dicision.cpp\
-")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.
-expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstar
-tnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstop
-num if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for 
-x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/CD948BA6BBF385E75EECC933030CFCD5364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/CD948BA6BBF385E75EECC933030CFCD5364FE131EAF292715EEF0B63283C77E
 1.pygtex
 Overfull \hbox (77.23558pt too wide) in paragraph at lines 55--55
@@ -2678,19 +2349,6 @@ Overfull \hbox (77.23558pt too wide) in paragraph at lines 55--55
  []
 
 )
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/zellers-congr
-uence.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = ope
-n(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\
-"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; 
-e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join
-(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/D253784B5455BF7D6C085019BBD55D56364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/D253784B5455BF7D6C085019BBD55D56364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 Underfull \hbox (badness 10000) in paragraph at lines 14--16
@@ -2698,111 +2356,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--16
 /10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ) =
  []
 
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/mink.cpp\")),
- \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.expa
-nduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnum
- = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum 
-if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x in
- (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/A72615169703A1CDA8B1D51C6CDE4212364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+[37]
 (./_minted-main/A72615169703A1CDA8B1D51C6CDE4212364FE131EAF292715EEF0B63283C77E
-1.pygtex [36])) (./source/tricks.tex
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/truly-release
--container-space.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close
-(); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encod
-ing=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum !=
- 0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.deden
-t(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...execute
-d.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/5353B3D21EF353777437E0C55D5F41AB364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
+1.pygtex)) (./source/tricks.tex
 (./_minted-main/5353B3D21EF353777437E0C55D5F41AB364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/O1-multiply-m
-od.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(o
-s.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\");
- fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e =
- fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x)
-)) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/57B5E402721587AB3A22E549FDD3EFA1364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/57B5E402721587AB3A22E549FDD3EFA1364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/unbeatable-in
-put-acceleration.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close
-(); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encod
-ing=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum !=
- 0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.deden
-t(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...execute
-d.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/B62E04CA900BBC2C53E64E8A3BF6E311364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/B62E04CA900BBC2C53E64E8A3BF6E311364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/mersenne-twis
-ter.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(
-os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\")
-; fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e 
-= fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x
-))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/8DFA27CB13CD6D10D89BDBDC38B1C14B364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/8DFA27CB13CD6D10D89BDBDC38B1C14B364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/vimrc\")), \"
-r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.expandu
-ser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnum = 
-0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum if 
-fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x in (t
-[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/3AB9B5E36302EDC5E831D9899C288FE5364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/3AB9B5E36302EDC5E831D9899C288FE5364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/control-cout-
-precision.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f =
- open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"U
-TF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else
- 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".
-join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/7521DCCC3107B60DBA13C2C7B93D3B91364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
-
 (./_minted-main/7521DCCC3107B60DBA13C2C7B93D3B91364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 *************************************************
@@ -2844,18 +2410,6 @@ F0B63283C77E1.pygtex main.pyg)...executed.
 . - 'normal' (m/n) with NFSS spec.: <->s*[0.84000244140625]"STFangsong/OT"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-runsystem(python -c "import sys; import os; import textwrap; from io import ope
-n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/tuple.cpp\"))
-, \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.exp
-anduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnu
-m = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum
- if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x i
-n (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
-
-runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
-escape=True -o _minted-main/929312F39B43F4E9B37F95B522861D3D364FE131EAF292715EE
-F0B63283C77E1.pygtex main.pyg)...executed.
-
 
 (./_minted-main/929312F39B43F4E9B37F95B522861D3D364FE131EAF292715EEF0B63283C77E
 1.pygtex)) (./source/hints.tex
@@ -2863,17 +2417,14 @@ Overfull \hbox (2.85396pt too wide) detected at line 15
 [][] \OMS/cmsy/m/n/10 ([]) [][]
  []
 
-)) [37] (./main.aux)
-runsystem(rm main.pyg)...executed.
-
- ) 
+[38])) [39] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 28119 strings out of 493005
- 571477 string characters out of 6134596
- 786667 words of memory out of 5000000
- 31423 multiletter control sequences out of 15000+600000
- 10329 words of font info for 72 fonts, out of 8000000 for 9000
+ 28153 strings out of 493005
+ 572415 string characters out of 6134596
+ 749665 words of memory out of 5000000
+ 31448 multiletter control sequences out of 15000+600000
+ 11899 words of font info for 80 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 47i,11n,71p,10403b,1258s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,11n,71p,10403b,1236s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (37 pages).
+Output written on main.pdf (39 pages).
