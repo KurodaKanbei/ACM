@@ -1,0 +1,16 @@
+\begin{lstlisting}
+set cin nu mouse=a nobk hls si go= ts=4 sts=4 sw=4
+
+nmap <C-A> ggVG
+vmap <C-C> "+y
+
+syntax on
+
+nmap<F4> : !gedit % <CR>
+nmap<F3> : vnew %<.in <CR>
+nmap<F5> : !./%< <CR>
+nmap<F9> : !g++ % -o %< -Wall <CR>
+nmap<F8> : !time ./%< < %<.in <CR>
+nmap<F10> : !javac % <CR>
+nmap<F6> : !java %< < %<.in <CR>
+\end{lstlisting}

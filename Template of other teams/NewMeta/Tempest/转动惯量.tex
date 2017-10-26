@@ -1,0 +1,90 @@
+\begin{lstlisting}
+int n, m;
+double eps = 1e-8;
+int sign(const double & x) {
+	return x < -eps?-1:x > eps;
+}
+struct Point {
+	double x, y;
+	void scan() {
+		scanf("%lf%lf", &x, &y);
+	}
+	void print() {
+		printf("(%f %f)\n", x, y);
+	}
+	Point(const double & x, const double & y) : x(x), y(y) {}
+	Point() {}
+	double len() {return sqrt(x * x + y * y);}
+	Point rev() {return Point(-y, x);}
+} a[222], b[222];
+Point operator + (const Point & a, const Point & b) {
+	return Point(a.x + b.x, a.y + b.y);
+}
+Point operator - (const Point & a, const Point & b) {
+	return Point(a.x - b.x, a.y - b.y);
+}
+Point operator * (const double & a, const Point & b) {
+	return Point(a * b.x, a * b.y);
+}
+double operator % (const Point & a, const Point & b) {
+	return a.x * b.x + a.y * b.y;
+}
+double operator * (const Point & a, const Point & b) {
+	return a.x * b.y - a.y * b.x;
+}
+double sqr(const double & x) {
+	return x * x;
+}
+double cub(const double & x) {
+	return x * x * x;
+}
+double calc(const double & Y, const double & c0, const double & c1, const double & c2, const double & c3) {
+	return Y * c0 + 0.5 * Y * Y * c1 + Y * Y * Y * c2 / 3 + Y * Y * Y * Y * c3 / 4;
+}
+int main() {
+	scanf("%d%d", &n, &m);
+	for(int i = 1; i <= n; i++) {
+		a[i].scan();
+	}
+	a[0] = a[n];
+	double area(0);
+	for(int i = 1; i <= n; i++) {
+		area += (a[i - 1] * a[i]);
+	}
+	for(int i = 1; i <= m; i++) {
+		b[i].scan();
+	}
+	double ans(0);
+	for(int i = 1; i <= m; i++) {
+		vector<Point> vec(a + 1, a + 1 + n);
+		for(int j = 1; j <= m; j++) if(j != i) {
+			vector<Point> vec1;
+			Point mid(0.5 * (b[i] + b[j])), dir((b[j] - b[i]).rev());
+			for(int k = 0; k < (int)vec.size(); k++) {
+				if(sign((vec[k] - mid) * dir) <= 0)
+					vec1.push_back(vec[k]);
+				Point dir1(vec[(k + 1) % (int)vec.size()] - vec[k]);
+				if(sign((vec[k] - mid) * dir) * sign((vec[(k + 1) % (int)vec.size()] - mid) * dir) < 0) {
+					double lambda((mid - vec[k]) * dir / (dir1 * dir));
+					vec1.push_back(vec[k] + lambda * dir1);
+				}
+			}
+			vec = vec1;
+		}
+		for(int j = 0; j < (int)vec.size(); j++)
+			vec[j] = vec[j] - b[i];
+		for(int j = 0; j < (int)vec.size(); j++){
+			double X1(vec[j].len()), X(vec[(j + 1) % (int)vec.size()] % vec[j] / vec[j].len()), Y(vec[j] * vec[(j + 1) % (int)vec.size()] / vec[j].len());
+			//若是vec[j].len()为0 或者Y为0 则转动惯量为0
+			//旋转中心在原点 三角形((0, 0), vec[j], vec[j + 1])的转动惯量, 其中若vec[j] * vec[j + 1] < 0求出来的是转动惯量的相反数.
+			ans += calc(Y, cub(X1) / 3, sqr(X1) * (X - X1) / Y, X1 * sqr((X - X1) / Y), (cub((X - X1) / Y) - cub(X / Y)) / 3);
+			ans += calc(Y, 0, 0, X1, -X1 / Y);
+		}
+ 
+	}
+ 
+	printf("%.10f\n", ans / area * 2);
+	fclose(stdin);
+	return 0;
+}
+\end{lstlisting}

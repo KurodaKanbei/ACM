@@ -1,0 +1,160 @@
+\begin{lstlisting}
+#include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+typedef long long int64;
+typedef pair<int, long long> State;
+const int MAXN = 8;
+
+char map[MAXN + 10][MAXN + 10];
+int n, m, lastx, lasty;
+int64 ans;
+vector<State> vec[2];
+
+
+void mergy(int cur) {
+	sort(vec[cur].begin(), vec[cur].end());
+	int size = 0;
+	for(int i = 0, j = 0; i < vec[cur].size(); i = j) {
+		vec[cur][size] = vec[cur][i];
+		j = i + 1;
+		while(j < vec[cur].size() && vec[cur][j].first == vec[cur][size].first) 
+			vec[cur][size].second += vec[cur][j].second, j++;
+		size++;
+	}
+	vec[cur].resize(size);
+}
+
+void next_line(int cur) {
+	int size = 0;
+	for(int i = 0; i < vec[cur].size(); i++) {
+		int sta = vec[cur][i].first;
+		if ((sta >> (m << 1)) == 0) {
+			vec[cur][size] = vec[cur][i];
+			vec[cur][size].first <<= 2;
+			size++;
+		}
+	}
+	vec[cur].resize(size);
+}
+
+inline int replace(int sta, int pos, int v) {
+	return (sta & (~(3 << (pos << 1)))) | (v << (pos << 1));
+}
+
+inline int replace(int &sta, int pos, int v1, int v2) {
+	int res = replace(sta, pos, v1);
+	res = replace(res, pos + 1, v2);
+	return res;
+}
+
+int Trans(int sta, int pos) {
+	int cnt = 1, v = (sta >> (pos << 1) & 3);
+	if (v == 1) {
+		sta = replace(sta, pos, 0, 0);
+		for(int i = pos + 2; ; i++) {
+			if ((sta >> (i << 1) & 3) == 1)
+				cnt++;
+			else if ((sta >> (i << 1) & 3) == 2)
+				cnt--;
+			if (cnt == 0)
+				return replace(sta, i, 1);
+		}
+	} else {
+		sta = replace(sta, pos, 0, 0);
+		for(int i = pos - 1; ; i--) {
+			if ((sta >> (i << 1) & 3) == 1) 
+				cnt--;
+			else if ((sta >> (i << 1) & 3) == 2)
+				cnt++;
+			if (cnt == 0)
+				return replace(sta, i, 2);
+		}
+	}
+}
+
+void dp_block(int i, int j, int cur) {
+	for(int s = 0; s < vec[cur].size(); s++) {
+		int sta = vec[cur][s].first;
+		int64 val = vec[cur][s].second;
+		int left = (sta >> (j << 1)) & 3, up = (sta >> ((j + 1) << 1)) & 3;
+		if (left == 0 && up == 0) {
+			vec[cur ^ 1].push_back(State(sta, val));
+		}
+	}
+}
+
+void dp_blank(int i, int j, int cur) {
+	for(int s = 0; s < vec[cur].size(); s++) {
+		int sta = vec[cur][s].first;
+		int64 val = vec[cur][s].second;
+		int left = (sta >> (j << 1)) & 3, up = (sta >> ((j + 1) << 1)) & 3, ns = 0;
+		if (left && up) {
+			if (left == 2 && up == 1) {
+				vec[cur ^ 1].push_back(State(replace(sta, j, 0, 0), val));
+			} else if (left == 1 && up == 2) {
+				if (replace(sta, j, 0, 0) == 0 && i == lastx && j == lasty)
+					ans += val;
+			} else if (left == 1 && up == 1) {
+				vec[cur ^ 1].push_back(State(Trans(sta, j), val));
+			} else if (left == 2 && up == 2) {
+				vec[cur ^ 1].push_back(State(Trans(sta, j), val));
+			}
+		} else if (left || up) {
+			vec[cur ^ 1].push_back(State(sta, val));
+			vec[cur ^ 1].push_back(State(replace(sta, j, up, left), val));
+		} else {
+			vec[cur ^ 1].push_back(State(replace(sta, j, 1, 2), val));
+		}
+	}
+}
+
+void show(int cur) {
+	for(int i = 0; i < vec[cur].size(); i++)
+		printf("%d %I64d\n", vec[cur][i].first, vec[cur][i].second);
+	printf("step\n");
+}
+
+int main() {
+	freopen("input.txt", "r", stdin);
+	while(scanf("%d %d", &n, &m) == 2) {
+		ans = 0;
+		lastx = lasty = -1;
+		gets(map[0]);
+		for(int i = 0; i < n; i++) {
+			scanf("%s", map[i]);
+			for(int j = 0; j < m; j++) {
+				if (map[i][j] == '.') {
+					lastx = i, lasty = j;
+				}
+			}
+		}
+		if (lastx == -1) {
+			printf("0\n");
+			continue;
+		}
+		int cur = 0;
+		vec[cur].clear();
+		vec[cur].push_back(State(0, 1));
+		for(int i = 0; i < n; i++) {
+			for(int j = 0; j < m; j++) {
+				vec[cur ^ 1].clear();
+				if (map[i][j] == '.') 
+					dp_blank(i, j, cur);
+				else
+					dp_block(i, j, cur);
+				cur ^= 1;
+				mergy(cur);
+				//show(cur);
+			}
+			next_line(cur);
+		}
+		cout << ans << endl;
+	}
+	return 0;
+}
+	\end{lstlisting}

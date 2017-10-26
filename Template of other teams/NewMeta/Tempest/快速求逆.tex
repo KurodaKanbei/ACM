@@ -1,0 +1,7 @@
+\begin{lstlisting}
+int inverse(int x, int modulo) {
+	if(x == 1)
+		return 1;
+	return (long long)(modulo - modulo / x) * inverse(modulo % x, modulo) % modulo;
+}
+\end{lstlisting}

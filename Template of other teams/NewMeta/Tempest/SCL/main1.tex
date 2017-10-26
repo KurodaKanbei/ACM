@@ -1,0 +1,56 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{listings} 
+\usepackage{harpoon}
+\usepackage[left=1.5cm, right=1.5cm]{geometry}
+\usepackage[BoldFont]{xeCJK}
+\oddsidemargin -0.1 true cm
+\if@twoside
+	\evensidemargin -0.1 true cm
+\fi
+\setlength{\parindent}{0em}
+\setCJKmainfont{Microsoft YaHei}
+\lstset{
+	language=C++,
+	numbers=left,
+	tabsize=4,
+	breaklines=tr,
+	extendedchars=false
+}
+
+\title{\LARGE{Standard Code Library}}
+\author{Tempest}
+\date{October, 2014}
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\chapter{数学}
+	\section{平面几何公式}
+		\input{几何公式.tex}
+	\section{NTT}
+		\input{NTT.tex}
+	\section{FFT}
+		\input{FFT.tex}	
+	\section{中国剩余定理}
+		包括扩展欧几里得，求逆元，和保证除数互质条件下的CRT
+		\input{crt.tex}
+	\section{求某年某月某日星期几}
+		\input{求某年某月某日星期几.tex}
+	\section{快速求逆}
+		\input{快速求逆.tex}
+	\section{Miller Rabin}	
+		miller\_rabin\_32是针对32位以下整数的; miller\_rabin\_64是针对64位以下整数的.
+		直接调用prime()函数, 当返回值是true时表示是素数, 否则不是质数.
+		\input{miller_rabin.tex}
+\chapter{计算几何}
+\chapter{数据结构}
+\chapter{图论}
+\chapter{字符串}
+\chapter{别的}
+\end{document}

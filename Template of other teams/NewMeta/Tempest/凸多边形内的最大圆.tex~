@@ -1,0 +1,105 @@
+\begin{lstlisting}
+#include<cstring>
+#include<cstdio>
+#include<cmath>
+#include<algorithm>
+#include<queue>
+using namespace std;
+double eps(1e-8);
+int sign(const double & x) {
+	return x < -eps?-1:x > eps;
+}
+struct Point {
+	double x, y;
+	Point() {
+	}
+	Point(const double & x, const double & y) : x(x), y(y) {
+	}
+	double sqrlen() const {
+		return x * x + y * y;
+	}
+	double len() const {
+		return sqrt(sqrlen());
+	}
+	void scan() {
+		scanf("%lf%lf", &x, &y);
+	}
+	void print() const {
+		printf("(%f %f)\n", x, y);
+	}
+};
+Point operator + (const Point & a, const Point & b) {
+	return Point(a.x + b.x, a.y + b.y);
+}
+Point operator - (const Point & a, const Point & b) {
+	return Point(a.x - b.x, a.y - b.y);
+}
+Point operator * (const double & a, const Point & b) {
+	return Point(a * b.x, a * b.y);
+}
+double operator * (const Point & a, const Point & b) {
+	return a.x * b.y - a.y * b.x;
+}
+struct Line {
+	Point s, d;
+	Line() {
+	}
+	Line(const Point & s, const Point & d) : s(s), d(d) {
+	}
+};
+Point crs(const Line & a, const Line & b) {
+	double lambda((b.s - a.s) * b.d / (a.d * b.d));
+	return a.s + lambda * a.d;
+}
+struct reca {
+	Point a, b;
+	int prv, nxt;
+	Point d() const {
+		return b - a;
+	}
+	double calc();
+} a[11111];
+reca (&c)[11111](a);
+double reca::calc() {
+	if(sign(d() * c[prv].d()) and sign(d() * c[nxt].d())) {
+		double len1(c[prv].d().len()), len2(d().len()), len3(c[nxt].d().len());
+		Point cp(crs(Line(a, 1 / (len1 + len2) * (len2 * c[prv].a + len1 * b) - a), Line(b, 1 / (len2 + len3) * (len3 * a + len2 * c[nxt].b) - b)));
+		return fabs((cp - a) * d() / d().len());
+	}else
+		return 1e100;
+ 
+}
+double val[11111];
+bool f[11111];	
+int main() {
+	int n;
+	scanf("%d", &n);
+	for(int i(0); i < n; i++) {
+		a[i].a.scan();
+	}
+	for(int i(0); i < n; i++) {
+		a[i].b = a[(i + 1) % n].a;
+		a[i].prv = (i + n - 1) % n;
+		a[i].nxt = (i + 1) % n;
+	}
+	priority_queue<pair<double, int>, vector<pair<double, int> >, greater<pair<double, int> > > hp;
+	for(int i(0); i < n; i++) {
+		hp.push(make_pair(val[i] = a[i].calc(), i));
+	}
+	for(int i(1); i <= n - 3; i++) {
+		int prv(a[hp.top().second].prv), nxt(a[hp.top().second].nxt);
+		a[prv].nxt = nxt;
+		a[nxt].prv = prv;
+		if(sign(a[prv].d() * a[nxt].d()))
+			a[prv].b = a[nxt].a = crs(Line(a[prv].a, a[prv].d()), Line(a[nxt].a, a[nxt].d()));
+		f[hp.top().second] = true;
+		hp.pop();
+		hp.push(make_pair(val[prv] = a[prv].calc(), prv));
+		hp.push(make_pair(val[nxt] = a[nxt].calc(), nxt));
+		while(f[hp.top().second] or val[hp.top().second] != hp.top().first)
+			hp.pop();
+	}
+	int y(hp.top().second);
+	printf("%f\n", min(min(val[a[y].prv], val[a[y].nxt]), val[y]));
+}
+\end{lstlisting}

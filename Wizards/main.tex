@@ -1,13 +1,48 @@
-\documentclass[titlepage, a4paper]{book}
-\usepackage[left=1.5cm, right=1.5cm]{geometry}
+\documentclass[titlepage, a4paper,10pt]{article}
 \usepackage{listings, color, fontspec, minted, setspace, titlesec, fancyhdr, dingbat, mdframed, multicol}
 \usepackage{graphicx, amssymb, amsmath, textcomp, booktabs}
-\usepackage{xeCJK}
-\usepackage{yfonts}
+\usepackage[Chinese]{ucharclasses}
+\usepackage[left=1.5cm, right=0.7cm, top=1.7cm, bottom=0.0cm]{geometry}
+\usepackage{pdfpages}
+\usepackage{tocloft}
 
-\setmonofont{Menlo}[Scale=1.0]
-\setCJKmainfont{STHeiti}
+%configure the top corners
+\pagestyle{fancy}
+\setlength{\headsep}{0.1cm}
+\rhead{Page \thepage}
+\lhead{上海交通大学 Shanghai Jiao Tong University}
 
+%configure space between the two columns
+\setlength{\columnsep}{30pt}
+
+%configure fonts
+\setmonofont{Isotype}[Scale=0.8]
+\newfontfamily\substitutefont{SimHei}[Scale=0.8]
+\setTransitionsForChinese{\begingroup\substitutefont}{\endgroup}
+
+%configure minted to display codes
+\definecolor{Gray}{rgb}{0.9,0.9,0.9}
+
+%remove leading numbers in table of contents
+%\setcounter{secnumdepth}{0}
+
+%configure section style of table of content
+\renewcommand\cftsecfont{\Large}
+
+%configure section style
+\titleformat{\section}
+	{\huge}			% The style of the section title
+	{\thesection.}				% a prefix
+	{4pt}						% How much space exists between the prefix and the title
+	{}					% How the section is represented
+% \titleformat{\section}{\huge}{}{0pt}{}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+
+%enable section to start new page automatically
+%\let\stdsection\section
+%\renewcommand\section{\penalty-100\vfilneg\stdsection}
+
+%\renewcommand\theFancyVerbLine{\arabic{FancyVerbLine}}
 \renewcommand{\theFancyVerbLine}{\sffamily \textcolor[rgb]{0.5,0.5,0.5}{\scriptsize {\arabic{FancyVerbLine}}}}
 
 \setminted[cpp]{
@@ -15,8 +50,8 @@
 	mathescape,
 	linenos,
 	autogobble,
-	baselinestretch=1.0,
-	tabsize=4,
+	baselinestretch=0.9,
+	tabsize=2,
 	fontsize=\normalsize,
 	%bgcolor=Gray,
 	frame=single,
@@ -35,7 +70,7 @@
 	linenos,
 	autogobble,
 	baselinestretch=1.0,
-	tabsize=4,
+	tabsize=2,
 	%bgcolor=Gray,
 	frame=single,
 	framesep=1mm,
@@ -53,7 +88,7 @@
 	linenos,
 	autogobble,
 	baselinestretch=1.0,
-	tabsize=4,
+	tabsize=2,
 	%bgcolor=Gray,
 	frame=single,
 	framesep=1mm,
@@ -66,15 +101,30 @@
 	breakbytoken=false,
 }
 
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\title{\Huge{\textgoth{Wizard's Standard Code Library}}
-	\author{\emph{Shanghai Jiao Tong University}}
-	\date{Dated: \today}
+%configure titles
+%\title{\LARGE{Wizards} \\[2ex] \Large{Standard Code Library} }
+%\date{\today}
 
+%THE SCL BEGINS
 \begin{document}
-	\maketitle
-	\tableofcontents
-	\begin{spacing}{0.8}
-		\input{../source.tex}
-	\end{spacing}
+	\include{}
+\end{document}
+\begin{document}
+
+\begin{multicols*}{2}
+
+\tableofcontents
+\end{multicols*}
+
+\begin{multicols}{2}
+
+
+\newpage
+\begin{spacing}{0.8}
+
+\input{../source.tex}
+
+\end{spacing}
+\end{multicols}
+
 \end{document}

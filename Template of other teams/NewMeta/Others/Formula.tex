@@ -1,0 +1,123 @@
+\def \bangle{ \atopwithdelims \langle \rangle}
+\begin{small}
+\subsubsection{Arithmetic Function}
+\[ \sigma_k(n) = \sum_{d|n}d^k = \prod_{i=1}^{\omega(n)}\frac{p_i^{(a_i+1)k}-1}
+{p_i^k-1} \]
+\[ J_k(n) = n^k\prod_{p|n}(1-\frac{1}{p^k}) \]
+$J_k(n)$ is the number of $k$-tuples of positive integers all less than or equal to n that form a coprime $(k + 1)$-tuple together with $n$.
+\[ \sum_{\delta|n}J_k(\delta) = n^k \]
+\[ \sum_{\delta|n}\delta^sJ_r(\delta)J_s(\frac{n}{\delta}) = J_{r+s}(n) \]
+\begin{align*}
+\sum_{\delta|n}\varphi(\delta)d(\frac{n}{\delta}) = \sigma(n),&\ \sum_{\delta|n}\left| \mu(\delta) \right| = 2^{\omega(n)} \\
+\sum_{\delta|n}2^{\omega(\delta)} = d(n^2),&\ \sum_{\delta|n}d(\delta^2) = d^2(n) \\
+\sum_{\delta|n}d(\frac{n}{\delta})2^{\omega(\delta)} = d^2(n),&\ \sum_{\delta|n}\frac{\mu(\delta)}{\delta} = \frac{\varphi(n)}{n} \\
+\sum_{\delta|n}\frac{\mu(\delta)}{\varphi(\delta)} = d(n),&\ \sum_{\delta|n}\frac{\mu^2(\delta)}{\varphi(\delta)} = \frac{n}{\varphi(n)} \\
+\end{align*}
+\[ n|\varphi(a^n-1) \]
+\[ \sum_{\substack{1 \leq k \leq n \\ \gcd(k, n) = 1}}f(\gcd(k-1, n)) = \varphi(n)
+\sum_{d|n}\frac{(\mu*f)(d)}{\varphi(d)} \]
+\[ \varphi(\mathrm{lcm}(m, n))\varphi(\gcd(m,n)) = \varphi(m)\varphi(n) \]
+\[ \sum_{\delta|n}d^3(\delta) = (\sum_{\delta|n}d(\delta))^2 \]
+\[ d(uv) = \sum_{\delta|\gcd(u, v)}\mu(\delta)d(\frac{u}{\delta})d(\frac{v}{\delta}) \]
+\[ \sigma_k(u)\sigma_k(v) = \sum_{\delta|\gcd(u, v)}\delta^k\sigma_k(\frac{uv}{\delta^2}) \]
+\[ \mu(n) = \sum_{k=1}^n[\gcd(k, n)=1]\cos{2\pi \frac{k}{n}} \]
+\[ \varphi(n) = \sum_{k=1}^n[\gcd(k, n)=1] = \sum_{k=1}^n\gcd(k, n)\cos{2\pi \frac{k}{n}} \]
+\[
+\left\{
+\begin{aligned}
+&S(n) = \sum_{k=1}^n(f \ast g)(k) \\
+&\sum_{k=1}^nS(\lfloor {n \over k} \rfloor) = \sum_{i=1}^nf(i)\sum_{j=1}^{\lfloor{n \over i}\rfloor}(g \ast 1)(j)
+\end{aligned}
+\right.
+\]
+\[
+\left\{
+\begin{aligned}
+&S(n) = \sum_{k=1}^n(f \cdot g)(k), g \text{ completely multiplicative} \\
+&\sum_{k=1}^nS(\lfloor {n \over k} \rfloor)g(k) = \sum_{k=1}^n(f \ast 1)(k)g(k)
+\end{aligned}
+\right.
+\]
+\subsubsection{Binomial Coefficients}
+\[ {n \choose k} = (-1)^k{k-n-1 \choose k} \]
+\[ \sum_{k \leq n}{r+k \choose k} = {r+n+1 \choose n} \]
+\[ \sum_{k=0}^n{k \choose m} = {n+1 \choose m+1} \]
+\[ \sqrt{1+z} = 1 + \sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{k\times2^{2k-1}}{2k-2 \choose k-1}z^k \]
+\[ \sum_{k=0}^{r}{r-k \choose m}{s+k \choose n} = {r+s+1 \choose m+n+1} \]
+\[ C_{n, m} = {n+m \choose m} - {n+m \choose m-1}, n \geq m \]
+\[ {n \choose k} \equiv [n\& k=k] \pmod 2 \]
+\subsubsection{Fibonacci Numbers}
+\[ F(z) = \frac{z}{1-z-z^2} \]
+\[ f_n = \frac{{\phi}^n-{\hat{\phi}}^n}{\sqrt{5}}, \phi = \frac{1+\sqrt{5}}{2},
+\hat{\phi} = \frac{1-\sqrt{5}}{2} \]
+\[ \sum_{k=1}^nf_k = f_{n+2}-1 \]
+\[ \sum_{k=1}^nf^2_k = f_nf_{n+1} \]
+\[ \sum_{k=0}^nf_kf_{n-k} = \frac{1}{5}(n-1)f_n+\frac{2}{5}nf_{n-1} \]
+\[ f^2_n + (-1)^n = f_{n+1}f_{n-1} \]
+\[ f_{n+k} = f_nf_{k+1} + f_{n-1}f_k \]
+\[ f_{2n+1} = f^2_n+f^2_{n+1} \]
+\[ (-1)^kf_{n-k} = f_{n}f_{k-1} - f_{n-1}f_{k} \]
+\[ \text{Modulo }f_n, f_{mn+r} \equiv \left\{
+\begin{aligned}
+&f_r,& m \bmod 4 = 0; \\
+&(-1)^{r+1}f_{n-r},& m \bmod 4 = 1; \\
+&(-1)^nf_r,& m \bmod 4 = 2; \\
+&(-1)^{r+1+n}f_{n-r},& m \bmod 4 = 3.
+\end{aligned}
+\right.
+\]
+\subsubsection{Stirling Cycle Numbers}
+\begin{align*}
+ {n+1 \brack k} = n{n \brack k} + {n \brack k-1},&\ \  {n+1 \brack 2} = n!H_n \\
+x^{\underline{n}} = \sum_k{ {n \brack k}(-1)^{n-k}x^k },&\ \  x^{\overline{n}} = \sum_k{ {n \brack k}x^k } \\
+ \end{align*}
+\subsubsection{Stirling Subset Numbers}
+\[ {n+1 \brace k} = k{n \brace k} + {n \brace k-1} \]
+\[ x^n = \sum_k{ {n \brace k}x^{\underline{k}} } = \sum_k{ {n \brace k}(-1)^{n-k}x^{\overline{k}} } \]
+\[ m!{n \brace m} = \sum_k{m \choose k}k^n(-1)^{m-k} \]
+\subsubsection{Eulerian Numbers}
+\[ {n \bangle k} = (k+1){n-1 \bangle k} + (n-k){n-1 \bangle k-1} \]
+\[ x^n = \sum_k{ {n \bangle k}{x+k \choose n} } \]
+\[ {n \bangle m} = \sum_{k=0}^m{n+1 \choose k}(m+1-k)^n(-1)^k \]
+\subsubsection{Harmonic Numbers}
+\[ \sum_{k=1}^nH_k = (n+1)H_n-n \]
+\[ \sum_{k=1}^nkH_k = \frac{n(n+1)}{2}H_n - \frac{n(n-1)}{4} \]
+\[ \sum_{k=1}^n{k \choose m}H_k = {n+1 \choose m+1}(H_{n+1} - \frac{1}{m+1}) \]
+\subsubsection{Pentagonal Number Theorem}
+\[ \prod_{n=1}^{\infty}(1-x^n) = \sum_{n=-\infty}^{\infty}{(-1)^kx^{k(3k-1)/2}} \]
+\[ p(n) = p(n-1)+p(n-2)-p(n-5)-p(n-7)+\cdots \]
+\[ f(n, k) = p(n)-p(n-k)-p(n-2k)+p(n-5k)+p(n-7k)-\cdots \]
+\subsubsection{Bell Numbers}
+\[ B_{n+1} = \sum_{k=0}^n{n \choose k}B_k \]
+\[ B_{p^m+n} \equiv mB_n+B_{n+1} \pmod{p} \]
+\subsubsection{Bernoulli Numbers}
+\[ B_n = 1 - \sum_{k=0}^{n-1}{n \choose k}\frac{B_k}{n-k+1} \]
+\[ G(x) = \sum_{k=0}^{\infty}\frac{B_k}{k!}x^k
+= \frac{1}{\sum_{k=0}^{\infty}\frac{x^k}{(k+1)!}} \]
+\[ S_m(n) = \frac{1}{m+1}\sum_{k=0}^m{m+1 \choose k}B_kn^{m-k+1} \]
+\subsubsection{Tetrahedron Volume}
+\[ V = \frac{\sqrt{ 4u^2v^2w^2 - \sum_{cyc}{u^2(v^2+w^2-U^2)^2} + \prod_{cyc}{(v^2+w^2-U^2)} }}{12} \]
+\subsubsection{BEST Thoerem}
+Counting the number of different Eulerian circuits in directed graphs.
+\[ \mathrm{ec}(G) = t_w(G)\prod_{v \in{V}}(\mathrm{deg}(v) - 1)! \]
+When calculating $t_w(G)$ for directed multigraphs, the entry $q_{i,j}$ for distinct $i$ and $j$ equals $−m$, where $m$ is the number of edges from $i$ to $j$, and the entry $q_{i,i}$ equals the indegree of $i$ minus the number of loops at $i$.
+It is a property of Eulerian graphs that $ \mathrm{tv}(G) = \mathrm{tw}(G)$ for every two vertices $v$ and $w$ in a connected Eulerian graph $G$.
+
+\subsubsection{重心}
+半径为 $r$ , 圆心角为 $\theta$ 的扇形重心与圆心的距离为 $\frac{4r\sin(\theta/2)}{3\theta}$ \\
+半径为 $r$ , 圆心角为 $\theta$ 的圆弧重心与圆心的距离为 $\frac{4r\sin^3(\theta/2)}{3(\theta-\sin(\theta))}$ \\
+
+\subsubsection{Others}
+\[ S_j = \sum_{k=1}^nx_k^j \]
+\[ h_m = \sum_{1\leq j_1 < \cdots < j_m \leq n} x_{j_1}\cdots x_{j_m} \]
+\[ H_m = \sum_{1\leq j_1 \leq \cdots \leq j_m \leq n} x_{j_1}\cdots x_{j_m} \]
+\[ h_n = \frac{1}{n}\sum_{k=1}^n(-1)^{k+1}S_kh_{n-k} \]
+\[ H_n = \frac{1}{n}\sum_{k=1}^nS_kH_{n-k} \]
+\[ \sum_{k=0}^nkc^k = \frac{nc^{n+2}-(n+1)c^{n+1}+c}{(c-1)^2} \]
+\[ n! = \sqrt{2\pi n}(\frac{n}{e})^n(1+\frac{1}{12n}+\frac{1}{288n^2}+O(\frac{1}{n^3})) \]
+\[ \begin{aligned}
+ &\max{\{x_a-x_b, y_a-y_b, z_a-z_b\}} - \min{\{x_a-x_b, y_a-y_b, z_a-z_b\}} \\
+=& \frac{1}{2}\sum_{cyc}\left| (x_a-y_a)-(x_b-y_b) \right|
+\end{aligned} \]
+\[ (a+b)(b+c)(c+a) = \frac{(a+b+c)^3 - a^3 - b^3 - c^3}{3} \]
+\end{small}

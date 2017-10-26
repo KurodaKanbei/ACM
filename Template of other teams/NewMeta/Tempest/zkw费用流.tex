@@ -1,0 +1,115 @@
+\begin{lstlisting}
+#include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+#include <cstring>
+#include <cmath>
+using namespace std;
+
+const int N = 105 << 2, M = 205 * 205 * 2;
+const int inf = 1000000000;
+
+struct eglist {
+	int other[M], succ[M], last[N], cap[M], cost[M], sum;
+	void clear() {
+		memset(last, -1, sizeof(last));
+		sum = 0;
+	}
+	void _addEdge(int a, int b, int c, int d) {
+		other[sum] = b, succ[sum] = last[a], last[a] = sum, cost[sum] = d, cap[sum++] = c;
+	}
+	void addEdge(int a, int b, int c, int d) {
+		_addEdge(a, b, c, d);
+		_addEdge(b, a, 0, -d);
+	}
+}e;
+
+int n, m, S, T, tot, totFlow, totCost;
+int dis[N], slack[N], visit[N], cur[N];
+
+int modlable() {
+	int delta = inf;
+	for(int i = 1; i <= T; i++) {
+		if (!visit[i] && slack[i] < delta)
+			delta = slack[i];
+		slack[i] = inf;
+		cur[i] = e.last[i];
+	}
+	if (delta == inf)
+		return 1;
+	for(int i = 1; i <= T; i++)
+		if (visit[i])
+			dis[i] += delta;
+	return 0;
+}
+
+int dfs(int x, int flow) {
+	if (x == T) {
+		totFlow += flow;
+		totCost += flow * (dis[S] - dis[T]);
+		return flow;
+	}
+	visit[x] = 1;
+	int left = flow;
+	for(int &i = cur[x]; ~i; i = e.succ[i])
+		if (e.cap[i] > 0 && !visit[e.other[i]]) {
+			int y = e.other[i];
+			if (dis[y] + e.cost[i] == dis[x]) {
+				int delta = dfs(y, min(left, e.cap[i]));
+				e.cap[i] -= delta;
+				e.cap[i ^ 1] += delta;
+				left -= delta;
+				if (!left)
+					return flow;
+			} else {
+				slack[y] = min(slack[y], dis[y] + e.cost[i] - dis[x]);
+			}
+		}
+	return flow - left;
+}
+
+pair<int, int> minCost() {
+	totFlow = 0, totCost = 0;
+	fill(dis + 1, dis + T + 1, 0);
+	for(int i = 1; i <= T; i++)
+		cur[i] = e.last[i];
+	do {
+		do {
+			fill(visit + 1, visit + T + 1, 0);
+		} while(dfs(S, inf));
+	} while(!modlable());
+	return make_pair(totFlow, totCost);
+}
+
+void run() {
+	scanf("%d %d", &m, &n);
+	e.clear();
+	S = m + n + 1, T = m + n + 2;
+	tot = 0;
+	for(int i = 1; i <= m; i++) {
+		int times;
+		scanf("%d", &times);
+		e.addEdge(S, i, times, 0);
+	}
+	for(int i = 1; i <= n; i++) {
+		int times;
+		scanf("%d", &times);
+		e.addEdge(i + m, T, times, 0);
+	}
+	for(int i = 1; i <= m; i++)
+		for(int j = 1; j <= n; j++) {
+			int cost;
+			scanf("%d", &cost);
+			e.addEdge(i, j + m, inf, cost);
+		}
+	pair<int, int> tmp = minCost();
+	printf("%d\n", tmp.second);
+}
+
+int main() {
+	int Test;
+	scanf("%d", &Test);
+	for(; Test--; run());
+	return 0;
+}
+\end{lstlisting}

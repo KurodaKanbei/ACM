@@ -1,0 +1,30 @@
+\begin{lstlisting}
+int const N = ;
+struct Node {
+	Node *next[N], *fail; int count;
+	inline Node() { memset(next, 0, sizeof(next)); fail = 0; count = 0; }
+};
+Node *root;
+inline int idx(char x) { return x - 'a'; }
+inline void insert(Node *x, char *str) {
+	int len = (int)strlen(str);
+	for (int i = 0; i < len; ++i) {
+		int c = idx(str[i]);
+		if (!x->next[c]) x->next[c] = new Node();
+		x = x->next[c];
+	} x->count++;
+}
+inline void build() {
+	vector<Node*> queue; queue.push_back(root->fail = root);
+	for (int head = 0; head < (int)queue.size(); ++head) {
+		Node* x = queue[head];
+		for (int i = 0; i < N; ++i)
+			if (x->next[i]) {
+				x->next[i]->fail = (x == root) ? root : x->fail->next[i];
+				x->next[i]->count += x->next[i]->fail->count;
+				queue.push_back(x->next[i]);
+			} else x->next[i] = (x == root) ? root : x->fail->next[i];
+	}
+}
+inline void prepare() { root = new Node(); }
+\end{lstlisting}

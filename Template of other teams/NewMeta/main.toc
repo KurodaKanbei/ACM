@@ -1,0 +1,98 @@
+\contentsline {section}{\numberline {1}Geometry}{2}
+\contentsline {subsection}{\numberline {1.1}三维几何}{2}
+\contentsline {subsection}{\numberline {1.2}三维凸包}{2}
+\contentsline {subsection}{\numberline {1.3}阿波罗尼茨圆}{2}
+\contentsline {subsection}{\numberline {1.4}最小覆盖球}{2}
+\contentsline {subsection}{\numberline {1.5}三角形与圆交}{3}
+\contentsline {subsection}{\numberline {1.6}圆并}{3}
+\contentsline {subsection}{\numberline {1.7}Delaunay 三角剖分}{3}
+\contentsline {subsection}{\numberline {1.8}二维几何}{4}
+\contentsline {subsection}{\numberline {1.9}整数半平面交}{5}
+\contentsline {subsection}{\numberline {1.10}凸包闵可夫斯基和}{6}
+\contentsline {subsection}{\numberline {1.11}三角形}{6}
+\contentsline {subsection}{\numberline {1.12}经纬度求球面最短距离}{6}
+\contentsline {subsection}{\numberline {1.13}长方体表面两点最短距离}{6}
+\contentsline {subsection}{\numberline {1.14}点到凸包切线}{6}
+\contentsline {subsection}{\numberline {1.15}直线与凸包的交点}{7}
+\contentsline {section}{\numberline {2}Graph}{7}
+\contentsline {subsection}{\numberline {2.1}无向图最小割}{7}
+\contentsline {subsection}{\numberline {2.2}Blossom Algorithm}{7}
+\contentsline {subsection}{\numberline {2.3}仙人掌}{8}
+\contentsline {subsection}{\numberline {2.4}最小树形图}{8}
+\contentsline {subsection}{\numberline {2.5}Dominator Tree}{8}
+\contentsline {subsection}{\numberline {2.6}离线动态最小生成树}{9}
+\contentsline {subsection}{\numberline {2.7}GH Tree}{9}
+\contentsline {subsection}{\numberline {2.8}Hopcroft mathcing}{9}
+\contentsline {subsection}{\numberline {2.9}KM}{10}
+\contentsline {subsection}{\numberline {2.10}Maximum Clique}{10}
+\contentsline {subsection}{\numberline {2.11}原始对偶费用流}{11}
+\contentsline {subsection}{\numberline {2.12}完美消除序列}{11}
+\contentsline {subsection}{\numberline {2.13}Tarjan}{12}
+\contentsline {subsection}{\numberline {2.14}ZKW 费用流}{12}
+\contentsline {section}{\numberline {3}String}{13}
+\contentsline {subsection}{\numberline {3.1}Exkmp}{13}
+\contentsline {subsection}{\numberline {3.2}Lyndon Word Decomposition}{13}
+\contentsline {subsection}{\numberline {3.3}Manacher}{13}
+\contentsline {subsection}{\numberline {3.4}Minimum Representation}{13}
+\contentsline {subsection}{\numberline {3.5}Palindromic Automaton}{13}
+\contentsline {subsection}{\numberline {3.6}Suffix Array}{13}
+\contentsline {subsection}{\numberline {3.7}Suffix Automaton}{13}
+\contentsline {subsection}{\numberline {3.8}AC 自动机}{14}
+\contentsline {subsection}{\numberline {3.9}子串最长公共子序列}{14}
+\contentsline {section}{\numberline {4}Tree}{14}
+\contentsline {subsection}{\numberline {4.1}树点分治-斜率优化}{14}
+\contentsline {subsection}{\numberline {4.2}树链剖分}{14}
+\contentsline {subsection}{\numberline {4.3}虚树}{14}
+\contentsline {subsection}{\numberline {4.4}有根树同构}{15}
+\contentsline {section}{\numberline {5}Math}{15}
+\contentsline {subsection}{\numberline {5.1}Conclusions}{15}
+\contentsline {subsection}{\numberline {5.2}积性函数线性求法}{15}
+\contentsline {subsection}{\numberline {5.3}平方剩余}{15}
+\contentsline {subsection}{\numberline {5.4}线性同余不等式}{15}
+\contentsline {subsection}{\numberline {5.5}Schreier Sims}{16}
+\contentsline {subsection}{\numberline {5.6}CRT}{16}
+\contentsline {subsection}{\numberline {5.7}Factorial Mod}{17}
+\contentsline {subsection}{\numberline {5.8}Miller Rabin and Pollard Rho}{17}
+\contentsline {subsection}{\numberline {5.9}Pell 方程}{17}
+\contentsline {subsection}{\numberline {5.10}Simplex}{17}
+\contentsline {subsection}{\numberline {5.11}Simpson}{18}
+\contentsline {subsection}{\numberline {5.12}FFT}{18}
+\contentsline {subsection}{\numberline {5.13}解一元三次方程}{19}
+\contentsline {subsection}{\numberline {5.14}线性递推}{19}
+\contentsline {subsection}{\numberline {5.15}黑盒子代数}{19}
+\contentsline {section}{\numberline {6}Data Structure}{20}
+\contentsline {subsection}{\numberline {6.1}可持久化左偏树-K短路}{20}
+\contentsline {subsection}{\numberline {6.2}左偏树}{20}
+\contentsline {subsection}{\numberline {6.3}KD 树}{20}
+\contentsline {subsection}{\numberline {6.4}LCT}{21}
+\contentsline {subsection}{\numberline {6.5}Merge-Split Treap}{21}
+\contentsline {subsection}{\numberline {6.6}Splay}{21}
+\contentsline {section}{\numberline {7}Miscellany}{22}
+\contentsline {subsection}{\numberline {7.1}日期公式}{22}
+\contentsline {subsection}{\numberline {7.2}DLX - 主代码手}{22}
+\contentsline {subsection}{\numberline {7.3}直线下格点统计}{22}
+\contentsline {section}{\numberline {8}Others}{23}
+\contentsline {subsection}{\numberline {8.1}Java Template}{23}
+\contentsline {subsection}{\numberline {8.2}Formulas}{23}
+\contentsline {subsubsection}{\numberline {8.2.1}Arithmetic Function}{23}
+\contentsline {subsubsection}{\numberline {8.2.2}Binomial Coefficients}{23}
+\contentsline {subsubsection}{\numberline {8.2.3}Fibonacci Numbers}{24}
+\contentsline {subsubsection}{\numberline {8.2.4}Stirling Cycle Numbers}{24}
+\contentsline {subsubsection}{\numberline {8.2.5}Stirling Subset Numbers}{24}
+\contentsline {subsubsection}{\numberline {8.2.6}Eulerian Numbers}{24}
+\contentsline {subsubsection}{\numberline {8.2.7}Harmonic Numbers}{24}
+\contentsline {subsubsection}{\numberline {8.2.8}Pentagonal Number Theorem}{24}
+\contentsline {subsubsection}{\numberline {8.2.9}Bell Numbers}{24}
+\contentsline {subsubsection}{\numberline {8.2.10}Bernoulli Numbers}{24}
+\contentsline {subsubsection}{\numberline {8.2.11}Tetrahedron Volume}{24}
+\contentsline {subsubsection}{\numberline {8.2.12}BEST Thoerem}{24}
+\contentsline {subsubsection}{\numberline {8.2.13}重心}{24}
+\contentsline {subsubsection}{\numberline {8.2.14}Others}{24}
+\contentsline {subsection}{\numberline {8.3}Integration Table}{25}
+\contentsline {subsubsection}{\numberline {8.3.1}$ax^2+bx+c$($a>0$)}{25}
+\contentsline {subsubsection}{\numberline {8.3.2}$\sqrt {\pm ax^2+bx+c}$($a>0$)}{25}
+\contentsline {subsubsection}{\numberline {8.3.3}$\sqrt {\pm \frac {x-a}{x-b}}$或$\sqrt {(x-a)(x-b)}$}{25}
+\contentsline {subsubsection}{\numberline {8.3.4}三角函数的积分}{25}
+\contentsline {subsubsection}{\numberline {8.3.5}反三角函数的积分(其中 $a>0$ )}{25}
+\contentsline {subsubsection}{\numberline {8.3.6}指数函数的积分}{25}
+\contentsline {subsubsection}{\numberline {8.3.7}对数函数的积分}{25}

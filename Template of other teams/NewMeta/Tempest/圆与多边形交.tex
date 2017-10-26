@@ -1,0 +1,113 @@
+\begin{lstlisting}
+const double eps = 5e-7;
+const int N = 2222;
+const double pi = acos(-1.0);
+int sign(double x) { return x < -eps ? -1 : x > eps; }
+double sqr(double x) { return x * x; }
+struct Point {
+	double x, y;
+	Point (double x = 0, double y = 0) : x(x), y(y) {}
+	friend inline Point operator +(const Point &a, const Point &b) {
+		return Point(a.x + b.x, a.y + b.y);
+	}
+	friend inline Point operator -(const Point &a, const Point &b) {
+		return Point(a.x - b.x, a.y - b.y);
+	}
+	friend inline Point operator *(const Point &a, double k) {
+		return Point(a.x * k, a.y * k);
+	}
+	friend inline Point operator /(const Point &a, double k) {
+		return Point(a.x / k, a.y / k);
+	}
+	double dist() const { return hypot(x, y); }
+	double dist2() const { return x * x + y * y; }
+	double ang() const { return atan2(y, x); }
+};
+vector<Point> convex; 
+int n;
+double radius;
+Point points[N][2];
+Point target;
+double det(Point a, Point b, Point c) { return (b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y); }
+double dot(Point a, Point b, Point c) { return (b.x - a.x) * (c.x - a.x) + (b.y - a.y) * (c.y - a.y); }
+double det(Point a, Point b) { return a.x * b.y - b.x * a.y; }
+double dot(Point a, Point b) { return a.x * b.x + a.y * b.y; }
+inline bool point_on_line(const Point &a, const Point &b, const Point &c) {
+	return sign(det(Point(0, 0), a - b, c - b)) == 0 && dot(Point(0, 0), b - a, c - a) < eps;
+}
+double point_to_line(const Point &a, const Point &b, const Point &c) {
+	return fabs(det(Point(0, 0), c - b, a - b)) / (b - c).dist();
+}
+Point project_to_line(const Point &p, const Point &a, const Point &b) {
+	return a + (b - a) * dot(Point(0, 0), p - a, b - a) / sqr((b - a).dist());
+}
+Point intersect(Point a, Point b, Point c, Point d) {
+	double s1 = det(a, b, c); double s2 = det(a, b, d); return (c * s2 - d * s1) / (s2 - s1);
+}
+inline Point line_to_circle(const Point &a, const Point &b) {
+	double x = sqrt(sqr(radius) - sqr(point_to_line(Point(0, 0), a, b)));
+	return project_to_line(Point(0, 0), a, b) - (b - a) / (b - a).dist() * x;
+}
+inline double area_tri(Point a, Point b) { return det(Point(0, 0), a, b) / 2; }
+inline double area_cir(Point a, Point b, double radius) {
+	if (sign(det(Point(0, 0), a, b)) == 0) return 0;
+	a = a / a.dist() * radius; b = b / b.dist() * radius;
+	double d = atan2(det(Point(0, 0), a, b), dot(Point(0, 0), a, b));
+	return sqr(radius) * d / 2;
+}
+int intersect(const Point &a, const Point &b, Point &u, Point &v, double radius) {
+	if (point_to_line(Point(0, 0), a, b) + eps > radius) return 0;
+	u = line_to_circle(a, b); v = line_to_circle(b, a);
+	return point_on_line(u, a, b) + point_on_line(v, a, b); 
+}
+vector<Point> calc(vector<Point> vec, Point a, Point b) {
+	vector<Point> result;
+	for(int i = 0; i < (int)vec.size(); i++) {
+		Point c = vec[i], d = vec[(i + 1) % (int)vec.size()];
+		if (det(a, b, c) > -eps)
+			result.push_back(c);
+		if (sign(det(a, b, c)) * sign(det(a, b, d)) == -1)
+			result.push_back(intersect(a, b, c, d));
+	} return result;
+}
+double areaCT(double R, Point pa, Point pb) {
+	if (pa.dist() < pb.dist()) swap(pa, pb);
+	if (pb.dist() < eps) return 0;
+	Point pc = pb - pa;
+	double a = pb.dist(), b = pa.dist(), c = pc.dist();
+	double cosB = dot(pb, pc) / a / c, B = acos(cosB);
+	double cosC = dot(pa, pb) / a / b, C = acos(cosC);
+	double S, h, theta;
+	if (a > R) {
+		S = C * 0.5 * R * R;
+		h = a * b * sin(C) / c;
+		if (h < R && B < pi * 0.5) 
+			S -= acos(h / R) * R * R - h * sqrt(max(0.0, R * R - h * h));
+	} else if (b > R) {
+		theta = pi - B - asin(sin(B) / R * a);
+		S = 0.5 * a * R * sin(theta) + (C - theta) * 0.5 * R * R;
+	} else S = 0.5 * sin(C) * a * b;
+	return S;
+}
+void solve() {
+	scanf("%lf%d", &radius, &n);
+	convex.clear();
+	convex.push_back(Point(-radius, -radius));
+	convex.push_back(Point(radius, -radius));
+	convex.push_back(Point(radius, radius));
+	convex.push_back(Point(-radius, radius));
+	for(int i = 1; i <= n; i++)
+		scanf("%lf%lf%lf%lf", &points[i][0].x, &points[i][0].y, &points[i][1].x, &points[i][1].y);
+	scanf("%lf %lf", &target.x, &target.y);
+	for(int i = 1; i <= n; i++) {
+		if (det(points[i][0], points[i][1], target) < -eps)
+			swap(points[i][0], points[i][1]);
+		convex = calc(convex, points[i][0], points[i][1]);
+	}
+	double ans = 0;
+	for(int i = 0; i < (int)convex.size(); i++)
+		ans += areaCT(radius, convex[i], convex[(i + 1) % (int)convex.size()]) * sign(det(convex[i], convex[(i + 1) % (int)convex.size()]));
+	printf("%.5f", max(0., fabs(ans) / (pi * radius * radius) * 100));
+	puts("%");
+}
+\end{lstlisting}

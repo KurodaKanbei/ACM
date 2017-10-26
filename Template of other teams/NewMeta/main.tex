@@ -1,0 +1,375 @@
+\documentclass[titlepage, a4paper,10pt]{article}
+\usepackage{listings, color, fontspec, minted, setspace, titlesec, fancyhdr, dingbat, mdframed, multicol}
+\usepackage{graphicx, amssymb, amsmath, textcomp, booktabs}
+\usepackage[Chinese]{ucharclasses}
+\usepackage[left=1.5cm, right=0.7cm, top=1.7cm, bottom=0.0cm]{geometry}
+\usepackage{pdfpages}
+\usepackage{tocloft}
+
+%configure the top corners
+\pagestyle{fancy}
+\setlength{\headsep}{0.1cm}
+\rhead{Page \thepage}
+\lhead{上海交通大学 Shanghai Jiao Tong University}
+
+%configure space between the two columns
+\setlength{\columnsep}{30pt}
+
+%configure fonts
+\setmonofont{Isotype}[Scale=0.8]
+\newfontfamily\substitutefont{SimHei}[Scale=0.8]
+\setTransitionsForChinese{\begingroup\substitutefont}{\endgroup}
+
+%configure minted to display codes
+\definecolor{Gray}{rgb}{0.9,0.9,0.9}
+
+%remove leading numbers in table of contents
+%\setcounter{secnumdepth}{0}
+
+%configure section style of table of content
+\renewcommand\cftsecfont{\Large}
+
+%configure section style
+\titleformat{\section}
+	{\huge}			% The style of the section title
+	{\thesection.}				% a prefix
+	{4pt}						% How much space exists between the prefix and the title
+	{}					% How the section is represented
+% \titleformat{\section}{\huge}{}{0pt}{}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+
+%enable section to start new page automatically
+%\let\stdsection\section
+%\renewcommand\section{\penalty-100\vfilneg\stdsection}
+
+%\renewcommand\theFancyVerbLine{\arabic{FancyVerbLine}}
+\renewcommand{\theFancyVerbLine}{\sffamily \textcolor[rgb]{0.5,0.5,0.5}{\scriptsize {\arabic{FancyVerbLine}}}}
+
+\setminted[cpp]{
+	style=xcode,
+	mathescape,
+	linenos,
+	autogobble,
+	baselinestretch=0.9,
+	tabsize=2,
+	fontsize=\normalsize,
+	%bgcolor=Gray,
+	frame=single,
+	framesep=1mm,
+	framerule=0.3pt,
+	numbersep=1mm,
+	breaklines=true,
+	breaksymbolsepleft=2pt,
+	%breaksymbolleft=\raisebox{0.8ex}{ \small\reflectbox{\carriagereturn}}, %not moe!
+	%breaksymbolright=\small\carriagereturn,
+	breakbytoken=false,
+}
+\setminted[java]{
+	style=xcode,
+	mathescape,
+	linenos,
+	autogobble,
+	baselinestretch=1.0,
+	tabsize=2,
+	%bgcolor=Gray,
+	frame=single,
+	framesep=1mm,
+	framerule=0.3pt,
+	numbersep=1mm,
+	breaklines=true,
+	breaksymbolsepleft=2pt,
+	%breaksymbolleft=\raisebox{0.8ex}{ \small\reflectbox{\carriagereturn}}, %not moe!
+	%breaksymbolright=\small\carriagereturn,
+	breakbytoken=false,
+}
+\setminted[text]{
+	style=xcode,
+	mathescape,
+	linenos,
+	autogobble,
+	baselinestretch=1.0,
+	tabsize=2,
+	%bgcolor=Gray,
+	frame=single,
+	framesep=1mm,
+	framerule=0.3pt,
+	numbersep=1mm,
+	breaklines=true,
+	breaksymbolsepleft=2pt,
+	%breaksymbolleft=\raisebox{0.8ex}{ \small\reflectbox{\carriagereturn}}, %not moe!
+	%breaksymbolright=\small\carriagereturn,
+	breakbytoken=false,
+}
+
+%configure titles
+%\title{\LARGE{New Meta} \\[2ex] \Large{Standard Code Library} }
+%\date{\today}
+
+%THE SCL BEGINS
+\begin{document}
+	\include{}
+\end{document}
+\begin{document}
+
+\begin{multicols*}{2}
+
+\tableofcontents
+\end{multicols*}
+
+\begin{multicols}{2}
+
+\newpage
+\begin{spacing}{0.8}
+
+\section{Geometry}
+
+\subsection{三维几何}
+\inputminted{cpp}{1 Geometry/1 3DGeo.cpp}
+
+\subsection{三维凸包}
+\inputminted{cpp}{1 Geometry/2 3DConvex.cpp}
+
+\subsection{阿波罗尼茨圆}
+\inputminted{cpp}{1 Geometry/3 阿波罗尼茨圆.cpp}
+
+\subsection{最小覆盖球}
+\inputminted{cpp}{1 Geometry/4 最小覆盖球.cpp}
+
+\subsection{三角形与圆交}
+\inputminted{cpp}{1 Geometry/5 areaCT.cpp}
+
+\subsection{圆并}
+\inputminted{cpp}{1 Geometry/6 CircleArea.cpp}
+
+\subsection{Delaunay 三角剖分}
+\inputminted{cpp}{1 Geometry/7 DelaunayTriangulation.cpp}
+
+\subsection{二维几何}
+\inputminted{cpp}{1 Geometry/8 Geo2D_simple.cpp}
+
+\subsection{整数半平面交}
+\inputminted{cpp}{1 Geometry/9 HPI_integer.cpp}
+
+\subsection{凸包闵可夫斯基和}
+\inputminted{cpp}{1 Geometry/10 mink.cpp}
+
+\subsection{三角形}
+\inputminted{cpp}{1 Geometry/11 triangle.cpp}
+
+\subsection{经纬度求球面最短距离}
+\inputminted{cpp}{1 Geometry/12 经纬度求球面最短距离.cpp}
+
+\subsection{长方体表面两点最短距离}
+\inputminted{cpp}{1 Geometry/13 长方体表面两点最短距离.cpp}
+
+\subsection{点到凸包切线}
+\inputminted{cpp}{1 Geometry/14 点到凸包切线.cpp}
+
+\subsection{直线与凸包的交点}
+\inputminted{cpp}{1 Geometry/15 直线与凸包的交点.cpp}
+
+
+\section{Graph}
+
+% \subsection{Conclusion}
+% \inputminted{cpp}{2 Graph/0 Conclusion.cpp}
+
+\subsection{无向图最小割}
+\inputminted{cpp}{2 Graph/1 无向图最小割.cpp}
+
+\subsection{Blossom Algorithm}
+\inputminted{cpp}{2 Graph/2 Blossom_Algorithm.cpp}
+
+\subsection{仙人掌}
+\inputminted{cpp}{2 Graph/3 cactus.cpp}
+
+\subsection{最小树形图}
+\inputminted{cpp}{2 Graph/4 ChuLiu.cpp}
+
+\subsection{Dominator Tree}
+\inputminted{cpp}{2 Graph/5 dominator_tree.cpp}
+
+\subsection{离线动态最小生成树}
+\inputminted{cpp}{2 Graph/6 DynamicMST.cpp}
+
+\subsection{GH Tree}
+\inputminted{cpp}{2 Graph/7 GHTree.cpp}
+
+\subsection{Hopcroft mathcing}
+\inputminted{cpp}{2 Graph/8 Hopcroft.cpp}
+
+\subsection{KM}
+\inputminted{cpp}{2 Graph/9 KM.cpp}
+
+\subsection{Maximum Clique}
+\inputminted{cpp}{2 Graph/10 MaximumClique.cpp}
+
+\subsection{原始对偶费用流}
+\inputminted{cpp}{2 Graph/11 MCMF_dij.cpp}
+
+\subsection{完美消除序列}
+\inputminted{cpp}{2 Graph/12 PEO.cpp}
+
+\subsection{Tarjan}
+\inputminted{cpp}{2 Graph/13 Tarjan.cpp}
+
+\subsection{ZKW 费用流}
+\inputminted{cpp}{2 Graph/14 ZKW费用流.cpp}
+
+\section{String}
+
+\subsection{Exkmp}
+\inputminted{cpp}{3 String/1 扩展KMP.cpp}
+
+\subsection{Lyndon Word Decomposition}
+\inputminted{cpp}{3 String/2 Lyndon Word Decomposition.cpp}
+
+\subsection{Manacher}
+\inputminted{cpp}{3 String/3 Manacher.cpp}
+
+\subsection{Minimum Representation}
+\inputminted{cpp}{3 String/4 Minimum Representation.cpp}
+
+\subsection{Palindromic Automaton}
+\inputminted{cpp}{3 String/5 Palindromic Automaton.cpp}
+
+\subsection{Suffix Array}
+\inputminted{cpp}{3 String/6 Suffix Array.cpp}
+
+\subsection{Suffix Automaton}
+\inputminted{cpp}{3 String/7 Suffix Automaton.cpp}
+
+\subsection{AC 自动机}
+\inputminted{cpp}{3 String/8 AC自动机.cpp}
+
+\subsection{子串最长公共子序列}
+\inputminted{cpp}{3 String/9 SubStringLCS.cpp}
+
+\section{Tree}
+
+\subsection{树点分治-斜率优化}
+\inputminted{cpp}{4 Tree/1 树点分治(斜率优化).cpp}
+
+\subsection{树链剖分}
+\inputminted{cpp}{4 Tree/2 树链剖分.cpp}
+
+\subsection{虚树}
+\inputminted{cpp}{4 Tree/3 虚树.cpp}
+
+\subsection{有根树同构}
+\inputminted{cpp}{4 Tree/4 有根树同构.cpp}
+
+\section{Math}
+
+\subsection{Conclusions}
+\inputminted{cpp}{5 Math/0 Conclusion.cpp}
+
+\subsection{积性函数线性求法}
+\inputminted{cpp}{5 Math/1 积性函数线性求法.cpp}
+
+\subsection{平方剩余}
+\inputminted{cpp}{5 Math/2 平方剩余.cpp}
+
+\subsection{线性同余不等式}
+\inputminted{cpp}{5 Math/3 线性同余不等式.cpp}
+
+\subsection{Schreier Sims}
+\inputminted{cpp}{5 Math/4 SchreierSims.cpp}
+
+\subsection{CRT}
+\inputminted{cpp}{5 Math/5 CRT.cpp}
+
+\subsection{Factorial Mod}
+\inputminted{cpp}{5 Math/6 FactorialMod.cpp}
+
+\subsection{Miller Rabin and Pollard Rho}
+\inputminted{cpp}{5 Math/7 Miller Rabin And Pollard Rho.cpp}
+
+\subsection{Pell 方程}
+\inputminted{cpp}{5 Math/8 Pell方程.cpp}
+
+\subsection{Simplex}
+\inputminted{cpp}{5 Math/9 Simplex.cpp}
+
+\subsection{Simpson}
+\inputminted{cpp}{5 Math/10 Simpson.cpp}
+
+\subsection{FFT}
+\inputminted{cpp}{5 Math/11 FFT.cpp}
+\begin{footnotesize}
+	\begin{align}
+	A(x)B(x)&\equiv 1\pmod{x^n}\\
+	(A(x)B(x)-1)^2&\equiv 0\pmod{x^{2n}}\\
+	A(x)(2B(x)-B(x)^2A(x))&\equiv 1\pmod{x^{2n}}
+	\end{align}
+	\begin{align}
+	B(x)&=\ln{A(x)}\\
+	B'(x)&=\frac{A'(x)}{A(x)}
+	\end{align}
+	\begin{align}
+	f(x)&=\exp{A(x)}\\
+	g(f(x))&=\ln{f(x)}-A(x)=0\\
+	f(x)&\equiv f_0(x)\pmod{x^n}\\
+	f(x)&\equiv f_0(x)(1-\ln{f_0(x)}+A(x))\pmod{x^{2n}}
+	\end{align}
+\end{footnotesize}
+
+\subsection{解一元三次方程}
+\inputminted{cpp}{5 Math/12 解一元三次方程.cpp}
+
+\subsection{线性递推}
+\inputminted{cpp}{5 Math/13 线性递推.cpp}
+
+\subsection{黑盒子代数}
+\inputminted{cpp}{5 Math/14 黑盒子代数.cpp}
+
+\section{Data Structure}
+
+% \subsection{Conclusion}
+% \inputminted{cpp}{6 Data Structure/0 Conclusion.cpp}
+
+\subsection{可持久化左偏树-K短路}
+\inputminted{cpp}{6 Data Structure/1 可持久化左偏树(K短路).cpp}
+
+\subsection{左偏树}
+\inputminted{cpp}{6 Data Structure/2 左偏树.cpp}
+
+\subsection{KD 树}
+\inputminted{cpp}{6 Data Structure/3 KD树.cpp}
+
+\subsection{LCT}
+\inputminted{cpp}{6 Data Structure/4 LCT.cpp}
+
+\subsection{Merge-Split Treap}
+\inputminted{cpp}{6 Data Structure/5 Merge-Split Treap.cpp}
+
+\subsection{Splay}
+\inputminted{cpp}{6 Data Structure/6 Splay.cpp}
+
+\section{Miscellany}
+
+\subsection{日期公式}
+\inputminted{cpp}{7 Miscellany/1 日期公式.cpp}
+
+\subsection{DLX - 主代码手}
+\inputminted{cpp}{7 Miscellany/2 DancingLinks.cpp}
+
+\subsection{直线下格点统计}
+\inputminted{cpp}{7 Miscellany/3 直线下格点统计.cpp}
+
+\section{Others}
+
+\subsection{Java Template}
+\inputminted{java}{Others/Main.java}
+
+\subsection{Formulas}
+\input{Others/Formula.tex}
+
+\subsection{Integration Table}
+\input{Others/IntegrationTable.tex}
+
+\end{spacing}
+\end{multicols}
+
+\end{document}
+%THE SCL ENDS

@@ -1,0 +1,25 @@
+\begin{lstlisting}
+inline long long pollard_rho(const long long &n, const long long &c) {
+	long long x = rand() % (n - 1) + 1, y = x;
+	for (int head = 1, tail = 2; true; ) {
+		x = multiply(x, x, n);
+		if ((x += c) >= n) x -= n;
+		if (x == y) return n;
+		long long d = __gcd(abs(x - y), n);
+		if (d > 1 && d < n) return d;
+		if ((++head) == tail) y = x, tail <<= 1;
+	}
+}
+inline vector<long long> mergy(const vector<long long> &a, const vector<long long> &b) {
+	vector<long long> vec;
+	for (int i = 0; i < (int)a.size(); ++i) vec.push_back(a[i]);
+	for (int i = 0; i < (int)b.size(); ++i) vec.push_back(b[i]);
+	return vec;
+}
+inline vector<long long> factor(const long long &n) {
+	if (n <= 1) return vector<long long>();
+	if (miller_rabin::prime(n)) return vector<long long>(1, n);
+	long long p = n; for (; p >= n; p = pollard_rho(n, rand() % (n - 1) + 1));
+	return mergy(factor(n / p), factor(p));
+}
+\end{lstlisting}

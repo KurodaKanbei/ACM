@@ -1,0 +1,45 @@
+int const N = ;
+int n;
+vector<int> adj[N];
+int father[N], height[N], size[N], son[N], top[N], idx[N], num[N];
+inline void prepare() {
+	vector<int> queue; father[1] = height[1] = 0; queue.push_back(1);
+	for (int head = 0; head < (int)queue.size(); ++head) {
+		int x = queue[head];
+		for (int i = 0; i < (int)adj[x].size(); ++i) {
+			int y = adj[x][i];
+			if (y != father[x])
+				father[y] = x, height[y] = height[x] + 1, queue.push_back(y);
+		}
+	}
+	for (int i = n - 1; i >= 0; --i) {
+		int x = queue[i]; size[x] = 1; son[x] = -1;
+		for (int j = 0; j < (int)adj[x].size(); ++j) {
+			int y = adj[x][j];
+			if (y != father[x]) {
+				size[x] += size[y];
+				if (son[x] == -1 || size[son[x]] < size[y]) son[x] = y;
+			}
+		}
+	} int tot = 0; fill(top + 1, top + n + 1, 0);
+	for (int i = 0; i < n; ++i) {
+		int x = queue[i];
+		if (top[x] == 0)
+			for (int y = x; y != -1; y = son[y])
+				top[y] = x, idx[y] = ++tot, num[tot] = //data[y];
+	} build(1, 1, n);
+}
+inline void handle(int x, int y) {
+	for (; true; ) {
+		if (top[x] == top[y]) {
+			if (x == y) handle(1, 1, n, idx[x], idx[x]);
+			else {
+				if (height[x] < height[y]) handle(1, 1, n, idx[x], idx[y]);
+				else handle(1, 1, n, idx[y], idx[x]);
+			} break;
+		}
+		if (height[top[x]] > height[top[y]])
+			handle(1, 1, n, idx[top[x]], idx[x]), x = father[top[x]];
+		else handle(1, 1, n, idx[top[y]], idx[y]), y = father[top[y]];
+	}
+}

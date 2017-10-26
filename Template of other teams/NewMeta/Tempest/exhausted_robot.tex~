@@ -1,0 +1,242 @@
+\begin{lstlisting}
+#include<cstring>
+#include<cstdio>
+#include<cmath>
+#include<vector>
+#include<algorithm>
+using namespace std;
+double eps(1e-8);
+int sign(const double & x) {
+	return (x > eps) - (x + eps < 0);
+}
+bool equal(const double & x, const double & y) {
+	return x + eps > y and y + eps > x;
+}
+struct Point {
+	double x, y;
+	Point () {
+	}
+	Point(const double & x, const double & y) : x(x), y(y) {
+	}
+	void scan() {
+		scanf("%lf%lf", &x, &y);
+	}
+	double sqrlen() const {
+		return x * x + y * y;
+	}
+	double len() const  {
+		return sqrt(sqrlen());
+	}
+	Point zoom(const double & l) const {
+		double lambda(l / len());
+		return Point(lambda * x, lambda * y);
+	}
+	Point rev() const {
+		return Point(-y, x);
+	}
+	void print() const {
+		printf("(%f %f)\n", x, y);
+	}
+};
+
+vector<Point> blocks[22], denied[22], robot;
+
+vector<pair<double, int> > vec;
+
+bool f[111];
+
+Point operator - (const Point & a, const Point & b) {
+	return Point(a.x - b.x, a.y - b.y);
+}
+Point operator + (const Point & a, const Point & b) {
+	return Point(a.x + b.x, a.y + b.y);
+}
+Point operator * (const double & a, const Point & b) {
+	return Point(a * b.x, a * b.y);
+}
+double operator * (const Point & a, const Point & b) {
+	return a.x * b.y - a.y * b.x;
+}
+double operator % (const Point & a, const Point & b) {
+	return a.x * b.x + a.y * b.y;
+}
+
+bool operator < (const Point & a, const Point & b) {
+	if(!equal(a.x, b.x))
+		return a.x < b.x;
+	else if(!equal(a.y, b.y));
+		return a.y < b.y;
+	return false;
+}
+bool operator == (const Point & a, const Point & b) {
+	return equal(a.x, b.x) and equal(a.y, b.y);
+}
+
+void scan(vector<Point> & vec) {
+	vec.clear();
+	int x;
+	scanf("%d", &x);
+	for(int i(0); i < x; i++) {
+		Point tmp;
+		tmp.scan();
+		vec.push_back(tmp);
+	}
+}
+
+Point intersect(const Point & as, const Point & ad, const Point & bs, const Point & bd) {
+	double lambda((bs - as) * bd / (ad * bd));
+	return as + lambda * ad;
+}
+
+void cut(vector<Point> & vec, const Point & s, const Point & d) {
+	vector<Point> vec1;
+	for(int i(0); i < (int)vec.size(); i++) {
+		if(sign((vec[i] - s) * d) <= 0) {
+			vec1.push_back(vec[i]);
+		}
+		if(sign((vec[i] - s) * d) * sign((vec[(i + 1) % (int)vec.size()] - s) * d) < 0) {
+			vec1.push_back(intersect(s, d, vec[i], vec[(i + 1) % (int)vec.size()] - vec[i]));
+		}
+	}
+	vec = vec1;
+}
+
+int mi;
+
+Point getMax(const Point & norm) {
+	Point res(robot[0]);
+	mi = 0;
+	for(int i(0); i < (int)robot.size(); i++) {
+		if(sign(robot[i] % norm - res % norm) > 0) {
+			res = robot[i];
+			mi = i;
+		}
+	}
+	return res;
+}
+
+bool vecCmp(const pair<double, int> & a, const pair<double, int> & b) {
+	if(!equal(a.first, b.first))
+		return a.first < b.first;
+	else
+		return a.second > b.second;
+}
+
+bool vecEql(const pair<double, int> & a, const pair<double, int> & b) {
+	return equal(a.first, b.first) and a.second == b.second;
+}
+
+void print(const vector<Point> & vec) {
+	printf("print:\n");
+	for(int i(0); i < (int)vec.size(); i++) {
+		vec[i].print();
+	}
+	printf("endprint\n");
+}
+
+void getConvex(vector<Point> & vec) {
+	sort(vec.begin(), vec.end());
+	vector<Point> vec1;
+	for(int i(0); i < (int)vec.size(); i++) {
+		while(vec1.size() >= 2 and sign((vec1.back() - vec1[(int)vec1.size() - 2]) * (vec[i] - vec1.back())) <= 0)
+			vec1.pop_back();
+		vec1.push_back(vec[i]);
+	}
+	vector<Point> vec2;
+	for(int i((int)vec.size() - 1); i >= 0; i--) {
+		while(vec2.size() >= 2 and sign((vec2.back() - vec2[(int)vec2.size() - 2]) * (vec[i] - vec2.back())) <= 0)
+			vec2.pop_back();
+		vec2.push_back(vec[i]);
+	}
+	vec.clear();
+	for(int i(0); i + 1 < (int)vec1.size(); i++)
+		vec.push_back(vec1[i]);
+	for(int i(0); i + 1 < (int)vec2.size(); i++)
+		vec.push_back(vec2[i]);
+}
+
+int main() {
+	int tst;
+	scanf("%d", &tst);
+	for(int qq(1); qq <= tst; qq++) {
+		int n;
+		scanf("%d", &n);
+		for(int i(0); i < n; i++)
+			scan(blocks[i]);
+		scan(robot);
+		double x1, y1, x2, y2;
+		scanf("%lf%lf%lf%lf", &x1, &y1, &x2, &y2);
+		x1 += robot[0].x - getMax(Point(-1, 0)).x;
+		y1 += robot[0].y - getMax(Point(0, -1)).y;
+		x2 -= getMax(Point(1, 0)).x - robot[0].x;
+		y2 -= getMax(Point(0, 1)).y - robot[0].y;
+		double ans((x2 - x1) * (y2 - y1));
+		for(int i(0); i < n; i++) {
+			int siz(blocks[i].size());
+			denied[i].clear();
+			int p1, p2;
+			p1 = 0;
+			getMax((blocks[i][1] - blocks[i][0]).rev());
+			p2 = mi;
+			denied[i].push_back(blocks[i][0] + robot[0] - robot[mi]);
+			for(int j1(1), j2(mi); j1 != p1 or j2 != p2; ) {
+				denied[i].push_back(blocks[i][j1] + robot[0] - robot[j2]);
+				Point dir((blocks[i][(j1 + 1) % (int)blocks[i].size()] - blocks[i][j1]).rev());
+				getMax(dir);
+				if(equal(robot[j2] % dir, robot[mi] % dir))
+					++j1 %= (int)blocks[i].size();
+				else
+					++j2 %= (int)robot.size();
+			}
+		}
+		for(int i(0); i < n; i++) {
+			cut(denied[i], Point(x1, y1), Point(x2 - x1, 0));
+			cut(denied[i], Point(x2, y1), Point(0, y2 - y1));
+			cut(denied[i], Point(x2, y2), Point(x1 - x2, 0));
+			cut(denied[i], Point(x1, y2), Point(0, y1 - y2));
+			for(int j(0); j < (int)denied[i].size(); j++) {
+				f[j] = !(denied[i][j] == denied[i][(j + 1) % (int)denied[i].size()]);
+			}
+			getConvex(denied[i]);
+			denied[i].push_back(denied[i].front());
+		}
+		for(int i(0); i < n; i++) {
+			for(int j(0); j + 1 < (int)denied[i].size(); j++) {
+				vec.clear();
+				vec.push_back(make_pair(0., 0));
+				vec.push_back(make_pair(1., 0));
+				Point norm(denied[i][j + 1] - denied[i][j]);
+				Point a(denied[i][j]), b(denied[i][j + 1]);
+				norm = norm.zoom(1 / norm.len());
+				for(int k(0); k < n; k++) if(k != i) {
+					int sz(vec.size());
+					for(int l(0); l + 1 < (int)denied[k].size(); l++) {
+						Point c(denied[k][l]), d(denied[k][l + 1]);
+						int s1(sign((c - a) * norm));
+						int s2(sign((d - a) * norm));
+						if(!s1 and !s2 and k < i and sign((d - c) % norm) > 0) {
+							vec.push_back(make_pair((c - a) % norm, 1));
+							vec.push_back(make_pair((d - a) % norm, -1));
+						} else if(s1 <= 0 and s2 > 0 or s1 > 0 and s2 <= 0) {
+							double a1((d - c) * (a - c));
+							double a2((d - c) * (b - c));
+							vec.push_back(make_pair(a1 / (a1 - a2), (s1 < 0 or s2 > 0)?1:-1));
+						}
+					}
+				}
+				sort(vec.begin(), vec.end(), vecCmp);
+				int cnt(0);
+				double tot(0);
+				for(int k(0); k + 1 < (int)vec.size(); k++) {
+					cnt += vec[k].second;
+					if(cnt == 0 and sign(vec[k].first) >= 0 and sign(vec[k + 1].first - 1) <= 0) {
+						tot += vec[k + 1].first - vec[k].first;
+					}
+				}
+				ans -= tot * (denied[i][j] * denied[i][j + 1]) / 2;
+			}
+		}
+		printf("Case #%d: %.3f\n", qq, ans);
+	}
+}
+\end{lstlisting}

@@ -1,0 +1,156 @@
+\begin{lstlisting}
+
+const int N = 11111, M = 111111 * 4;
+
+struct eglist {
+	int other[M], succ[M], last[M], sum;
+	void clear() {
+		memset(last, -1, sizeof(last));
+		sum = 0;
+	}
+	void addEdge(int a, int b) {
+		other[sum] = b, succ[sum] = last[a], last[a] = sum++;
+		other[sum] = a, succ[sum] = last[b], last[b] = sum++;
+	}
+}e;
+
+int n, m;
+struct point {
+	int x, y;
+	point(int x, int y) : x(x), y(y) {}
+	point() {}
+	friend point operator -(point a, point b) {
+		return point(a.x - b.x, a.y - b.y);
+	}
+	double arg() {
+		return atan2(y, x);
+	}
+}points[N];
+
+vector<pair<int, double> > vecs;
+vector<int> ee[M];
+vector<pair<double, pair<int, int> > > edges;
+double length[M];
+int tot, father[M], next[M], visit[M];
+
+int find(int x) {
+	return father[x] == x ? x : father[x] = find(father[x]);
+}
+
+long long det(point a, point b) {
+	return 1LL * a.x * b.y - 1LL * b.x * a.y;
+}
+
+double dist(point a, point b) {
+	return sqrt(1.0 * (a.x - b.x) * (a.x - b.x) + 1.0 * (a.y - b.y) * (a.y - b.y));
+}
+
+int main() {
+	scanf("%d %d", &n, &m);
+	e.clear();
+	for(int i = 1; i <= n; i++) {
+		scanf("%d %d", &points[i].x, &points[i].y);
+	}
+	for(int i = 1; i <= m; i++) {
+		int a, b;
+		scanf("%d %d", &a, &b);
+		e.addEdge(a, b);
+	}	
+	for(int x = 1; x <= n; x++) {
+		vector<pair<double, int> > pairs;
+		for(int i = e.last[x]; ~i; i = e.succ[i]) {
+			int y = e.other[i];
+			pairs.push_back(make_pair((points[y] - points[x]).arg(), i));
+		}
+		sort(pairs.begin(), pairs.end());
+		for(int i = 0; i < (int)pairs.size(); i++) {
+			next[pairs[(i + 1) % (int)pairs.size()].second ^ 1] = pairs[i].second;
+		}
+	}
+	memset(visit, 0, sizeof(visit));
+	tot = 0;
+	for(int start = 0; start < e.sum; start++) {
+		if (visit[start])
+			continue;
+		long long total = 0;
+		int now = start;
+		vecs.clear();
+		while(!visit[now]) {
+			visit[now] = 1;
+			total += det(points[e.other[now ^ 1]], points[e.other[now]]);
+			vecs.push_back(make_pair(now / 2, dist(points[e.other[now ^ 1]], points[e.other[now]])));
+			now = next[now];
+		}
+		if (now == start && total > 0) {
+			++tot;
+			for(int i = 0; i < (int)vecs.size(); i++) {
+				ee[vecs[i].first].push_back(tot);
+			}
+		}
+	}
+	
+	for(int i = 0; i < e.sum / 2; i++) {
+		int a = 0, b = 0;
+		if (ee[i].size() == 0)
+			continue;
+		else if (ee[i].size() == 1) {
+			a = ee[i][0];
+		} else if (ee[i].size() == 2) {
+			a = ee[i][0], b = ee[i][1];
+		}
+		edges.push_back(make_pair(dist(points[e.other[i * 2]], points[e.other[i * 2 + 1]]), make_pair(a, b)));
+	}
+	sort(edges.begin(), edges.end());
+	for(int i = 0; i <= tot; i++)
+		father[i] = i;
+	double ans = 0;
+	for(int i = 0; i < (int)edges.size(); i++) {
+		int a = edges[i].second.first, b = edges[i].second.second;
+		double v = edges[i].first;
+		if (find(a) != find(b)) {
+			ans += v;
+			father[father[a]] = father[b];
+		}
+	}
+	printf("%.5f\n", ans);
+}
+
+scanf("%lf %lf %d", &W, &H, &n);
+for (int i = 0; i < n; i++) {
+	scanf("%lf %lf %lf %lf", &segments[i][0].x, &segments[i][0].y, &segments[i][1].x, &segments[i][1].y);
+}
+addSegment(Point(0, 0), Point(W, 0));
+addSegment(Point(W, 0), Point(W, H));
+addSegment(Point(W, H), Point(0, H));
+addSegment(Point(0, H), Point(0, 0));
+
+for (int i = 0; i < n; i++) {
+	Points.push_back(segments[i][0]);
+	Points.push_back(segments[i][1]);
+	for (int j = 0; j < i; j++) {
+		if (!parallel(segments[i][0], segments[i][1], segments[j][0], segments[j][1])) {
+			Point p = intersect(segments[i][0], segments[i][1], segments[j][0], segments[j][1]);
+			if (p.on(segments[i][0], segments[i][1]) && p.on(segments[j][0], segments[j][1])) {
+				Points.push_back(p);
+			}
+		}
+	}
+}
+sort(Points.begin(), Points.end());
+Points.erase(unique(Points.begin(), Points.end()), Points.end());
+
+e.clear();
+for (int i = 0; i < n; i++) {
+	vector<pair<double, int> > pairs;
+	for (int j = 0; j < Points.size(); j++) {
+		if (Points[j].on(segments[i][0], segments[i][1]))
+			pairs.push_back(make_pair((Points[j] - segments[i][0]).norm(), j));
+	}
+	sort(pairs.begin(), pairs.end());
+	for (int i = 1; i < pairs.size(); i++) {
+		e.addEdge(pairs[i - 1].second, pairs[i].second);
+		e.addEdge(pairs[i].second, pairs[i - 1].second);
+	}
+}
+
+\end{lstlisting}

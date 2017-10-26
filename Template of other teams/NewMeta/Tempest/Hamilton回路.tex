@@ -1,0 +1,81 @@
+\begin{lstlisting}
+bool graph[N][N];
+int n, l[N], r[N], next[N], last[N], s, t;
+char buf[10010];
+void cover(int x) { l[r[x]] = l[x]; r[l[x]] = r[x]; }
+int adjacent(int x) {
+	for (int i = r[0]; i <= n; i = r[i]) if (graph[x][i]) return i;
+	return 0;
+}
+int main() {
+	scanf("%d\n", &n);
+	for (int i = 1; i <= n; ++i) {
+		gets(buf);
+		string str = buf;
+		istringstream sin(str);
+		int x;
+		while (sin >> x) {
+			graph[i][x] = true;
+		}
+		l[i] = i - 1;
+		r[i] = i + 1;
+	}
+	for (int i = 2; i <= n; ++i)
+		if (graph[1][i]) {
+			s = 1;
+			t = i;
+			cover(s);
+			cover(t);
+			next[s] = t;
+			break;
+		}
+	while (true) {
+		int x;
+		while (x = adjacent(s)) {
+			next[x] = s;
+			s = x;
+			cover(s);
+		}
+		while (x = adjacent(t)) {
+			next[t] = x;
+			t = x;
+			cover(t);
+		}
+		if (!graph[s][t]) {
+			for (int i = s, j; i != t; i = next[i])
+				if (graph[s][next[i]] && graph[t][i]) {
+					for (j = s; j != i; j = next[j])
+						last[next[j]] = j;
+					j = next[s];
+					next[s] = next[i];
+					next[t] = i;
+					t = j;
+					for (j = i; j != s; j = last[j])
+						next[j] = last[j];
+					break;
+				}
+		}
+		next[t] = s;
+		if (r[0] > n)
+			break;
+		for (int i = s; i != t; i = next[i])
+			if (adjacent(i)) {
+				s = next[i];
+				t = i;
+				next[t] = 0;
+				break;
+			}
+	}
+	for (int i = s; ; i = next[i]) {
+		if (i == 1) {
+			printf("%d", i);
+			for (int j = next[i]; j != i; j = next[j])
+				printf(" %d", j);
+			printf(" %d\n", i);
+			break;
+		}
+		if (i == t)
+			break;
+	}
+}
+\end{lstlisting}

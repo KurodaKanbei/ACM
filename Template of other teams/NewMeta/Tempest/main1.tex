@@ -1,0 +1,226 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{listings} 
+\usepackage{harpoon}
+\usepackage[left=1.5cm, right=1.5cm]{geometry}
+\usepackage[BoldFont]{xeCJK}
+\newcommand{\ud}{\mathrm{d}}
+\oddsidemargin -0.1 true cm
+\if@twoside
+	\evensidemargin -0.1 true cm
+\fi
+\setlength{\parindent}{0em}
+\setCJKmainfont{Yahei Mono}
+\lstset{
+	language=C++,
+	numbers=left,
+	tabsize=4,
+	breaklines=tr,
+	extendedchars=false
+}
+\title{\LARGE{Standard Code Library}}
+\author{Tempest}
+\date{October, 2014}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\chapter{数论算法}
+	\section{$O(m^2\log n)$求线性递推数列第n项}
+		\input{linear_recurrence.tex}
+	\section{NTT}
+		\input{NTT.tex}
+	\section{中国剩余定理}
+		\input{crt.tex}
+	\section{中国剩余定理(可不互质)}
+		\input{chinese_remainder_theorem.tex}
+	\section{Miller Rabin}	
+		\input{miller_rabin.tex}
+	\section{Pollard Rho}
+		\input{pollard_rho.tex}
+	\section{离散对数}
+		\input{离散对数.tex}
+	\section{原根}
+		\input{离散根.tex}
+	\section{离散二次方根}
+		\input{离散二次方根.tex}
+	\section{牛顿迭代求平方根}
+		\input{牛顿迭代求平方根.tex}
+	\section{Pell方程求根}
+		\input{佩尔方程求根.tex}
+	\section{直线下整点个数}
+		\input{直线下的整点个数.tex}
+	
+\chapter{数值算法}
+	\section{FFT}
+		\input{FFT.tex}	
+	\section{解一元三次方程+求三阶二次型的标准型}
+		\input{一元三次方程.tex}
+	\section{高斯消元}
+		\input{高斯消元.tex}
+	\section{最小二乘法}
+		\input{最小二乘法.tex}
+	\section{多项式求根}
+		\input{多项式求根.tex}
+	\section{自适应辛普森}
+	 	\input{adaptive_simpson.tex}
+\chapter{计算几何}
+	\section{圆与多边形交}
+		\input{圆与多边形交.tex}
+	\section{动态凸包}
+		\input{动态凸包.tex}
+	\section{farmland}
+		\input{farmland.tex}
+	\section{farmland完全体}
+		\input{farmland1.tex}
+	\section{半平面交}
+		\input{half_plane_intersect.tex}
+	\section{三维绕轴旋转}
+		\input{三维绕轴旋转.tex}
+	\section{点到凸包切线}???
+	%!!!
+	\section{直线凸包交点}
+		\input{直线到凸包交点.tex}
+	\section{exhausted\_robot 凸多边形卡壳+凸多边形交}
+		\input{exhausted_robot.tex}
+	\section{判断圆存在交集O(nlogk)}
+		\input{判断圆存在交集.tex}
+	\section{最小覆盖球}
+		\input{最小覆盖球.tex}
+	\section{最小覆盖圆}
+		\input{最小覆盖圆.tex}
+	\section{圆交$O(n^2\log n)$计算面积和重心}
+		\input{圆交.tex}
+	\section{三维跨立实验+点到线段的垂足在线段上+分数类}
+		\input{跨立实验.tex}
+	\section{平面图形的转动惯量计算}
+		\input{转动惯量.tex}
+	\section{凸多边形内的最大圆$O(n\log n)$}
+		\input{凸多边形内的最大圆.tex}
+	\section{三维凸包}
+		\input{3D_convex_hull.tex}
+	\section{点在多边形内}
+		\input{点在多边形内.tex}
+	\section{三角形的内心}
+		\input{三角形的内心.tex}
+	\section{三角形的外心}
+		\input{三角形的外心.tex}
+	\section{三角形的垂心}
+		\input{三角形的垂心.tex}
+	\section{V图}
+		\input{V图.tex}
+\chapter{数据结构}
+	\section{KD树}
+		\input{KD树.tex}
+	\section{树链剖分}
+		\input{树链剖分.tex}
+	\section{可持久化左偏树}
+		\input{可持久化左偏树.tex}
+	\section{treap}
+		\input{treap.tex}
+	\section{functional\_treap}
+		\input{functional_treap.tex}
+	\section{LCT}
+		\input{link_cut_tree.tex}
+	\section{Splay}
+		\input{Splay.tex}
+\chapter{图论}
+	\section{Gabow算法求点双连通分量(非递归)}
+		边(u, v)属于min(color[u], color[v])这个点双连通分量.
+		\input{Gabow.tex}
+	\section{Hopcroft Karp求二分图最大匹配$O(EV^{0.5})$}
+		\input{Hopcroft_Karp.tex}
+	\section{最小树形图}
+		\input{最小树形图.tex}
+	\section{KM}
+		\input{KM.tex}
+	\section{扩展KM}
+		\input{扩展KM.tex}
+	\section{度限制生成树}
+		\input{度限制生成树.tex}
+	\section{一般图匹配}
+		\input{一般图匹配.tex}
+	%带权的?!
+	\section{无向图最小割}
+		\input{无向图最小割.tex}
+	\section{Hamilton回路}
+		\input{Hamilton回路.tex}
+	\section{弦图判定}
+		\input{弦图判定.tex}
+	\section{弦图求团数}
+		\input{弦图求团数.tex}
+	\section{有根树的同构}
+		\input{有根树的同构.tex}
+	\section{zkw费用流}
+		\input{zkw费用流.tex}
+	%\section{图同构哈希}
+	%!!!
+\chapter{字符串}
+	\section{扩展KMP}
+		\input{扩展KMP.tex}
+	\section{后缀数组}
+		\input{后缀数组.tex}
+	\section{DC3}
+		\input{DC3.tex}
+	\section{AC自动机}
+		\input{aho_corasick_automation.tex}
+	\section{极长回文子串}
+		\input{极长回文子串.tex}
+	\section{后缀自动机--多个串的最长公共子串}
+		\input{后缀自动机--多个串最长公共子串.tex}
+	\section{后缀自动机--多次询问串在母串中的出现次数}
+		\input{后缀自动机--多次询问串在母串中的出现次数.tex}
+	\section{循环串的最小表示}
+		\input{SCL_str_cyc_min_rep.tex}
+\chapter{Others}
+	\section{快速求逆}
+		\input{快速求逆.tex}
+	\section{求某年某月某日星期几}
+		\input{求某年某月某日星期几.tex}
+	\section{LL*LL\%LL} 
+		\input{LLMOD.tex}
+	\section{next\_nCk}
+		\input{next_nCk.tex}
+	\section{单纯形}
+		\input{单纯形.tex}
+	\section{曼哈顿最小生成树}
+		\input{曼哈顿最小生成树.tex}
+	\section{最长公共子序列}
+		\input{最长公共子序列.tex}
+	\section{环状最长公共子序列}
+		\input{环状最长公共子序列.tex}
+	\section{长方体表面两点最近距离}
+		\input{长方体表面最近距离.tex}
+	\section{插头DP}
+		\input{插头DP.tex}
+	\section{最大团搜索}
+		\input{最大团搜索.tex}
+	\section{Dancing Links}
+		\input{Dancing_Links.tex}
+	\section{极大团计数}
+		\input{极大团计数.tex}
+\chapter{Hints}
+	\section{积分表}
+		\input{积分表.tex}
+	\section{数学公式}
+		\input{数学公式.tex}
+	\section{平面几何公式}
+		\input{几何公式.tex}
+	\section{网络流Hints}
+	下界:(u, v)下界为c:超级源到t建流量为c, s到超级汇建流量为c, (原来的汇到原来的源建无穷, 如果有), 流一遍超级源出边满了就存在可行流.\\
+	下界最大流(有源汇): 上面的搞完从原来的源到原来的汇流一遍\\
+	下界最小流(有源汇): 上面的搞完从原来的汇到原来的源流一遍\\
+	\section{2-SATHints}
+	每对点都选择强连通时color较小的\\
+	\section{二分图相关Hints}
+		\input{二分图.tex}
+	\section{java\_hints}
+		旧\\
+		\input{java_hints.tex}
+		新\\
+		\input{java_template.tex}
+	\section{Usage\_of\_Rope}
+		\input{Usage_of_Rope.tex}
+\end{document}
