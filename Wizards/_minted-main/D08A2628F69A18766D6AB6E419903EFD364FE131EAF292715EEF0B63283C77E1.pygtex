@@ -1,0 +1,95 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{const} \PYG{k+kt}{int} \PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{1000} \PYG{o}{+} \PYG{l+m+mi}{7}\PYG{p}{;}
+\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{bool}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZgt{}} \PYG{n}{adj}\PYG{p}{;}
+\PYG{k}{class} \PYG{n+nc}{MaxClique} \PYG{p}{\PYGZob{}}
+    \PYG{k}{const} \PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{bool}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZgt{}} \PYG{n}{adj}\PYG{p}{;}
+    \PYG{k}{const} \PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{;}
+    \PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{result}\PYG{p}{,} \PYG{n}{cur\PYGZus{}res}\PYG{p}{;}
+    \PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZgt{}} \PYG{n}{color\PYGZus{}set}\PYG{p}{;}
+    \PYG{k}{const} \PYG{k+kt}{double} \PYG{n}{t\PYGZus{}limit}\PYG{p}{;} \PYG{c+c1}{// MAGIC}
+	\PYG{k+kt}{int} \PYG{n}{para}\PYG{p}{,} \PYG{n}{level}\PYG{p}{;}
+	\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,} \PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZgt{}} \PYG{n}{steps}\PYG{p}{;}
+\PYG{k}{public}\PYG{o}{:}
+    \PYG{k}{class} \PYG{n+nc}{Vertex} \PYG{p}{\PYGZob{}}
+    \PYG{k}{public}\PYG{o}{:}
+        \PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{,} \PYG{n}{d}\PYG{p}{;}
+        \PYG{n}{Vertex}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{d} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{:} \PYG{n}{i}\PYG{p}{(}\PYG{n}{i}\PYG{p}{),} \PYG{n}{d}\PYG{p}{(}\PYG{n}{d}\PYG{p}{)} \PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{p}{\PYGZcb{};}
+    \PYG{k+kt}{void} \PYG{n+nf}{reorder}\PYG{p}{(}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Vertex}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZam{}}\PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k}{auto} \PYG{o}{\PYGZam{}}\PYG{n+nl}{u} \PYG{p}{:} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{u}\PYG{p}{.}\PYG{n}{d} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k}{auto} \PYG{n+nl}{v} \PYG{p}{:} \PYG{n}{p}\PYG{p}{)} \PYG{n}{u}\PYG{p}{.}\PYG{n}{d} \PYG{o}{+=} \PYG{n}{adj}\PYG{p}{[}\PYG{n}{v}\PYG{p}{.}\PYG{n}{i}\PYG{p}{][}\PYG{n}{u}\PYG{p}{.}\PYG{n}{i}\PYG{p}{];}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{n}{sort}\PYG{p}{(}\PYG{n}{p}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{(),} \PYG{n}{p}\PYG{p}{.}\PYG{n}{end}\PYG{p}{(),} \PYG{p}{[}\PYG{o}{\PYGZam{}}\PYG{p}{](}\PYG{k}{const} \PYG{n}{Vertex} \PYG{o}{\PYGZam{}}\PYG{n}{a}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Vertex} \PYG{o}{\PYGZam{}}\PYG{n}{b}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{k}{return} \PYG{n}{a}\PYG{p}{.}\PYG{n}{d} \PYG{o}{\PYGZgt{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{d}\PYG{p}{;} \PYG{p}{\PYGZcb{}} \PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+	\PYG{c+c1}{// reuse p[i].d to denote the maximum possible clique for first i vertices.}
+    \PYG{k+kt}{void} \PYG{n+nf}{init\PYGZus{}color}\PYG{p}{(}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Vertex}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZam{}}\PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kt}{int} \PYG{n}{maxd} \PYG{o}{=} \PYG{n}{p}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{].}\PYG{n}{d}\PYG{p}{;}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{p}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{d} \PYG{o}{=} \PYG{n}{min}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{maxd}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k+kt}{bool} \PYG{n+nf}{bridge}\PYG{p}{(}\PYG{k}{const} \PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZam{}}\PYG{n}{s}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k}{auto} \PYG{n+nl}{v} \PYG{p}{:} \PYG{n}{s}\PYG{p}{)} \PYG{k}{if} \PYG{p}{(}\PYG{n}{adj}\PYG{p}{[}\PYG{n}{v}\PYG{p}{][}\PYG{n}{x}\PYG{p}{])} \PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+        \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+	\PYG{c+c1}{// approximate estimate the p[i].d}
+	\PYG{c+c1}{// Do not care about first mink color class (For better result, we must get some vertex in some color class larger than mink )}
+    \PYG{k+kt}{void} \PYG{n+nf}{color\PYGZus{}sort}\PYG{p}{(}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Vertex}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZam{}}\PYG{n}{cur}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kt}{int} \PYG{n}{totc} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{ptr} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{mink} \PYG{o}{=} \PYG{n}{max}\PYG{p}{((}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{result}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{cur\PYGZus{}res}\PYG{p}{.}\PYG{n}{size}\PYG{p}{(),} \PYG{l+m+mi}{0}\PYG{p}{);}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cur}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{int} \PYG{n}{x} \PYG{o}{=} \PYG{n}{cur}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{i}\PYG{p}{,} \PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{k}{while} \PYG{p}{(}\PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{n}{totc} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{bridge}\PYG{p}{(}\PYG{n}{color\PYGZus{}set}\PYG{p}{[}\PYG{n}{k}\PYG{p}{],} \PYG{n}{x}\PYG{p}{))} \PYG{n}{k}\PYG{o}{++}\PYG{p}{;}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{k} \PYG{o}{==} \PYG{n}{totc}\PYG{p}{)} \PYG{n}{color\PYGZus{}set}\PYG{p}{[}\PYG{n}{totc}\PYG{o}{++}\PYG{p}{].}\PYG{n}{clear}\PYG{p}{();}
+            \PYG{n}{color\PYGZus{}set}\PYG{p}{[}\PYG{n}{k}\PYG{p}{].}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{n}{mink}\PYG{p}{)} \PYG{n}{cur}\PYG{p}{[}\PYG{n}{ptr}\PYG{o}{++}\PYG{p}{].}\PYG{n}{i} \PYG{o}{=} \PYG{n}{x}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{ptr}\PYG{p}{)} \PYG{n}{cur}\PYG{p}{[}\PYG{n}{ptr} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{d} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{mink}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{totc}\PYG{p}{;} \PYG{n}{i} \PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k}{auto} \PYG{n+nl}{v} \PYG{p}{:} \PYG{n}{color\PYGZus{}set}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+                \PYG{n}{cur}\PYG{p}{[}\PYG{n}{ptr}\PYG{o}{++}\PYG{p}{]} \PYG{o}{=} \PYG{n}{Vertex}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,} \PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k+kt}{void} \PYG{n+nf}{expand}\PYG{p}{(}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Vertex}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZam{}}\PYG{n}{cur}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{steps}\PYG{p}{[}\PYG{n}{level}\PYG{p}{].}\PYG{n}{second} \PYG{o}{=} \PYG{n}{steps}\PYG{p}{[}\PYG{n}{level}\PYG{p}{].}\PYG{n}{second} \PYG{o}{\PYGZhy{}} \PYG{n}{steps}\PYG{p}{[}\PYG{n}{level}\PYG{p}{].}\PYG{n}{first} \PYG{o}{+} \PYG{n}{steps}\PYG{p}{[}\PYG{n}{level} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{first}\PYG{p}{;}
+		\PYG{n}{steps}\PYG{p}{[}\PYG{n}{level}\PYG{p}{].}\PYG{n}{first} \PYG{o}{=} \PYG{n}{steps}\PYG{p}{[}\PYG{n}{level} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{second}\PYG{p}{;}
+        \PYG{k}{while} \PYG{p}{(}\PYG{n}{cur}\PYG{p}{.}\PYG{n}{size}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{cur\PYGZus{}res}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{+} \PYG{n}{cur}\PYG{p}{.}\PYG{n}{back}\PYG{p}{().}\PYG{n}{d} \PYG{o}{\PYGZlt{}=} \PYG{n}{result}\PYG{p}{.}\PYG{n}{size}\PYG{p}{())} \PYG{k}{return} \PYG{p}{;}
+            \PYG{k+kt}{int} \PYG{n}{x} \PYG{o}{=} \PYG{n}{cur}\PYG{p}{.}\PYG{n}{back}\PYG{p}{().}\PYG{n}{i}\PYG{p}{;}
+            \PYG{n}{cur\PYGZus{}res}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);} \PYG{n}{cur}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+            \PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Vertex}\PYG{o}{\PYGZgt{}} \PYG{n}{remain}\PYG{p}{;}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k}{auto} \PYG{n+nl}{v} \PYG{p}{:} \PYG{n}{cur}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{adj}\PYG{p}{[}\PYG{n}{v}\PYG{p}{.}\PYG{n}{i}\PYG{p}{][}\PYG{n}{x}\PYG{p}{])} \PYG{n}{remain}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{v}\PYG{p}{.}\PYG{n}{i}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{remain}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{cur\PYGZus{}res}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{n}{result}\PYG{p}{.}\PYG{n}{size}\PYG{p}{())} \PYG{n}{result} \PYG{o}{=} \PYG{n}{cur\PYGZus{}res}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{c+c1}{// Magic ballance.}
+				\PYG{k}{if} \PYG{p}{(}\PYG{l+m+mf}{1.} \PYG{o}{*} \PYG{n}{steps}\PYG{p}{[}\PYG{n}{level}\PYG{p}{].}\PYG{n}{second} \PYG{o}{/} \PYG{o}{++}\PYG{n}{para} \PYG{o}{\PYGZlt{}} \PYG{n}{t\PYGZus{}limit}\PYG{p}{)} \PYG{n}{reorder}\PYG{p}{(}\PYG{n}{remain}\PYG{p}{);}
+                \PYG{n}{color\PYGZus{}sort}\PYG{p}{(}\PYG{n}{remain}\PYG{p}{);}
+				\PYG{n}{steps}\PYG{p}{[}\PYG{n}{level}\PYG{o}{++}\PYG{p}{].}\PYG{n}{second}\PYG{o}{++}\PYG{p}{;}
+                \PYG{n}{expand}\PYG{p}{(}\PYG{n}{remain}\PYG{p}{);}
+				\PYG{n}{level}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{cur\PYGZus{}res}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{k}{public}\PYG{o}{:}
+    \PYG{n}{MaxClique}\PYG{p}{(}\PYG{k}{const} \PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{bool}\PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZgt{}} \PYG{o}{\PYGZam{}}\PYG{n}{\PYGZus{}adj}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,} \PYG{k+kt}{double} \PYG{n}{tt} \PYG{o}{=} \PYG{l+m+mf}{0.025}\PYG{p}{)} \PYG{o}{:} \PYG{n}{adj}\PYG{p}{(}\PYG{n}{\PYGZus{}adj}\PYG{p}{),} \PYG{n}{n}\PYG{p}{(}\PYG{n}{n}\PYG{p}{),} \PYG{n}{t\PYGZus{}limit}\PYG{p}{(}\PYG{n}{tt}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{result}\PYG{p}{.}\PYG{n}{clear}\PYG{p}{();}
+        \PYG{n}{cur\PYGZus{}res}\PYG{p}{.}\PYG{n}{clear}\PYG{p}{();}
+        \PYG{n}{color\PYGZus{}set}\PYG{p}{.}\PYG{n}{resize}\PYG{p}{(}\PYG{n}{n}\PYG{p}{);}
+		\PYG{n}{steps}\PYG{p}{.}\PYG{n}{resize}\PYG{p}{(}\PYG{n}{n} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{);}
+		\PYG{n}{fill}\PYG{p}{(}\PYG{n}{steps}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{(),} \PYG{n}{steps}\PYG{p}{.}\PYG{n}{end}\PYG{p}{(),} \PYG{n}{make\PYGZus{}pair}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{));}
+		\PYG{n}{level} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{n}{para} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{solve}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Vertex}\PYG{o}{\PYGZgt{}} \PYG{n}{p}\PYG{p}{;}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{n}{p}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{Vertex}\PYG{p}{(}\PYG{n}{i}\PYG{p}{));}
+        \PYG{n}{reorder}\PYG{p}{(}\PYG{n}{p}\PYG{p}{);}
+        \PYG{n}{init\PYGZus{}color}\PYG{p}{(}\PYG{n}{p}\PYG{p}{);}
+        \PYG{n}{expand}\PYG{p}{(}\PYG{n}{p}\PYG{p}{);}
+        \PYG{k}{return} \PYG{n}{result}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

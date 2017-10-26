@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{add\PYGZus{}node}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{int} \PYG{o}{\PYGZam{}}\PYG{n}{last}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{lastnode} \PYG{o}{=} \PYG{n}{last}\PYG{p}{;}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{c}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{][}\PYG{n}{x}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{nownode} \PYG{o}{=} \PYG{n}{c}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{][}\PYG{n}{x}\PYG{p}{];}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{l}\PYG{p}{[}\PYG{n}{nownode}\PYG{p}{]} \PYG{o}{==} \PYG{n}{l}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{n}{last} \PYG{o}{=} \PYG{n}{nownode}\PYG{p}{;}
+		\PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{k+kt}{int} \PYG{n}{auxnode} \PYG{o}{=} \PYG{o}{++}\PYG{n}{cnt}\PYG{p}{;} \PYG{n}{l}\PYG{p}{[}\PYG{n}{auxnode}\PYG{p}{]} \PYG{o}{=} \PYG{n}{l}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+			\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{alphabet}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{n}{c}\PYG{p}{[}\PYG{n}{auxnode}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{c}\PYG{p}{[}\PYG{n}{nownode}\PYG{p}{][}\PYG{n}{i}\PYG{p}{];}
+			\PYG{n}{par}\PYG{p}{[}\PYG{n}{auxnode}\PYG{p}{]} \PYG{o}{=} \PYG{n}{par}\PYG{p}{[}\PYG{n}{nownode}\PYG{p}{];} \PYG{n}{par}\PYG{p}{[}\PYG{n}{nownode}\PYG{p}{]} \PYG{o}{=} \PYG{n}{auxnode}\PYG{p}{;}
+			\PYG{k}{for} \PYG{p}{(;} \PYG{n}{lastnode} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{c}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{][}\PYG{n}{x}\PYG{p}{]} \PYG{o}{==} \PYG{n}{nownode}\PYG{p}{;} \PYG{n}{lastnode} \PYG{o}{=} \PYG{n}{par}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+				\PYG{n}{c}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{][}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n}{auxnode}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{n}{last} \PYG{o}{=} \PYG{n}{auxnode}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{newnode} \PYG{o}{=} \PYG{o}{++}\PYG{n}{cnt}\PYG{p}{;} \PYG{n}{l}\PYG{p}{[}\PYG{n}{newnode}\PYG{p}{]} \PYG{o}{=} \PYG{n}{l}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{k}{for} \PYG{p}{(;} \PYG{n}{lastnode} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n}{c}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{][}\PYG{n}{x}\PYG{p}{];} \PYG{n}{lastnode} \PYG{o}{=} \PYG{n}{par}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{])} \PYG{n}{c}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{][}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n}{newnode}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{lastnode}\PYG{p}{)} \PYG{n}{par}\PYG{p}{[}\PYG{n}{newnode}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{k+kt}{int} \PYG{n}{nownode} \PYG{o}{=} \PYG{n}{c}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{][}\PYG{n}{x}\PYG{p}{];}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{l}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{==} \PYG{n}{l}\PYG{p}{[}\PYG{n}{nownode}\PYG{p}{])} \PYG{n}{par}\PYG{p}{[}\PYG{n}{newnode}\PYG{p}{]} \PYG{o}{=} \PYG{n}{nownode}\PYG{p}{;}
+			\PYG{k}{else} \PYG{p}{\PYGZob{}}
+				\PYG{k+kt}{int} \PYG{n}{auxnode} \PYG{o}{=} \PYG{o}{++}\PYG{n}{cnt}\PYG{p}{;} \PYG{n}{l}\PYG{p}{[}\PYG{n}{auxnode}\PYG{p}{]} \PYG{o}{=} \PYG{n}{l}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+				\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{alphabet}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{n}{c}\PYG{p}{[}\PYG{n}{auxnode}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{c}\PYG{p}{[}\PYG{n}{nownode}\PYG{p}{][}\PYG{n}{i}\PYG{p}{];}
+				\PYG{n}{par}\PYG{p}{[}\PYG{n}{auxnode}\PYG{p}{]} \PYG{o}{=} \PYG{n}{par}\PYG{p}{[}\PYG{n}{nownode}\PYG{p}{];} \PYG{n}{par}\PYG{p}{[}\PYG{n}{nownode}\PYG{p}{]} \PYG{o}{=} \PYG{n}{par}\PYG{p}{[}\PYG{n}{newnode}\PYG{p}{]} \PYG{o}{=} \PYG{n}{auxnode}\PYG{p}{;}
+				\PYG{k}{for} \PYG{p}{(;} \PYG{n}{lastnode} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{c}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{][}\PYG{n}{x}\PYG{p}{]} \PYG{o}{==} \PYG{n}{nownode}\PYG{p}{;} \PYG{n}{lastnode} \PYG{o}{=} \PYG{n}{par}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+					\PYG{n}{c}\PYG{p}{[}\PYG{n}{lastnode}\PYG{p}{][}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n}{auxnode}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{n}{last} \PYG{o}{=} \PYG{n}{newnode}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{// getchar()读入优化 \PYGZlt{}\PYGZlt{} 关同步cin \PYGZlt{}\PYGZlt{} 此优化}
+\PYG{c+c1}{// 用isdigit()会小幅变慢}
+\PYG{c+c1}{// 返回 false 表示读到文件尾}
+\PYG{k}{namespace} \PYG{n}{Reader} \PYG{p}{\PYGZob{}}
+    \PYG{k}{const} \PYG{k+kt}{int} \PYG{n}{L} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{15}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{5}\PYG{p}{;}
+    \PYG{k+kt}{char} \PYG{n}{buffer}\PYG{p}{[}\PYG{n}{L}\PYG{p}{],} \PYG{o}{*}\PYG{n}{S}\PYG{p}{,} \PYG{o}{*}\PYG{n}{T}\PYG{p}{;}
+    \PYG{k+kr}{\PYGZus{}\PYGZus{}inline} \PYG{k+kt}{bool} \PYG{n+nf}{getchar}\PYG{p}{(}\PYG{k+kt}{char} \PYG{o}{\PYGZam{}}\PYG{n}{ch}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{S} \PYG{o}{==} \PYG{n}{T}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{n}{T} \PYG{o}{=} \PYG{p}{(}\PYG{n}{S} \PYG{o}{=} \PYG{n}{buffer}\PYG{p}{)} \PYG{o}{+} \PYG{n}{fread}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{L}\PYG{p}{,} \PYG{n}{stdin}\PYG{p}{);}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{S} \PYG{o}{==} \PYG{n}{T}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{ch} \PYG{o}{=} \PYG{n}{EOF}\PYG{p}{;}
+				\PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+		\PYG{n}{ch} \PYG{o}{=} \PYG{o}{*}\PYG{n}{S}\PYG{o}{++}\PYG{p}{;}
+		\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k+kr}{\PYGZus{}\PYGZus{}inline} \PYG{k+kt}{bool} \PYG{n+nf}{getint}\PYG{p}{(}\PYG{k+kt}{int} \PYG{o}{\PYGZam{}}\PYG{n}{x}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{char} \PYG{n}{ch}\PYG{p}{;} \PYG{k+kt}{bool} \PYG{n}{neg} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{for} \PYG{p}{(;} \PYG{n}{getchar}\PYG{p}{(}\PYG{n}{ch}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{ch} \PYG{o}{\PYGZlt{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}} \PYG{o}{||} \PYG{n}{ch} \PYG{o}{\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}9\PYGZsq{}}\PYG{p}{);} \PYG{p}{)} \PYG{n}{neg} \PYG{o}{\PYGZca{}=} \PYG{n}{ch} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZhy{}\PYGZsq{}}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{ch} \PYG{o}{==} \PYG{n}{EOF}\PYG{p}{)} \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+		\PYG{n}{x} \PYG{o}{=} \PYG{n}{ch} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+		\PYG{k}{for} \PYG{p}{(;} \PYG{n}{getchar}\PYG{p}{(}\PYG{n}{ch}\PYG{p}{),} \PYG{n}{ch} \PYG{o}{\PYGZgt{}=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{ch} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}9\PYGZsq{}}\PYG{p}{;} \PYG{p}{)}
+			\PYG{n}{x} \PYG{o}{=} \PYG{n}{x} \PYG{o}{*} \PYG{l+m+mi}{10} \PYG{o}{+} \PYG{n}{ch} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{neg}\PYG{p}{)} \PYG{n}{x} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{;}
+		\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{void} \PYG{n+nf}{Manacher}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{s}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{p}\PYG{p}{[])}
+\PYG{p}{\PYGZob{}}
+    \PYG{n}{string} \PYG{n}{t} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdl{}\PYGZsh{}\PYGZdq{}}\PYG{p}{;}
+
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{s}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+    \PYG{p}{\PYGZob{}}
+        \PYG{n}{t} \PYG{o}{+=} \PYG{n}{s}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{n}{t} \PYG{o}{+=} \PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{p}\PYG{p}{(}\PYG{n}{t}\PYG{p}{.}\PYG{n}{size}\PYG{p}{(),} \PYG{l+m+mi}{0}\PYG{p}{);}
+
+    \PYG{k+kt}{int} \PYG{n}{mx} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{id} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{t}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+    \PYG{p}{\PYGZob{}}
+        \PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{mx} \PYG{o}{\PYGZgt{}} \PYG{n}{i} \PYG{o}{?} \PYG{n}{min}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{id} \PYG{o}{\PYGZhy{}} \PYG{n}{i}\PYG{p}{],} \PYG{n}{mx} \PYG{o}{\PYGZhy{}} \PYG{n}{i}\PYG{p}{)} \PYG{o}{:} \PYG{l+m+mi}{1}\PYG{p}{;}
+        \PYG{k}{while} \PYG{p}{(}\PYG{n}{t}\PYG{p}{[}\PYG{n}{i} \PYG{o}{+} \PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]} \PYG{o}{==} \PYG{n}{t}\PYG{p}{[}\PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]])} \PYG{o}{++}\PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{mx} \PYG{o}{\PYGZlt{}} \PYG{n}{i} \PYG{o}{+} \PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{mx} \PYG{o}{=} \PYG{n}{i} \PYG{o}{+} \PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+            \PYG{n}{id} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

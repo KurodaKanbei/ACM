@@ -1,0 +1,58 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{reverse}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{rev} \PYG{o}{\PYGZca{}=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{swap}\PYG{p}{(}\PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{rotate}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{k}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{y} \PYG{o}{=} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{fa}\PYG{p}{,} \PYG{n}{z} \PYG{o}{=} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{y}\PYG{p}{].}\PYG{n}{fa}\PYG{p}{;}
+    \PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{fa} \PYG{o}{=} \PYG{n}{z}\PYG{p}{;} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{z}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{n}{tr}\PYG{p}{[}\PYG{n}{z}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{n}{y}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x}\PYG{p}{;}
+    \PYG{n}{tr}\PYG{p}{[}\PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{n}{k} \PYG{o}{\PYGZca{}} \PYG{l+m+mi}{1}\PYG{p}{]].}\PYG{n}{fa} \PYG{o}{=} \PYG{n}{y}\PYG{p}{;} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{y}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]} \PYG{o}{=} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{n}{k} \PYG{o}{\PYGZca{}} \PYG{l+m+mi}{1}\PYG{p}{];}
+    \PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{n}{k} \PYG{o}{\PYGZca{}} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{y}\PYG{p}{;} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{y}\PYG{p}{].}\PYG{n}{fa} \PYG{o}{=} \PYG{n}{x}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{splay}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{w}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{z} \PYG{o}{=} \PYG{n}{x}\PYG{p}{;} \PYG{n}{pushdown}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+	\PYG{k}{while} \PYG{p}{(}\PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{fa} \PYG{o}{!=} \PYG{n}{w}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{y} \PYG{o}{=} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{fa}\PYG{p}{;} \PYG{n}{z} \PYG{o}{=} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{y}\PYG{p}{].}\PYG{n}{fa}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{z} \PYG{o}{==} \PYG{n}{w}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n}{pushdown}\PYG{p}{(}\PYG{n}{z} \PYG{o}{=} \PYG{n}{y}\PYG{p}{);} \PYG{n}{pushdown}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+			\PYG{n}{rotate}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{y}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}\PYG{p}{);}
+			\PYG{n}{update}\PYG{p}{(}\PYG{n}{y}\PYG{p}{);} \PYG{n}{update}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{n}{pushdown}\PYG{p}{(}\PYG{n}{z}\PYG{p}{);} \PYG{n}{pushdown}\PYG{p}{(}\PYG{n}{y}\PYG{p}{);} \PYG{n}{pushdown}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+			\PYG{k+kt}{int} \PYG{n}{t1} \PYG{o}{=} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{y}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}\PYG{p}{,} \PYG{n}{t2} \PYG{o}{=} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{z}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{n}{y}\PYG{p}{;}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{t1} \PYG{o}{==} \PYG{n}{t2}\PYG{p}{)} \PYG{n}{rotate}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,} \PYG{n}{t2}\PYG{p}{),} \PYG{n}{rotate}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{t1}\PYG{p}{);}
+			\PYG{k}{else} \PYG{n}{rotate}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{t1}\PYG{p}{),} \PYG{n}{rotate}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{t2}\PYG{p}{);}
+			\PYG{n}{update}\PYG{p}{(}\PYG{n}{z}\PYG{p}{);} \PYG{n}{update}\PYG{p}{(}\PYG{n}{y}\PYG{p}{);} \PYG{n}{update}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{n}{update}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{x} \PYG{o}{!=} \PYG{n}{z}\PYG{p}{)} \PYG{n}{par}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n}{par}\PYG{p}{[}\PYG{n}{z}\PYG{p}{],} \PYG{n}{par}\PYG{p}{[}\PYG{n}{z}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{access}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{y} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{x}\PYG{p}{;} \PYG{n}{y} \PYG{o}{=} \PYG{n}{x}\PYG{p}{,} \PYG{n}{x} \PYG{o}{=} \PYG{n}{par}\PYG{p}{[}\PYG{n}{x}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+		\PYG{n}{splay}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{])} \PYG{n}{par}\PYG{p}{[}\PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{x}\PYG{p}{,} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]].}\PYG{n}{fa} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{n}{tr}\PYG{p}{[}\PYG{n}{x}\PYG{p}{].}\PYG{n}{c}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{y}\PYG{p}{;} \PYG{n}{par}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{tr}\PYG{p}{[}\PYG{n}{y}\PYG{p}{].}\PYG{n}{fa} \PYG{o}{=} \PYG{n}{x}\PYG{p}{;} \PYG{n}{update}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{makeroot}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{access}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);} \PYG{n}{splay}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);} \PYG{n}{reverse}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{link}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{y}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{makeroot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);} \PYG{n}{par}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n}{y}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{cut}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{y}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{access}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);} \PYG{n}{splay}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{par}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{x}\PYG{p}{)} \PYG{n}{swap}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{),} \PYG{n}{access}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),} \PYG{n}{splay}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+	\PYG{n}{par}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{inline} \PYG{k+kt}{void} \PYG{n+nf}{split}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{y}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// x will be the root of the tree}
+	\PYG{n}{makeroot}\PYG{p}{(}\PYG{n}{y}\PYG{p}{);} \PYG{n}{access}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);} \PYG{n}{splay}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

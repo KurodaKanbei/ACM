@@ -1,0 +1,52 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{int} \PYG{n}{S}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{n}{totFlow}\PYG{p}{,} \PYG{n}{totCost}\PYG{p}{;}
+
+\PYG{k+kt}{int} \PYG{n}{dis}\PYG{p}{[}\PYG{n}{N}\PYG{p}{],} \PYG{n}{slack}\PYG{p}{[}\PYG{n}{N}\PYG{p}{],} \PYG{n}{visit}\PYG{p}{[}\PYG{n}{N}\PYG{p}{];}
+
+\PYG{k+kt}{int} \PYG{n+nf}{modlable} \PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{delta} \PYG{o}{=} \PYG{n}{INF}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{T}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{visit}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{slack}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n}{delta}\PYG{p}{)} \PYG{n}{delta} \PYG{o}{=} \PYG{n}{slack}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{n}{slack}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{INF}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{delta} \PYG{o}{==} \PYG{n}{INF}\PYG{p}{)} \PYG{k}{return} \PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{T}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{visit}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{n}{dis}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+=} \PYG{n}{delta}\PYG{p}{;}
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{int} \PYG{n+nf}{dfs} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{flow}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{x} \PYG{o}{==} \PYG{n}{T}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{totFlow} \PYG{o}{+=} \PYG{n}{flow}\PYG{p}{;}
+        \PYG{n}{totCost} \PYG{o}{+=} \PYG{n}{flow} \PYG{o}{*} \PYG{p}{(}\PYG{n}{dis}\PYG{p}{[}\PYG{n}{S}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{dis}\PYG{p}{[}\PYG{n}{T}\PYG{p}{]);}
+        \PYG{k}{return} \PYG{n}{flow}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{visit}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{left} \PYG{o}{=} \PYG{n}{flow}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{e}\PYG{p}{.}\PYG{n}{last}\PYG{p}{[}\PYG{n}{x}\PYG{p}{];} \PYG{o}{\PYGZti{}}\PYG{n}{i}\PYG{p}{;} \PYG{n}{i} \PYG{o}{=} \PYG{n}{e}\PYG{p}{.}\PYG{n}{succ}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{cap}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n}{visit}\PYG{p}{[}\PYG{n}{e}\PYG{p}{.}\PYG{n}{other}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]])} \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{int} \PYG{n}{y} \PYG{o}{=} \PYG{n}{e}\PYG{p}{.}\PYG{n}{other}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{dis}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{+} \PYG{n}{e}\PYG{p}{.}\PYG{n}{cost}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{n}{dis}\PYG{p}{[}\PYG{n}{x}\PYG{p}{])} \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{int} \PYG{n}{delta} \PYG{o}{=} \PYG{n}{dfs} \PYG{p}{(}\PYG{n}{y}\PYG{p}{,} \PYG{n}{min} \PYG{p}{(}\PYG{n}{left}\PYG{p}{,} \PYG{n}{e}\PYG{p}{.}\PYG{n}{cap}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]));}
+                \PYG{n}{e}\PYG{p}{.}\PYG{n}{cap}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}=} \PYG{n}{delta}\PYG{p}{;}
+                \PYG{n}{e}\PYG{p}{.}\PYG{n}{cap}\PYG{p}{[}\PYG{n}{i} \PYG{o}{\PYGZca{}} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+=} \PYG{n}{delta}\PYG{p}{;}
+                \PYG{n}{left} \PYG{o}{\PYGZhy{}=} \PYG{n}{delta}\PYG{p}{;}
+                \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{left}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{n}{visit}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{k}{return} \PYG{n}{flow}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+                \PYG{n}{slack}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{=} \PYG{n}{min} \PYG{p}{(}\PYG{n}{slack}\PYG{p}{[}\PYG{n}{y}\PYG{p}{],} \PYG{n}{dis}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{+} \PYG{n}{e}\PYG{p}{.}\PYG{n}{cost}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{dis}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]);}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{flow} \PYG{o}{\PYGZhy{}} \PYG{n}{left}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{pair} \PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,} \PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{minCost} \PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{n}{totFlow} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{totCost} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{fill} \PYG{p}{(}\PYG{n}{dis} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{dis} \PYG{o}{+} \PYG{n}{T} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{k}{do} \PYG{p}{\PYGZob{}}
+        \PYG{k}{do} \PYG{p}{\PYGZob{}}
+            \PYG{n}{fill} \PYG{p}{(}\PYG{n}{visit} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{visit} \PYG{o}{+} \PYG{n}{T} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}} \PYG{k}{while} \PYG{p}{(}\PYG{n}{dfs} \PYG{p}{(}\PYG{n}{S}\PYG{p}{,} \PYG{n}{INF}\PYG{p}{));}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{modlable} \PYG{p}{());}
+    \PYG{k}{return} \PYG{n+nf}{make\PYGZus{}pair} \PYG{p}{(}\PYG{n}{totFlow}\PYG{p}{,} \PYG{n}{totCost}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

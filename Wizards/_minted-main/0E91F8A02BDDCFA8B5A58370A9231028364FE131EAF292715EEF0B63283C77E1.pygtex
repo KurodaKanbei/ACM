@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{// n 必须是2的次幂}
+\PYG{k+kt}{void} \PYG{n+nf}{fft}\PYG{p}{(}\PYG{n}{Complex} \PYG{n}{a}\PYG{p}{[],} \PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{f}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{R}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n}{i}\PYG{p}{)} \PYG{n}{swap}\PYG{p}{(}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{a}\PYG{p}{[}\PYG{n}{R}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]);}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{h} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}\PYGZlt{}=} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{h}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Complex} \PYG{n}{wn} \PYG{o}{=} \PYG{n}{Complex}\PYG{p}{(}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{pi} \PYG{o}{/} \PYG{n}{i}\PYG{p}{),} \PYG{n}{f} \PYG{o}{*} \PYG{n}{sin}\PYG{p}{(}\PYG{n}{pi} \PYG{o}{/} \PYG{n}{i}\PYG{p}{));}
+		\PYG{n}{Complex} \PYG{n}{w} \PYG{o}{=} \PYG{n}{Complex}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{n}{i}\PYG{p}{;} \PYG{o}{++}\PYG{n}{k}\PYG{p}{,} \PYG{n}{w} \PYG{o}{=} \PYG{n}{w} \PYG{o}{*} \PYG{n}{wn}\PYG{p}{)} \PYG{n}{tmp}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]} \PYG{o}{=} \PYG{n}{w}\PYG{p}{;} 
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{p} \PYG{o}{=} \PYG{n}{i} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{n}{j} \PYG{o}{+=} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{n}{i}\PYG{p}{;} \PYG{o}{++}\PYG{n}{k}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{Complex} \PYG{n}{x} \PYG{o}{=} \PYG{n}{a}\PYG{p}{[}\PYG{n}{j} \PYG{o}{+} \PYG{n}{k}\PYG{p}{],} \PYG{n}{y} \PYG{o}{=} \PYG{n}{a}\PYG{p}{[}\PYG{n}{j} \PYG{o}{+} \PYG{n}{k} \PYG{o}{+} \PYG{n}{i}\PYG{p}{]} \PYG{o}{*} \PYG{n}{tmp}\PYG{p}{[}\PYG{n}{k}\PYG{p}{];}
+				\PYG{n}{a}\PYG{p}{[}\PYG{n}{j} \PYG{o}{+} \PYG{n}{k}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x} \PYG{o}{+} \PYG{n}{y}\PYG{p}{;} \PYG{n}{a}\PYG{p}{[}\PYG{n}{j} \PYG{o}{+} \PYG{n}{k} \PYG{o}{+} \PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{y}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{Point} \PYG{n+nf}{inCenter}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{A}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{B}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{C}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// 内心}
+	\PYG{k+kt}{double} \PYG{n}{a} \PYG{o}{=} \PYG{p}{(}\PYG{n}{B} \PYG{o}{\PYGZhy{}} \PYG{n}{C}\PYG{p}{).}\PYG{n}{len}\PYG{p}{(),} \PYG{n}{b} \PYG{o}{=} \PYG{p}{(}\PYG{n}{C} \PYG{o}{\PYGZhy{}} \PYG{n}{A}\PYG{p}{).}\PYG{n}{len}\PYG{p}{(),} \PYG{n}{c} \PYG{o}{=} \PYG{p}{(}\PYG{n}{A} \PYG{o}{\PYGZhy{}} \PYG{n}{B}\PYG{p}{).}\PYG{n}{len}\PYG{p}{(),}
+		\PYG{n}{s} \PYG{o}{=} \PYG{n}{fabs}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{B} \PYG{o}{\PYGZhy{}} \PYG{n}{A}\PYG{p}{,} \PYG{n}{C} \PYG{o}{\PYGZhy{}} \PYG{n}{A}\PYG{p}{)),}
+		\PYG{n}{r} \PYG{o}{=} \PYG{n}{s} \PYG{o}{/} \PYG{n}{p}\PYG{p}{;}
+	\PYG{k}{return} \PYG{p}{(}\PYG{n}{A} \PYG{o}{*} \PYG{n}{a} \PYG{o}{+} \PYG{n}{B} \PYG{o}{*} \PYG{n}{b} \PYG{o}{+} \PYG{n}{C} \PYG{o}{*} \PYG{n}{c}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{b} \PYG{o}{+} \PYG{n}{c}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{Point} \PYG{n+nf}{circumCenter}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{a}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{b}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{c}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// 外心}
+	\PYG{n}{Point} \PYG{n}{bb} \PYG{o}{=} \PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{,} \PYG{n}{cc} \PYG{o}{=} \PYG{n}{c} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{;}
+	\PYG{k+kt}{double} \PYG{n}{db} \PYG{o}{=} \PYG{n}{bb}\PYG{p}{.}\PYG{n}{len2}\PYG{p}{(),} \PYG{n}{dc} \PYG{o}{=} \PYG{n}{cc}\PYG{p}{.}\PYG{n}{len2}\PYG{p}{(),} \PYG{n}{d} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{det}\PYG{p}{(}\PYG{n}{bb}\PYG{p}{,} \PYG{n}{cc}\PYG{p}{);}
+	\PYG{k}{return} \PYG{n}{a} \PYG{o}{\PYGZhy{}} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{bb}\PYG{p}{.}\PYG{n}{y} \PYG{o}{*} \PYG{n}{dc} \PYG{o}{\PYGZhy{}} \PYG{n}{cc}\PYG{p}{.}\PYG{n}{y} \PYG{o}{*} \PYG{n}{db}\PYG{p}{,} \PYG{n}{cc}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{n}{db} \PYG{o}{\PYGZhy{}} \PYG{n}{bb}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{n}{dc}\PYG{p}{)} \PYG{o}{/} \PYG{n}{d}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{Point} \PYG{n+nf}{othroCenter}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{a}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{b}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{c}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// 垂心}
+	\PYG{n}{Point} \PYG{n}{ba} \PYG{o}{=} \PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{,} \PYG{n}{ca} \PYG{o}{=} \PYG{n}{c} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{,} \PYG{n}{bc} \PYG{o}{=} \PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{;}
+	\PYG{k+kt}{double} \PYG{n}{Y} \PYG{o}{=} \PYG{n}{ba}\PYG{p}{.}\PYG{n}{y} \PYG{o}{*} \PYG{n}{ca}\PYG{p}{.}\PYG{n}{y} \PYG{o}{*} \PYG{n}{bc}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,}
+		   \PYG{n}{A} \PYG{o}{=} \PYG{n}{ca}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{n}{ba}\PYG{p}{.}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{ba}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{n}{ca}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,}
+		   \PYG{n}{x0} \PYG{o}{=} \PYG{p}{(}\PYG{n}{Y} \PYG{o}{+} \PYG{n}{ca}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{n}{ba}\PYG{p}{.}\PYG{n}{y} \PYG{o}{*} \PYG{n}{b}\PYG{p}{.}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{ba}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{n}{ca}\PYG{p}{.}\PYG{n}{y} \PYG{o}{*} \PYG{n}{c}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)} \PYG{o}{/} \PYG{n}{A}\PYG{p}{,}
+		   \PYG{n}{y0} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{ba}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{p}{(}\PYG{n}{x0} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)} \PYG{o}{/} \PYG{n}{ba}\PYG{p}{.}\PYG{n}{y} \PYG{o}{+} \PYG{n}{ca}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
+	\PYG{k}{return} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kn}{import} \PYG{n+nn}{java.math.BigInteger}\PYG{o}{;}  
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.Scanner}\PYG{o}{;}  
+\PYG{c+c1}{//a[n]=(g[n]+a[0])/h[n]  }
+\PYG{c+c1}{//g[n]=a[n\PYGZhy{}1]*h[n\PYGZhy{}1]\PYGZhy{}g[n\PYGZhy{}1]  }
+\PYG{c+c1}{//h[n]=(N\PYGZhy{}g[n]*g[n])/h[n\PYGZhy{}1]  }
+\PYG{c+c1}{//p[n]=a[n\PYGZhy{}1]*p[n\PYGZhy{}1]+p[n\PYGZhy{}2]  }
+\PYG{c+c1}{//q[n]=a[n\PYGZhy{}1]*q[n\PYGZhy{}1]+q[n\PYGZhy{}2]  }
+\PYG{c+c1}{//so:  }
+\PYG{c+c1}{//p[n]*q[n\PYGZhy{}1]\PYGZhy{}p[n\PYGZhy{}1]*q[n]=(\PYGZhy{}1)\PYGZca{}(n+1);  }
+\PYG{c+c1}{//p[n]\PYGZca{}2\PYGZhy{}N*q[n]\PYGZca{}2=(\PYGZhy{}1)\PYGZca{}(n+1)*h[n+1];  }
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Main} \PYG{o}{\PYGZob{}}  
+    \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{BigInteger} \PYG{n}{p}\PYG{o}{,} \PYG{n}{q}\PYG{o}{;}  
+    \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{solve}\PYG{o}{(}\PYG{k+kt}{int} \PYG{n}{n}\PYG{o}{)} \PYG{o}{\PYGZob{}}  
+        \PYG{n}{BigInteger} \PYG{n}{N}\PYG{o}{,} \PYG{n}{p1}\PYG{o}{,} \PYG{n}{p2}\PYG{o}{,} \PYG{n}{q1}\PYG{o}{,} \PYG{n}{q2}\PYG{o}{,} \PYG{n}{a0}\PYG{o}{,} \PYG{n}{a1}\PYG{o}{,} \PYG{n}{a2}\PYG{o}{,} \PYG{n}{g1}\PYG{o}{,} \PYG{n}{g2}\PYG{o}{,} \PYG{n}{h1}\PYG{o}{,} \PYG{n}{h2}\PYG{o}{;}  
+        \PYG{n}{g1} \PYG{o}{=} \PYG{n}{q2} \PYG{o}{=} \PYG{n}{p1} \PYG{o}{=} \PYG{n}{BigInteger}\PYG{o}{.}\PYG{n+na}{ZERO}\PYG{o}{;}  
+        \PYG{n}{h1} \PYG{o}{=} \PYG{n}{q1} \PYG{o}{=} \PYG{n}{p2} \PYG{o}{=} \PYG{n}{BigInteger}\PYG{o}{.}\PYG{n+na}{ONE}\PYG{o}{;}  
+        \PYG{n}{a0} \PYG{o}{=} \PYG{n}{a1} \PYG{o}{=} \PYG{n}{BigInteger}\PYG{o}{.}\PYG{n+na}{valueOf}\PYG{o}{((}\PYG{k+kt}{long}\PYG{o}{)}\PYG{n}{Math}\PYG{o}{.}\PYG{n+na}{sqrt}\PYG{o}{(}\PYG{l+m+mf}{1.0}\PYG{o}{*}\PYG{n}{n}\PYG{o}{));}  
+        \PYG{n}{N} \PYG{o}{=} \PYG{n}{BigInteger}\PYG{o}{.}\PYG{n+na}{valueOf}\PYG{o}{(}\PYG{n}{n}\PYG{o}{);}  
+        \PYG{k}{while} \PYG{o}{(}\PYG{k+kc}{true}\PYG{o}{)} \PYG{o}{\PYGZob{}}  
+            \PYG{n}{g2} \PYG{o}{=} \PYG{n}{a1}\PYG{o}{.}\PYG{n+na}{multiply}\PYG{o}{(}\PYG{n}{h1}\PYG{o}{).}\PYG{n+na}{subtract}\PYG{o}{(}\PYG{n}{g1}\PYG{o}{);}      \PYG{c+c1}{//g2=a1*h1\PYGZhy{}g1  }
+            \PYG{n}{h2} \PYG{o}{=} \PYG{n}{N}\PYG{o}{.}\PYG{n+na}{subtract}\PYG{o}{(}\PYG{n}{g2}\PYG{o}{.}\PYG{n+na}{pow}\PYG{o}{(}\PYG{l+m+mi}{2}\PYG{o}{)).}\PYG{n+na}{divide}\PYG{o}{(}\PYG{n}{h1}\PYG{o}{);}  \PYG{c+c1}{//h2=(n\PYGZhy{}g2\PYGZca{}2)/h1   }
+            \PYG{n}{a2} \PYG{o}{=} \PYG{n}{g2}\PYG{o}{.}\PYG{n+na}{add}\PYG{o}{(}\PYG{n}{a0}\PYG{o}{).}\PYG{n+na}{divide}\PYG{o}{(}\PYG{n}{h2}\PYG{o}{);}             \PYG{c+c1}{//a2=(g2+a0)/h2  }
+            \PYG{n}{p} \PYG{o}{=} \PYG{n}{a1}\PYG{o}{.}\PYG{n+na}{multiply}\PYG{o}{(}\PYG{n}{p2}\PYG{o}{).}\PYG{n+na}{add}\PYG{o}{(}\PYG{n}{p1}\PYG{o}{);}            \PYG{c+c1}{//p=a1*p2+p1  }
+            \PYG{n}{q} \PYG{o}{=} \PYG{n}{a1}\PYG{o}{.}\PYG{n+na}{multiply}\PYG{o}{(}\PYG{n}{q2}\PYG{o}{).}\PYG{n+na}{add}\PYG{o}{(}\PYG{n}{q1}\PYG{o}{);}            \PYG{c+c1}{//q=a1*q2+q1  }
+            \PYG{k}{if} \PYG{o}{(}\PYG{n}{p}\PYG{o}{.}\PYG{n+na}{pow}\PYG{o}{(}\PYG{l+m+mi}{2}\PYG{o}{).}\PYG{n+na}{subtract}\PYG{o}{(}\PYG{n}{N}\PYG{o}{.}\PYG{n+na}{multiply}\PYG{o}{(}\PYG{n}{q}\PYG{o}{.}\PYG{n+na}{pow}\PYG{o}{(}\PYG{l+m+mi}{2}\PYG{o}{))).}\PYG{n+na}{compareTo}\PYG{o}{(}\PYG{n}{BigInteger}\PYG{o}{.}\PYG{n+na}{ONE}\PYG{o}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{o}{)} \PYG{k}{return}\PYG{o}{;}\PYG{c+c1}{//p\PYGZca{}2\PYGZhy{}n*q\PYGZca{}2=1  }
+            \PYG{n}{g1} \PYG{o}{=} \PYG{n}{g2}\PYG{o}{;}\PYG{n}{h1} \PYG{o}{=} \PYG{n}{h2}\PYG{o}{;}\PYG{n}{a1} \PYG{o}{=} \PYG{n}{a2}\PYG{o}{;}  
+            \PYG{n}{p1} \PYG{o}{=} \PYG{n}{p2}\PYG{o}{;}\PYG{n}{p2} \PYG{o}{=} \PYG{n}{p}\PYG{o}{;}  
+            \PYG{n}{q1} \PYG{o}{=} \PYG{n}{q2}\PYG{o}{;}\PYG{n}{q2} \PYG{o}{=} \PYG{n}{q}\PYG{o}{;}  
+        \PYG{o}{\PYGZcb{}}  
+    \PYG{o}{\PYGZcb{}}  
+
+    \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{o}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{o}{)} \PYG{o}{\PYGZob{}}  
+        \PYG{n}{Scanner} \PYG{n}{cin} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Scanner}\PYG{o}{(}\PYG{n}{System}\PYG{o}{.}\PYG{n+na}{in}\PYG{o}{);}  
+        \PYG{k+kt}{int} \PYG{n}{t}\PYG{o}{=}\PYG{n}{cin}\PYG{o}{.}\PYG{n+na}{nextInt}\PYG{o}{();}  
+        \PYG{k}{while} \PYG{o}{(}\PYG{n}{t}\PYG{o}{\PYGZhy{}\PYGZhy{}!=}\PYG{l+m+mi}{0}\PYG{o}{)} \PYG{o}{\PYGZob{}}  
+            \PYG{n}{solve}\PYG{o}{(}\PYG{n}{cin}\PYG{o}{.}\PYG{n+na}{nextInt}\PYG{o}{());}  
+            \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}\PYG{n}{p} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} \PYGZdq{}} \PYG{o}{+} \PYG{n}{q}\PYG{o}{);}  
+        \PYG{o}{\PYGZcb{}}  
+    \PYG{o}{\PYGZcb{}}  
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

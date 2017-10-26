@@ -1,0 +1,156 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{int} \PYG{n+nf}{sign}\PYG{p}{(}\PYG{n}{DB} \PYG{n}{x}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZlt{}} \PYG{o}{\PYGZhy{}}\PYG{n}{eps}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{DB} \PYG{n+nf}{msqrt}\PYG{p}{(}\PYG{n}{DB} \PYG{n}{x}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{o}{?} \PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{:} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k}{struct} \PYG{n}{Point} \PYG{p}{\PYGZob{}}
+	\PYG{n}{DB} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{;}
+	\PYG{n}{Point} \PYG{n+nf}{rotate}\PYG{p}{(}\PYG{n}{DB} \PYG{n}{ang}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 逆时针旋转 ang 弧度}
+		\PYG{k}{return} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{ang}\PYG{p}{)} \PYG{o}{*} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{sin}\PYG{p}{(}\PYG{n}{ang}\PYG{p}{)} \PYG{o}{*} \PYG{n}{y}\PYG{p}{,}
+				\PYG{n}{cos}\PYG{p}{(}\PYG{n}{ang}\PYG{p}{)} \PYG{o}{*} \PYG{n}{y} \PYG{o}{+} \PYG{n}{sin}\PYG{p}{(}\PYG{n}{ang}\PYG{p}{)} \PYG{o}{*} \PYG{n}{x}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{n}{Point} \PYG{n+nf}{turn90}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 逆时针旋转 90 度}
+		\PYG{k}{return} \PYG{n}{Point}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{p}{,} \PYG{n}{x}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{n}{Point} \PYG{n+nf}{unit}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{o}{*}\PYG{k}{this} \PYG{o}{/} \PYG{n}{len}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{};}
+\PYG{n}{DB} \PYG{n+nf}{dot}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{a}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{b}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n}{a}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{n}{b}\PYG{p}{.}\PYG{n}{x} \PYG{o}{+} \PYG{n}{a}\PYG{p}{.}\PYG{n}{y} \PYG{o}{*} \PYG{n}{b}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{DB} \PYG{n+nf}{det}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{a}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{b}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n}{a}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{n}{b}\PYG{p}{.}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{.}\PYG{n}{y} \PYG{o}{*} \PYG{n}{b}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cp}{\PYGZsh{}define cross(p1,p2,p3) ((p2.x\PYGZhy{}p1.x)*(p3.y\PYGZhy{}p1.y)\PYGZhy{}(p3.x\PYGZhy{}p1.x)*(p2.y\PYGZhy{}p1.y))}
+\PYG{c+cp}{\PYGZsh{}define crossOp(p1,p2,p3) sign(cross(p1,p2,p3))}
+\PYG{k+kt}{bool} \PYG{n+nf}{isLL}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l1}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l2}\PYG{p}{,} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 直线与直线交点}
+	\PYG{n}{DB} \PYG{n}{s1} \PYG{o}{=} \PYG{n}{det}\PYG{p}{(}\PYG{n}{l2}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l2}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l1}\PYG{p}{.}\PYG{n}{a} \PYG{o}{\PYGZhy{}} \PYG{n}{l2}\PYG{p}{.}\PYG{n}{a}\PYG{p}{),}
+	   \PYG{n}{s2} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{det}\PYG{p}{(}\PYG{n}{l2}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l2}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l1}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l2}\PYG{p}{.}\PYG{n}{a}\PYG{p}{);}
+	\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{s1} \PYG{o}{+} \PYG{n}{s2}\PYG{p}{))} \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+	\PYG{n}{p} \PYG{o}{=} \PYG{p}{(}\PYG{n}{l1}\PYG{p}{.}\PYG{n}{a} \PYG{o}{*} \PYG{n}{s2} \PYG{o}{+} \PYG{n}{l1}\PYG{p}{.}\PYG{n}{b} \PYG{o}{*} \PYG{n}{s1}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{s1} \PYG{o}{+} \PYG{n}{s2}\PYG{p}{);}
+	\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{bool} \PYG{n+nf}{onSeg}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 点在线段上}
+	\PYG{k}{return} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{))} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b}\PYG{p}{))} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{Point} \PYG{n+nf}{projection}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line} \PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a} \PYG{o}{+} \PYG{p}{(}\PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{).}\PYG{n}{len2}\PYG{p}{());}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{DB} \PYG{n+nf}{disToLine}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 点到*直线*距离}
+	\PYG{k}{return} \PYG{n}{fabs}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{).}\PYG{n}{len}\PYG{p}{());}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{DB} \PYG{n+nf}{disToSeg}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 点到线段距离}
+	\PYG{k}{return} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{))} \PYG{o}{*} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b}\PYG{p}{))} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{o}{?} \PYG{n}{disToLine}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,} \PYG{n}{p}\PYG{p}{)} \PYG{o}{:} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{((}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{).}\PYG{n}{len}\PYG{p}{(),} \PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b}\PYG{p}{).}\PYG{n}{len}\PYG{p}{());}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// 圆与直线交点}
+\PYG{k+kt}{bool} \PYG{n+nf}{isCL}\PYG{p}{(}\PYG{n}{Circle} \PYG{n}{a}\PYG{p}{,} \PYG{n}{Line} \PYG{n}{l}\PYG{p}{,} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{DB} \PYG{n}{x} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{l}\PYG{p}{.}\PYG{n}{a} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{.}\PYG{n}{o}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{),}
+	   \PYG{n}{y} \PYG{o}{=} \PYG{p}{(}\PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{).}\PYG{n}{len2}\PYG{p}{(),}
+	   \PYG{n}{d} \PYG{o}{=} \PYG{n}{x} \PYG{o}{*} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{y} \PYG{o}{*} \PYG{p}{((}\PYG{n}{l}\PYG{p}{.}\PYG{n}{a} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{.}\PYG{n}{o}\PYG{p}{).}\PYG{n}{len2}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{a}\PYG{p}{.}\PYG{n}{r}\PYG{p}{);}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{d}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+	\PYG{n}{Point} \PYG{n}{p} \PYG{o}{=} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a} \PYG{o}{\PYGZhy{}} \PYG{p}{((}\PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{x} \PYG{o}{/} \PYG{n}{y}\PYG{p}{)),} \PYG{n}{delta} \PYG{o}{=} \PYG{p}{(}\PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{msqrt}\PYG{p}{(}\PYG{n}{d}\PYG{p}{)} \PYG{o}{/} \PYG{n}{y}\PYG{p}{);}
+	\PYG{n}{p1} \PYG{o}{=} \PYG{n}{p} \PYG{o}{+} \PYG{n}{delta}\PYG{p}{;} \PYG{n}{p2} \PYG{o}{=} \PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{delta}\PYG{p}{;}
+	\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{//圆与圆的交面积}
+\PYG{n}{DB} \PYG{n+nf}{areaCC}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Circle}\PYG{o}{\PYGZam{}} \PYG{n}{c1}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Circle}\PYG{o}{\PYGZam{}} \PYG{n}{c2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{DB} \PYG{n}{d} \PYG{o}{=} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{o} \PYG{o}{\PYGZhy{}} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{o}\PYG{p}{).}\PYG{n}{len}\PYG{p}{();}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{d} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{+} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{))} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{d} \PYG{o}{\PYGZhy{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{))} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{DB} \PYG{n}{r} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r}\PYG{p}{,} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{);}
+		\PYG{k}{return} \PYG{n}{r} \PYG{o}{*} \PYG{n}{r} \PYG{o}{*} \PYG{n}{PI}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{n}{DB} \PYG{n}{x} \PYG{o}{=} \PYG{p}{(}\PYG{n}{d} \PYG{o}{*} \PYG{n}{d} \PYG{o}{+} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{d}\PYG{p}{),}
+		\PYG{n}{t1} \PYG{o}{=} \PYG{n}{acos}\PYG{p}{(}\PYG{n}{x} \PYG{o}{/} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{r}\PYG{p}{),} \PYG{n}{t2} \PYG{o}{=} \PYG{n}{acos}\PYG{p}{((}\PYG{n}{d} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{p}{)} \PYG{o}{/} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{);}
+	\PYG{k}{return} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{t1} \PYG{o}{+} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{t2} \PYG{o}{\PYGZhy{}} \PYG{n}{d} \PYG{o}{*} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{sin}\PYG{p}{(}\PYG{n}{t1}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// 圆与圆交点}
+\PYG{k+kt}{bool} \PYG{n+nf}{isCC}\PYG{p}{(}\PYG{n}{Circle} \PYG{n}{a}\PYG{p}{,} \PYG{n}{Circle} \PYG{n}{b}\PYG{p}{,} \PYG{n}{P}\PYG{o}{\PYGZam{}} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{P}\PYG{o}{\PYGZam{}} \PYG{n}{p2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{DB} \PYG{n}{s1} \PYG{o}{=} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{o} \PYG{o}{\PYGZhy{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{o}\PYG{p}{).}\PYG{n}{len}\PYG{p}{();}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{s1} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{r}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{o}{||} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{s1} \PYG{o}{\PYGZhy{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{r}\PYG{p}{))} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+	\PYG{n}{DB} \PYG{n}{s2} \PYG{o}{=} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{a}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{b}\PYG{p}{.}\PYG{n}{r}\PYG{p}{)} \PYG{o}{/} \PYG{n}{s1}\PYG{p}{;}
+	\PYG{n}{DB} \PYG{n}{aa} \PYG{o}{=} \PYG{p}{(}\PYG{n}{s1} \PYG{o}{+} \PYG{n}{s2}\PYG{p}{)} \PYG{o}{*} \PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{n}{bb} \PYG{o}{=} \PYG{p}{(}\PYG{n}{s1} \PYG{o}{\PYGZhy{}} \PYG{n}{s2}\PYG{p}{)} \PYG{o}{*} \PYG{l+m+mf}{0.5}\PYG{p}{;}
+	\PYG{n}{P} \PYG{n}{o} \PYG{o}{=} \PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{o} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{.}\PYG{n}{o}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{aa} \PYG{o}{/} \PYG{p}{(}\PYG{n}{aa} \PYG{o}{+} \PYG{n}{bb}\PYG{p}{))} \PYG{o}{+} \PYG{n}{a}\PYG{p}{.}\PYG{n}{o}\PYG{p}{;}
+	\PYG{n}{P} \PYG{n}{delta} \PYG{o}{=} \PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{o} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{.}\PYG{n}{o}\PYG{p}{).}\PYG{n}{unit}\PYG{p}{().}\PYG{n}{turn90}\PYG{p}{()} \PYG{o}{*} \PYG{n}{msqrt}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{a}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{aa} \PYG{o}{*} \PYG{n}{aa}\PYG{p}{);}
+	\PYG{n}{p1} \PYG{o}{=} \PYG{n}{o} \PYG{o}{+} \PYG{n}{delta}\PYG{p}{,} \PYG{n}{p2} \PYG{o}{=} \PYG{n}{o} \PYG{o}{\PYGZhy{}} \PYG{n}{delta}\PYG{p}{;}
+	\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// 求点到圆的切点，按关于点的顺时针方向返回两个点}
+\PYG{k+kt}{bool} \PYG{n+nf}{tanCP}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{p0}\PYG{p}{,} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{p2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{double} \PYG{n}{x} \PYG{o}{=} \PYG{p}{(}\PYG{n}{p0} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{.}\PYG{n}{o}\PYG{p}{).}\PYG{n}{len2}\PYG{p}{(),} \PYG{n}{d} \PYG{o}{=} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{c}\PYG{p}{.}\PYG{n}{r}\PYG{p}{;}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{d} \PYG{o}{\PYGZlt{}} \PYG{n}{eps}\PYG{p}{)} \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;} \PYG{c+c1}{// 点在圆上认为没有切点}
+	\PYG{n}{Point} \PYG{n}{p} \PYG{o}{=} \PYG{p}{(}\PYG{n}{p0} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{.}\PYG{n}{o}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{c}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{c}\PYG{p}{.}\PYG{n}{r} \PYG{o}{/} \PYG{n}{x}\PYG{p}{);}
+	\PYG{n}{Point} \PYG{n}{delta} \PYG{o}{=} \PYG{p}{((}\PYG{n}{p0} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{.}\PYG{n}{o}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{c}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{d}\PYG{p}{)} \PYG{o}{/} \PYG{n}{x}\PYG{p}{)).}\PYG{n}{turn90}\PYG{p}{();}
+	\PYG{n}{p1} \PYG{o}{=} \PYG{n}{c}\PYG{p}{.}\PYG{n}{o} \PYG{o}{+} \PYG{n}{p} \PYG{o}{+} \PYG{n}{delta}\PYG{p}{;}
+	\PYG{n}{p2} \PYG{o}{=} \PYG{n}{c}\PYG{p}{.}\PYG{n}{o} \PYG{o}{+} \PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{delta}\PYG{p}{;}
+	\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// 求圆到圆的外共切线，按关于 c1.o 的顺时针方向返回两条线}
+\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Line}\PYG{o}{\PYGZgt{}} \PYG{n}{extanCC}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c1}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Line}\PYG{o}{\PYGZgt{}} \PYG{n}{ret}\PYG{p}{;}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Point} \PYG{n}{dir} \PYG{o}{=} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{o} \PYG{o}{\PYGZhy{}} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{o}\PYG{p}{;}
+		\PYG{n}{dir} \PYG{o}{=} \PYG{p}{(}\PYG{n}{dir} \PYG{o}{*} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{/} \PYG{n}{dir}\PYG{p}{.}\PYG{n}{len}\PYG{p}{())).}\PYG{n}{turn90}\PYG{p}{();}
+		\PYG{n}{ret}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{Line}\PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{o} \PYG{o}{+} \PYG{n}{dir}\PYG{p}{,} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{o} \PYG{o}{+} \PYG{n}{dir}\PYG{p}{));}
+		\PYG{n}{ret}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{Line}\PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{o} \PYG{o}{\PYGZhy{}} \PYG{n}{dir}\PYG{p}{,} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{o} \PYG{o}{\PYGZhy{}} \PYG{n}{dir}\PYG{p}{));}
+	\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Point} \PYG{n}{p} \PYG{o}{=} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{o} \PYG{o}{*} \PYG{o}{\PYGZhy{}}\PYG{n}{c2}\PYG{p}{.}\PYG{n}{r} \PYG{o}{+} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{o} \PYG{o}{*} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{r}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{);}
+		\PYG{n}{Point} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{,} \PYG{n}{q1}\PYG{p}{,} \PYG{n}{q2}\PYG{p}{;}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{tanCP}\PYG{p}{(}\PYG{n}{c1}\PYG{p}{,} \PYG{n}{p}\PYG{p}{,} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{tanCP}\PYG{p}{(}\PYG{n}{c2}\PYG{p}{,} \PYG{n}{p}\PYG{p}{,} \PYG{n}{q1}\PYG{p}{,} \PYG{n}{q2}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZlt{}} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{)} \PYG{n}{swap}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{),} \PYG{n}{swap}\PYG{p}{(}\PYG{n}{q1}\PYG{p}{,} \PYG{n}{q2}\PYG{p}{);}
+			\PYG{n}{ret}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{Line}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{q1}\PYG{p}{));}
+			\PYG{n}{ret}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{Line}\PYG{p}{(}\PYG{n}{p2}\PYG{p}{,} \PYG{n}{q2}\PYG{p}{));}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n}{ret}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// 求圆到圆的内共切线，按关于 c1.o 的顺时针方向返回两条线}
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Line}\PYG{o}{\PYGZgt{}} \PYG{n}{intanCC}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c1}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Line}\PYG{o}{\PYGZgt{}} \PYG{n}{ret}\PYG{p}{;}
+	\PYG{n}{Point} \PYG{n}{p} \PYG{o}{=} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{o} \PYG{o}{*} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r} \PYG{o}{+} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{o} \PYG{o}{*} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{r}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{+} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{);}
+	\PYG{n}{Point} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{,} \PYG{n}{q1}\PYG{p}{,} \PYG{n}{q2}\PYG{p}{;}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{tanCP}\PYG{p}{(}\PYG{n}{c1}\PYG{p}{,} \PYG{n}{p}\PYG{p}{,} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{tanCP}\PYG{p}{(}\PYG{n}{c2}\PYG{p}{,} \PYG{n}{p}\PYG{p}{,} \PYG{n}{q1}\PYG{p}{,} \PYG{n}{q2}\PYG{p}{))} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// 两圆相切认为没有切线}
+		\PYG{n}{ret}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{Line}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{q1}\PYG{p}{));}
+		\PYG{n}{ret}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{Line}\PYG{p}{(}\PYG{n}{p2}\PYG{p}{,} \PYG{n}{q2}\PYG{p}{));}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n}{ret}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{bool} \PYG{n}{contain}\PYG{p}{(}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}} \PYG{n}{polygon}\PYG{p}{,} \PYG{n}{Point} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// 判断点 p 是否被多边形包含，包括落在边界上}
+	\PYG{k+kt}{int} \PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{n}{polygon}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{o}{++} \PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Point} \PYG{n}{u} \PYG{o}{=} \PYG{n}{polygon}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{v} \PYG{o}{=} \PYG{n}{polygon}\PYG{p}{[(}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{n}\PYG{p}{];}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{onSeg}\PYG{p}{(}\PYG{n}{Line}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,} \PYG{n}{v}\PYG{p}{),} \PYG{n}{p}\PYG{p}{))} \PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}  \PYG{c+c1}{// Here I guess.}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{u}\PYG{p}{.}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{v}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{n}{swap}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,} \PYG{n}{v}\PYG{p}{);}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{p}\PYG{p}{.}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{o}{||} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{p}\PYG{p}{.}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{v}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{continue}\PYG{p}{;}
+		\PYG{n}{ret} \PYG{o}{+=} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,} \PYG{n}{v}\PYG{p}{,} \PYG{n}{u}\PYG{p}{))} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n}{ret} \PYG{o}{\PYGZam{}} \PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// 用半平面 (q1,q2) 的逆时针方向去切凸多边形}
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}} \PYG{n}{convexCut}\PYG{p}{(}\PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}\PYGZam{}}\PYG{n}{ps}\PYG{p}{,} \PYG{n}{Point} \PYG{n}{q1}\PYG{p}{,} \PYG{n}{Point} \PYG{n}{q2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}} \PYG{n}{qs}\PYG{p}{;} \PYG{k+kt}{int} \PYG{n}{n} \PYG{o}{=} \PYG{n}{ps}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Point} \PYG{n}{p1} \PYG{o}{=} \PYG{n}{ps}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{p2} \PYG{o}{=} \PYG{n}{ps}\PYG{p}{[(}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{n}\PYG{p}{];}
+		\PYG{k+kt}{int} \PYG{n}{d1} \PYG{o}{=} \PYG{n}{crossOp}\PYG{p}{(}\PYG{n}{q1}\PYG{p}{,}\PYG{n}{q2}\PYG{p}{,}\PYG{n}{p1}\PYG{p}{),} \PYG{n}{d2} \PYG{o}{=} \PYG{n}{crossOp}\PYG{p}{(}\PYG{n}{q1}\PYG{p}{,}\PYG{n}{q2}\PYG{p}{,}\PYG{n}{p2}\PYG{p}{);}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{d1} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{n}{qs}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{);}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{d1} \PYG{o}{*} \PYG{n}{d2} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{n}{qs}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{isSS}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{,} \PYG{n}{q1}\PYG{p}{,} \PYG{n}{q2}\PYG{p}{));}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n}{qs}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// 求凸包}
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}} \PYG{n}{convexHull}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}} \PYG{n}{ps}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{n} \PYG{o}{=} \PYG{n}{ps}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{k}{if} \PYG{p}{(}\PYG{n}{n} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{k}{return} \PYG{n}{ps}\PYG{p}{;}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{ps}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{(),} \PYG{n}{ps}\PYG{p}{.}\PYG{n}{end}\PYG{p}{());}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}} \PYG{n}{qs}\PYG{p}{;}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{n}{qs}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{ps}\PYG{p}{[}\PYG{n}{i} \PYG{o}{++}\PYG{p}{]))}
+		\PYG{k}{while} \PYG{p}{(}\PYG{n}{qs}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{qs}\PYG{p}{[}\PYG{n}{qs}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{p}{],} \PYG{n}{qs}\PYG{p}{.}\PYG{n}{back}\PYG{p}{(),} \PYG{n}{ps}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]))} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{)}
+			\PYG{n}{qs}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{t} \PYG{o}{=} \PYG{n}{qs}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{qs}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{ps}\PYG{p}{[}\PYG{n}{i} \PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{]))}
+		\PYG{k}{while} \PYG{p}{((}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{qs}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{n}{t} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{qs}\PYG{p}{[}\PYG{n}{qs}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{p}{],} \PYG{n}{qs}\PYG{p}{.}\PYG{n}{back}\PYG{p}{(),} \PYG{n}{ps}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]))} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{)}
+			\PYG{n}{qs}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+	\PYG{k}{return} \PYG{n}{qs}\PYG{p}{;}
+\end{Verbatim}

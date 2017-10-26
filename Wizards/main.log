@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.15)  26 OCT 2017 13:06
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.15)  26 OCT 2017 17:40
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -960,6 +960,792 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \CJKUnifiedIdeographsExtensionDClass=\XeTeXcharclass18
 \CJKUnifiedIdeographsExtensionEClass=\XeTeXcharclass19
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ctex/ctex.sty
+Package: ctex 2017/04/01 v2.4.9 Chinese adapter in LaTeX (CTEX)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2017/05/13 LaTeX2e option processing using LaTeX3 keys
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/ctex/ctexhook.sty
+Package: ctexhook 2017/04/01 v2.4.9 Document and package hooks (CTEX)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ctex/ctexpatch.sty
+Package: ctexpatch 2017/04/01 v2.4.9 Patching commands (CTEX)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\l__ctex_tmp_int=\count197
+\l__ctex_tmp_box=\box86
+\l__ctex_tmp_dim=\dimen195
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
+File: ctexopts.cfg 2017/04/01 v2.4.9 Option configuration file (CTEX)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
+File: ctex-engine-xetex.def 2017/04/01 v2.4.9 XeLaTeX adapter (CTEX)
+(/usr/local/texlive/2017/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+Package: xeCJK 2017/05/15 v3.4.8 Typesetting CJK scripts with XeLaTeX
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
+y
+Package: xtemplate 2017/05/13 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen196
+\l__xtemplate_tmp_int=\count198
+\l__xtemplate_tmp_muskip=\muskip17
+\l__xtemplate_tmp_skip=\skip137
+)
+\l__xeCJK_tmp_int=\count199
+\l__xeCJK_tmp_box=\box87
+\l__xeCJK_tmp_dim=\dimen197
+\l__xeCJK_tmp_skip=\skip138
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKShipoutHook with sig. '' on line 148.
+.................................................
+\g__xeCJK_spacefactor_int=\count266
+\l__xeCJK_begin_int=\count267
+\l__xeCJK_end_int=\count268
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \makexeCJKactive with sig. '' on line 377.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \makexeCJKinactive with sig. '' on line 378.
+.................................................
+\c__xeCJK_CJK_class_int=\XeTeXcharclass20
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass21
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass22
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass23
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass24
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass25
+\c__xeCJK_CM_class_int=\XeTeXcharclass26
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass27
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclareCharClass with sig. 's>{\TrimSpaces }mm' on
+. line 542.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_set_char_class_aux:Nnw with sig.
+. 'm>{\SplitArgument {1}{->}}m' on line 563.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \normalspacedchars with sig. 'm' on line 608.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKResetPunctClass with sig. '' on line 619.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKResetCharClass with sig. '' on line 631.
+.................................................
+\l__xeCJK_last_skip=\skip139
+\g__xeCJK_node_int=\count269
+\c__xeCJK_CJK_node_dim=\dimen198
+\c__xeCJK_CJK-space_node_dim=\dimen199
+\c__xeCJK_default_node_dim=\dimen256
+\c__xeCJK_default-space_node_dim=\dimen257
+\c__xeCJK_CJK-widow_node_dim=\dimen258
+\c__xeCJK_normalspace_node_dim=\dimen259
+\l__xeCJK_ccglue_skip=\skip140
+\l__xeCJK_ecglue_skip=\skip141
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKnobreak with sig. '' on line 1470.
+.................................................
+\l__xeCJK_widow_penalty_int=\count270
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclareSubCJKBlock with sig. 's>{\TrimSpaces }mm' on
+. line 1666.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKCancelSubCJKBlock with sig. 'sm' on line 1677.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKRestoreSubCJKBlock with sig. 'sm' on line 1686.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetwidth with sig. 'smm' on line 1784.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetkern with sig. 'mmm' on line 1788.
+.................................................
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'xeCJK/punctuation' taking 0 argument(s) on line 1925.
+.................................................
+\l__xeCJK_fixed_punct_width_dim=\dimen260
+\l__xeCJK_mixed_punct_width_dim=\dimen261
+\l__xeCJK_middle_punct_width_dim=\dimen262
+\l__xeCJK_fixed_margin_width_dim=\dimen263
+\l__xeCJK_mixed_margin_width_dim=\dimen264
+\l__xeCJK_middle_margin_width_dim=\dimen265
+\l__xeCJK_bound_punct_width_dim=\dimen266
+\l__xeCJK_bound_margin_width_dim=\dimen267
+\l__xeCJK_margin_minimum_dim=\dimen268
+\l__xeCJK_kerning_total_width_dim=\dimen269
+\l__xeCJK_same_align_margin_dim=\dimen270
+\l__xeCJK_different_align_margin_dim=\dimen271
+\l__xeCJK_kerning_margin_width_dim=\dimen272
+\l__xeCJK_kerning_margin_minimum_dim=\dimen273
+\l__xeCJK_bound_dim=\dimen274
+\l__xeCJK_reverse_bound_dim=\dimen275
+\l__xeCJK_minimum_bound_dim=\dimen276
+\l__xeCJK_kerning_margin_dim=\dimen277
+\l__xeCJK_original_margin_dim=\dimen278
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclarePunctStyle with sig. '>{\TrimSpaces }mm' on
+. line 2423.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKEditPunctStyle with sig. '>{\TrimSpaces }mm' on line
+. 2436.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKfallbackfamilyfont with sig. 'mom' on line 2528.
+.................................................
+\g__xeCJK_family_int=\count271
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKfamily with sig. 't+t-m' on line 2955.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_gobble_CJKfamily:wn with sig. 't+t-m' on line
+. 2969.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_post_arg:w with sig. 'mmmO{}' on line 3028.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmainfont with sig. 'om' on line 3034.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKsansfont with sig. 'om' on line 3041.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmonofont with sig. 'om' on line 3047.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKfamilyfont with sig. 'mom' on line 3058.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newCJKfontfamily with sig. 'omom' on line 3066.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKfontspec with sig. 'om' on line 3072.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultCJKfontfeatures with sig. 'm' on line 3095.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addCJKfontfeatures with sig. 'sO{}m' on line 3101.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmathfont with sig. 'om' on line 3275.
+.................................................
+\l__xeCJK_fam_int=\count272
+\g__xeCJK_fam_allocation_int=\count273
+\l__xeCJK_verb_case_int=\count274
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKVerbAddon with sig. '' on line 3515.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKOffVerbAddon with sig. '' on line 3519.
+.................................................
+\l__xeCJK_verb_exspace_skip=\skip142
+ (/usr/local/texlive/2017/texmf-dist/tex/xelatex/xecjk/xunicode-addon.sty
+Package: xunicode-addon 2017/05/15 v3.4.8 addon file for xunicode
+
+(/usr/local/texlive/2017/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tipa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+)
+\tipaTiiicode=\count275
+\tipasavetokens=\toks27
+\tipachecktokens=\toks28
+)
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \ReloadXunicode with sig. 'm' on line 84.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareUTFmathsymbols with sig. 'm' on line 129.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \UseMathAsText with sig. '' on line 138.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \UndeclareUTFcharacter with sig. 'O{\UTFencname }mm' on
+. line 173.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \UndeclareUTFcomposite with sig. 'O{\UTFencname }mmm' on
+. line 180.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareUTFcharacter with sig. 'O{\UTFencname }mm' on
+. line 207.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFSymbol with sig. 'mO{\UTFencname }m' on line
+. 233.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFCommand with sig. 'mO{\UTFencname }m' on line
+. 235.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareUTFcomposite with sig. 'O{\UTFencname }mmm' on
+. line 278.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFCompositeCommand with sig. 'mO{\UTFencname }mm'
+. on line 291.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFCompositeSymbol with sig. 'mO{\UTFencname }mm'
+. on line 296.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFComposite with sig. 'mO{\UTFencname }' on line
+. 298.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFEncodedAccent with sig. 'mO{\UTFencname }mm' on
+. line 300.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFEncodedAccents with sig. 'mO{\UTFencname }mm' on
+. line 302.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFEncodedSymbol with sig. 'mO{\UTFencname }mm' on
+. line 304.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFEncodedCircle with sig. 'mO{\UTFencname }mm' on
+. line 306.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareEncodedCompositeCharacter with sig. 'mmmm' on
+. line 308.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \DeclareEncodedCompositeAccents with sig. 'mmmm' on line
+. 310.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFDoubleEncodedAccent with sig. 'mO{\UTFencname
+. }mm' on line 312.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFDoubleEncodedSymbol with sig. 'mO{\UTFencname
+. }mm' on line 314.
+.................................................
+\l__xunadd_tmp_coffin=\box88
+\l__xunadd_circle_coffin=\box89
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \settextcircledratio with sig. 'm' on line 465.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \AtBeginUTFCommand with sig. 'sO{}+m' on line 534.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \AtEndUTFCommand with sig. 'sO{}+m' on line 544.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUTFTIPACommand with sig. 'O{\UTFencname }m' on line
+. 576.
+.................................................
+)
+(/usr/local/texlive/2017/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+
+*** Reloading Xunicode for encoding 'TU' ***
+) (/usr/local/texlive/2017/texmf-dist/tex/xelatex/xecjk/xunicode-extra.def
+File: xunicode-extra.def 2017/05/15 v3.4.8 extra definition for xunicode
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetup with sig. '+m' on line 3820.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetemboldenfactor with sig. 'm' on line 3822.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetslantfactor with sig. 'm' on line 3824.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \punctstyle with sig. 'm' on line 3825.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKplainchr with sig. '' on line 3826.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKsetecglue with sig. 'm' on line 3827.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKspace with sig. '' on line 3829.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKnospace with sig. '' on line 3830.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKallowbreakbetweenpuncts with sig. '' on line 3832.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKnobreakbetweenpuncts with sig. '' on line 3834.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKenablefallback with sig. '' on line 3836.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKdisablefallback with sig. '' on line 3838.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetcharclass with sig. 'mmm' on line 3843.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \nobreakspace with sig. '' on line 3989.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \fontfamily with sig. 'm' on line 4029.
+.................................................
+
+(/usr/local/texlive/2017/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
+File: xeCJK.cfg 2017/05/15 v3.4.8 Configuration file for xeCJK package
+))
+(/usr/local/texlive/2017/texmf-dist/tex/xelatex/xecjk/xeCJKfntef.sty
+Package: xeCJKfntef 2017/05/15 v3.4.8 xeCJK font effect
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box90
+\UL@hyphenbox=\box91
+\UL@skip=\skip143
+\UL@hook=\toks29
+\UL@height=\dimen279
+\UL@pe=\count276
+\UL@pixel=\dimen280
+\ULC@box=\box92
+Package: ulem 2012/05/18
+\ULdepth=\dimen281
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty
+Package: CJKfntef 2015/04/18 4.8.4
+\CJK@fntefSkip=\skip144
+\CJK@nest=\count277
+\CJK@fntefDimen=\dimen282
+\CJK@underdotBox=\box93
+\CJK@ULbox=\box94
+\CJK@underanyskip=\dimen283
+)
+\l__xeCJK_space_skip=\skip145
+\c__xeCJK_ulem-begin_node_dim=\dimen284
+\c__xeCJK_null_box=\box95
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKfntefon with sig. 'st-so' on line 614.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderline with sig. 'st-so' on line 630.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \varCJKunderline with sig. '' on line 632.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderwave with sig. 'st-so' on line 642.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderdblline with sig. 'st-so' on line 666.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKsout with sig. 'st-so' on line 685.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKxout with sig. 'st-so' on line 702.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderanyline with sig. 'st-somm' on line 723.
+.................................................
+\l__xeCJK_fntef_box=\box96
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderanysymbol with sig. 'ommm' on line 903.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderdot with sig. 'om' on line 912.
+.................................................
+\l__xeCJK_under_symbol_box=\box97
+.................................................
+. LaTeX info: "xparse/redefine-environment"
+. 
+. Redefining environment 'CJKfilltwosides' with sig. 'O{c}m' on line 1016.
+.................................................
+\c__xeCJK_filll_skip=\skip146
+)
+\ccwd=\dimen285
+\l__ctex_ccglue_skip=\skip147
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ctexset with sig. '' on line 376.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXsetup with sig. '+o>{\TrimSpaces }m' on line 382.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXoptions with sig. '+o' on line 388.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXsetfont with sig. '' on line 406.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ziju with sig. 'm' on line 478.
+.................................................
+\l__ctex_ziju_dim=\dimen286
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXindent with sig. '' on line 519.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXnoindent with sig. '' on line 525.
+.................................................
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/zhnumber/zhnumber.sty
+Package: zhnumber 2016/05/14 v2.4 Typesetting numbers with Chinese glyphs
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumber with sig. '+o+m' on line 50.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumberwithoptions with sig. '+m+m' on line 57.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnum with sig. '+o+m' on line 111.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumwithoptions with sig. '+m+m' on line 118.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdig with sig. '+o+m' on line 297.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdigwithoptions with sig. '+m+m' on line 304.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdigits with sig. '+s+o+m' on line 318.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdigitswithoptions with sig. '+m+m+m' on line 325.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdate with sig. '+s+m' on line 384.
+.................................................
+\l__zhnum_scale_int=\count278
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumExtendScaleMap with sig. '>{\TrimSpaces }+o+m' on
+. line 506.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumsetup with sig. '+m' on line 938.
+.................................................
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
+File: zhnumber-utf8.cfg 2016/05/14 v2.4 Chinese numerals with UTF8 encoding
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXnumber with sig. 'mm' on line 542.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXdigits with sig. 'mm' on line 544.
+.................................................
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese.d
+ef
+File: ctex-scheme-chinese.def 2017/04/01 v2.4.9 Chinese scheme for generic (CTE
+X)
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
+File: ctex-name-utf8.cfg 2017/04/01 v2.4.9 Caption with encoding UTF8 (CTEX)
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zihao with sig. 'm' on line 641.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTeX with sig. '' on line 745.
+.................................................
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-mac.def
+File: ctex-fontset-mac.def 2017/04/01 v2.4.9 Mac OS X fonts definition (CTEX)
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'STSong' does not contain script 'CJK'.
+*************************************************
+\g__fontspec_family_STSong_int=\count279
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STKaiti/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STHeiti/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STSong/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STSong(0)' created for font 'STSong' with options
+. [Script={CJK},BoldFont={STHeiti},ItalicFont={STKaiti}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"STSong/OT"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.: <->"STHeiti/OT"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.: <->"STKaiti/OT"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \songti with sig. '' on line 48.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \heiti with sig. '' on line 49.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fangsong with sig. '' on line 50.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \kaishu with sig. '' on line 51.
+.................................................
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/ctex/config/ctex.cfg
+File: ctex.cfg 2017/04/01 v2.4.9 Configuration file (CTEX)
+)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
@@ -967,18 +1753,18 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count197
-\Gm@cntv=\count198
-\c@Gm@tempcnt=\count199
-\Gm@bindingoffset=\dimen195
-\Gm@wd@mp=\dimen196
-\Gm@odd@mp=\dimen197
-\Gm@even@mp=\dimen198
-\Gm@layoutwidth=\dimen199
-\Gm@layoutheight=\dimen256
-\Gm@layouthoffset=\dimen257
-\Gm@layoutvoffset=\dimen258
-\Gm@dimlist=\toks27
+\Gm@cnth=\count280
+\Gm@cntv=\count281
+\c@Gm@tempcnt=\count282
+\Gm@bindingoffset=\dimen287
+\Gm@wd@mp=\dimen288
+\Gm@odd@mp=\dimen289
+\Gm@even@mp=\dimen290
+\Gm@layoutwidth=\dimen291
+\Gm@layoutheight=\dimen292
+\Gm@layouthoffset=\dimen293
+\Gm@layoutvoffset=\dimen294
+\Gm@dimlist=\toks30
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2017/01/14 v0.5h Insert pages of external PDF documents (AM)
@@ -986,61 +1772,61 @@ Package: pdfpages 2017/01/14 v0.5h Insert pages of external PDF documents (AM)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
 )
-\AM@pagewidth=\dimen259
-\AM@pageheight=\dimen260
+\AM@pagewidth=\dimen295
+\AM@pageheight=\dimen296
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/pdfpages/ppxetex.def
 File: ppxetex.def 2017/01/14 v0.5h Pdfpages driver for XeTeX (AM)
 )
-\AM@pagebox=\box86
-\AM@global@opts=\toks28
-\AM@toc@title=\toks29
-\c@AM@survey=\count266
-\AM@templatesizebox=\box87
+\AM@pagebox=\box98
+\AM@global@opts=\toks31
+\AM@toc@title=\toks32
+\c@AM@survey=\count283
+\AM@templatesizebox=\box99
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 44.
-\cftparskip=\skip137
-\cftbeforetoctitleskip=\skip138
-\cftaftertoctitleskip=\skip139
-\cftbeforepartskip=\skip140
-\cftpartnumwidth=\skip141
-\cftpartindent=\skip142
-\cftbeforesecskip=\skip143
-\cftsecindent=\skip144
-\cftsecnumwidth=\skip145
-\cftbeforesubsecskip=\skip146
-\cftsubsecindent=\skip147
-\cftsubsecnumwidth=\skip148
-\cftbeforesubsubsecskip=\skip149
-\cftsubsubsecindent=\skip150
-\cftsubsubsecnumwidth=\skip151
-\cftbeforeparaskip=\skip152
-\cftparaindent=\skip153
-\cftparanumwidth=\skip154
-\cftbeforesubparaskip=\skip155
-\cftsubparaindent=\skip156
-\cftsubparanumwidth=\skip157
-\cftbeforeloftitleskip=\skip158
-\cftafterloftitleskip=\skip159
-\cftbeforefigskip=\skip160
-\cftfigindent=\skip161
-\cftfignumwidth=\skip162
-\c@lofdepth=\count267
-\c@lotdepth=\count268
-\cftbeforelottitleskip=\skip163
-\cftafterlottitleskip=\skip164
-\cftbeforetabskip=\skip165
-\cfttabindent=\skip166
-\cfttabnumwidth=\skip167
+\cftparskip=\skip148
+\cftbeforetoctitleskip=\skip149
+\cftaftertoctitleskip=\skip150
+\cftbeforepartskip=\skip151
+\cftpartnumwidth=\skip152
+\cftpartindent=\skip153
+\cftbeforesecskip=\skip154
+\cftsecindent=\skip155
+\cftsecnumwidth=\skip156
+\cftbeforesubsecskip=\skip157
+\cftsubsecindent=\skip158
+\cftsubsecnumwidth=\skip159
+\cftbeforesubsubsecskip=\skip160
+\cftsubsubsecindent=\skip161
+\cftsubsubsecnumwidth=\skip162
+\cftbeforeparaskip=\skip163
+\cftparaindent=\skip164
+\cftparanumwidth=\skip165
+\cftbeforesubparaskip=\skip166
+\cftsubparaindent=\skip167
+\cftsubparanumwidth=\skip168
+\cftbeforeloftitleskip=\skip169
+\cftafterloftitleskip=\skip170
+\cftbeforefigskip=\skip171
+\cftfigindent=\skip172
+\cftfignumwidth=\skip173
+\c@lofdepth=\count284
+\c@lotdepth=\count285
+\cftbeforelottitleskip=\skip174
+\cftafterlottitleskip=\skip175
+\cftbeforetabskip=\skip176
+\cfttabindent=\skip177
+\cfttabnumwidth=\skip178
 )
 .................................................
 . fontspec info: "no-scripts"
 . 
 . Font "Isotype" does not contain any OpenType `Script' information.
 .................................................
-\g__fontspec_family_Isotype_int=\count269
+\g__fontspec_family_Isotype_int=\count286
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1071,13 +1857,13 @@ Package tocloft Info: The document has section divisions on input line 44.
 . \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
 . \hyphenchar \font =\c_minus_one 
 .................................................
-LaTeX Info: Redefining \ttfamily on input line 19.
+LaTeX Info: Redefining \ttfamily on input line 20.
 .................................................
 . fontspec info: "no-scripts"
 . 
 . Font "SimHei" does not contain any OpenType `Script' information.
 .................................................
-\g__fontspec_family_SimHei_int=\count270
+\g__fontspec_family_SimHei_int=\count287
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1107,31 +1893,38 @@ runsystem(which pygmentize && touch main.aex)...executed.
 
 runsystem(rm main.aex)...executed.
 
- (./main.aux)
+
+(/usr/local/texlive/2017/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
+Package: xeCJK-listings 2017/05/15 v3.4.8 xeCJK patch file for listings
+\l__xeCJK_listings_max_char_int=\count288
+\l__xeCJK_listings_flag_int=\count289
+)
+(./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 109.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 110.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 110.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/tipa/t3cmr.fd
+File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 109.
-\c@lstlisting=\count271
+LaTeX Font Info:    ... okay on input line 110.
+\c@lstlisting=\count290
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -1139,32 +1932,948 @@ LaTeX Font Info:    ... okay on input line 109.
 .................................................
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 109.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 109.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 109.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 109.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 109.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 109.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 109.
-LaTeX Font Info:    Redeclaring math accent \check on input line 109.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 109.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 109.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 109.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 109.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 109.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 110.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 110.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 110.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 110.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 110.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 110.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 110.
+LaTeX Font Info:    Redeclaring math accent \check on input line 110.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 110.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 110.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 110.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 110.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 109.
+(Font)              `operators' in the math version `normal' on input line 110.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on 
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 110.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/Isotype(0)/m/n on input line 110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/Isotype(0)/bx/n on input line 110.
+\AtBeginShipoutBox=\box100
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 110.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(42.67912pt, 534.91191pt, 19.91684pt)
+* v-part:(T,H,B)=(48.36958pt, 796.67726pt, 0.0pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=534.91191pt
+* \textheight=796.67726pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
+* \topmargin=-60.9004pt
+* \headheight=12.0pt
+* \headsep=2.84544pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=30.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 99.
+
+) (./main.toc)
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+ [1
+
+] (./source.tex (./source/number-theory.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(./_minted-main/default-pyg-prefix.pygstyle) (./_minted-main/xcode.pygstyle)
+(./_minted-main/3BFCF6D6DF29C641DA3778F1725C4FFA364FE131EAF292715EEF0B63283C77E
+1.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
+
+ []
+
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'STFangsong' does not contain script 'CJK'.
+*************************************************
+\g__fontspec_family_STFangsong_int=\count291
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STFangsong/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STFangsong/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STFangsong/I" (it probably doesn't exist).
+.................................................
+LaTeX Font Info:    Font shape `TU/Isotype(0)/m/n' will be
+(Font)              scaled to size 8.00003pt on input line 1.
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STFangsong(0)' created for font 'STFangsong' with options
+. [Script={CJK}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"STFangsong/OT"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+.................................................
+LaTeX Font Info:    Font shape `TU/Isotype(0)/m/n' will be
+(Font)              scaled to size 4.00002pt on input line 2.
+*************************************************
+* fontspec warning: "script-not-exist-latn"
+* 
+* Font 'STXihei' does not contain script 'CJK'.
+*  'Latin' script used instead.
+*************************************************
+\g__fontspec_family_STXihei_int=\count292
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STHeiti/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STXihei/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STXihei(0)' created for font 'STXihei' with options
+. [Script={CJK},BoldFont={STHeiti}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"STXihei/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.: <->"STHeiti/OT:script=latn;language=DFLT;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->"STXihei/BI/OT:script=latn;language=DFLT;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+)
+(./_minted-main/14355837D809D74842D27909CBF97022364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/79B0D8FC5CFB8BE936E1DD9540F01BC6364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/40D45725573F14D11A554730A44DA05C364FE131EAF292715EEF0B63283C77E
+1.pygtex
+Overfull \hbox (43.63536pt too wide) in paragraph at lines 18--18
+[]\TU/Isotype(0)/m/n/10 lim[][][]=[]{[]4[],[]0[],[]1373653LL[],[]25326001LL[],[
+]25000000000LL[],[]2152302898747LL[], 
+ []
+
+)
+(./_minted-main/6C3057F2DB9EDCC100F1ED17C2A743DF364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/5C975FDC3AFE3FECFCE1C4A45AEFD5257555BD1B672EA4FE3EB320D14CDBAF3
+7.pygtex [2]
+Overfull \hbox (102.43573pt too wide) in paragraph at lines 26--26
+[]\TU/Isotype(0)/m/n/10 ([][]p[][].[][]pow[][]([][]2[][]).[][]subtract[][]([][]
+N[][].[][]multiply[][]([][]q[][].[][]pow[][]([][]2[][]))).[][]compareTo[][]([][
+]BigInteger[][].[][]ONE[][])[] 
+ []
+
+)
+(./_minted-main/63A346DEB0B5074763C0960C43129454364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/A82AA8D0E5F443C881E5E13115B13783364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/FEEEF54E30B8D9DB36680882DCF3EEE3364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/5D4FD3405B6FEA1FC9078C9E48E033C0364FE131EAF292715EEF0B63283C77E
+1.pygtex [3])
+(./_minted-main/EF7A6ABD5A77CB56BA2AF29138B53CAB364FE131EAF292715EEF0B63283C77E
+1.pygtex
+Overfull \hbox (22.6354pt too wide) in paragraph at lines 33--33
+[]\TU/Isotype(0)/m/n/10 ans[][]=[][]ans[][]*[][]A[].[]second[][]%[][]P[][]*[][]
+inv[]([]B[].[]second[],[]P[])[]%[][]P[][]*[][]inv[]([]C[].[]second[],[]P[])[]%[
+][]P[];|  
+ []
+
+)
+(./_minted-main/A2ECF1F72444C53F7BC0051A3E620657364FE131EAF292715EEF0B63283C77E
+1.pygtex [4])
+(./_minted-main/528997934F7328E5372C922CB9263DA9364FE131EAF292715EEF0B63283C77E
+1.pygtex)) (./source/algebra.tex
+(./_minted-main/0E91F8A02BDDCFA8B5A58370A9231028364FE131EAF292715EEF0B63283C77E
+1.pygtex) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex [5])
+(./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
+(./_minted-main/DB1F63A6A410C52C7A35E9F9A7AB1975364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/A8771C2DCD9DC309F88BBD1FBDFC568F364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/06CC42F25F4192C07487BA1FF24C9F5F364FE131EAF292715EEF0B63283C77E
+1.pygtex [6]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
+(./_minted-main/7FF0F2696A0081A90BC573E26230BEBD364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/20BF1398FFE370FDA80548A85930A9F5364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/8DE7059FE99729AE7FF7DE4D877FC8EA364FE131EAF292715EEF0B63283C77E
+1.pygtex [7])) (./source/geometry.tex
+(./_minted-main/ABC25B1DC0D488A2DD5F40462C910BFF364FE131EAF292715EEF0B63283C77E
+1.pygtex [8])
+(./_minted-main/C903EFA9BF0C035D67D26708CDC67E5B364FE131EAF292715EEF0B63283C77E
+1.pygtex [9])
+(./_minted-main/3B78EF130884853D44E8F93416516678364FE131EAF292715EEF0B63283C77E
+1.pygtex [10] [11]
+Overfull \hbox (68.83557pt too wide) in paragraph at lines 255--255
+[]\TU/Isotype(0)/m/n/10 SegmentToSegment[]([]P[][[]yminP[]],[]P[][[]yminP[][]+[
+][]1[]],[]Q[][[]ymaxQ[]],[]Q[][[]ymaxQ[][]+[][]1[]]);|  
+ []
+
+)
+(./_minted-main/2E66A7A846E72AD45D0FA668E6BAC50A364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/81E951BBB1B11C0E69E9AC5362693B8C364FE131EAF292715EEF0B63283C77E
+1.pygtex [12])
+(./_minted-main/D5E9C39EC716D61164B64880B96EC3CC364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/D7948D6499297F1FBAF6F9F19582F85B364FE131EAF292715EEF0B63283C77E
+1.pygtex [13])
+(./_minted-main/1BC7CA2BF7F3D65B27328F161C9285EA364FE131EAF292715EEF0B63283C77E
+1.pygtex
+Overfull \hbox (5.83533pt too wide) in paragraph at lines 74--74
+[]\TU/Isotype(0)/m/n/10 sqrt[]([]di2[]([]x[],[]y[])[]*[][]di2[]([]y[],[]z[])[]*
+[][]di2[]([]z[],[]x[]))[]/[][]fabs[]([]x[][]*[][]y[][]+[][]y[][]*[][]z[][]+[][]
+z[][]*[][]x[])[]/[][]2[];|  
+ []
+
+[14])
+(./_minted-main/51F2EDC179B6AE0914239D2D188949FD364FE131EAF292715EEF0B63283C77E
+1.pygtex [15]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
+(./_minted-main/F88B6C65E6C9E065F51DBFA3614CFA5D364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/71A67580D697678433628CB667D3A0E0364FE131EAF292715EEF0B63283C77E
+1.pygtex [16])
+(./_minted-main/79503B31C465BCA96B6F4987964CBDA9364FE131EAF292715EEF0B63283C77E
+1.pygtex [17])) (./source/string.tex
+(./_minted-main/2E1840EEC99CFB0F0325215BFB095F93364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/97B2407A6FA5D4B0182FAB4865FD351E364FE131EAF292715EEF0B63283C77E
+1.pygtex [18])
+(./_minted-main/A6296BFF3CFD1F84233F8E4192EB6DE0364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/FDF75CEBB1BFE9BA1D5C12183F5C3421364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/428A85A67563F359A690360C5026F062364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/13A052AC626FCEBFB1DE408D361E96D3364FE131EAF292715EEF0B63283C77E
+1.pygtex [19]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex))
+(./source/data-structure.tex
+(./_minted-main/FDF64B951CB2810A99E70E8B0FF2A4B0364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+(./_minted-main/A62CEBDCA024547436942070C4A083B8364FE131EAF292715EEF0B63283C77E
+1.pygtex [20])
+(./_minted-main/0C775C3D4B5768A5D4C8A7400E37F17B364FE131EAF292715EEF0B63283C77E
+1.pygtex [21])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/spaly
+.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.
+path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); f
+vstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = f
+vstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x)))
+ for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/55A559E2A38B338374585BF8376BF418364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/55A559E2A38B338374585BF8376BF418364FE131EAF292715EEF0B63283C77E
+1.pygtex [22])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/link-
+cut-tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = 
+open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UT
+F8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 
+0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".j
+oin(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/49AF97D881D70502A4690BF889DC61BD364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/49AF97D881D70502A4690BF889DC61BD364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/mo'al
+ogorithm-on-tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close
+(); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encod
+ing=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum !=
+ 0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.deden
+t(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...execute
+d.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/7AAC22BD05D5DA9AD6DF3C2431C1D393364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/7AAC22BD05D5DA9AD6DF3C2431C1D393364FE131EAF292715EEF0B63283C77E
+1.pygtex [23])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/cdq.c
+pp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.pa
+th.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvs
+tartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvs
+topnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) f
+or x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/782CB10B025DBA5924C36B36C8438DC1364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/782CB10B025DBA5924C36B36C8438DC1364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/data-structure/gener
+al-binary.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f =
+ open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"U
+TF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else
+ 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".
+join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/D316469FAFF2A6D83A4B13C422FADEF6364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/D316469FAFF2A6D83A4B13C422FADEF6364FE131EAF292715EEF0B63283C77E
+1.pygtex [24])) (./source/graph-theory.tex
+(./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/2-sat-t
+arjan.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = ope
+n(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\
+"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; 
+e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join
+(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/CAD0268BF784BD3D08EB9D8F4B3580C0364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/CAD0268BF784BD3D08EB9D8F4B3580C0364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/KM.cpp\
+")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.
+expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstar
+tnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstop
+num if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for 
+x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/9E4C8AB6E3627E966BB945EB6A0AE125364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/9E4C8AB6E3627E966BB945EB6A0AE125364FE131EAF292715EEF0B63283C77E
+1.pygtex [25])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/biconne
+cted-graph-vertex.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.clos
+e(); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", enco
+ding=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum !
+= 0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dede
+nt(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...execut
+ed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/18833E22428BE4F6338737EED58F31D3364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/18833E22428BE4F6338737EED58F31D3364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/biconne
+cted-graph-edge.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(
+); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encodi
+ng=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 
+0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent
+(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed
+.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/25B2DCB6EADB4BE94E4516B1954929E9364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/25B2DCB6EADB4BE94E4516B1954929E9364FE131EAF292715EEF0B63283C77E
+1.pygtex [26])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/optimum
+-branching.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f 
+= open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"
+UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 els
+e 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\"
+.join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/F15CF6C60B60111A93DB03C65B21DC5E364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/F15CF6C60B60111A93DB03C65B21DC5E364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/blossom
+-algorithm.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f 
+= open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"
+UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 els
+e 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\"
+.join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/2167B175259CDB9C9D1ED97ED5C03943364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/2167B175259CDB9C9D1ED97ED5C03943364FE131EAF292715EEF0B63283C77E
+1.pygtex [27])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/dominat
+or-tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = o
+pen(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF
+8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0
+; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".jo
+in(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/EF5B9FE36095C42D26FCF52DE3D8DBB5364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/EF5B9FE36095C42D26FCF52DE3D8DBB5364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/stoer-w
+agner-algorithm.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(
+); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encodi
+ng=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 
+0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent
+(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed
+.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/C9ABEAC1E2B5E499A6DFEA3B3D290240364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/C9ABEAC1E2B5E499A6DFEA3B3D290240364FE131EAF292715EEF0B63283C77E
+1.pygtex
+Overfull \hbox (52.03564pt too wide) in paragraph at lines 32--32
+| | | |[][][][]\TU/Isotype(0)/m/n/10 cost[][[]seq[][[]k[]]][[]seq[][[]i[]]][]=[
+][]cost[][[]seq[][[]i[]]][[]seq[][[]k[]]][]+=[][]cost[][[]seq[][[]pk[]]][[]seq[
+][[]i[]]];|  
+ []
+
+)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/maxcliq
+ue.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(o
+s.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\");
+ fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e =
+ fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x)
+)) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/D08A2628F69A18766D6AB6E419903EFD364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/D08A2628F69A18766D6AB6E419903EFD364FE131EAF292715EEF0B63283C77E
+1.pygtex [28]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/Steiner
+-Tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = ope
+n(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\
+"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; 
+e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join
+(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/80942DBBEC99CD6AC7A18C0A859B757F364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/80942DBBEC99CD6AC7A18C0A859B757F364FE131EAF292715EEF0B63283C77E
+1.pygtex [29])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/mirage-
+tree.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open
+(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"
+); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e
+ = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(
+x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/239156FED46642F21D048FF2AF41A0E5364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/239156FED46642F21D048FF2AF41A0E5364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/vertex-
+partition.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f =
+ open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"U
+TF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else
+ 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".
+join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/C086113364151457543B5859B1AED2AD364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/C086113364151457543B5859B1AED2AD364FE131EAF292715EEF0B63283C77E
+1.pygtex [30])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/dinic.c
+pp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.pa
+th.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvs
+tartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvs
+topnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) f
+or x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/504EC836FAAAD1AD05FF17B03582F83F364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/504EC836FAAAD1AD05FF17B03582F83F364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/mincost
+-maxflow.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = 
+open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UT
+F8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 
+0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".j
+oin(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/6ECD7EDE1FC14B1981277651F0D50534364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/6ECD7EDE1FC14B1981277651F0D50534364FE131EAF292715EEF0B63283C77E
+1.pygtex [31])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/zkw-cos
+t-flow.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = op
+en(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8
+\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0;
+ e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".joi
+n(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/EB2991D571E970AFC5030503E6506A2F364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/EB2991D571E970AFC5030503E6506A2F364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/graph-theory/GH-tree
+.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.
+path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); f
+vstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = f
+vstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x)))
+ for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/F74A60F592F377B6137AA6E48C17BE1E364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/F74A60F592F377B6137AA6E48C17BE1E364FE131EAF292715EEF0B63283C77E
+1.pygtex
+Overfull \hbox (14.23537pt too wide) in paragraph at lines 12--12
+[]\TU/Isotype(0)/m/n/10 cnt[],[]n[],[]m[],[]dis[][[]N[]],[]last[][[]N[]],[]a[][
+[]N[]],[]tmp[][[]N[]],[]ans[][[]N[]][[]N[]],[]s[],[]t[],[]mark[][[]N[]];|  
+ []
+
+
+Overfull \hbox (31.03543pt too wide) in paragraph at lines 18--18
+[]\TU/Isotype(0)/m/n/10 e[][[]++[][]cnt[]].[]to[][]=[][]v[];[]e[][[]cnt[]].[]c[
+][]=[][]c[];[]e[][[]cnt[]].[]next[][]=[][]last[][[]u[]];[]last[][[]u[]][]=[][]c
+nt[];|  
+ []
+
+
+Overfull \hbox (31.03543pt too wide) in paragraph at lines 19--19
+[]\TU/Isotype(0)/m/n/10 e[][[]++[][]cnt[]].[]to[][]=[][]u[];[]e[][[]cnt[]].[]c[
+][]=[][]c[];[]e[][[]cnt[]].[]next[][]=[][]last[][[]v[]];[]last[][[]v[]][]=[][]c
+nt[];|  
+ []
+
+[32]
+Overfull \hbox (26.83539pt too wide) in paragraph at lines 81--81
+[]\TU/Isotype(0)/m/n/10 ans[][[]i[]][[]j[]][]=[][]ans[][[]j[]][[]i[]][]=[][]min
+[]([]ans[][[]i[]][[]j[]],[]flow[]);|  
+ []
+
+)) (./source/others.tex
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/exact.cpp\"))
+, \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.exp
+anduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnu
+m = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum
+ if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x i
+n (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/3474C6185ABD0355AB4424FFD2D5B6BD364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/3474C6185ABD0355AB4424FFD2D5B6BD364FE131EAF292715EEF0B63283C77E
+1.pygtex [33])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/rader.cpp\"))
+, \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.exp
+anduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnu
+m = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum
+ if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x i
+n (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/AD649595CAEF15A0209C9BFE24B3FD8F364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/AD649595CAEF15A0209C9BFE24B3FD8F364FE131EAF292715EEF0B63283C77E
+1.pygtex [34])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/optimize.cpp\
+")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.
+expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstar
+tnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstop
+num if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for 
+x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/DDECFEC7E0D782170CC25CA0B24A4186364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/DDECFEC7E0D782170CC25CA0B24A4186364FE131EAF292715EEF0B63283C77E
+1.pygtex [35]
+Overfull \hbox (85.63562pt too wide) in paragraph at lines 30--30
+\TU/Isotype(0)/m/n/10 ([]double[])([]sum[][[]k[]][]*[][]sum[][[]k[]][]-[][]sum[
+][[]j[]][]*[][]sum[][[]j[]][]+[][]g[][[]j[]][]-[][]g[][[]k[]])[]/[]([]double[])
+([]sum[][[]k[]][]-[][]sum[][[]j[]]);|  
+ []
+
+
+Overfull \hbox (39.43555pt too wide) in paragraph at lines 37--37
+| | | |[][][]\TU/Isotype(0)/m/n/10 while[]([]head[][]<[][]tail[][]&&[][]cal[]([
+]q[][[]tail[][]-[][]1[]],[]q[][[]tail[]])[]>[][]cal[]([]q[][[]tail[]],[]i[][]-[
+][]1[]))[]tail[][]--[];|  
+ []
+
+
+Overfull \hbox (26.83543pt too wide) in paragraph at lines 39--39
+[]\TU/Isotype(0)/m/n/10 while[]([]head[][]<[][]tail[][]&&[][]cal[]([]q[][[]head
+[]],[]q[][[]head[][]+[][]1[]])[]<[][]sum[][[]i[]])[]head[][]++[];|  
+ []
+
+)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/dicision.cpp\
+")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.
+expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstar
+tnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstop
+num if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for 
+x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/CD948BA6BBF385E75EECC933030CFCD5364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/CD948BA6BBF385E75EECC933030CFCD5364FE131EAF292715EEF0B63283C77E
+1.pygtex
+Overfull \hbox (77.23558pt too wide) in paragraph at lines 55--55
+[]\TU/Isotype(0)/m/n/10 while[]([]head[][]<=[][]tail[][]&&[][]cal[]([]i[],[]q[]
+[[]tail[]].[]l[])[]>[][]cal[]([]q[][[]tail[]].[]p[],[]q[][[]tail[]].[]l[]))|  
+ []
+
+)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/zellers-congr
+uence.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = ope
+n(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\
+"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; 
+e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join
+(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/D253784B5455BF7D6C085019BBD55D56364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/D253784B5455BF7D6C085019BBD55D56364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+[]\TU/lmr/m/n/10 the number of partitions of n: $\OML/cmm/m/it/10 p\OT1/cmr/m/n
+/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ) =
+ []
+
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/others/mink.cpp\")),
+ \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.expa
+nduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnum
+ = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum 
+if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x in
+ (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/A72615169703A1CDA8B1D51C6CDE4212364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/A72615169703A1CDA8B1D51C6CDE4212364FE131EAF292715EEF0B63283C77E
+1.pygtex [36])) (./source/tricks.tex
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/truly-release
+-container-space.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close
+(); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encod
+ing=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum !=
+ 0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.deden
+t(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...execute
+d.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/5353B3D21EF353777437E0C55D5F41AB364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/5353B3D21EF353777437E0C55D5F41AB364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/O1-multiply-m
+od.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(o
+s.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\");
+ fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e =
+ fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x)
+)) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/57B5E402721587AB3A22E549FDD3EFA1364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/57B5E402721587AB3A22E549FDD3EFA1364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/unbeatable-in
+put-acceleration.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close
+(); f = open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encod
+ing=\"UTF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum !=
+ 0 else 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.deden
+t(\"\".join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...execute
+d.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/B62E04CA900BBC2C53E64E8A3BF6E311364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/B62E04CA900BBC2C53E64E8A3BF6E311364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/mersenne-twis
+ter.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(
+os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\")
+; fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e 
+= fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x
+))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/8DFA27CB13CD6D10D89BDBDC38B1C14B364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/8DFA27CB13CD6D10D89BDBDC38B1C14B364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/vimrc\")), \"
+r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.expandu
+ser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnum = 
+0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum if 
+fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x in (t
+[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/3AB9B5E36302EDC5E831D9899C288FE5364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/3AB9B5E36302EDC5E831D9899C288FE5364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/control-cout-
+precision.cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f =
+ open(os.path.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"U
+TF8\"); fvstartnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else
+ 0; e = fvstopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".
+join(x))) for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/7521DCCC3107B60DBA13C2C7B93D3B91364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/7521DCCC3107B60DBA13C2C7B93D3B91364FE131EAF292715EEF0B63283C77E
+1.pygtex)
+*************************************************
+* xeCJK warning: "scale-factor"
+* 
+* `\xeCJKVerbAddon' may not work properly.
+* 
+* You may set `Scale=0.84' to CJKfamily `\CJKttdefault',
+* or set `Scale=1.1905' to family `\ttdefault'.
+*************************************************
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'STFangsong' does not contain script 'CJK'.
+*************************************************
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STFangsong/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STFangsong/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STFangsong/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STFangsong(1)' created for font 'STFangsong' with options
+. [Script={CJK},Scale={0.84000244140625}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->s*[0.84000244140625]"STFangsong/OT"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+.................................................
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/tricks/tuple.cpp\"))
+, \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.path.exp
+anduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fvstartnu
+m = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fvstopnum
+ if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) for x i
+n (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/929312F39B43F4E9B37F95B522861D3D364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/929312F39B43F4E9B37F95B522861D3D364FE131EAF292715EEF0B63283C77E
+1.pygtex)) (./source/hints.tex
+Overfull \hbox (2.85396pt too wide) detected at line 15
+[][] \OMS/cmsy/m/n/10 ([]) [][]
+ []
+
+)) [37] (./main.aux)
+runsystem(rm main.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 28119 strings out of 493005
+ 571477 string characters out of 6134596
+ 786667 words of memory out of 5000000
+ 31423 multiletter control sequences out of 15000+600000
+ 10329 words of font info for 72 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 47i,11n,71p,10403b,1258s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on main.pdf (37 pages).
