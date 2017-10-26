@@ -1,37 +1,3 @@
-\section{提示}
-
-\subsection{线性规划转对偶}
-
-\begin{equation*}
-\begin{aligned}
-&\text{maximize }\mathbf{c}^{T}\mathbf{x}\\
-&\text{subject to }\mathbf{A}\mathbf{x} \leq \mathbf{b}, \mathbf{x} \geq 0
-\end{aligned}
-\Longleftrightarrow
-\begin{aligned}
-&\text{minimize }\mathbf{y}^{T}\mathbf{b}\\
-&\text{subject to }\mathbf{y}^{T}\mathbf{A} \geq \mathbf{c}^{T}, \mathbf{y} \geq 0
-\end{aligned}
-\end{equation*}
-
-\subsection{NTT 素数及其原根}
-\begin{tabular}{|l|l|}
-\hline
-\texttt{Prime} & \texttt{Primitive root} \\
-\hline
-1053818881 & 7 \\
-\hline
-1051721729 & 6 \\
-\hline
-1045430273 & 3 \\
-\hline
-1012924417 & 5 \\
-\hline
-1007681537 & 3 \\
-\hline
-\end{tabular}
-
-\subsection{积分表}
 \newcommand{\md}{\mathrm{d}}
 \newcommand{\me}{\mathrm{e}}
 
@@ -175,7 +141,7 @@
 
 \item $ \int a^x \md x= \frac{1}{\ln a} a^x + C$
 
-\item $ \int \me ^{ax}\md x=\frac{1}{a}a^{ax}+C $
+\item $ \int \me ^{ax}\md x=\frac{1}{a}a^{ax}+C $ 
 
 \item $ \int x \me  ^ {ax} \md x=\frac{1}{a^2}(ax-1)a^{ax} +C $
 
@@ -207,7 +173,7 @@
 
 \item $ \int (\ln x)^{n} \md x = x(\ln x)^ n - n \int (\ln x)^{n-1} \md x $
 
-\item $ \int x ^ m(\ln x)^n \md x=\frac{1}{m+1}x^{m+1} (\ln x)^n - \frac{n}{m+1} \int x^m(\ln x)^{n-1}\md x $
+\item $ \int x ^ m(\ln x)^n \md x=\frac{1}{m+1}x^{m+1} (\ln x)^n - \frac{n}{m+1} \int x^m(\ln x)^{n-1}\md x $ 
 
 \end{enumerate}
 

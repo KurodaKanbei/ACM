@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.15)  26 OCT 2017 18:58
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.15)  26 OCT 2017 19:43
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2030,23 +2030,27 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 99.
 
-) (./main.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 1.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 111.
+
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 1.
+LaTeX Font Info:    Try loading font information for U+msb on input line 111.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
 
-])
+LaTeX Warning: No \author given.
+
+[1
+
+] (./main.toc [1])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [2]
-(./source.tex (./source/number-theory.tex
+ [2] (./source.tex (./source/number-theory.tex
 (./_minted-main/default-pyg-prefix.pygstyle) (./_minted-main/xcode.pygstyle)
 (./_minted-main/3BFCF6D6DF29C641DA3778F1725C4FFA364FE131EAF292715EEF0B63283C77E
 1.pygtex
@@ -2213,17 +2217,32 @@ z[][]*[][]x[])[]/[][]2[];|
 
 )
 (./_minted-main/51F2EDC179B6AE0914239D2D188949FD364FE131EAF292715EEF0B63283C77E
-1.pygtex [16]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
+1.pygtex [16])
+runsystem(python -c "import sys; import os; import textwrap; from io import ope
+n; f = open(os.path.expanduser(os.path.expandvars(\"source/geometry/2d/V-graph.
+cpp\")), \"r\", encoding=\"UTF8\"); t = f.readlines(); f.close(); f = open(os.p
+ath.expanduser(os.path.expandvars(\"main.pyg\")), \"w\", encoding=\"UTF8\"); fv
+startnum = 0; fvstopnum = 0; s = fvstartnum-1 if fvstartnum != 0 else 0; e = fv
+stopnum if fvstopnum != 0 else len(t); [f.write(textwrap.dedent(\"\".join(x))) 
+for x in (t[0:s], t[s:e], t[e:]) if x]; f.close();")...executed.
+
+runsystem(pygmentize -l cpp -f latex -P commandprefix=PYG -F tokenmerge -P math
+escape=True -o _minted-main/2396D24B88ABFC16ADC4A3010EE0BB0D364FE131EAF292715EE
+F0B63283C77E1.pygtex main.pyg)...executed.
+
+
+(./_minted-main/2396D24B88ABFC16ADC4A3010EE0BB0D364FE131EAF292715EEF0B63283C77E
+1.pygtex [17] [18])
 (./_minted-main/F88B6C65E6C9E065F51DBFA3614CFA5D364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/71A67580D697678433628CB667D3A0E0364FE131EAF292715EEF0B63283C77E
-1.pygtex [17])
+1.pygtex [19])
 (./_minted-main/79503B31C465BCA96B6F4987964CBDA9364FE131EAF292715EEF0B63283C77E
-1.pygtex [18])) (./source/string.tex
+1.pygtex [20])) (./source/string.tex
 (./_minted-main/2E1840EEC99CFB0F0325215BFB095F93364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/97B2407A6FA5D4B0182FAB4865FD351E364FE131EAF292715EEF0B63283C77E
-1.pygtex [19])
+1.pygtex [21])
 (./_minted-main/A6296BFF3CFD1F84233F8E4192EB6DE0364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/FDF75CEBB1BFE9BA1D5C12183F5C3421364FE131EAF292715EEF0B63283C77E
@@ -2231,37 +2250,37 @@ z[][]*[][]x[])[]/[][]2[];|
 (./_minted-main/428A85A67563F359A690360C5026F062364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/13A052AC626FCEBFB1DE408D361E96D3364FE131EAF292715EEF0B63283C77E
-1.pygtex [20]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex))
+1.pygtex [22]) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex))
 (./source/data-structure.tex
 (./_minted-main/FDF64B951CB2810A99E70E8B0FF2A4B0364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/A62CEBDCA024547436942070C4A083B8364FE131EAF292715EEF0B63283C77E
-1.pygtex [21])
-(./_minted-main/0C775C3D4B5768A5D4C8A7400E37F17B364FE131EAF292715EEF0B63283C77E
-1.pygtex [22])
-(./_minted-main/55A559E2A38B338374585BF8376BF418364FE131EAF292715EEF0B63283C77E
 1.pygtex [23])
+(./_minted-main/0C775C3D4B5768A5D4C8A7400E37F17B364FE131EAF292715EEF0B63283C77E
+1.pygtex [24])
+(./_minted-main/55A559E2A38B338374585BF8376BF418364FE131EAF292715EEF0B63283C77E
+1.pygtex [25])
 (./_minted-main/49AF97D881D70502A4690BF889DC61BD364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/7AAC22BD05D5DA9AD6DF3C2431C1D393364FE131EAF292715EEF0B63283C77E
-1.pygtex [24])
+1.pygtex [26])
 (./_minted-main/782CB10B025DBA5924C36B36C8438DC1364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/D316469FAFF2A6D83A4B13C422FADEF6364FE131EAF292715EEF0B63283C77E
-1.pygtex [25])) (./source/graph-theory.tex
+1.pygtex [27])) (./source/graph-theory.tex
 (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
 (./_minted-main/CAD0268BF784BD3D08EB9D8F4B3580C0364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/9E4C8AB6E3627E966BB945EB6A0AE125364FE131EAF292715EEF0B63283C77E
-1.pygtex [26])
+1.pygtex [28])
 (./_minted-main/18833E22428BE4F6338737EED58F31D3364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/25B2DCB6EADB4BE94E4516B1954929E9364FE131EAF292715EEF0B63283C77E
-1.pygtex [27])
+1.pygtex [29])
 (./_minted-main/F15CF6C60B60111A93DB03C65B21DC5E364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/2167B175259CDB9C9D1ED97ED5C03943364FE131EAF292715EEF0B63283C77E
-1.pygtex [28])
+1.pygtex [30])
 (./_minted-main/EF5B9FE36095C42D26FCF52DE3D8DBB5364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/C9ABEAC1E2B5E499A6DFEA3B3D290240364FE131EAF292715EEF0B63283C77E
@@ -2272,19 +2291,19 @@ Overfull \hbox (52.03564pt too wide) in paragraph at lines 32--32
 ][[]i[]]];|  
  []
 
-[29])
+[31])
 (./_minted-main/D08A2628F69A18766D6AB6E419903EFD364FE131EAF292715EEF0B63283C77E
 1.pygtex) (./_minted-main/364FE131EAF292715EEF0B63283C77E1.pygtex)
 (./_minted-main/80942DBBEC99CD6AC7A18C0A859B757F364FE131EAF292715EEF0B63283C77E
-1.pygtex [30])
+1.pygtex [32])
 (./_minted-main/239156FED46642F21D048FF2AF41A0E5364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/C086113364151457543B5859B1AED2AD364FE131EAF292715EEF0B63283C77E
-1.pygtex [31])
+1.pygtex [33])
 (./_minted-main/504EC836FAAAD1AD05FF17B03582F83F364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/6ECD7EDE1FC14B1981277651F0D50534364FE131EAF292715EEF0B63283C77E
-1.pygtex [32])
+1.pygtex [34])
 (./_minted-main/EB2991D571E970AFC5030503E6506A2F364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/F74A60F592F377B6137AA6E48C17BE1E364FE131EAF292715EEF0B63283C77E
@@ -2308,7 +2327,7 @@ Overfull \hbox (31.03543pt too wide) in paragraph at lines 19--19
 nt[];|  
  []
 
-[33]
+[35]
 Overfull \hbox (26.83539pt too wide) in paragraph at lines 81--81
 []\TU/Isotype(0)/m/n/10 ans[][[]i[]][[]j[]][]=[][]ans[][[]j[]][[]i[]][]=[][]min
 []([]ans[][[]i[]][[]j[]],[]flow[]);|  
@@ -2316,11 +2335,11 @@ Overfull \hbox (26.83539pt too wide) in paragraph at lines 81--81
 
 )) (./source/others.tex
 (./_minted-main/3474C6185ABD0355AB4424FFD2D5B6BD364FE131EAF292715EEF0B63283C77E
-1.pygtex [34])
+1.pygtex [36])
 (./_minted-main/AD649595CAEF15A0209C9BFE24B3FD8F364FE131EAF292715EEF0B63283C77E
-1.pygtex [35])
+1.pygtex [37])
 (./_minted-main/DDECFEC7E0D782170CC25CA0B24A4186364FE131EAF292715EEF0B63283C77E
-1.pygtex [36]
+1.pygtex [38]
 Overfull \hbox (85.63562pt too wide) in paragraph at lines 30--30
 \TU/Isotype(0)/m/n/10 ([]double[])([]sum[][[]k[]][]*[][]sum[][[]k[]][]-[][]sum[
 ][[]j[]][]*[][]sum[][[]j[]][]+[][]g[][[]j[]][]-[][]g[][[]k[]])[]/[]([]double[])
@@ -2351,12 +2370,8 @@ Overfull \hbox (77.23558pt too wide) in paragraph at lines 55--55
 )
 (./_minted-main/D253784B5455BF7D6C085019BBD55D56364FE131EAF292715EEF0B63283C77E
 1.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 14--16
-[]\TU/lmr/m/n/10 the number of partitions of n: $\OML/cmm/m/it/10 p\OT1/cmr/m/n
-/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ) =
- []
-
-[37]
+(./_minted-main/4F4CB86D3338EF52B3F9636A4400EE90364FE131EAF292715EEF0B63283C77E
+1.pygtex [39])
 (./_minted-main/A72615169703A1CDA8B1D51C6CDE4212364FE131EAF292715EEF0B63283C77E
 1.pygtex)) (./source/tricks.tex
 (./_minted-main/5353B3D21EF353777437E0C55D5F41AB364FE131EAF292715EEF0B63283C77E
@@ -2368,7 +2383,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--16
 (./_minted-main/8DFA27CB13CD6D10D89BDBDC38B1C14B364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 (./_minted-main/3AB9B5E36302EDC5E831D9899C288FE5364FE131EAF292715EEF0B63283C77E
-1.pygtex)
+1.pygtex [40])
 (./_minted-main/7521DCCC3107B60DBA13C2C7B93D3B91364FE131EAF292715EEF0B63283C77E
 1.pygtex)
 *************************************************
@@ -2417,14 +2432,68 @@ Overfull \hbox (2.85396pt too wide) detected at line 15
 [][] \OMS/cmsy/m/n/10 ([]) [][]
  []
 
-[38])) [39] (./main.aux) ) 
-Here is how much of TeX's memory you used:
- 28153 strings out of 493005
- 572415 string characters out of 6134596
- 749665 words of memory out of 5000000
- 31448 multiletter control sequences out of 15000+600000
- 11899 words of font info for 80 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 47i,11n,71p,10403b,1236s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (39 pages).
+Overfull \hbox (19.16684pt too wide) in paragraph at lines 44--48
+[]$[] [] \OT1/cmr/m/n/9 = []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
+[]$[] [][]\OML/cmm/m/it/9 x \OT1/cmr/m/n/9 = [][] +
+ []
+
+
+Overfull \hbox (14.10193pt too wide) in paragraph at lines 70--71
+[]$[] [][]\OML/cmm/m/it/9 x \OT1/cmr/m/n/9 = \OMS/cmsy/m/n/9 ^^@[][] \OT1/cmr/m
+/n/9 + [] [] [] +
+ []
+
+
+Overfull \hbox (25.0pt too wide) detected at line 121
+[]
+ []
+
+
+Overfull \hbox (14.72978pt too wide) in paragraph at lines 123--127
+[]$[] [] \OT1/cmr/m/n/9 = []$ 
+ []
+
+
+Overfull \hbox (26.00287pt too wide) in paragraph at lines 128--133
+[]$[] [] \OT1/cmr/m/n/9 = []$ 
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+[]$[] [][] [][] \OML/cmm/m/it/9 bx[]x \OT1/cmr/m/n/9 = [][][] [][] \OML/cmm/m/i
+t/9 bx\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 a [] bx \OMS/cmsy/m/n/9 ^^@
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+[]$[] [][] [][] \OML/cmm/m/it/9 bx[]x \OT1/cmr/m/n/9 = [][][] [][] \OML/cmm/m/i
+t/9 bx\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 a [] bx \OT1/cmr/m/n/9 +
+ []
+
+
+Overfull \hbox (2.34322pt too wide) in paragraph at lines 210--211
+[]$[] \OML/cmm/m/it/9 x[]\OT1/cmr/m/n/9 ([] \OML/cmm/m/it/9 x\OT1/cmr/m/n/9 )[]
+[]\OML/cmm/m/it/9 x \OT1/cmr/m/n/9 = []\OML/cmm/m/it/9 x[]\OT1/cmr/m/n/9 ([] \O
+ML/cmm/m/it/9 x\OT1/cmr/m/n/9 )[] \OMS/cmsy/m/n/9 ^^@ [] [] \OML/cmm/m/it/9 x[]
+\OT1/cmr/m/n/9 ([] \OML/cmm/m/it/9 x\OT1/cmr/m/n/9 )[][]\OML/cmm/m/it/9 x$ 
+ []
+
+)) [42] (./main.aux)
+runsystem(rm main.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 28180 strings out of 493005
+ 573285 string characters out of 6134596
+ 749950 words of memory out of 5000000
+ 31459 multiletter control sequences out of 15000+600000
+ 11939 words of font info for 85 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 47i,15n,71p,10403b,1274s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on main.pdf (43 pages).
