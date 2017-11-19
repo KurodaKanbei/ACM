@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{double} \PYG{n+nf}{Dis}\PYG{p}{(}\PYG{n}{Point} \PYG{n}{a}\PYG{p}{,} \PYG{n}{Point} \PYG{n}{b}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n}{sqrt}\PYG{p}{((}\PYG{n}{a}\PYG{p}{.}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{b}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{b}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{b}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{b}\PYG{p}{.}\PYG{n}{y}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{double} \PYG{n+nf}{Closest\PYGZus{}Pair}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{left}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{right}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{double} \PYG{n}{d} \PYG{o}{=} \PYG{n}{INF}\PYG{p}{;}
+	\PYG{k}{if}\PYG{p}{(}\PYG{n}{left} \PYG{o}{==} \PYG{n}{right}\PYG{p}{)} \PYG{k}{return} \PYG{n}{d}\PYG{p}{;}
+	\PYG{k}{if}\PYG{p}{(}\PYG{n}{left} \PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{==} \PYG{n}{right}\PYG{p}{)}
+		\PYG{k}{return} \PYG{n}{Dis}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{n}{left}\PYG{p}{],}\PYG{n}{p}\PYG{p}{[}\PYG{n}{right}\PYG{p}{]);}
+	\PYG{k+kt}{int} \PYG{n}{mid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{left}\PYG{o}{+}\PYG{n}{right}\PYG{p}{)}\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+	\PYG{k+kt}{double} \PYG{n}{d1} \PYG{o}{=} \PYG{n}{Closest\PYGZus{}Pair}\PYG{p}{(}\PYG{n}{left}\PYG{p}{,}\PYG{n}{mid}\PYG{p}{);}
+	\PYG{k+kt}{double} \PYG{n}{d2} \PYG{o}{=} \PYG{n}{Closest\PYGZus{}Pair}\PYG{p}{(}\PYG{n}{mid}\PYG{p}{,}\PYG{n}{right}\PYG{p}{);}
+	\PYG{n}{d} \PYG{o}{=} \PYG{n}{min}\PYG{p}{(}\PYG{n}{d1}\PYG{p}{,}\PYG{n}{d2}\PYG{p}{);}
+	\PYG{k+kt}{int} \PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{left}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{right}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{fabs}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{n}{mid}\PYG{p}{].}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{n}{d}\PYG{p}{)}
+			\PYG{n}{temp}\PYG{p}{[}\PYG{n}{k}\PYG{o}{++}\PYG{p}{]} \PYG{o}{=} \PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{n}{sort}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{,}\PYG{n}{temp}\PYG{o}{+}\PYG{n}{k}\PYG{p}{,}\PYG{n}{cmpy}\PYG{p}{);}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{k}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{k} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{temp}\PYG{p}{[}\PYG{n}{j}\PYG{p}{].}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{temp}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{y} \PYG{o}{\PYGZlt{}} \PYG{n}{d}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k+kt}{double} \PYG{n}{d3} \PYG{o}{=} \PYG{n}{Dis}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{n}{temp}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]);}
+			\PYG{n}{d} \PYG{o}{=} \PYG{n}{min}\PYG{p}{(}\PYG{n}{d}\PYG{p}{,}\PYG{n}{d3}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n}{d}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
