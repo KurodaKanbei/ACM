@@ -4,12 +4,10 @@ int sign(DB x) {
 DB msqrt(DB x) {
 	return sign(x) > 0 ? sqrt(x) : 0;
 }
-
 struct Point {
 	DB x, y;
 	Point rotate(DB ang) const {  // 逆时针旋转 ang 弧度
-		return Point(cos(ang) * x - sin(ang) * y,
-				cos(ang) * y + sin(ang) * x);
+		return Point(cos(ang) * x - sin(ang) * y, cos(ang) * y + sin(ang) * x);
 	}
 	Point turn90() const {  // 逆时针旋转 90 度
 		return Point(-y, x);
@@ -152,3 +150,4 @@ std::vector<Point> convexHull(std::vector<Point> ps) {
 		while ((int)qs.size() > t && sign(det(qs[qs.size() - 2], qs.back(), ps[i])) <= 0)
 			qs.pop_back();
 	return qs;
+}

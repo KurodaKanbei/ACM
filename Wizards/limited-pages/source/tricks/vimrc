@@ -25,4 +25,4 @@ autocmd FileType cpp map <F8> :!time ./%< < %<.in <CR>
 autocmd FileType cpp map <F5> :!time ./%< <CR>
 
 map <F3> :vnew %<.in <CR>
-m
+map <F4> :!gedit % <CR>

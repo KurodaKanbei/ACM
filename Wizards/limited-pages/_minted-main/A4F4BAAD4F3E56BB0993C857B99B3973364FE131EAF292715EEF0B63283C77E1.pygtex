@@ -26,5 +26,5 @@
 \PYG{n}{autocmd} \PYG{n}{FileType} \PYG{n}{cpp} \PYG{n}{map} \PYG{o}{\PYGZlt{}}\PYG{n}{F5}\PYG{o}{\PYGZgt{}} \PYG{o}{:!}\PYG{n}{time} \PYG{p}{.}\PYG{o}{/\PYGZpc{}\PYGZlt{}} \PYG{o}{\PYGZlt{}}\PYG{n}{CR}\PYG{o}{\PYGZgt{}}
 
 \PYG{n}{map} \PYG{o}{\PYGZlt{}}\PYG{n}{F3}\PYG{o}{\PYGZgt{}} \PYG{o}{:}\PYG{n}{vnew} \PYG{o}{\PYGZpc{}\PYGZlt{}}\PYG{p}{.}\PYG{n}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{CR}\PYG{o}{\PYGZgt{}}
-\PYG{n}{m}
+\PYG{n}{map} \PYG{o}{\PYGZlt{}}\PYG{n}{F4}\PYG{o}{\PYGZgt{}} \PYG{o}{:!}\PYG{n}{gedit} \PYG{o}{\PYGZpc{}} \PYG{o}{\PYGZlt{}}\PYG{n}{CR}\PYG{o}{\PYGZgt{}}
 \end{Verbatim}

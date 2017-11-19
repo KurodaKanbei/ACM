@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{O3}\PYG{err}{优化}
+\PYG{c+cp}{\PYGZsh{}define \PYGZus{}\PYGZus{} \PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{} ((optimize(\PYGZdq{}\PYGZhy{}O3\PYGZdq{})))}
+\PYG{c+cp}{\PYGZsh{}define \PYGZus{} \PYGZus{}\PYGZus{} \PYGZus{}\PYGZus{}inline \PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{} ((\PYGZus{}\PYGZus{}gnu\PYGZus{}inline\PYGZus{}\PYGZus{}, \PYGZus{}\PYGZus{}always\PYGZus{}inline\PYGZus{}\PYGZus{}, \PYGZus{}\PYGZus{}artificial\PYGZus{}\PYGZus{}))}
+
+\PYG{err}{汇编开栈}
+\PYG{c+cp}{\PYGZsh{}pragma comment(linker, \PYGZdq{}/STACK:256000000\PYGZdq{})}
+
+\PYG{k+kt}{int} \PYG{n}{\PYGZus{}\PYGZus{}size} \PYG{o}{=} \PYG{l+m+mi}{256} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{20}\PYG{p}{;}
+\PYG{k+kt}{char}\PYG{o}{*} \PYG{n}{\PYGZus{}\PYGZus{}p\PYGZus{}\PYGZus{}} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{char} \PYG{o}{*}\PYG{p}{)} \PYG{n}{malloc}\PYG{p}{(}\PYG{n}{\PYGZus{}\PYGZus{}size\PYGZus{}\PYGZus{}}\PYG{p}{)} \PYG{o}{+} \PYG{n}{\PYGZus{}\PYGZus{}size\PYGZus{}\PYGZus{}}\PYG{p}{;}
+
+\PYG{k+kt}{int} \PYG{n+nf}{main}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+	\PYG{n}{\PYGZus{}\PYGZus{}asm\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}movl \PYGZpc{}0, \PYGZpc{}\PYGZpc{}esp}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{o}{::} \PYG{l+s}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{(}\PYG{n}{\PYGZus{}\PYGZus{}p\PYGZus{}\PYGZus{}}\PYG{p}{));}
+	\PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
