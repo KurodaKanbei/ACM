@@ -1,0 +1,97 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{//判断点是否在多边形内}
+\PYG{k+kt}{int} \PYG{n+nf}{isPointInPolygon}\PYG{p}{(}\PYG{n}{point} \PYG{n}{p}\PYG{p}{,} \PYG{n}{point} \PYG{o}{*}\PYG{n}{a}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{cnt} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{OnSegment}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,} \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{a}\PYG{p}{[(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{n}\PYG{p}{]))} \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+        \PYG{k+kt}{double} \PYG{n}{k} \PYG{o}{=} \PYG{n}{cross}\PYG{p}{(}\PYG{n}{a}\PYG{p}{[(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{n}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{p}\PYG{o}{\PYGZhy{}}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+        \PYG{k+kt}{double} \PYG{n}{d1} \PYG{o}{=} \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{p}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
+		\PYG{k+kt}{double}  \PYG{n}{d2} \PYG{o}{=} \PYG{n}{a}\PYG{p}{[(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)].}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{p}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{k}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{d1}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{d2}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{n}{cnt}\PYG{o}{++}\PYG{p}{;}
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{k}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{d2}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}}\PYG{n}{d1}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{n}{cnt}\PYG{o}{++}\PYG{p}{;}
+        \PYG{c+c1}{//k==0，点和线段共线的情况不考虑}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{cnt}\PYG{o}{\PYGZam{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{k}{return} \PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{//判断凸包是否相离}
+\PYG{k+kt}{bool} \PYG{n+nf}{two\PYGZus{}getaway\PYGZus{}ConvexHull}\PYG{p}{(}\PYG{n}{point} \PYG{o}{*}\PYG{n}{cha}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{n1}\PYG{p}{,} \PYG{n}{point} \PYG{o}{*}\PYG{n}{chb}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{m1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{n1}\PYG{o}{==}\PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{m1}\PYG{o}{==}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{cha}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{==}\PYG{n}{chb}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}
+            \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{n1}\PYG{o}{==}\PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{m1}\PYG{o}{==}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{OnSegment}\PYG{p}{(}\PYG{n}{cha}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{chb}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{chb}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]))}
+            \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{n1}\PYG{o}{==}\PYG{l+m+mi}{2} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{m1}\PYG{o}{==}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{OnSegment}\PYG{p}{(}\PYG{n}{chb}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{cha}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{cha}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]))}
+            \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{n1}\PYG{o}{==}\PYG{l+m+mi}{2} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{m1}\PYG{o}{==}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{SegmentIntersection}\PYG{p}{(}\PYG{n}{cha}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{cha}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{chb}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{chb}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]))}
+            \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{n1}\PYG{o}{==}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n1}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+            \PYG{k}{if}\PYG{p}{(}\PYG{n}{isPointInPolygon}\PYG{p}{(}\PYG{n}{cha}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{chb}\PYG{p}{,} \PYG{n}{m1}\PYG{p}{))}
+                \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{m1}\PYG{o}{==}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{m1}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+            \PYG{k}{if}\PYG{p}{(}\PYG{n}{isPointInPolygon}\PYG{p}{(}\PYG{n}{chb}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{cha}\PYG{p}{,} \PYG{n}{n1}\PYG{p}{))}
+                \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+        \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n1}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{n}{m1}\PYG{p}{;} \PYG{o}{++}\PYG{n}{j}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{k}{if}\PYG{p}{(}\PYG{n}{SegmentIntersection}\PYG{p}{(}\PYG{n}{cha}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{cha}\PYG{p}{[(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{n1}\PYG{p}{],} \PYG{n}{chb}\PYG{p}{[}\PYG{n}{j}\PYG{p}{],} \PYG{n}{chb}\PYG{p}{[(}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{m1}\PYG{p}{]))}
+                    \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n1}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+            \PYG{k}{if}\PYG{p}{(}\PYG{n}{isPointInPolygon}\PYG{p}{(}\PYG{n}{cha}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{chb}\PYG{p}{,} \PYG{n}{m1}\PYG{p}{))}
+                \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+        \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{m1}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+            \PYG{k}{if}\PYG{p}{(}\PYG{n}{isPointInPolygon}\PYG{p}{(}\PYG{n}{chb}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{cha}\PYG{p}{,} \PYG{n}{n1}\PYG{p}{))}
+                \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{//旋转卡壳求两个凸包最近距离}
+\PYG{k+kt}{double} \PYG{n+nf}{solve}\PYG{p}{(}\PYG{n}{point} \PYG{o}{*}\PYG{n}{P}\PYG{p}{,} \PYG{n}{point} \PYG{o}{*}\PYG{n}{Q}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{m}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{n}\PYG{o}{==}\PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{m}\PYG{o}{==}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n}{length}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{Q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{n}\PYG{o}{==}\PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{m}\PYG{o}{==}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n}{DistanceToSegment}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{Q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{Q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{n}\PYG{o}{==}\PYG{l+m+mi}{2} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{m}\PYG{o}{==}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n}{DistanceToSegment}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]);}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{n}\PYG{o}{==}\PYG{l+m+mi}{2} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{m}\PYG{o}{==}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n}{SegmentToSegment}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{Q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{Q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]);}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k+kt}{int} \PYG{n}{yminP} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{ymaxQ} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{k}{if}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{y} \PYG{o}{\PYGZlt{}} \PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{p}{].}\PYG{n}{y}\PYG{p}{)} \PYG{n}{yminP} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
+    \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{m}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{k}{if}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{y} \PYG{o}{\PYGZgt{}} \PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{p}{].}\PYG{n}{y}\PYG{p}{)} \PYG{n}{ymaxQ} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
+    \PYG{n}{P}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]} \PYG{o}{=} \PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{];}
+    \PYG{n}{Q}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]} \PYG{o}{=} \PYG{n}{Q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{];}
+    \PYG{k+kt}{double} \PYG{n}{INF2} \PYG{o}{=} \PYG{l+m+mf}{1e100}\PYG{p}{;}
+    \PYG{k+kt}{double} \PYG{n}{arg}\PYG{p}{,} \PYG{n}{ans} \PYG{o}{=} \PYG{n}{INF2}\PYG{p}{;}
+
+    \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{//当叉积负正转正时，说明点ymaxQ就是对踵点}
+        \PYG{k}{while}\PYG{p}{((}\PYG{n}{arg}\PYG{o}{=}\PYG{n}{cross}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{p}{]))} \PYG{o}{\PYGZlt{}} \PYG{o}{\PYGZhy{}}\PYG{n}{eps}\PYG{p}{)}
+            \PYG{n}{ymaxQ} \PYG{o}{=} \PYG{p}{(}\PYG{n}{ymaxQ}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{m}\PYG{p}{;}
+        \PYG{k+kt}{double} \PYG{n}{ret}\PYG{p}{;}
+
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{arg} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//卡住第二个凸包上的点。}
+            \PYG{n}{ret} \PYG{o}{=} \PYG{n}{DistanceToSegment}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{p}{],} \PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{p}{],} \PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]);}
+            \PYG{n}{ans}  \PYG{o}{=} \PYG{n}{min}\PYG{p}{(}\PYG{n}{ans}\PYG{p}{,}\PYG{n}{ret}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//arg==0，卡住第二个凸包的边}
+            \PYG{n}{ret} \PYG{o}{=} \PYG{n}{SegmentToSegment}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{p}{],}\PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{p}{],}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]);}
+            \PYG{n}{ans} \PYG{o}{=} \PYG{n}{min}\PYG{p}{(}\PYG{n}{ans}\PYG{p}{,}\PYG{n}{ret}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{n}{yminP} \PYG{o}{=} \PYG{p}{(}\PYG{n}{yminP}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{n}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{ans}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{double} \PYG{n+nf}{mindis\PYGZus{}twotubao}\PYG{p}{(}\PYG{n}{point} \PYG{o}{*}\PYG{n}{P}\PYG{p}{,} \PYG{n}{point} \PYG{o}{*}\PYG{n}{Q}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{m}\PYG{p}{)\PYGZob{}}
+    \PYG{c+c1}{//return min(solve(P, Q, n, m),solve(Q,P,m,n));}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{two\PYGZus{}getaway\PYGZus{}ConvexHull}\PYG{p}{(}\PYG{n}{P}\PYG{p}{,}\PYG{n}{n}\PYG{p}{,}\PYG{n}{Q}\PYG{p}{,}\PYG{n}{m}\PYG{p}{)}\PYG{o}{==}\PYG{n+nb}{true}\PYG{p}{)} \PYG{k}{return} \PYG{n}{min}\PYG{p}{(}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{P}\PYG{p}{,} \PYG{n}{Q}\PYG{p}{,} \PYG{n}{n}\PYG{p}{,} \PYG{n}{m}\PYG{p}{),}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{,}\PYG{n}{P}\PYG{p}{,}\PYG{n}{m}\PYG{p}{,}\PYG{n}{n}\PYG{p}{));}
+    \PYG{k}{else} \PYG{k}{return} \PYG{l+m+mf}{0.0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
