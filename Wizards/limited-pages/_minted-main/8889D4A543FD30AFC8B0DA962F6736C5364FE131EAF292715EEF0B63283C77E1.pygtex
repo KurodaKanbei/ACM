@@ -1,21 +1,9 @@
 \begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}iostream\PYGZgt{}}
-\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}cstring\PYGZgt{}}
-\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}algorithm\PYGZgt{}}
-\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}cstdio\PYGZgt{}}
-\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}cmath\PYGZgt{}}
-
-\PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
-
 \PYG{k}{const} \PYG{k+kt}{int} \PYG{n}{eps} \PYG{o}{=} \PYG{l+m+mf}{1e\PYGZhy{}8}\PYG{p}{;}
-
-\PYG{k}{struct} \PYG{n}{Tpoint}
-\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Tpoint} \PYG{p}{\PYGZob{}}
 	\PYG{k+kt}{double} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{z}\PYG{p}{;}
 \PYG{p}{\PYGZcb{};}
-
 \PYG{k+kt}{int} \PYG{n}{npoint}\PYG{p}{,} \PYG{n}{nouter}\PYG{p}{;}
-
 \PYG{n}{Tpoint} \PYG{n}{pt}\PYG{p}{[}\PYG{l+m+mi}{200000}\PYG{p}{],} \PYG{n}{outer}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{],}\PYG{n}{res}\PYG{p}{;}
 \PYG{k+kt}{double} \PYG{n}{radius}\PYG{p}{,}\PYG{n}{tmp}\PYG{p}{;}
 \PYG{k+kr}{inline} \PYG{k+kt}{double} \PYG{n+nf}{dist}\PYG{p}{(}\PYG{n}{Tpoint} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{Tpoint} \PYG{n}{p2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
@@ -94,7 +82,6 @@
 \PYG{p}{\PYGZcb{}}
 \PYG{k+kt}{void} \PYG{n+nf}{minball}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{n}{ball}\PYG{p}{();}
-	\PYG{c+c1}{//printf(\PYGZdq{}(\PYGZpc{}.3lf,\PYGZpc{}.3lf,\PYGZpc{}.3lf) \PYGZpc{}.3lf\PYGZbs{}n\PYGZdq{}, res.x,res.y,res.z,radius);}
 	\PYG{k}{if} \PYG{p}{(} \PYG{n}{nouter}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{4} \PYG{p}{)}
 		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
 			\PYG{k}{if} \PYG{p}{(}\PYG{n}{dist}\PYG{p}{(}\PYG{n}{res}\PYG{p}{,} \PYG{n}{pt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}\PYG{o}{\PYGZhy{}}\PYG{n}{radius}\PYG{o}{\PYGZgt{}}\PYG{n}{eps}\PYG{p}{)} \PYG{p}{\PYGZob{}}
@@ -109,8 +96,7 @@
 				\PYG{p}{\PYGZcb{}}
 			\PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
-\PYG{k+kt}{void} \PYG{n+nf}{solve}\PYG{p}{()}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{void} \PYG{n+nf}{solve}\PYG{p}{()} \PYG{p}{\PYGZob{}}
 	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{npoint}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{n}{scanf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}lf\PYGZpc{}lf\PYGZpc{}lf\PYGZdq{}}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{pt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{x}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{pt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{y}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{pt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{z}\PYG{p}{);}
 	\PYG{n}{random\PYGZus{}shuffle}\PYG{p}{(}\PYG{n}{pt}\PYG{p}{,} \PYG{n}{pt} \PYG{o}{+} \PYG{n}{npoint}\PYG{p}{);}
 	\PYG{n}{radius}\PYG{o}{=\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}

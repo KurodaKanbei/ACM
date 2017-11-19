@@ -10,7 +10,6 @@
 	\PYG{n}{y} \PYG{o}{=} \PYG{n}{xx} \PYG{o}{\PYGZhy{}} \PYG{n}{a} \PYG{o}{/} \PYG{n}{b} \PYG{o}{*} \PYG{n}{yy}\PYG{p}{;}
 	\PYG{n}{x} \PYG{o}{=} \PYG{n}{yy}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-
 \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n+nf}{inv}\PYG{p}{(}\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{MODN}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{inv\PYGZus{}x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{;}
 	\PYG{n}{ex\PYGZus{}gcd}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{MODN}\PYG{p}{,} \PYG{n}{inv\PYGZus{}x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{);}

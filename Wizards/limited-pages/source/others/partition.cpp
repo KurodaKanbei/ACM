@@ -1,12 +1,5 @@
-#include<iostream>
-#include<cstdio>
-using namespace std;
-#define LL __int64
-const int N=100005;
-const int MOD=1000000007;
 LL dp[N],fi[N];
 LL five(LL x){ return (3*x*x-x)/2; }
-//五边形数
 void wbxs(){
     dp[0]=1;
     int t=1000; //其实可以等于sqrt(N)
@@ -22,14 +15,4 @@ void wbxs(){
             flag*=-1;
         }
     }
-}
-int main(){
-    wbxs();
-    int T,n;
-    scanf("%d",&T);
-    while(T--){
-        scanf("%d",&n);
-        printf("%I64d\n",dp[n]);
-    }
-    return 0;
 }

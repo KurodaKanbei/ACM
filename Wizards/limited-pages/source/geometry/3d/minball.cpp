@@ -1,20 +1,8 @@
-#include<iostream>
-#include<cstring>
-#include<algorithm>
-#include<cstdio>
-#include<cmath>
-
-using namespace std;
-
 const int eps = 1e-8;
-
-struct Tpoint
-{
+struct Tpoint {
 	double x, y, z;
 };
-
 int npoint, nouter;
-
 Tpoint pt[200000], outer[4],res;
 double radius,tmp;
 inline double dist(Tpoint p1, Tpoint p2) {
@@ -93,7 +81,6 @@ void ball() {
 }
 void minball(int n) {
 	ball();
-	//printf("(%.3lf,%.3lf,%.3lf) %.3lf\n", res.x,res.y,res.z,radius);
 	if ( nouter<4 )
 		for (int i=0; i<n; ++i)
 			if (dist(res, pt[i])-radius>eps) {
@@ -108,8 +95,7 @@ void minball(int n) {
 				}
 			}
 }
-void solve()
-{
+void solve() {
 	for (int i=0;i<npoint;i++) scanf("%lf%lf%lf",&pt[i].x,&pt[i].y,&pt[i].z);
 	random_shuffle(pt, pt + npoint);
 	radius=-1;

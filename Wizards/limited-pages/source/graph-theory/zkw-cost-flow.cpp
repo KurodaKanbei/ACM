@@ -1,7 +1,5 @@
 int S, T, totFlow, totCost;
-
 int dis[N], slack[N], visit[N];
-
 int modlable () {
     int delta = INF;
     for (int i = 1; i <= T; i++) {
@@ -13,7 +11,6 @@ int modlable () {
         if (visit[i]) dis[i] += delta;
     return 0;
 }
-
 int dfs (int x, int flow) {
     if (x == T) {
         totFlow += flow;
@@ -37,7 +34,6 @@ int dfs (int x, int flow) {
         }
     return flow - left;
 }
-
 pair <int, int> minCost () {
     totFlow = 0; totCost = 0;
     fill (dis + 1, dis + T + 1, 0);

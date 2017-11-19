@@ -1,59 +1,36 @@
-void solve(int l,int r,std::vector<int> q)
-{
-	if(l == r || q.empty())
-	{
-		for(int i = 0; i < q.size(); i++)
-		{
+void solve(int l,int r,std::vector<int> q) {
+	if(l == r || q.empty()) {
+		for(int i = 0; i < q.size(); i++) {
 			ans[q[i]] = l;
 		}
-	}
-	else
-	{
+	} else {
 		int mid = (l + r) >> 1;
-		
 		backup.clear();
-		
-		for(int i = l; i <= mid; i++)
-		{
+		for(int i = l; i <= mid; i++) {
 			Event e = event[i];
-			
-			if(e.l <= e.r)
-			{
+			if(e.l <= e.r) {
 				add(e.l, e.v);
 				add(e.r + 1, -e.v);
-			}
-			else
-			{
+			} else {
 				add(1, e.v);
 				add(e.r + 1, -e.v);
 				add(e.l, e.v);
 			}
 		}
-		
 		std::vector<int> qL, qR;
-		
-		for(int i = 0; i < q.size(); i++)
-		{
+		for(int i = 0; i < q.size(); i++) {
 			LL val = 0;
-			
-			for(int j = 0; j < vec[q[i]].size(); j++)
-			{
+			for(int j = 0; j < vec[q[i]].size(); j++) {
 				val += count(vec[q[i]][j]);
-				
 				if(val >= p[q[i]]) break;
 			}
-			
-			if(cnt[q[i]] + val >= p[q[i]])
-			{
+			if(cnt[q[i]] + val >= p[q[i]]) {
 				qL.push_back(q[i]);
-			}
-			else
-			{
+			} else {
 				cnt[q[i]] += val;
 				qR.push_back(q[i]);
 			}
 		}
-		
 		for(int i = 0; i < backup.size(); i++) sum[backup[i]] = 0;
 		solve(l, mid, qL);
 		solve(mid + 1, r, qR);

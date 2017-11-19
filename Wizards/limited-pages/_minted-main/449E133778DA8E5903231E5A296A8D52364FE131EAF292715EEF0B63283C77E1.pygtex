@@ -1,64 +1,43 @@
 \begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{k+kt}{int} \PYG{n+nf}{newnode}\PYG{p}{()}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n+nf}{newnode}\PYG{p}{()} \PYG{p}{\PYGZob{}}
 	\PYG{o}{++}\PYG{n}{tot}\PYG{p}{;}
 	\PYG{n}{memset}\PYG{p}{(}\PYG{n}{ch}\PYG{p}{[}\PYG{n}{tot}\PYG{p}{],} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{ch}\PYG{p}{[}\PYG{n}{tot}\PYG{p}{]));}
 	\PYG{n}{fail}\PYG{p}{[}\PYG{n}{tot}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
 	\PYG{n}{dep}\PYG{p}{[}\PYG{n}{tot}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
 	\PYG{n}{par}\PYG{p}{[}\PYG{n}{tot}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
-
 	\PYG{k}{return} \PYG{n}{tot}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-\PYG{k+kt}{void} \PYG{n+nf}{insert}\PYG{p}{(}\PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{s}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{)}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{void} \PYG{n+nf}{insert}\PYG{p}{(}\PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{s}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{k}{if}\PYG{p}{(}\PYG{o}{*}\PYG{n}{s} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}0\PYGZsq{}}\PYG{p}{)} \PYG{k}{return}\PYG{p}{;}
-	\PYG{k}{else}
-	\PYG{p}{\PYGZob{}}
-		\PYG{k+kt}{int} \PYG{o}{\PYGZam{}}\PYG{n}{y} \PYG{o}{=} \PYG{n}{ch}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{o}{*}\PYG{n}{s} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{];}
-
-		\PYG{k}{if}\PYG{p}{(}\PYG{n}{y} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}
-		\PYG{p}{\PYGZob{}}
+	\PYG{k}{else} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{o}{\PYGZam{}}\PYG{n}{y} \PYG{o}{=} \PYG{n}{ch}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{o}{*}\PYG{n}{s} \PYG{o}{\PYGZhy{}} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{];}	
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{y} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 			\PYG{n}{y} \PYG{o}{=} \PYG{n}{newnode}\PYG{p}{();}
 			\PYG{n}{par}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x}\PYG{p}{;}
 			\PYG{n}{dep}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{=} \PYG{n}{dep}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
 		\PYG{p}{\PYGZcb{}}
-
 		\PYG{n}{insert}\PYG{p}{(}\PYG{n}{s} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{y}\PYG{p}{);}
 	\PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
-\PYG{k+kt}{void} \PYG{n+nf}{build}\PYG{p}{()}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{void} \PYG{n+nf}{build}\PYG{p}{()} \PYG{p}{\PYGZob{}}
 	\PYG{k+kt}{int} \PYG{n}{line}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{];}
 	\PYG{k+kt}{int} \PYG{n}{f} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
-
 	\PYG{n}{fail}\PYG{p}{[}\PYG{n}{root}\PYG{p}{]} \PYG{o}{=} \PYG{n}{root}\PYG{p}{;}
-
-	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{alpha}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
-	\PYG{p}{\PYGZob{}}
-		\PYG{k}{if}\PYG{p}{(}\PYG{n}{ch}\PYG{p}{[}\PYG{n}{root}\PYG{p}{][}\PYG{n}{i}\PYG{p}{])}
-		\PYG{p}{\PYGZob{}}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{alpha}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{ch}\PYG{p}{[}\PYG{n}{root}\PYG{p}{][}\PYG{n}{i}\PYG{p}{])} \PYG{p}{\PYGZob{}}
 			\PYG{n}{fail}\PYG{p}{[}\PYG{n}{ch}\PYG{p}{[}\PYG{n}{root}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{root}\PYG{p}{;}
 			\PYG{n}{line}\PYG{p}{[}\PYG{n}{r}\PYG{o}{++}\PYG{p}{]} \PYG{o}{=} \PYG{n}{ch}\PYG{p}{[}\PYG{n}{root}\PYG{p}{][}\PYG{n}{i}\PYG{p}{];}
-		\PYG{p}{\PYGZcb{}}
-		\PYG{k}{else}
-		\PYG{p}{\PYGZob{}}
+		\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
 			\PYG{n}{ch}\PYG{p}{[}\PYG{n}{root}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{root}\PYG{p}{;}
 		\PYG{p}{\PYGZcb{}}
 	\PYG{p}{\PYGZcb{}}
-
-	\PYG{k}{while}\PYG{p}{(}\PYG{n}{f} \PYG{o}{!=} \PYG{n}{r}\PYG{p}{)}
-	\PYG{p}{\PYGZob{}}
+	\PYG{k}{while}\PYG{p}{(}\PYG{n}{f} \PYG{o}{!=} \PYG{n}{r}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 		\PYG{k+kt}{int} \PYG{n}{x} \PYG{o}{=} \PYG{n}{line}\PYG{p}{[}\PYG{n}{f}\PYG{o}{++}\PYG{p}{];}
-
-		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{alpha}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
-		\PYG{p}{\PYGZob{}}
-			\PYG{k}{if}\PYG{p}{(}\PYG{n}{ch}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{n}{i}\PYG{p}{])}
-			\PYG{p}{\PYGZob{}}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{alpha}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{ch}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{n}{i}\PYG{p}{])} \PYG{p}{\PYGZob{}}
 				\PYG{n}{fail}\PYG{p}{[}\PYG{n}{ch}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{ch}\PYG{p}{[}\PYG{n}{fail}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]][}\PYG{n}{i}\PYG{p}{];}
 				\PYG{n}{line}\PYG{p}{[}\PYG{n}{r}\PYG{o}{++}\PYG{p}{]} \PYG{o}{=} \PYG{n}{ch}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{n}{i}\PYG{p}{];}
-			\PYG{p}{\PYGZcb{}}
-			\PYG{k}{else}
-			\PYG{p}{\PYGZob{}}
+			\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
 				\PYG{n}{ch}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{ch}\PYG{p}{[}\PYG{n}{fail}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]][}\PYG{n}{i}\PYG{p}{];}
 			\PYG{p}{\PYGZcb{}}
 		\PYG{p}{\PYGZcb{}}

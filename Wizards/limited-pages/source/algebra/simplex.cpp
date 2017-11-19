@@ -17,7 +17,6 @@ vector<double> simplex(vector<vector<double> > &A, vector<double> b, vector<doub
 			r = i;
 		}
 	}
-
 	for(int j = 0; j < m - 1; j++) {
 		D[n][j] = c[j];
 	}
@@ -50,27 +49,18 @@ vector<double> simplex(vector<vector<double> > &A, vector<double> b, vector<doub
 				}
 			}
 		}
-		if (s < 0) {
-			break;
-		}
+		if (s < 0) break;
 		for(int i = 0; i < n; i++) {
 			if (D[i][s] < -eps) {
 				if (r < 0 || (d = D[r][m] / D[r][s] - D[i][m] / D[i][s]) < -eps
 					|| d < eps && ix[r + m] > ix[i + m]) {
-
 					r = i;
 				}
 			}
 		}
-
-		if (r < 0) {
-			return vector<double> ();
-		}
+		if (r < 0) return vector<double> ();
 	}
-	if (D[n + 1][m] < -eps) {
-		return vector<double> ();
-	}
-
+	if (D[n + 1][m] < -eps) return vector<double> ();
 	vector<double> x(m - 1);
 	for(int i = m; i < n + m; i++) {
 		if (ix[i] < m - 1) {

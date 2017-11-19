@@ -20,7 +20,6 @@
 			\PYG{n}{slack}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{INF}\PYG{p}{;}
 			\PYG{n}{used}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{false}\PYG{p}{;}
 		\PYG{p}{\PYGZcb{}}
-
 		\PYG{k}{do} \PYG{p}{\PYGZob{}}
 			\PYG{n}{used}\PYG{p}{[}\PYG{n}{j0}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{true}\PYG{p}{;}
 			\PYG{k+kt}{int} \PYG{n}{i0} \PYG{o}{=} \PYG{n}{match}\PYG{p}{[}\PYG{n}{j0}\PYG{p}{],} \PYG{n}{delta} \PYG{o}{=} \PYG{n}{INF}\PYG{p}{,} \PYG{n}{j1} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
@@ -46,14 +45,12 @@
 			\PYG{p}{\PYGZcb{}}
 			\PYG{n}{j0} \PYG{o}{=} \PYG{n}{j1}\PYG{p}{;}
 		\PYG{p}{\PYGZcb{}} \PYG{k}{while} \PYG{p}{(}\PYG{n}{match}\PYG{p}{[}\PYG{n}{j0}\PYG{p}{]} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{);}
-
 		\PYG{k}{do} \PYG{p}{\PYGZob{}}
 			\PYG{k+kt}{int} \PYG{n}{j1} \PYG{o}{=} \PYG{n}{way}\PYG{p}{[}\PYG{n}{j0}\PYG{p}{];}
 			\PYG{n}{match}\PYG{p}{[}\PYG{n}{j0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{match}\PYG{p}{[}\PYG{n}{j1}\PYG{p}{];}
 			\PYG{n}{j0} \PYG{o}{=} \PYG{n}{j1}\PYG{p}{;}
 		\PYG{p}{\PYGZcb{}} \PYG{k}{while} \PYG{p}{(}\PYG{n}{j0}\PYG{p}{);}
 	\PYG{p}{\PYGZcb{}}
-
 	\PYG{k+kt}{int} \PYG{n+nf}{get\PYGZus{}ans}\PYG{p}{()} \PYG{p}{\PYGZob{}}
 		\PYG{k+kt}{int} \PYG{n}{sum} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
 		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{n}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}

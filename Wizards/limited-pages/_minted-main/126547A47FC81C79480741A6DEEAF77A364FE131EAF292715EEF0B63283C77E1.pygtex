@@ -1,57 +1,37 @@
 \begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{k+kt}{bool} \PYG{n+nf}{BFS}\PYG{p}{()}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{bool} \PYG{n+nf}{BFS}\PYG{p}{()} \PYG{p}{\PYGZob{}}
     \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{ind}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{n}{dep}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
-
     \PYG{n}{dep}\PYG{p}{[}\PYG{n}{S}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{line}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{S}\PYG{p}{);}
-
-    \PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{line}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{())}
-    \PYG{p}{\PYGZob{}}
+    \PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{line}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
         \PYG{k+kt}{int} \PYG{n}{now} \PYG{o}{=} \PYG{n}{line}\PYG{p}{.}\PYG{n}{front}\PYG{p}{();}
         \PYG{n}{line}\PYG{p}{.}\PYG{n}{pop}\PYG{p}{();}
-
         \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{head}\PYG{p}{[}\PYG{n}{now}\PYG{p}{],} \PYG{n}{p}\PYG{p}{;} \PYG{n}{i} \PYG{p}{;} \PYG{n}{i} \PYG{o}{=} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{next}\PYG{p}{)}
             \PYG{k}{if}\PYG{p}{(}\PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{cap} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n}{dep}\PYG{p}{[}\PYG{n}{p} \PYG{o}{=} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{v}\PYG{p}{])}
                 \PYG{n}{dep}\PYG{p}{[}\PYG{n}{p}\PYG{p}{]} \PYG{o}{=} \PYG{n}{dep}\PYG{p}{[}\PYG{n}{now}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{line}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{p}\PYG{p}{);}
     \PYG{p}{\PYGZcb{}}
-
-    \PYG{k}{if}\PYG{p}{(}\PYG{n}{dep}\PYG{p}{[}\PYG{n}{T}\PYG{p}{])}
-    \PYG{p}{\PYGZob{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{dep}\PYG{p}{[}\PYG{n}{T}\PYG{p}{])} \PYG{p}{\PYGZob{}}
         \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{ind}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
             \PYG{n}{cur}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{head}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
         \PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}    
-    \PYG{p}{\PYGZcb{}}
-    \PYG{k}{else}
-        \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-\PYG{k+kt}{int} \PYG{n+nf}{DFS}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{a}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{flow}\PYG{p}{)}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n+nf}{DFS}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{a}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{flow}\PYG{p}{)} \PYG{p}{\PYGZob{}}
     \PYG{k}{if}\PYG{p}{(}\PYG{n}{a} \PYG{o}{==} \PYG{n}{T}\PYG{p}{)} \PYG{k}{return} \PYG{n}{flow}\PYG{p}{;}
-
     \PYG{k+kt}{int} \PYG{n}{ret} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
-
     \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{o}{\PYGZam{}}\PYG{n}{i} \PYG{o}{=} \PYG{n}{cur}\PYG{p}{[}\PYG{n}{a}\PYG{p}{],} \PYG{n}{p}\PYG{p}{;} \PYG{n}{i} \PYG{p}{;} \PYG{n}{i} \PYG{o}{=} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{next}\PYG{p}{)}
-        \PYG{k}{if}\PYG{p}{(}\PYG{n}{dep}\PYG{p}{[}\PYG{n}{p} \PYG{o}{=} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{v}\PYG{p}{]} \PYG{o}{==} \PYG{n}{dep}\PYG{p}{[}\PYG{n}{a}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{cap}\PYG{p}{)}
-        \PYG{p}{\PYGZob{}}
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{dep}\PYG{p}{[}\PYG{n}{p} \PYG{o}{=} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{v}\PYG{p}{]} \PYG{o}{==} \PYG{n}{dep}\PYG{p}{[}\PYG{n}{a}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{cap}\PYG{p}{)} \PYG{p}{\PYGZob{}}
             \PYG{k+kt}{int} \PYG{n}{ff} \PYG{o}{=} \PYG{n}{DFS}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{(}\PYG{n}{flow}\PYG{p}{,} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{cap}\PYG{p}{));}
-
             \PYG{n}{flow} \PYG{o}{\PYGZhy{}=} \PYG{n}{ff}\PYG{p}{,} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{cap} \PYG{o}{\PYGZhy{}=} \PYG{n}{ff}\PYG{p}{;}
             \PYG{n}{ret} \PYG{o}{+=} \PYG{n}{ff}\PYG{p}{,} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i} \PYG{o}{\PYGZca{}} \PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{cap} \PYG{o}{+=} \PYG{n}{ff}\PYG{p}{;}
-
             \PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{flow}\PYG{p}{)} \PYG{k}{break}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
-
         \PYG{k}{return} \PYG{n}{ret}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-\PYG{k+kt}{int} \PYG{n+nf}{solve}\PYG{p}{()}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n+nf}{solve}\PYG{p}{()} \PYG{p}{\PYGZob{}}
     \PYG{k+kt}{int} \PYG{n}{totflow} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
-
     \PYG{k}{while}\PYG{p}{(}\PYG{n}{BFS}\PYG{p}{())}
-    \PYG{p}{\PYGZob{}}
         \PYG{n}{totflow} \PYG{o}{+=} \PYG{n}{DFS}\PYG{p}{(}\PYG{n}{S}\PYG{p}{,} \PYG{n}{INF}\PYG{p}{);}
     \PYG{p}{\PYGZcb{}}
-
     \PYG{k}{return} \PYG{n}{totflow}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}

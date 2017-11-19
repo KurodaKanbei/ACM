@@ -2,7 +2,7 @@
 #define maxn 1000005  
 using namespace std;  
 int head,sz;  
-int U[maxn],D[maxn],L[maxn],R[maxn];//上下左右链表指针  
+int U[maxn],D[maxn],L[maxn],R[maxn];
 int H[maxn],ROW[maxn],C[maxn],S[maxn],O[maxn];  
 void remove(int c) {  
     L[R[c]]=L[c];  
@@ -62,19 +62,7 @@ void insert(int i, int j) {
     ++sz;  
 }  
 bool dfs(int k,int len) {
-    if(R[head]==head) {
-        sort(O,O+len*len);  
-        int p=0;  
-        for(int i=0; i<len; i++) {
-            for(int j=0; j<len; j++) {
-                int num=O[p++];  
-                num=num-(i*len+j)*len;  
-                printf("%d",num);  
-            }  
-            puts("");  
-        }  
-        return  true;  
-    }  
+    if(R[head]==head) return true;    
     int s=INF,c;  
     for (int t=R[head]; t!=head; t=R[t])  
         if (S[t]<s) s=S[t],c=t;  

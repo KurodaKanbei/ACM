@@ -1,4 +1,3 @@
-// n 必须是2的次幂
 void fft(Complex a[], int n, int f) {
 	for (int i = 0; i < n; ++i)
 		if (R[i] < i) swap(a[i], a[R[i]]);

@@ -5,15 +5,12 @@ __inline P cross(const P& a, const P& b) {
 			a.x * b.y - a.y * b.x
         );
 }
-
 __inline DB mix(const P& a, const P& b, const P& c) {
 	return dot(cross(a, b), c);
 }
-
 __inline DB volume(const P& a, const P& b, const P& c, const P& d) {
 	return mix(b - a, c - a, d - a);
 }
-
 struct Face {
 	int a, b, c;
 	__inline Face() {}
@@ -29,10 +26,8 @@ struct Face {
 		return dot(normal(), p0 - p[a]);
 	}
 };
-
 std::vector<Face> face, tmp;  // Should be O(n).
 int mark[N][N], Time, n;
-
 __inline void add(int v) {
 	++ Time;
 	clear(tmp);
@@ -41,8 +36,7 @@ __inline void add(int v) {
 		if (sign(volume(p[v], p[a], p[b], p[c])) > 0) {
 			mark[a][b] = mark[b][a] = mark[a][c] =
 				mark[c][a] = mark[b][c] = mark[c][b] = Time;
-		}
-		else {
+		} else {
 			tmp.push_back(face[i]);
 		}
 	}
@@ -55,7 +49,6 @@ __inline void add(int v) {
 		assert(face.size() < 500u);
 	}
 }
-
 void reorder() {
 	for (int i = 2; i < n; ++ i) {
 		P tmp = cross(p[i] - p[0], p[i] - p[1]);
@@ -69,7 +62,6 @@ void reorder() {
 		}
 	}
 }
-
 void build_convex() {
 	reorder();
 	clear(face);

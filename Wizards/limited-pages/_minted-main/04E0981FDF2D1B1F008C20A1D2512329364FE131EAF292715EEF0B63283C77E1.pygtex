@@ -1,5 +1,4 @@
 \begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{c+c1}{// n 必须是2的次幂}
 \PYG{k+kt}{void} \PYG{n+nf}{fft}\PYG{p}{(}\PYG{n}{Complex} \PYG{n}{a}\PYG{p}{[],} \PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{f}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
 		\PYG{k}{if} \PYG{p}{(}\PYG{n}{R}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n}{i}\PYG{p}{)} \PYG{n}{swap}\PYG{p}{(}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{a}\PYG{p}{[}\PYG{n}{R}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]);}

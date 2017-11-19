@@ -19,7 +19,6 @@ struct KM {
 			slack[j] = INF;
 			used[j] = false;
 		}
-		
 		do {
 			used[j0] = true;
 			int i0 = match[j0], delta = INF, j1 = 0;
@@ -45,14 +44,12 @@ struct KM {
 			}
 			j0 = j1;
 		} while (match[j0] != 0);
-		
 		do {
 			int j1 = way[j0];
 			match[j0] = match[j1];
 			j0 = j1;
 		} while (j0);
 	}
-	
 	int get_ans() {
 		int sum = 0;
 		for(int i = 1; i <= n; i++) {

@@ -4,12 +4,10 @@
 \PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}algorithm\PYGZgt{}}
 \PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
 \PYG{k}{const} \PYG{k+kt}{double} \PYG{n}{eps}\PYG{o}{=}\PYG{l+m+mf}{1e\PYGZhy{}6}\PYG{p}{;}
-\PYG{k}{struct} \PYG{n}{couple}
-\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{couple} \PYG{p}{\PYGZob{}}
 	\PYG{k+kt}{double} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{;}
 	\PYG{n}{couple}\PYG{p}{()\PYGZob{}\PYGZcb{}}
-	\PYG{n}{couple}\PYG{p}{(}\PYG{k}{const} \PYG{k+kt}{double} \PYG{o}{\PYGZam{}}\PYG{n}{xx}\PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{double} \PYG{o}{\PYGZam{}}\PYG{n}{yy}\PYG{p}{)}
-	\PYG{p}{\PYGZob{}}
+	\PYG{n}{couple}\PYG{p}{(}\PYG{k}{const} \PYG{k+kt}{double} \PYG{o}{\PYGZam{}}\PYG{n}{xx}\PYG{p}{,} \PYG{k}{const} \PYG{k+kt}{double} \PYG{o}{\PYGZam{}}\PYG{n}{yy}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 		\PYG{n}{x} \PYG{o}{=} \PYG{n}{xx}\PYG{p}{;} \PYG{n}{y} \PYG{o}{=} \PYG{n}{yy}\PYG{p}{;}
 	\PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}} \PYG{n}{a}\PYG{p}{[}\PYG{l+m+mi}{100001}\PYG{p}{];}

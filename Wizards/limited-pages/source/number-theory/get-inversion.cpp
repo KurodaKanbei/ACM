@@ -9,7 +9,6 @@ void ex_gcd(long long a, long long b, long long &x, long long &y) {
 	y = xx - a / b * yy;
 	x = yy;
 }
-
 long long inv(long long x, long long MODN) {
 	long long inv_x, y;
 	ex_gcd(x, MODN, inv_x, y);

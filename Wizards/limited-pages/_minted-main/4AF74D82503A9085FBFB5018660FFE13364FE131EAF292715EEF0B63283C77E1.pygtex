@@ -3,7 +3,7 @@
 \PYG{c+cp}{\PYGZsh{}define maxn 1000005  }
 \PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}  
 \PYG{k+kt}{int} \PYG{n}{head}\PYG{p}{,}\PYG{n}{sz}\PYG{p}{;}  
-\PYG{k+kt}{int} \PYG{n}{U}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{D}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{L}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{R}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{];}\PYG{c+c1}{//上下左右链表指针  }
+\PYG{k+kt}{int} \PYG{n}{U}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{D}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{L}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{R}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{];}
 \PYG{k+kt}{int} \PYG{n}{H}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{ROW}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{C}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{S}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],}\PYG{n}{O}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{];}  
 \PYG{k+kt}{void} \PYG{n+nf}{remove}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{c}\PYG{p}{)} \PYG{p}{\PYGZob{}}  
     \PYG{n}{L}\PYG{p}{[}\PYG{n}{R}\PYG{p}{[}\PYG{n}{c}\PYG{p}{]]}\PYG{o}{=}\PYG{n}{L}\PYG{p}{[}\PYG{n}{c}\PYG{p}{];}  
@@ -63,19 +63,7 @@
     \PYG{o}{++}\PYG{n}{sz}\PYG{p}{;}  
 \PYG{p}{\PYGZcb{}}  
 \PYG{k+kt}{bool} \PYG{n+nf}{dfs}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{k}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{len}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-    \PYG{k}{if}\PYG{p}{(}\PYG{n}{R}\PYG{p}{[}\PYG{n}{head}\PYG{p}{]}\PYG{o}{==}\PYG{n}{head}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-        \PYG{n}{sort}\PYG{p}{(}\PYG{n}{O}\PYG{p}{,}\PYG{n}{O}\PYG{o}{+}\PYG{n}{len}\PYG{o}{*}\PYG{n}{len}\PYG{p}{);}  
-        \PYG{k+kt}{int} \PYG{n}{p}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}  
-        \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{len}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-            \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{n}{len}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-                \PYG{k+kt}{int} \PYG{n}{num}\PYG{o}{=}\PYG{n}{O}\PYG{p}{[}\PYG{n}{p}\PYG{o}{++}\PYG{p}{];}  
-                \PYG{n}{num}\PYG{o}{=}\PYG{n}{num}\PYG{o}{\PYGZhy{}}\PYG{p}{(}\PYG{n}{i}\PYG{o}{*}\PYG{n}{len}\PYG{o}{+}\PYG{n}{j}\PYG{p}{)}\PYG{o}{*}\PYG{n}{len}\PYG{p}{;}  
-                \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d\PYGZdq{}}\PYG{p}{,}\PYG{n}{num}\PYG{p}{);}  
-            \PYG{p}{\PYGZcb{}}  
-            \PYG{n}{puts}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}  
-        \PYG{p}{\PYGZcb{}}  
-        \PYG{k}{return}  \PYG{n+nb}{true}\PYG{p}{;}  
-    \PYG{p}{\PYGZcb{}}  
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{R}\PYG{p}{[}\PYG{n}{head}\PYG{p}{]}\PYG{o}{==}\PYG{n}{head}\PYG{p}{)} \PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}    
     \PYG{k+kt}{int} \PYG{n}{s}\PYG{o}{=}\PYG{n}{INF}\PYG{p}{,}\PYG{n}{c}\PYG{p}{;}  
     \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{t}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{n}{head}\PYG{p}{];} \PYG{n}{t}\PYG{o}{!=}\PYG{n}{head}\PYG{p}{;} \PYG{n}{t}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{n}{t}\PYG{p}{])}  
         \PYG{k}{if} \PYG{p}{(}\PYG{n}{S}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{o}{\PYGZlt{}}\PYG{n}{s}\PYG{p}{)} \PYG{n}{s}\PYG{o}{=}\PYG{n}{S}\PYG{p}{[}\PYG{n}{t}\PYG{p}{],}\PYG{n}{c}\PYG{o}{=}\PYG{n}{t}\PYG{p}{;}  

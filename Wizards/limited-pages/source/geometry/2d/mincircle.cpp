@@ -3,12 +3,10 @@
 #include<algorithm>
 using namespace std;
 const double eps=1e-6;
-struct couple
-{
+struct couple {
 	double x, y;
 	couple(){}
-	couple(const double &xx, const double &yy)
-	{
+	couple(const double &xx, const double &yy) {
 		x = xx; y = yy;
 	}
 } a[100001];

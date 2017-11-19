@@ -1,62 +1,40 @@
 \begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{k}{struct} \PYG{n}{Node}
-\PYG{p}{\PYGZob{}}
+\PYG{k}{struct} \PYG{n}{Node} \PYG{p}{\PYGZob{}}
 	\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{z}\PYG{p}{,} \PYG{n}{idx}\PYG{p}{;}
-
-	\PYG{k}{friend} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{o}{==} \PYG{p}{(}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{a}\PYG{p}{,}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{b}\PYG{p}{)}
-	\PYG{p}{\PYGZob{}}
+	\PYG{k}{friend} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{o}{==} \PYG{p}{(}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{a}\PYG{p}{,}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{b}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 		\PYG{k}{return} \PYG{n}{a}\PYG{p}{.}\PYG{n}{x} \PYG{o}{==} \PYG{n}{b}\PYG{p}{.}\PYG{n}{x} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{a}\PYG{p}{.}\PYG{n}{y} \PYG{o}{==} \PYG{n}{b}\PYG{p}{.}\PYG{n}{y} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{a}\PYG{p}{.}\PYG{n}{z} \PYG{o}{==} \PYG{n}{b}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
 	\PYG{p}{\PYGZcb{}}
-	\PYG{k}{friend} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{o}{\PYGZlt{}} \PYG{p}{(}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{a}\PYG{p}{,}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{b}\PYG{p}{)}
-	\PYG{p}{\PYGZob{}}
+	\PYG{k}{friend} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{o}{\PYGZlt{}} \PYG{p}{(}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{a}\PYG{p}{,}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{b}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 		\PYG{k}{return} \PYG{n}{a}\PYG{p}{.}\PYG{n}{y} \PYG{o}{\PYGZlt{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
 	\PYG{p}{\PYGZcb{}}
-
 \PYG{p}{\PYGZcb{}} \PYG{n}{triple}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{];}
-
-\PYG{k+kt}{bool} \PYG{n+nf}{cmpx}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{a}\PYG{p}{,}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{b}\PYG{p}{)}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{bool} \PYG{n+nf}{cmpx}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{a}\PYG{p}{,}\PYG{k}{const} \PYG{n}{Node} \PYG{o}{\PYGZam{}}\PYG{n}{b}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{k}{if}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{x} \PYG{o}{!=} \PYG{n}{b}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)} \PYG{k}{return} \PYG{n}{a}\PYG{p}{.}\PYG{n}{x} \PYG{o}{\PYGZlt{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;}
 	\PYG{k}{if}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{y} \PYG{o}{!=} \PYG{n}{b}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)} \PYG{k}{return} \PYG{n}{a}\PYG{p}{.}\PYG{n}{y} \PYG{o}{\PYGZlt{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
 	\PYG{k}{return} \PYG{n}{a}\PYG{p}{.}\PYG{n}{z} \PYG{o}{\PYGZlt{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-
-\PYG{k+kt}{void} \PYG{n+nf}{solve}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{l}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{)}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{void} \PYG{n+nf}{solve}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{l}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{k}{if}\PYG{p}{(}\PYG{n}{l} \PYG{o}{==} \PYG{n}{r}\PYG{p}{)} \PYG{k}{return}\PYG{p}{;}
-
 	\PYG{k+kt}{int} \PYG{n}{mid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{l} \PYG{o}{+} \PYG{n}{r}\PYG{p}{)} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{1}\PYG{p}{;}
-
 	\PYG{n}{solve}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,} \PYG{n}{mid}\PYG{p}{);}
-
 	\PYG{k}{static} \PYG{n}{std}\PYG{o}{::}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{Node}\PYG{p}{,}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{Lt}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{],} \PYG{n}{Rt}\PYG{p}{[}\PYG{n}{maxn}\PYG{p}{];}
 	\PYG{k+kt}{int} \PYG{n}{Ls} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{Rs} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
-
 	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{l}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{mid}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
 		\PYG{n}{Lt}\PYG{p}{[}\PYG{o}{++}\PYG{n}{Ls}\PYG{p}{]} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{make\PYGZus{}pair}\PYG{p}{(}\PYG{n}{triple}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{i}\PYG{p}{);}
 	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{mid} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{r}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
 		\PYG{n}{Rt}\PYG{p}{[}\PYG{o}{++}\PYG{n}{Rs}\PYG{p}{]} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{make\PYGZus{}pair}\PYG{p}{(}\PYG{n}{triple}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{i}\PYG{p}{);}
-
 	\PYG{k+kt}{int} \PYG{n}{pos} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
-
 	\PYG{n}{std}\PYG{o}{::}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{Lt} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{Lt} \PYG{o}{+} \PYG{n}{Ls} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{);}
 	\PYG{n}{std}\PYG{o}{::}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{Rt} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{Rt} \PYG{o}{+} \PYG{n}{Rs} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{);}
-
 	\PYG{n}{backup}\PYG{p}{.}\PYG{n}{clear}\PYG{p}{();}
-	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{Rs}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
-	\PYG{p}{\PYGZob{}}
-		\PYG{k}{while}\PYG{p}{(}\PYG{n}{pos} \PYG{o}{\PYGZlt{}=} \PYG{n}{Ls} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{p}{(}\PYG{n}{Rt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{first} \PYG{o}{\PYGZlt{}} \PYG{n}{Lt}\PYG{p}{[}\PYG{n}{pos}\PYG{p}{].}\PYG{n}{first}\PYG{p}{))}
-		\PYG{p}{\PYGZob{}}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{Rs}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{while}\PYG{p}{(}\PYG{n}{pos} \PYG{o}{\PYGZlt{}=} \PYG{n}{Ls} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{p}{(}\PYG{n}{Rt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{first} \PYG{o}{\PYGZlt{}} \PYG{n}{Lt}\PYG{p}{[}\PYG{n}{pos}\PYG{p}{].}\PYG{n}{first}\PYG{p}{))} \PYG{p}{\PYGZob{}}
 			\PYG{n}{insert}\PYG{p}{(}\PYG{n}{Lt}\PYG{p}{[}\PYG{n}{pos}\PYG{p}{].}\PYG{n}{first}\PYG{p}{.}\PYG{n}{z}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{);}
-
 			\PYG{n}{pos}\PYG{o}{++}\PYG{p}{;}
 		\PYG{p}{\PYGZcb{}}
-
 		\PYG{n}{f}\PYG{p}{[}\PYG{n}{Rt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{second}\PYG{p}{]} \PYG{o}{+=} \PYG{n}{query}\PYG{p}{(}\PYG{n}{Rt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{first}\PYG{p}{.}\PYG{n}{z}\PYG{p}{);}
 	\PYG{p}{\PYGZcb{}}
-
 	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{backup}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{n}{pre}\PYG{p}{[}\PYG{n}{backup}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
-
 	\PYG{n}{solve}\PYG{p}{(}\PYG{n}{mid} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{r}\PYG{p}{);}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}

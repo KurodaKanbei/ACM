@@ -4,7 +4,6 @@ namespace adaptive_simpson {
 		double mid = (left + right) / 2;
 		return (right - left) * (f(left) + 4 * f(mid) + f(right)) / 6;
 	}
-
 	template<typename function>
 	inline double simpson(function f, const double &left, const double &right, const double &eps, const double &area_sum) {
 		double mid = (left + right) / 2;
@@ -16,7 +15,6 @@ namespace adaptive_simpson {
 		}
 		return simpson(f, left, right, eps / 2, area_left) + simpson(f, mid, right, eps / 2, area_right);
 	}
-
 	template<typename function>
 	inline double simpson(function f, const double &left, const double &right, const double &eps) {
 		return simpson(f, left, right, eps, area(f, left, right));

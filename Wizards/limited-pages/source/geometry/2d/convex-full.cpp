@@ -70,13 +70,11 @@ double solve(point *P, point *Q, int n, int m) {
     Q[n] = Q[0];
     double INF2 = 1e100;
     double arg, ans = INF2;
-
     for(int i=0; i<n; ++i) {
         //当叉积负正转正时，说明点ymaxQ就是对踵点
         while((arg=cross(P[yminP] - P[yminP+1],Q[ymaxQ+1] - Q[ymaxQ])) < -eps)
             ymaxQ = (ymaxQ+1)%m;
         double ret;
-
         if(arg > eps) { //卡住第二个凸包上的点。
             ret = DistanceToSegment(Q[ymaxQ], P[yminP], P[yminP+1]);
             ans  = min(ans,ret);
