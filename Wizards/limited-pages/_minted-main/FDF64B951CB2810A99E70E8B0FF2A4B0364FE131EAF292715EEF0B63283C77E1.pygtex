@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{int} \PYG{n+nf}{merge}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{y}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//p[i] 结点i的权值，这里是维护大根堆}
+\PYG{c+c1}{//d[i] 在i的子树中，i到右叶子结点的最远距离.}
+
+    \PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{x}\PYG{p}{)} \PYG{k}{return} \PYG{n}{y}\PYG{p}{;}
+    \PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{y}\PYG{p}{)} \PYG{k}{return} \PYG{n}{x}\PYG{p}{;}
+
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n}{p}\PYG{p}{[}\PYG{n}{y}\PYG{p}{])} \PYG{n}{std}\PYG{o}{::}\PYG{n}{swap}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{);}
+
+    \PYG{n}{r}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n}{merge}\PYG{p}{(}\PYG{n}{r}\PYG{p}{[}\PYG{n}{x}\PYG{p}{],} \PYG{n}{y}\PYG{p}{);}
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{r}\PYG{p}{[}\PYG{n}{x}\PYG{p}{])} \PYG{n}{fa}\PYG{p}{[}\PYG{n}{r}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{x}\PYG{p}{;}
+
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{d}\PYG{p}{[}\PYG{n}{l}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]]} \PYG{o}{\PYGZlt{}} \PYG{n}{d}\PYG{p}{[}\PYG{n}{r}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]])} \PYG{n}{std}\PYG{o}{::}\PYG{n}{swap}\PYG{p}{(}\PYG{n}{l}\PYG{p}{[}\PYG{n}{x}\PYG{p}{],} \PYG{n}{r}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]);}\PYG{c+c1}{//调整树的结构，使其满足左偏性质}
+
+    \PYG{n}{d}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n}{d}\PYG{p}{[}\PYG{n}{r}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{x}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

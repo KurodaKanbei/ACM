@@ -1,0 +1,76 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{// 凸包中的点按逆时针方向}
+\PYG{k}{struct} \PYG{n}{Convex} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{;}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}} \PYG{n}{a}\PYG{p}{,} \PYG{n}{upper}\PYG{p}{,} \PYG{n}{lower}\PYG{p}{;}
+	\PYG{k+kt}{void} \PYG{n+nf}{make\PYGZus{}shell}\PYG{p}{(}\PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}\PYGZam{}} \PYG{n}{p}\PYG{p}{,}
+			\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}\PYGZam{}} \PYG{n}{shell}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// p needs to be sorted.}
+		\PYG{n}{clear}\PYG{p}{(}\PYG{n}{shell}\PYG{p}{);} \PYG{k+kt}{int} \PYG{n}{n} \PYG{o}{=} \PYG{n}{p}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} 
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{,} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{for} \PYG{p}{(;} \PYG{n}{j} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{2} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{shell}\PYG{p}{[}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{shell}\PYG{p}{[}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{],}
+							\PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{shell}\PYG{p}{[}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{]))} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{j}\PYG{p}{)} \PYG{n}{shell}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+			\PYG{n}{shell}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kt}{void} \PYG{n+nf}{make\PYGZus{}convex}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+		\PYG{n}{std}\PYG{o}{::}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{(),} \PYG{n}{a}\PYG{p}{.}\PYG{n}{end}\PYG{p}{());}
+		\PYG{n}{make\PYGZus{}shell}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{lower}\PYG{p}{);} 
+		\PYG{n}{std}\PYG{o}{::}\PYG{n}{reverse}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{(),} \PYG{n}{a}\PYG{p}{.}\PYG{n}{end}\PYG{p}{());}
+		\PYG{n}{make\PYGZus{}shell}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{upper}\PYG{p}{);}
+		\PYG{n}{a} \PYG{o}{=} \PYG{n}{lower}\PYG{p}{;} \PYG{n}{a}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+		\PYG{n}{a}\PYG{p}{.}\PYG{n}{insert}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{end}\PYG{p}{(),} \PYG{n}{upper}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{(),} \PYG{n}{upper}\PYG{p}{.}\PYG{n}{end}\PYG{p}{());}
+		\PYG{k}{if} \PYG{p}{((}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{a}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{n}{a}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+		\PYG{n}{n} \PYG{o}{=} \PYG{n}{a}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kt}{void} \PYG{n+nf}{init}\PYG{p}{(}\PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}\PYGZam{}} \PYG{n}{\PYGZus{}a}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{clear}\PYG{p}{(}\PYG{n}{a}\PYG{p}{);} \PYG{n}{a} \PYG{o}{=} \PYG{n}{\PYGZus{}a}\PYG{p}{;} \PYG{n}{n} \PYG{o}{=} \PYG{n}{a}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}
+		\PYG{n}{make\PYGZus{}convex}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kt}{void} \PYG{n+nf}{read}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{\PYGZus{}n}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// Won\PYGZsq{}t make convex.}
+		\PYG{n}{clear}\PYG{p}{(}\PYG{n}{a}\PYG{p}{);} \PYG{n}{n} \PYG{o}{=} \PYG{n}{\PYGZus{}n}\PYG{p}{;} \PYG{n}{a}\PYG{p}{.}\PYG{n}{resize}\PYG{p}{(}\PYG{n}{n}\PYG{p}{);}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} 
+			\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{read}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{DB}\PYG{p}{,} \PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{get\PYGZus{}tangent}\PYG{p}{(}
+			\PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Point}\PYG{o}{\PYGZgt{}\PYGZam{}} \PYG{n}{convex}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{vec}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{l} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{convex}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{p}{;}
+		\PYG{n}{assert}\PYG{p}{(}\PYG{n}{r} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{);}
+		\PYG{k}{for} \PYG{p}{(;} \PYG{n}{l} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}} \PYG{n}{r}\PYG{p}{;} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k+kt}{int} \PYG{n}{mid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{l} \PYG{o}{+} \PYG{n}{r}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{;}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{convex}\PYG{p}{[}\PYG{n}{mid} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{convex}\PYG{p}{[}\PYG{n}{mid}\PYG{p}{],} \PYG{n}{vec}\PYG{p}{))} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+				\PYG{n}{r} \PYG{o}{=} \PYG{n}{mid}\PYG{p}{;}
+			\PYG{k}{else} \PYG{n}{l} \PYG{o}{=} \PYG{n}{mid}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{std}\PYG{o}{::}\PYG{n}{max}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{make\PYGZus{}pair}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{vec}\PYG{p}{,} \PYG{n}{convex}\PYG{p}{[}\PYG{n}{r}\PYG{p}{]),} \PYG{n}{r}\PYG{p}{),}
+				\PYG{n}{std}\PYG{o}{::}\PYG{n}{make\PYGZus{}pair}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{vec}\PYG{p}{,} \PYG{n}{convex}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]),} \PYG{l+m+mi}{0}\PYG{p}{));}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kt}{int} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{Point} \PYG{n}{u}\PYG{p}{,} \PYG{n}{Point} \PYG{n}{v}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{l}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{r}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{s1} \PYG{o}{=} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{v} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{,} \PYG{n}{a}\PYG{p}{[}\PYG{n}{l} \PYG{o}{\PYGZpc{}} \PYG{n}{n}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{));}
+		\PYG{k}{for} \PYG{p}{(;} \PYG{n}{l} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}} \PYG{n}{r}\PYG{p}{;} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k+kt}{int} \PYG{n}{mid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{l} \PYG{o}{+} \PYG{n}{r}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{;}
+			\PYG{k+kt}{int} \PYG{n}{smid} \PYG{o}{=} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{v} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{,} \PYG{n}{a}\PYG{p}{[}\PYG{n}{mid} \PYG{o}{\PYGZpc{}} \PYG{n}{n}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{));}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{smid} \PYG{o}{==} \PYG{n}{s1}\PYG{p}{)} \PYG{n}{l} \PYG{o}{=} \PYG{n}{mid}\PYG{p}{;}
+			\PYG{k}{else} \PYG{n}{r} \PYG{o}{=} \PYG{n}{mid}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{l} \PYG{o}{\PYGZpc{}} \PYG{n}{n}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{c+c1}{// 求凸包上和向量 vec 叉积最大的点，返回编号，共线的多个切点返回任意一个}
+	\PYG{k+kt}{int} \PYG{n}{get\PYGZus{}tangent}\PYG{p}{(}\PYG{n}{Point} \PYG{n}{vec}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{std}\PYG{o}{::}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{n}{DB}\PYG{p}{,} \PYG{k+kt}{int}\PYG{o}{\PYGZgt{}} \PYG{n}{ret} \PYG{o}{=} \PYG{n}{get\PYGZus{}tangent}\PYG{p}{(}\PYG{n}{upper}\PYG{p}{,} \PYG{n}{vec}\PYG{p}{);}
+		\PYG{n}{ret}\PYG{p}{.}\PYG{n}{second} \PYG{o}{=} \PYG{p}{(}\PYG{n}{ret}\PYG{p}{.}\PYG{n}{second} \PYG{o}{+} \PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{lower}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{n}\PYG{p}{;}
+		\PYG{n}{ret} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{max}\PYG{p}{(}\PYG{n}{ret}\PYG{p}{,} \PYG{n}{get\PYGZus{}tangent}\PYG{p}{(}\PYG{n}{lower}\PYG{p}{,} \PYG{n}{vec}\PYG{p}{));}
+		\PYG{k}{return} \PYG{n}{ret}\PYG{p}{.}\PYG{n}{second}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{c+c1}{// 求凸包和直线 u, v 的交点，如果不相交返回 false，如果有则是和 (i, next(i)) 的交点，交在点上不确定返回前后两条边其中之一}
+	\PYG{k+kt}{bool} \PYG{n}{get\PYGZus{}intersection}\PYG{p}{(}\PYG{n}{Point} \PYG{n}{u}\PYG{p}{,} \PYG{n}{Point} \PYG{n}{v}\PYG{p}{,} \PYG{k+kt}{int} \PYG{o}{\PYGZam{}}\PYG{n}{i0}\PYG{p}{,} \PYG{k+kt}{int} \PYG{o}{\PYGZam{}}\PYG{n}{i1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{p0} \PYG{o}{=} \PYG{n}{get\PYGZus{}tangent}\PYG{p}{(}\PYG{n}{u} \PYG{o}{\PYGZhy{}} \PYG{n}{v}\PYG{p}{),} \PYG{n}{p1} \PYG{o}{=} \PYG{n}{get\PYGZus{}tangent}\PYG{p}{(}\PYG{n}{v} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{);}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{v} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{,} \PYG{n}{a}\PYG{p}{[}\PYG{n}{p0}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{))} \PYG{o}{*} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{v} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{,} \PYG{n}{a}\PYG{p}{[}\PYG{n}{p1}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{))} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{p0} \PYG{o}{\PYGZgt{}} \PYG{n}{p1}\PYG{p}{)} \PYG{n}{std}\PYG{o}{::}\PYG{n}{swap}\PYG{p}{(}\PYG{n}{p0}\PYG{p}{,} \PYG{n}{p1}\PYG{p}{);}
+			\PYG{n}{i0} \PYG{o}{=} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,} \PYG{n}{v}\PYG{p}{,} \PYG{n}{p0}\PYG{p}{,} \PYG{n}{p1}\PYG{p}{);}
+			\PYG{n}{i1} \PYG{o}{=} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,} \PYG{n}{v}\PYG{p}{,} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{p0} \PYG{o}{+} \PYG{n}{n}\PYG{p}{);}
+			\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

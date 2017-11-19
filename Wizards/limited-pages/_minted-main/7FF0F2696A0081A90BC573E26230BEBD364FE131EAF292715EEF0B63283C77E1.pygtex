@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{void} \PYG{n+nf}{FWT}\PYG{p}{(}\PYG{n}{LL} \PYG{n}{a}\PYG{p}{[],}\PYG{k+kt}{int} \PYG{n}{n}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{ty}\PYG{p}{)\PYGZob{}}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{d}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{n}{d}\PYG{o}{\PYGZlt{}}\PYG{n}{n}\PYG{p}{;}\PYG{n}{d}\PYG{o}{\PYGZlt{}\PYGZlt{}=}\PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{m}\PYG{o}{=}\PYG{p}{(}\PYG{n}{d}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{l+m+mi}{1}\PYG{p}{),}\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{n}\PYG{p}{;}\PYG{n}{i}\PYG{o}{+=}\PYG{n}{m}\PYG{p}{)\PYGZob{}}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{ty}\PYG{o}{==}\PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+				\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{n}{d}\PYG{p}{;}\PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+					\PYG{n}{LL} \PYG{n}{x}\PYG{o}{=}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{p}{],}\PYG{n}{y}\PYG{o}{=}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{o}{+}\PYG{n}{d}\PYG{p}{];}
+					\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{n}{x}\PYG{o}{+}\PYG{n}{y}\PYG{p}{;}
+					\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{o}{+}\PYG{n}{d}\PYG{p}{]}\PYG{o}{=}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{p}{;}
+    	            \PYG{c+c1}{//xor:a[i+j]=x+y,a[i+j+d]=x\PYGZhy{}y;    }
+    	            \PYG{c+c1}{//and:a[i+j]=x+y;    }
+    	            \PYG{c+c1}{//or:a[i+j+d]=x+y;    }
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+				\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{j}\PYG{o}{\PYGZlt{}}\PYG{n}{d}\PYG{p}{;}\PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+					\PYG{n}{LL} \PYG{n}{x}\PYG{o}{=}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{p}{],}\PYG{n}{y}\PYG{o}{=}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{o}{+}\PYG{n}{d}\PYG{p}{];}
+					\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{n}{y}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}
+					\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{o}{+}\PYG{n}{d}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}
+	                \PYG{c+c1}{//xor:a[i+j]=(x+y)/2,a[i+j+d]=(x\PYGZhy{}y)/2;    }
+    	            \PYG{c+c1}{//and:a[i+j]=x\PYGZhy{}y;    }
+    	            \PYG{c+c1}{//or:a[i+j+d]=y\PYGZhy{}x;    }
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+	\PYG{n}{FWT}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{n}{n}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{);}
+	\PYG{n}{FWT}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{n}{n}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{);}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{n}{n}\PYG{p}{);}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+		\PYG{n}{c}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{b}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+	\PYG{n}{FWT}\PYG{p}{(}\PYG{n}{c}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{n}{n}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{);}
+\end{Verbatim}

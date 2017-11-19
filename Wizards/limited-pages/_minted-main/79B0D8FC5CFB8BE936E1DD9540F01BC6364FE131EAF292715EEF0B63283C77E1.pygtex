@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{//返回 (ans, M)，其中ans是模M意义下的解}
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{long} \PYG{k+kt}{long}\PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{long}\PYG{o}{\PYGZgt{}} \PYG{n}{CRT}\PYG{p}{(}\PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{long} \PYG{k+kt}{long}\PYG{o}{\PYGZgt{}\PYGZam{}} \PYG{n}{m}\PYG{p}{,} \PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{long} \PYG{k+kt}{long}\PYG{o}{\PYGZgt{}\PYGZam{}} \PYG{n}{a}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{M} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{ans} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+	\PYG{k+kt}{int} \PYG{n}{n} \PYG{o}{=} \PYG{n}{m}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{n}{M} \PYG{o}{*=} \PYG{n}{m}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{ans} \PYG{o}{=} \PYG{p}{(}\PYG{n}{ans} \PYG{o}{+} \PYG{p}{(}\PYG{n}{M} \PYG{o}{/} \PYG{n}{m}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{o}{*} \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZpc{}} \PYG{n}{M} \PYG{o}{*} \PYG{n}{inv}\PYG{p}{(}\PYG{n}{M} \PYG{o}{/} \PYG{n}{m}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{m}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]))} \PYG{o}{\PYGZpc{}} \PYG{n}{M}\PYG{p}{;}  \PYG{c+c1}{// 可能需要大整数相乘取模}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n}{std}\PYG{o}{::}\PYG{n}{make\PYGZus{}pair}\PYG{p}{(}\PYG{n}{ans}\PYG{p}{,} \PYG{n}{M}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

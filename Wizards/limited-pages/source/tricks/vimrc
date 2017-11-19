@@ -1,0 +1,28 @@
+set ruler
+set number
+set smartindent
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set hlsearch
+set incsearch
+set autoread
+set backspace=2
+set mouse=a
+
+syntax on
+
+nmap <C-A> ggVG
+vmap <C-C> "+y
+
+filetype plugin indent on
+
+autocmd FileType cpp set cindent
+autocmd FileType cpp map <F9> :!g++ % -o %< -g -std=c++11 -Wall -Wextra -Wconversion && size %< <CR>
+autocmd FileType cpp map <C-F9> :!g++ % -o %< -std=c++11 -O2 && size %< <CR>
+autocmd FileType cpp map <F8> :!time ./%< < %<.in <CR>
+autocmd FileType cpp map <F5> :!time ./%< <CR>
+
+map <F3> :vnew %<.in <CR>
+m

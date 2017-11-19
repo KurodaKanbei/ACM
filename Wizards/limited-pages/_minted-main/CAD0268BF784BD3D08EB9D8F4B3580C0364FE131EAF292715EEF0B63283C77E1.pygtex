@@ -1,0 +1,58 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{template}\PYG{o}{\PYGZlt{}}\PYG{k}{class} \PYG{n+nc}{TAT}\PYG{o}{\PYGZgt{}}\PYG{k+kt}{void} \PYG{n}{checkmin}\PYG{p}{(}\PYG{n}{TAT} \PYG{o}{\PYGZam{}}\PYG{n}{x}\PYG{p}{,}\PYG{n}{TAT} \PYG{n}{y}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k}{if}\PYG{p}{(}\PYG{n}{y} \PYG{o}{\PYGZlt{}} \PYG{n}{x}\PYG{p}{)} \PYG{n}{x} \PYG{o}{=} \PYG{n}{y}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void} \PYG{n}{tarjan}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{u}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{=} \PYG{n}{low}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{=} \PYG{o}{++}\PYG{n}{dt}\PYG{p}{;}
+	\PYG{n}{flag}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{true}\PYG{p}{;}
+	\PYG{n}{stk}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{u}\PYG{p}{);}
+
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{vec}\PYG{p}{[}\PYG{n}{u}\PYG{p}{].}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{k+kt}{int} \PYG{n}{v} \PYG{o}{=} \PYG{n}{vec}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{i}\PYG{p}{];}
+
+		\PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{v}\PYG{p}{])}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{tarjan}\PYG{p}{(}\PYG{n}{v}\PYG{p}{);}
+			\PYG{n}{checkmin}\PYG{p}{(}\PYG{n}{low}\PYG{p}{[}\PYG{n}{u}\PYG{p}{],} \PYG{n}{low}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]);}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{k}{if}\PYG{p}{(}\PYG{n}{flag}\PYG{p}{[}\PYG{n}{v}\PYG{p}{])}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{checkmin}\PYG{p}{(}\PYG{n}{low}\PYG{p}{[}\PYG{n}{u}\PYG{p}{],} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k}{if}\PYG{p}{(}\PYG{n}{low}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{==} \PYG{n}{dfn}\PYG{p}{[}\PYG{n}{u}\PYG{p}{])}
+	\PYG{p}{\PYGZob{}}
+		\PYG{o}{++}\PYG{n}{bcnt}\PYG{p}{;}
+		\PYG{k}{while}\PYG{p}{(}\PYG{n}{stk}\PYG{p}{.}\PYG{n}{top}\PYG{p}{()} \PYG{o}{!=} \PYG{n}{u}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{block}\PYG{p}{[}\PYG{n}{stk}\PYG{p}{.}\PYG{n}{top}\PYG{p}{()]} \PYG{o}{=} \PYG{n}{bcnt}\PYG{p}{;}
+			\PYG{n}{flag}\PYG{p}{[}\PYG{n}{stk}\PYG{p}{.}\PYG{n}{top}\PYG{p}{()]} \PYG{o}{=} \PYG{n+nb}{false}\PYG{p}{;}
+			\PYG{n}{stk}\PYG{p}{.}\PYG{n}{pop}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+
+		\PYG{n}{block}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{=} \PYG{n}{bcnt}\PYG{p}{;}
+		\PYG{n}{flag}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{false}\PYG{p}{;}
+		\PYG{n}{stk}\PYG{p}{.}\PYG{n}{pop}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{bool} \PYG{n}{solve}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{n}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+			\PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{dfn}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{n}{tarjan}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+
+		\PYG{k+kt}{bool} \PYG{n}{ans} \PYG{o}{=} \PYG{n+nb}{true}\PYG{p}{;}
+
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{n}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{block}\PYG{p}{[}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{n}{block}\PYG{p}{[}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{])}
+			\PYG{p}{\PYGZob{}}
+				\PYG{n}{ans} \PYG{o}{=} \PYG{n+nb}{false}\PYG{p}{;}
+				\PYG{k}{break}\PYG{p}{;}	
+			\PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{return} \PYG{n}{ans}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

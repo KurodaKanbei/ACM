@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kt}{void} \PYG{n+nf}{ex\PYGZus{}gcd}\PYG{p}{(}\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{a}\PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{b}\PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{o}{\PYGZam{}}\PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{o}{\PYGZam{}}\PYG{n}{y}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{b} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+		\PYG{n}{y} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+		\PYG{k}{return}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{xx}\PYG{p}{,} \PYG{n}{yy}\PYG{p}{;}
+	\PYG{n}{ex\PYGZus{}gcd}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,} \PYG{n}{a} \PYG{o}{\PYGZpc{}} \PYG{n}{b}\PYG{p}{,} \PYG{n}{xx}\PYG{p}{,} \PYG{n}{yy}\PYG{p}{);}
+	\PYG{n}{y} \PYG{o}{=} \PYG{n}{xx} \PYG{o}{\PYGZhy{}} \PYG{n}{a} \PYG{o}{/} \PYG{n}{b} \PYG{o}{*} \PYG{n}{yy}\PYG{p}{;}
+	\PYG{n}{x} \PYG{o}{=} \PYG{n}{yy}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n+nf}{inv}\PYG{p}{(}\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{MODN}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{inv\PYGZus{}x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{;}
+	\PYG{n}{ex\PYGZus{}gcd}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{MODN}\PYG{p}{,} \PYG{n}{inv\PYGZus{}x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{);}
+	\PYG{k}{return} \PYG{p}{(}\PYG{n}{inv\PYGZus{}x} \PYG{o}{\PYGZpc{}} \PYG{n}{MODN} \PYG{o}{+} \PYG{n}{MODN}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{MODN}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

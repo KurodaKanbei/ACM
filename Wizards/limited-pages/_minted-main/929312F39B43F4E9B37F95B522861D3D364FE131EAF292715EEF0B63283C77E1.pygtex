@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{mytuple} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{make\PYGZus{}tuple} \PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mf}{2.6}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{);}          \PYG{c+c1}{// packing values into tuple}
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{tie} \PYG{p}{(}\PYG{n}{myint}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{ignore}\PYG{p}{,} \PYG{n}{mychar}\PYG{p}{)} \PYG{o}{=} \PYG{n}{mytuple}\PYG{p}{;}   \PYG{c+c1}{// unpacking tuple into variables}
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{get}\PYG{o}{\PYGZlt{}}\PYG{n}{I}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{mytuple}\PYG{p}{)} \PYG{o}{=} \PYG{l+m+mi}{20}\PYG{p}{;}
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{get}\PYG{o}{\PYGZlt{}}\PYG{n}{I}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{mytuple}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}    \PYG{c+c1}{// get the Ith(const) element}
+\end{Verbatim}

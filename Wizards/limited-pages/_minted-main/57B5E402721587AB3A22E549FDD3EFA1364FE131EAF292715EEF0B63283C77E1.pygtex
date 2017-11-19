@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{// 需要保证 x 和 y 非负}
+\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n+nf}{mult}\PYG{p}{(}\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{y}\PYG{p}{,} \PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{MODN}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{long} \PYG{k+kt}{long} \PYG{n}{t} \PYG{o}{=} \PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{k+kt}{long} \PYG{k+kt}{long}\PYG{p}{)((}\PYG{k+kt}{long} \PYG{k+kt}{double}\PYG{p}{)}\PYG{n}{x} \PYG{o}{/} \PYG{n}{MODN} \PYG{o}{*} \PYG{n}{y} \PYG{o}{+} \PYG{l+m+mf}{1e\PYGZhy{}3}\PYG{p}{)} \PYG{o}{*} \PYG{n}{MODN}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{MODN}\PYG{p}{;}
+	\PYG{k}{return} \PYG{n}{t} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{o}{?} \PYG{n}{t} \PYG{o}{+} \PYG{n+nl}{MODN} \PYG{p}{:} \PYG{n}{t}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
