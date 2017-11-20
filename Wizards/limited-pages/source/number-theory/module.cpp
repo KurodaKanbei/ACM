@@ -17,8 +17,6 @@ pair<LL,LL> calc(LL n,LL p,LL k){
     prod=1;P=pow(p,k,1e18);
     for(int i=1;i<P;i++)if(i%p)prod=prod*i%P;
     pair<LL,LL> res=comput(n,p,k);
-//  res.second=res.second*pow(p,res.first%k,P)%P;
-//  res.first-=res.first%k; 
     return res;
 }
 LL calc(LL n,LL m,LL p,LL k){
