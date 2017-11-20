@@ -1,36 +1,30 @@
 \begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{k+kt}{int} \PYG{n+nf}{h}\PYG{p}{()}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{int} \PYG{n+nf}{h}\PYG{p}{()} \PYG{p}{\PYGZob{}}
     \PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{,}\PYG{n}{k}\PYG{p}{,}\PYG{n}{count}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
     \PYG{k+kt}{bool} \PYG{n}{visit}\PYG{p}{[}\PYG{n}{N}\PYG{p}{];}
     \PYG{n}{memset}\PYG{p}{(}\PYG{n}{visit}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{visit}\PYG{p}{));}
-    \PYG{k}{for}\PYG{p}{(}\PYG{n}{i}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{];}\PYG{n}{i}\PYG{p}{;}\PYG{n}{i}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
-    \PYG{p}{\PYGZob{}}
+    \PYG{k}{for}\PYG{p}{(}\PYG{n}{i}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{];}\PYG{n}{i}\PYG{p}{;}\PYG{n}{i}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{p}{\PYGZob{}}
         \PYG{k}{if}\PYG{p}{(}\PYG{n}{visit}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{k}{continue}\PYG{p}{;}
         \PYG{n}{count}\PYG{o}{++}\PYG{p}{;}
         \PYG{n}{visit}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}
-        \PYG{k}{for}\PYG{p}{(}\PYG{n}{j}\PYG{o}{=}\PYG{n}{D}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}\PYG{n}{j}\PYG{o}{!=}\PYG{n}{i}\PYG{p}{;}\PYG{n}{j}\PYG{o}{=}\PYG{n}{D}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])}
-        \PYG{p}{\PYGZob{}}
+        \PYG{k}{for}\PYG{p}{(}\PYG{n}{j}\PYG{o}{=}\PYG{n}{D}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}\PYG{n}{j}\PYG{o}{!=}\PYG{n}{i}\PYG{p}{;}\PYG{n}{j}\PYG{o}{=}\PYG{n}{D}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])} \PYG{p}{\PYGZob{}}
             \PYG{k}{for}\PYG{p}{(}\PYG{n}{k}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{n}{j}\PYG{p}{];}\PYG{n}{k}\PYG{o}{!=}\PYG{n}{j}\PYG{p}{;}\PYG{n}{k}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{n}{k}\PYG{p}{])}
                 \PYG{n}{visit}\PYG{p}{[}\PYG{n}{C}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]]}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
     \PYG{p}{\PYGZcb{}}
     \PYG{k}{return} \PYG{n}{count}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-\PYG{k+kt}{void} \PYG{n+nf}{Dance}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{k}\PYG{p}{)}
-\PYG{p}{\PYGZob{}}
+\PYG{k+kt}{void} \PYG{n+nf}{Dance}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{k}\PYG{p}{)} \PYG{p}{\PYGZob{}}
     \PYG{k+kt}{int} \PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{,}\PYG{n}{c}\PYG{p}{,}\PYG{n}{Min}\PYG{p}{,}\PYG{n}{ans}\PYG{p}{;}
     \PYG{n}{ans}\PYG{o}{=}\PYG{n}{h}\PYG{p}{();}
     \PYG{k}{if}\PYG{p}{(}\PYG{n}{k}\PYG{o}{+}\PYG{n}{ans}\PYG{o}{\PYGZgt{}}\PYG{n}{K} \PYG{o}{||} \PYG{n}{k}\PYG{o}{+}\PYG{n}{ans}\PYG{o}{\PYGZgt{}=}\PYG{n}{ak}\PYG{p}{)} \PYG{k}{return}\PYG{p}{;}
-    \PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{R}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}
-    \PYG{p}{\PYGZob{}}
+    \PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{R}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])} \PYG{p}{\PYGZob{}}
         \PYG{k}{if}\PYG{p}{(}\PYG{n}{k}\PYG{o}{\PYGZlt{}}\PYG{n}{ak}\PYG{p}{)} \PYG{n}{ak}\PYG{o}{=}\PYG{n}{k}\PYG{p}{;}
         \PYG{k}{return}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
     \PYG{k}{for}\PYG{p}{(}\PYG{n}{Min}\PYG{o}{=}\PYG{n}{N}\PYG{p}{,}\PYG{n}{i}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{];}\PYG{n}{i}\PYG{p}{;}\PYG{n}{i}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
         \PYG{k}{if}\PYG{p}{(}\PYG{n}{S}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZlt{}}\PYG{n}{Min}\PYG{p}{)} \PYG{n}{Min}\PYG{o}{=}\PYG{n}{S}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{n}{c}\PYG{o}{=}\PYG{n}{i}\PYG{p}{;}
-    \PYG{k}{for}\PYG{p}{(}\PYG{n}{i}\PYG{o}{=}\PYG{n}{D}\PYG{p}{[}\PYG{n}{c}\PYG{p}{];}\PYG{n}{i}\PYG{o}{!=}\PYG{n}{c}\PYG{p}{;}\PYG{n}{i}\PYG{o}{=}\PYG{n}{D}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
-    \PYG{p}{\PYGZob{}}
+    \PYG{k}{for}\PYG{p}{(}\PYG{n}{i}\PYG{o}{=}\PYG{n}{D}\PYG{p}{[}\PYG{n}{c}\PYG{p}{];}\PYG{n}{i}\PYG{o}{!=}\PYG{n}{c}\PYG{p}{;}\PYG{n}{i}\PYG{o}{=}\PYG{n}{D}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{p}{\PYGZob{}}
         \PYG{n}{remove}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
         \PYG{k}{for}\PYG{p}{(}\PYG{n}{j}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}\PYG{n}{j}\PYG{o}{!=}\PYG{n}{i}\PYG{p}{;}\PYG{n}{j}\PYG{o}{=}\PYG{n}{R}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])}
             \PYG{n}{remove}\PYG{p}{(}\PYG{n}{j}\PYG{p}{);}
