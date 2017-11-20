@@ -1,26 +1,15 @@
-template<class T>void checkmin(T &x,T y) {
-	if(y < x) x = y;
-}
+template<class T>void checkmin(T &x,T y) { if(y < x) x = y; }
 struct Node {
 	Node *c[2], *fa;
-	int size, rev;
-	LL val, add, min; 
+	int size, rev; LL val, add, min;
+	
 	Node *init(LL v) {
-		val = min = v;
-		add = rev = 0;
-		c[0] = c[1] = fa = NULL;
-		size = 1;
+		val = min = v, add = rev = 0;
+		c[0] = c[1] = fa = NULL, size = 1;
 		return this;
 	}
-	void rvs() {
-		std::swap(c[0], c[1]);
-		rev ^= 1;
-	}
-	void inc(LL x) {
-		val += x;
-		add += x;
-		min += x;
-	}
+	void rvs() { std::swap(c[0], c[1]), rev ^= 1; }
+	void inc(LL x) { val += x, add += x, min += x; }
 	void pushdown() {
 		if(rev) {
 			if(c[0]) c[0]->rvs();
@@ -34,13 +23,11 @@ struct Node {
 		}
 	}
 	void update() {
-		min = val;
-		if(c[0]) checkmin(min, c[0]->min);
-		if(c[1]) checkmin(min, c[1]->min);
-		size = 1;
-		if(c[0]) size += c[0]->size;
-		if(c[1]) size += c[1]->size;
+		min = val, size = 1;
+		if(c[0]) checkmin(min, c[0]->min), size += c[0]->size;
+		if(c[1]) checkmin(min, c[1]->min), size += c[1]->size;
 	}
+
 } *root;
 Node* newnode(LL x) {
 	static Node pool[maxs], *p = pool;
@@ -72,9 +59,8 @@ void rotate(Node *x,Node* &k) {
 	y->update(), x->update();
 }
 void spaly(Node *x,Node* &k) {
-	static Node *st[maxs];
+	static Node *st[maxs], *y, *z;
 	int top = 0;
-	Node *y, *z;
 	y = x;
 	while(y != k) st[++top] = y, y = y->fa;
 	st[++top] = y;
@@ -90,25 +76,19 @@ void spaly(Node *x,Node* &k) {
 }
 Node *subtree(int l,int r) {
 	assert((++l) <= (++r));
-	spaly(find(l - 1), root);
-	spaly(find(r + 1), root->c[1]);
+	spaly(find(l - 1), root), spaly(find(r + 1), root->c[1]);
 	return root->c[1]->c[0];
 }
 void ins(int pos,int v) {
 	pos++;
-	spaly(find(pos), root);
-	spaly(find(pos + 1), root->c[1]);
+	spaly(find(pos), root), spaly(find(pos + 1), root->c[1]);
 	setc(root->c[1], 0, newnode(v));
-	root->c[1]->update();
-	root->update();
+	root->c[1]->update(), root->update();
 }
 void del(int pos) {
 	pos++;
-	spaly(find(pos - 1), root);
-	spaly(find(pos + 1), root->c[1]);
-	root->c[1]->c[0] = NULL;
-	root->c[1]->update();
-	root->update();
+	spaly(find(pos - 1), root), spaly(find(pos + 1), root->c[1]);
+	root->c[1]->c[0] = NULL, root->c[1]->update(), root->update();
 }
 void init() {
 	root = newnode(0);
