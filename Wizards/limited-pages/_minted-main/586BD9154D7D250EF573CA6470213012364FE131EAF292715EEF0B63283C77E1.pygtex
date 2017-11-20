@@ -25,23 +25,23 @@
 \PYG{p}{\PYGZcb{}}
 \PYG{c+cp}{\PYGZsh{}define cross(p1,p2,p3) ((p2.x\PYGZhy{}p1.x)*(p3.y\PYGZhy{}p1.y)\PYGZhy{}(p3.x\PYGZhy{}p1.x)*(p2.y\PYGZhy{}p1.y))}
 \PYG{c+cp}{\PYGZsh{}define crossOp(p1,p2,p3) sign(cross(p1,p2,p3))}
-\PYG{k+kt}{bool} \PYG{n+nf}{isLL}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l1}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l2}\PYG{p}{,} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 直线与直线交点}
+\PYG{k+kt}{bool} \PYG{n+nf}{isLL}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l1}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l2}\PYG{p}{,} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{n}{DB} \PYG{n}{s1} \PYG{o}{=} \PYG{n}{det}\PYG{p}{(}\PYG{n}{l2}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l2}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l1}\PYG{p}{.}\PYG{n}{a} \PYG{o}{\PYGZhy{}} \PYG{n}{l2}\PYG{p}{.}\PYG{n}{a}\PYG{p}{),}
 	   \PYG{n}{s2} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{det}\PYG{p}{(}\PYG{n}{l2}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l2}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l1}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l2}\PYG{p}{.}\PYG{n}{a}\PYG{p}{);}
 	\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{s1} \PYG{o}{+} \PYG{n}{s2}\PYG{p}{))} \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;}
 	\PYG{n}{p} \PYG{o}{=} \PYG{p}{(}\PYG{n}{l1}\PYG{p}{.}\PYG{n}{a} \PYG{o}{*} \PYG{n}{s2} \PYG{o}{+} \PYG{n}{l1}\PYG{p}{.}\PYG{n}{b} \PYG{o}{*} \PYG{n}{s1}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{s1} \PYG{o}{+} \PYG{n}{s2}\PYG{p}{);}
 	\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-\PYG{k+kt}{bool} \PYG{n+nf}{onSeg}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 点在线段上}
+\PYG{k+kt}{bool} \PYG{n+nf}{onSeg}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}} 
 	\PYG{k}{return} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{))} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b}\PYG{p}{))} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{0}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \PYG{n}{Point} \PYG{n+nf}{projection}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line} \PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{k}{return} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a} \PYG{o}{+} \PYG{p}{(}\PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{).}\PYG{n}{len2}\PYG{p}{());}
 \PYG{p}{\PYGZcb{}}
-\PYG{n}{DB} \PYG{n+nf}{disToLine}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 点到*直线*距离}
+\PYG{n}{DB} \PYG{n+nf}{disToLine}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  
 	\PYG{k}{return} \PYG{n}{fabs}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{).}\PYG{n}{len}\PYG{p}{());}
 \PYG{p}{\PYGZcb{}}
-\PYG{n}{DB} \PYG{n+nf}{disToSeg}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{// 点到线段距离}
+\PYG{n}{DB} \PYG{n+nf}{disToSeg}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Line}\PYG{o}{\PYGZam{}} \PYG{n}{l}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point}\PYG{o}{\PYGZam{}} \PYG{n}{p}\PYG{p}{)} \PYG{p}{\PYGZob{}}  
 	\PYG{k}{return} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{))} \PYG{o}{*} \PYG{n}{sign}\PYG{p}{(}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b}\PYG{p}{,} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b}\PYG{p}{))} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{o}{?} \PYG{n}{disToLine}\PYG{p}{(}\PYG{n}{l}\PYG{p}{,} \PYG{n}{p}\PYG{p}{)} \PYG{o}{:} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{((}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{a}\PYG{p}{).}\PYG{n}{len}\PYG{p}{(),} \PYG{p}{(}\PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{.}\PYG{n}{b}\PYG{p}{).}\PYG{n}{len}\PYG{p}{());}
 \PYG{p}{\PYGZcb{}}
 \PYG{c+c1}{// 圆与直线交点}
@@ -77,7 +77,7 @@
 	\PYG{n}{p1} \PYG{o}{=} \PYG{n}{o} \PYG{o}{+} \PYG{n}{delta}\PYG{p}{,} \PYG{n}{p2} \PYG{o}{=} \PYG{n}{o} \PYG{o}{\PYGZhy{}} \PYG{n}{delta}\PYG{p}{;}
 	\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-\PYG{c+c1}{// 求点到圆的切点，按关于点的顺时针方向返回两个点}
+\PYG{c+c1}{// 求点到圆的切点，按关于点的顺时针方向}
 \PYG{k+kt}{bool} \PYG{n+nf}{tanCP}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{p0}\PYG{p}{,} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{Point} \PYG{o}{\PYGZam{}}\PYG{n}{p2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{k+kt}{double} \PYG{n}{x} \PYG{o}{=} \PYG{p}{(}\PYG{n}{p0} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{.}\PYG{n}{o}\PYG{p}{).}\PYG{n}{len2}\PYG{p}{(),} \PYG{n}{d} \PYG{o}{=} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{.}\PYG{n}{r} \PYG{o}{*} \PYG{n}{c}\PYG{p}{.}\PYG{n}{r}\PYG{p}{;}
 	\PYG{k}{if} \PYG{p}{(}\PYG{n}{d} \PYG{o}{\PYGZlt{}} \PYG{n}{eps}\PYG{p}{)} \PYG{k}{return} \PYG{n+nb}{false}\PYG{p}{;} \PYG{c+c1}{// 点在圆上认为没有切点}
@@ -87,7 +87,7 @@
 	\PYG{n}{p2} \PYG{o}{=} \PYG{n}{c}\PYG{p}{.}\PYG{n}{o} \PYG{o}{+} \PYG{n}{p} \PYG{o}{\PYGZhy{}} \PYG{n}{delta}\PYG{p}{;}
 	\PYG{k}{return} \PYG{n+nb}{true}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-\PYG{c+c1}{// 求圆到圆的外共切线，按关于 c1.o 的顺时针方向返回两条线}
+\PYG{c+c1}{// 求圆到圆的外共切线，按关于 c1.o 的顺时针方向}
 \PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Line}\PYG{o}{\PYGZgt{}} \PYG{n}{extanCC}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c1}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Line}\PYG{o}{\PYGZgt{}} \PYG{n}{ret}\PYG{p}{;}
 	\PYG{k}{if} \PYG{p}{(}\PYG{n}{sign}\PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
@@ -106,7 +106,7 @@
 	\PYG{p}{\PYGZcb{}}
 	\PYG{k}{return} \PYG{n}{ret}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
-\PYG{c+c1}{// 求圆到圆的内共切线，按关于 c1.o 的顺时针方向返回两条线}
+\PYG{c+c1}{// 求圆到圆的内共切线，按关于 c1.o 的顺时针方向}
 \PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Line}\PYG{o}{\PYGZgt{}} \PYG{n}{intanCC}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c1}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Circle} \PYG{o}{\PYGZam{}}\PYG{n}{c2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{n}{std}\PYG{o}{::}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{Line}\PYG{o}{\PYGZgt{}} \PYG{n}{ret}\PYG{p}{;}
 	\PYG{n}{Point} \PYG{n}{p} \PYG{o}{=} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{o} \PYG{o}{*} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r} \PYG{o}{+} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{o} \PYG{o}{*} \PYG{n}{c1}\PYG{p}{.}\PYG{n}{r}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{c1}\PYG{p}{.}\PYG{n}{r} \PYG{o}{+} \PYG{n}{c2}\PYG{p}{.}\PYG{n}{r}\PYG{p}{);}

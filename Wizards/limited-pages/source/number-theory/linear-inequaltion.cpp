@@ -6,5 +6,5 @@ ll cal(ll m, ll d, ll l, ll r) {
     if (d * 2 > m) return cal(m, m - d, m - r, m - l);
     if ((l - 1) / d < r / d) return (l - 1) / d + 1;
     ll k = cal(d, (-m % d + d) % d, l % d, r % d);
-    return k == MXL ? MXL : (k * m + l - 1) / d + 1; // 无解 2
+    return k == MXL ? MXL : (k * m + l - 1) / d + 1; 
 }

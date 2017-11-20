@@ -24,23 +24,23 @@ DB det(const Point& a, const Point& b) {
 }
 #define cross(p1,p2,p3) ((p2.x-p1.x)*(p3.y-p1.y)-(p3.x-p1.x)*(p2.y-p1.y))
 #define crossOp(p1,p2,p3) sign(cross(p1,p2,p3))
-bool isLL(const Line& l1, const Line& l2, Point& p) {  // 直线与直线交点
+bool isLL(const Line& l1, const Line& l2, Point& p) {
 	DB s1 = det(l2.b - l2.a, l1.a - l2.a),
 	   s2 = -det(l2.b - l2.a, l1.b - l2.a);
 	if (!sign(s1 + s2)) return false;
 	p = (l1.a * s2 + l1.b * s1) / (s1 + s2);
 	return true;
 }
-bool onSeg(const Line& l, const Point& p) {  // 点在线段上
+bool onSeg(const Line& l, const Point& p) { 
 	return sign(det(p - l.a, l.b - l.a)) == 0 && sign(dot(p - l.a, p - l.b)) <= 0;
 }
 Point projection(const Line & l, const Point& p) {
 	return l.a + (l.b - l.a) * (dot(p - l.a, l.b - l.a) / (l.b - l.a).len2());
 }
-DB disToLine(const Line& l, const Point& p) {  // 点到*直线*距离
+DB disToLine(const Line& l, const Point& p) {  
 	return fabs(det(p - l.a, l.b - l.a) / (l.b - l.a).len());
 }
-DB disToSeg(const Line& l, const Point& p) {  // 点到线段距离
+DB disToSeg(const Line& l, const Point& p) {  
 	return sign(dot(p - l.a, l.b - l.a)) * sign(dot(p - l.b, l.a - l.b)) == 1 ? disToLine(l, p) : std::min((p - l.a).len(), (p - l.b).len());
 }
 // 圆与直线交点
@@ -76,7 +76,7 @@ bool isCC(Circle a, Circle b, P& p1, P& p2) {
 	p1 = o + delta, p2 = o - delta;
 	return true;
 }
-// 求点到圆的切点，按关于点的顺时针方向返回两个点
+// 求点到圆的切点，按关于点的顺时针方向
 bool tanCP(const Circle &c, const Point &p0, Point &p1, Point &p2) {
 	double x = (p0 - c.o).len2(), d = x - c.r * c.r;
 	if (d < eps) return false; // 点在圆上认为没有切点
@@ -86,7 +86,7 @@ bool tanCP(const Circle &c, const Point &p0, Point &p1, Point &p2) {
 	p2 = c.o + p - delta;
 	return true;
 }
-// 求圆到圆的外共切线，按关于 c1.o 的顺时针方向返回两条线
+// 求圆到圆的外共切线，按关于 c1.o 的顺时针方向
 vector<Line> extanCC(const Circle &c1, const Circle &c2) {
 	vector<Line> ret;
 	if (sign(c1.r - c2.r) == 0) {
@@ -105,7 +105,7 @@ vector<Line> extanCC(const Circle &c1, const Circle &c2) {
 	}
 	return ret;
 }
-// 求圆到圆的内共切线，按关于 c1.o 的顺时针方向返回两条线
+// 求圆到圆的内共切线，按关于 c1.o 的顺时针方向
 std::vector<Line> intanCC(const Circle &c1, const Circle &c2) {
 	std::vector<Line> ret;
 	Point p = (c1.o * c2.r + c2.o * c1.r) / (c1.r + c2.r);
