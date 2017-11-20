@@ -13,13 +13,10 @@ struct Node {
 		return this;
 	}
 	void rvs() {
-		std::swap(c[0], c[1]);
-		rev ^= 1;
+		std::swap(c[0], c[1]), rev ^= 1;
 	}
 	void inc(LL x) {
-		val += x;
-		add += x;
-		min += x;
+		val += x, add += x, min += x;
 	}
 	void pushdown() {
 		if(rev) {
@@ -34,12 +31,9 @@ struct Node {
 		}
 	}
 	void update() {
-		min = val;
-		if(c[0]) checkmin(min, c[0]->min);
-		if(c[1]) checkmin(min, c[1]->min);
-		size = 1;
-		if(c[0]) size += c[0]->size;
-		if(c[1]) size += c[1]->size;
+		min = val, size = 1;
+		if(c[0]) checkmin(min, c[0]->min), size += c[0]->size;
+		if(c[1]) checkmin(min, c[1]->min), size += c[1]->size;
 	}
 } *root;
 Node* newnode(LL x) {
