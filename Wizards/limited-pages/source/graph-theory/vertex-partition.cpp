@@ -31,9 +31,7 @@ void solve() {
 		ban[u] = true, vec.clear();
 		for(int i = 0; i < G[u].size(); i++)
 			if(!ban[G[u][i]]) vec.push_back(G[u][i]);
-		/*
-		do something you like...
-		*/
+		/*do something you like...*/
 		for(int i = 0; i < vec.size(); i++) line[r++] = vec[i];
 	}
 }

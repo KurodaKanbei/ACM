@@ -34,40 +34,45 @@
 \contentsline {section}{\numberline {4}字符串}{11}
 \contentsline {subsection}{\numberline {4.1}AC自动机}{11}
 \contentsline {subsection}{\numberline {4.2}后缀数组}{11}
-\contentsline {subsection}{\numberline {4.3}后缀自动机}{12}
+\contentsline {subsection}{\numberline {4.3}后缀自动机}{11}
 \contentsline {subsection}{\numberline {4.4}广义后缀自动机}{12}
 \contentsline {subsection}{\numberline {4.5}manacher}{12}
 \contentsline {subsection}{\numberline {4.6}回文自动机}{12}
-\contentsline {subsection}{\numberline {4.7}循环串的最小表示}{13}
+\contentsline {subsection}{\numberline {4.7}循环串的最小表示}{12}
 \contentsline {section}{\numberline {5}数据结构}{13}
 \contentsline {subsection}{\numberline {5.1}可并堆}{13}
 \contentsline {subsection}{\numberline {5.2}KD-Tree}{13}
 \contentsline {subsection}{\numberline {5.3}Treap}{14}
 \contentsline {subsection}{\numberline {5.4}Splay}{14}
 \contentsline {subsection}{\numberline {5.5}Link cut Tree}{15}
-\contentsline {subsection}{\numberline {5.6}树上莫队}{16}
+\contentsline {subsection}{\numberline {5.6}树上莫队}{15}
 \contentsline {subsection}{\numberline {5.7}CDQ分治}{16}
 \contentsline {subsection}{\numberline {5.8}整体二分}{16}
-\contentsline {section}{\numberline {6}图论}{17}
-\contentsline {subsection}{\numberline {6.1}2-SAT tarjan}{17}
-\contentsline {subsection}{\numberline {6.2}KM}{17}
+\contentsline {section}{\numberline {6}图论}{16}
+\contentsline {subsection}{\numberline {6.1}2-SAT tarjan}{16}
+\contentsline {subsection}{\numberline {6.2}KM}{16}
 \contentsline {subsection}{\numberline {6.3}点双连通分量}{17}
-\contentsline {subsection}{\numberline {6.4}边双连通分量}{18}
-\contentsline {subsection}{\numberline {6.5}最小树形图}{18}
-\contentsline {subsection}{\numberline {6.6}带花树}{19}
-\contentsline {subsection}{\numberline {6.7}支配树}{19}
-\contentsline {subsection}{\numberline {6.8}无向图最小割}{20}
-\contentsline {subsection}{\numberline {6.9}最大团搜索}{20}
-\contentsline {subsection}{\numberline {6.10}虚树}{21}
-\contentsline {subsection}{\numberline {6.11}点分治}{21}
-\contentsline {subsection}{\numberline {6.12}最小割最大流}{21}
-\contentsline {subsection}{\numberline {6.13}最小费用流}{22}
-\contentsline {subsection}{\numberline {6.14}最小割树}{22}
-\contentsline {subsection}{\numberline {6.15}上下界网络流建图}{23}
-\contentsline {subsubsection}{\numberline {6.15.1}无源汇的上下界可行流}{23}
-\contentsline {subsubsection}{\numberline {6.15.2}有源汇的上下界可行流}{23}
-\contentsline {subsubsection}{\numberline {6.15.3}有源汇的上下界最大流}{23}
-\contentsline {subsubsection}{\numberline {6.15.4}有源汇的上下界最小流}{23}
+\contentsline {subsection}{\numberline {6.4}边双连通分量}{17}
+\contentsline {subsection}{\numberline {6.5}树上路径求交}{17}
+\contentsline {subsection}{\numberline {6.6}最小树形图}{18}
+\contentsline {subsection}{\numberline {6.7}带花树}{18}
+\contentsline {subsection}{\numberline {6.8}支配树}{18}
+\contentsline {subsection}{\numberline {6.9}随机最大权匹配}{19}
+\contentsline {subsection}{\numberline {6.10}无向图最小割}{19}
+\contentsline {subsection}{\numberline {6.11}最大团搜索}{20}
+\contentsline {subsection}{\numberline {6.12}弦图判定}{20}
+\contentsline {subsection}{\numberline {6.13}斯坦纳树}{20}
+\contentsline {subsection}{\numberline {6.14}虚树}{21}
+\contentsline {subsection}{\numberline {6.15}点分治}{21}
+\contentsline {subsection}{\numberline {6.16}最小割最大流}{21}
+\contentsline {subsection}{\numberline {6.17}最小费用流}{21}
+\contentsline {subsection}{\numberline {6.18}zkw费用流}{22}
+\contentsline {subsection}{\numberline {6.19}最小割树}{22}
+\contentsline {subsection}{\numberline {6.20}上下界网络流建图}{23}
+\contentsline {subsubsection}{\numberline {6.20.1}无源汇的上下界可行流}{23}
+\contentsline {subsubsection}{\numberline {6.20.2}有源汇的上下界可行流}{23}
+\contentsline {subsubsection}{\numberline {6.20.3}有源汇的上下界最大流}{23}
+\contentsline {subsubsection}{\numberline {6.20.4}有源汇的上下界最小流}{23}
 \contentsline {section}{\numberline {7}其他}{23}
 \contentsline {subsection}{\numberline {7.1}Dancing Links}{23}
 \contentsline {subsubsection}{\numberline {7.1.1}精确覆盖}{23}
@@ -80,7 +85,7 @@
 \contentsline {subsection}{\numberline {8.2}大整数取模}{24}
 \contentsline {subsection}{\numberline {8.3}读入优化}{24}
 \contentsline {subsection}{\numberline {8.4}汇编技巧}{24}
-\contentsline {section}{\numberline {9}提示}{24}
-\contentsline {subsection}{\numberline {9.1}线性规划转对偶}{24}
+\contentsline {section}{\numberline {9}提示}{25}
+\contentsline {subsection}{\numberline {9.1}线性规划转对偶}{25}
 \contentsline {subsection}{\numberline {9.2}NTT 素数及其原根}{25}
 \contentsline {subsection}{\numberline {9.3}积分表}{25}

@@ -18,8 +18,7 @@ void tarjan(int u,int f) {
 		}
 	}
 }
-void work()
-{
+void work() {
 	for(int i = 1; i <= n; i++) if(!dfn[i]) tarjan(i, 0);
 	for(int i = 1; i <= m; i++) pbc[i * 2 - 1] = pbc[i * 2] = std::max(pbc[i * 2 - 1], pbc[i * 2]);
 }

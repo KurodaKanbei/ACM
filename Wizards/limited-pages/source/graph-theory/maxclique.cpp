@@ -21,7 +21,6 @@ public:
         }
         sort(p.begin(), p.end(), [&](const Vertex &a, const Vertex &b) { return a.d > b.d; } );
     }
-	// reuse p[i].d to denote the maximum possible clique for first i vertices.
     void init_color(vector<Vertex> &p) {
         int maxd = p[0].d;
         for (int i = 0; i < p.size(); i++) p[i].d = min(i, maxd) + 1;
@@ -30,8 +29,6 @@ public:
         for (auto v : s) if (adj[v][x]) return true;
         return false;
     }
-	// approximate estimate the p[i].d
-	// Do not care about first mink color class (For better result, we must get some vertex in some color class larger than mink )
     void color_sort(vector<Vertex> &cur) {
         int totc = 0, ptr = 0, mink = max((int)result.size() - (int)cur_res.size(), 0);
         for (int i = 0; i < cur.size(); i++) {
@@ -62,7 +59,6 @@ public:
             if (remain.size() == 0) {
                 if (cur_res.size() > result.size()) result = cur_res;
             } else {
-				// Magic ballance.
 				if (1. * steps[level].second / ++para < t_limit) reorder(remain);
                 color_sort(remain);
 				steps[level++].second++;

@@ -3,26 +3,18 @@
     \PYG{k}{static} \PYG{k+kt}{int} \PYG{n}{line}\PYG{p}{[}\PYG{n}{maxv}\PYG{p}{];}
     \PYG{k}{static} \PYG{k+kt}{bool} \PYG{n}{hash}\PYG{p}{[}\PYG{n}{maxv}\PYG{p}{];}
     \PYG{k}{register} \PYG{k+kt}{int} \PYG{n}{f} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
-	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{ind}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-    	\PYG{n}{dist}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{inf}\PYG{p}{;}
-    	\PYG{n}{from}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
-	\PYG{p}{\PYGZcb{}}
-    \PYG{n}{dist}\PYG{p}{[}\PYG{n}{S}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{line}\PYG{p}{[}\PYG{n}{r}\PYG{p}{]} \PYG{o}{=} \PYG{n}{S}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{p}{(}\PYG{n}{r} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{maxv}\PYG{p}{;}
-    \PYG{n}{hash}\PYG{p}{[}\PYG{n}{S}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{true}\PYG{p}{;}
+	\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{ind}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{inf}\PYG{p}{,} \PYG{n}{from}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{dist}\PYG{p}{[}\PYG{n}{S}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{line}\PYG{p}{[}\PYG{n}{r}\PYG{p}{]} \PYG{o}{=} \PYG{n}{S}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{p}{(}\PYG{n}{r} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{maxv}\PYG{p}{,} \PYG{n}{hash}\PYG{p}{[}\PYG{n}{S}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{true}\PYG{p}{;}
     \PYG{k}{while}\PYG{p}{(}\PYG{n}{f} \PYG{o}{!=} \PYG{n}{r}\PYG{p}{)} \PYG{p}{\PYGZob{}}
         \PYG{k+kt}{int} \PYG{n}{x} \PYG{o}{=} \PYG{n}{line}\PYG{p}{[}\PYG{n}{f}\PYG{p}{];}
-        \PYG{n}{line}\PYG{p}{[}\PYG{n}{f}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{f} \PYG{o}{=} \PYG{p}{(}\PYG{n}{f} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{maxv}\PYG{p}{;}
-        \PYG{n}{hash}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{false}\PYG{p}{;}
+        \PYG{n}{line}\PYG{p}{[}\PYG{n}{f}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{f} \PYG{o}{=} \PYG{p}{(}\PYG{n}{f} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{maxv}\PYG{p}{,} \PYG{n}{hash}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{false}\PYG{p}{;}
         \PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{n}{head}\PYG{p}{[}\PYG{n}{x}\PYG{p}{];} \PYG{n}{i}\PYG{p}{;} \PYG{n}{i} \PYG{o}{=} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{next}\PYG{p}{)}
             \PYG{k}{if}\PYG{p}{(}\PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{cap}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-                \PYG{k+kt}{int} \PYG{n}{v} \PYG{o}{=} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{v}\PYG{p}{;}
-                \PYG{k+kt}{int} \PYG{n}{w} \PYG{o}{=} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{+} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{cost}\PYG{p}{;}
+                \PYG{k+kt}{int} \PYG{n}{v} \PYG{o}{=} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{v}\PYG{p}{,} \PYG{n}{w} \PYG{o}{=} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{+} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{cost}\PYG{p}{;}
                 \PYG{k}{if}\PYG{p}{(}\PYG{n}{w} \PYG{o}{\PYGZlt{}} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{v}\PYG{p}{])} \PYG{p}{\PYGZob{}}
-                    \PYG{n}{dist}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n}{w}\PYG{p}{;}
-                    \PYG{n}{from}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
+                    \PYG{n}{dist}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n}{w}\PYG{p}{,} \PYG{n}{from}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
                     \PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{hash}\PYG{p}{[}\PYG{n}{v}\PYG{p}{])} \PYG{p}{\PYGZob{}}
-                        \PYG{k}{if}\PYG{p}{(}\PYG{n}{f} \PYG{o}{!=} \PYG{n}{r} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{\PYGZlt{}=} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{line}\PYG{p}{[}\PYG{n}{f}\PYG{p}{]])}
-                            \PYG{n}{f} \PYG{o}{=} \PYG{p}{(}\PYG{n}{f} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{maxv}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{maxv}\PYG{p}{,} \PYG{n}{line}\PYG{p}{[}\PYG{n}{f}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v}\PYG{p}{;}
+                        \PYG{k}{if}\PYG{p}{(}\PYG{n}{f} \PYG{o}{!=} \PYG{n}{r} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{\PYGZlt{}=} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{line}\PYG{p}{[}\PYG{n}{f}\PYG{p}{]])} \PYG{n}{f} \PYG{o}{=} \PYG{p}{(}\PYG{n}{f} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{maxv}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{maxv}\PYG{p}{,} \PYG{n}{line}\PYG{p}{[}\PYG{n}{f}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v}\PYG{p}{;}
                         \PYG{k}{else} \PYG{n}{line}\PYG{p}{[}\PYG{n}{r}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{p}{(}\PYG{n}{r} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{n}{maxv}\PYG{p}{;}
                         \PYG{n}{hash}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{true}\PYG{p}{;}
                     \PYG{p}{\PYGZcb{}}
@@ -34,8 +26,7 @@
 \PYG{k+kt}{int} \PYG{n+nf}{back}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{flow}\PYG{p}{)} \PYG{p}{\PYGZob{}}
 	\PYG{k}{if}\PYG{p}{(}\PYG{n}{from}\PYG{p}{[}\PYG{n}{x}\PYG{p}{])} \PYG{p}{\PYGZob{}}
 		\PYG{n}{flow} \PYG{o}{=} \PYG{n}{back}\PYG{p}{(}\PYG{n}{edge}\PYG{p}{[}\PYG{n}{from}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{\PYGZca{}} \PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{v}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{min}\PYG{p}{(}\PYG{n}{flow}\PYG{p}{,} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{from}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]].}\PYG{n}{cap}\PYG{p}{));}
-		\PYG{n}{edge}\PYG{p}{[}\PYG{n}{from}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]].}\PYG{n}{cap} \PYG{o}{\PYGZhy{}=} \PYG{n}{flow}\PYG{p}{;}
-		\PYG{n}{edge}\PYG{p}{[}\PYG{n}{from}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{\PYGZca{}} \PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{cap} \PYG{o}{+=} \PYG{n}{flow}\PYG{p}{;}
+		\PYG{n}{edge}\PYG{p}{[}\PYG{n}{from}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]].}\PYG{n}{cap} \PYG{o}{\PYGZhy{}=} \PYG{n}{flow}\PYG{p}{,} \PYG{n}{edge}\PYG{p}{[}\PYG{n}{from}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{\PYGZca{}} \PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{cap} \PYG{o}{+=} \PYG{n}{flow}\PYG{p}{;}
 	\PYG{p}{\PYGZcb{}}
 	\PYG{k}{return} \PYG{n}{flow}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
@@ -43,8 +34,7 @@
     \PYG{k+kt}{int} \PYG{n}{mincost} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{maxflow} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
     \PYG{k}{while}\PYG{p}{(}\PYG{n}{SPFA}\PYG{p}{())} \PYG{p}{\PYGZob{}}
         \PYG{k+kt}{int} \PYG{n}{flow} \PYG{o}{=} \PYG{n}{back}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,} \PYG{n}{inf}\PYG{p}{);}
-        \PYG{n}{mincost} \PYG{o}{+=} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{T}\PYG{p}{]} \PYG{o}{*} \PYG{n}{flow}\PYG{p}{;}
-        \PYG{n}{maxflow} \PYG{o}{+=} \PYG{n}{flow}\PYG{p}{;}
+        \PYG{n}{mincost} \PYG{o}{+=} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{T}\PYG{p}{]} \PYG{o}{*} \PYG{n}{flow}\PYG{p}{,} \PYG{n}{maxflow} \PYG{o}{+=} \PYG{n}{flow}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
     \PYG{k}{return} \PYG{n}{mincost}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}

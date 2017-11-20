@@ -1,6 +1,5 @@
 bool BFS() {
     for(int i = 1; i <= ind; i++) dep[i] = 0;
-    
     dep[S] = 1, line.push(S);
     while(!line.empty()) {
         int now = line.front(); line.pop();
@@ -8,7 +7,6 @@ bool BFS() {
             if(edge[i].cap && !dep[p = edge[i].v])
                 dep[p] = dep[now] + 1, line.push(p);
     }
-
     if(dep[T]) {
         for(int i = 1; i <= ind; i++) cur[i] = head[i];
         return true;    

@@ -79,7 +79,8 @@ double solve(point *P, point *Q, int n, int m) {
             ret = DistanceToSegment(Q[ymaxQ], P[yminP], P[yminP+1]);
             ans  = min(ans,ret);
         } else { //arg==0，卡住第二个凸包的边
-            ret = SegmentToSegment(P[yminP],P[yminP+1],Q[ymaxQ],Q[ymaxQ+1]);
+            ret = SegmentToSegment(P[yminP],P[yminP+1],
+				  Q[ymaxQ],Q[ymaxQ+1]);
             ans = min(ans,ret);
         }
         yminP = (yminP+1)%n;

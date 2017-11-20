@@ -80,7 +80,8 @@
             \PYG{n}{ret} \PYG{o}{=} \PYG{n}{DistanceToSegment}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{p}{],} \PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{p}{],} \PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]);}
             \PYG{n}{ans}  \PYG{o}{=} \PYG{n}{min}\PYG{p}{(}\PYG{n}{ans}\PYG{p}{,}\PYG{n}{ret}\PYG{p}{);}
         \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//arg==0，卡住第二个凸包的边}
-            \PYG{n}{ret} \PYG{o}{=} \PYG{n}{SegmentToSegment}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{p}{],}\PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{p}{],}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]);}
+            \PYG{n}{ret} \PYG{o}{=} \PYG{n}{SegmentToSegment}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{p}{],}\PYG{n}{P}\PYG{p}{[}\PYG{n}{yminP}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],}
+				  \PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{p}{],}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{ymaxQ}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]);}
             \PYG{n}{ans} \PYG{o}{=} \PYG{n}{min}\PYG{p}{(}\PYG{n}{ans}\PYG{p}{,}\PYG{n}{ret}\PYG{p}{);}
         \PYG{p}{\PYGZcb{}}
         \PYG{n}{yminP} \PYG{o}{=} \PYG{p}{(}\PYG{n}{yminP}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{n}\PYG{p}{;}
